@@ -7,18 +7,14 @@ import { notFound } from "next/navigation";
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getSingle("homepage").catch(() => notFound());
+  const page = await client.getSingle("reviews").catch(() => notFound());
 
-  return (
-    <>
-      <SliceZone slices={page?.data?.slices} components={components} />
-    </>
-  );
+  return <SliceZone slices={page?.data?.slices} components={components} />;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getSingle("homepage");
+  const page = await client.getSingle("reviews");
 
   return {
     title: page?.data?.meta_title,
