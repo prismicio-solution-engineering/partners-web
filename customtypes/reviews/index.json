@@ -11,7 +11,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "hero": {
+            "form_section": {
+              "type": "SharedSlice"
+            },
+            "accordion_section": {
+              "type": "SharedSlice"
+            },
+            "hero_banner": {
+              "type": "SharedSlice"
+            },
+            "highlighted_text": {
+              "type": "SharedSlice"
+            },
+            "text": {
               "type": "SharedSlice"
             }
           }

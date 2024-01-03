@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Frequently Asked Questions"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "again",
+							"type": "Text"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ullamco ea laborum in adipisicing incididunt reprehenderit minim. Duis nisi mollit reprehenderit incididunt consequat occaecat reprehenderit cillum duis deserunt voluptate irure."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

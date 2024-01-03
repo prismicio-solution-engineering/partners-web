@@ -1,0 +1,60 @@
+{
+  "id": "featured_partners",
+  "type": "SharedSlice",
+  "name": "FeaturedPartners",
+  "description": "A showcase of partner logos, arranged in a grid layout, to highlight and link to featured partners.",
+  "variations": [
+    {
+      "id": "default_variation",
+      "name": "Default Variation",
+      "description": "A standard layout for displaying featured partner logos in a visually appealing grid.",
+      "primary": {
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Title",
+            "single": "heading2"
+          }
+        },
+        "see_all_button_label": {
+          "type": "Text",
+          "config": {
+            "label": "See All Button Label"
+          }
+        },
+        "see_all_button_link": {
+          "type": "Link",
+          "config": {
+            "label": "See All Button Link",
+            "placeholder": "Link to all partners",
+            "select": "web"
+          }
+        }
+      },
+      "items": {
+        "partner_link": {
+          "type": "Link",
+          "config": {
+            "label": "Partner Link",
+            "placeholder": "URL to partner's page",
+            "select": "web"
+          }
+        },
+        "partner_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Partner Logo",
+            "constraint": {
+              "width": 200,
+              "height": 200
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    }
+  ]
+}

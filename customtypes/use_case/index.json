@@ -16,7 +16,29 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "news_list": {
+              "type": "SharedSlice"
+            },
+            "text_section": {
+              "type": "SharedSlice"
+            },
+            "accordion_section": {
+              "type": "SharedSlice"
+            },
+            "hero_banner": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            },
+            "highlighted_text": {
+              "type": "SharedSlice"
+            },
+            "form_section": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

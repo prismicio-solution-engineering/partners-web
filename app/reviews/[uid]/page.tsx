@@ -4,6 +4,8 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { Content } from "@prismicio/client";
+import Header from "@/components/Header";
 
 type Params = { uid: string };
 
@@ -12,8 +14,15 @@ export default async function Page({ params }: { params: Params }) {
   const page = await client
     .getByUID("review", params.uid)
     .catch(() => notFound());
-
-  return <SliceZone slices={page?.data?.slices} components={components} />;
+  const navigation =
+    await client.getSingle<Content.NavigationDocument>("navigation");
+    
+  return (
+    <>
+      <Header navigation={navigation} />
+      <SliceZone slices={page?.data?.slices} components={components} />;
+    </>
+  );
 }
 
 export async function generateMetadata({

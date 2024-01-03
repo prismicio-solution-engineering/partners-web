@@ -17,7 +17,34 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "hero": {
+            "text_section": {
+              "type": "SharedSlice"
+            },
+            "timeline": {
+              "type": "SharedSlice"
+            },
+            "check_list": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            },
+            "hero_banner": {
+              "type": "SharedSlice"
+            },
+            "highlighted_text": {
+              "type": "SharedSlice"
+            },
+            "news_list": {
+              "type": "SharedSlice"
+            },
+            "form_section": {
+              "type": "SharedSlice"
+            },
+            "featured_partners": {
+              "type": "SharedSlice"
+            },
+            "accordion_section": {
               "type": "SharedSlice"
             }
           }

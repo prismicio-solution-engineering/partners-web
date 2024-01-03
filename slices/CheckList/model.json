@@ -1,0 +1,58 @@
+{
+  "id": "check_list",
+  "type": "SharedSlice",
+  "name": "CheckList",
+  "description": "The Check List component displays the list of items to cover to become certified. Each item has a title, a description and an image. In each item it is possible to hide the description and image with a toggle.",
+  "variations": [
+    {
+      "id": "default_variation",
+      "name": "Default Variation",
+      "description": "Default variation where each item in the checklist contains a title, description, and image, with a toggle to hide description and image.",
+      "primary": {
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": "Enter the section title for the checklist"
+          }
+        }
+      },
+      "items": {
+        "item_title": {
+          "type": "Text",
+          "config": {
+            "label": "Item Title",
+            "placeholder": "Enter the title for the checklist item"
+          }
+        },
+        "item_description": {
+          "type": "Text",
+          "config": {
+            "label": "Item Description",
+            "placeholder": "Enter the description for the checklist item"
+          }
+        },
+        "item_image": {
+          "type": "Image",
+          "config": {
+            "label": "Item Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "item_visibility": {
+          "type": "Boolean",
+          "config": {
+            "label": "Item Visibility",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    }
+  ]
+}
