@@ -1,10 +1,10 @@
-import React from 'react';
-import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+import React from "react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 // import { FaArrowRight } from "react-icons/fa";
 
-import { Content } from '@prismicio/client';
-import { ArrowRightIcon } from '@heroicons/react/solid';
+import { Content, isFilled } from "@prismicio/client";
+import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/solid";
 
 /**
  * Props for `HeroBanner`.
@@ -38,12 +38,15 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
             ),
           }}
         />
-        <PrismicNextLink
-          className="flex items-center justify-center w-full max-w-xs mx-auto py-4 px-8 text-white font-bold bg-[#3BBB96] rounded-[16px] hover:bg-[#75DCC0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3BBB96] transform transition-all duration-300 ease-in-out lg:w-auto"
-          field={slice.primary.button_link}
-        >
-          {slice.primary.button_label} <ArrowRightIcon className="ml-2 w-5 h-5" />
-        </PrismicNextLink>
+        {isFilled.link(slice.primary.button_link) && (
+          <PrismicNextLink
+            className="flex items-center justify-center w-full max-w-xs mx-auto py-4 px-8 text-white font-bold bg-[#3BBB96] rounded-[16px] hover:bg-[#75DCC0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3BBB96] transform transition-all duration-300 ease-in-out lg:w-auto"
+            field={slice.primary.button_link}
+          >
+            {slice.primary.button_label}
+            <ChevronRightIcon className="ml-2 w-5 h-5" />
+          </PrismicNextLink>
+        )}
       </div>
     </div>
   );

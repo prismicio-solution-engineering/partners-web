@@ -10,10 +10,12 @@
       "description": "Default variation with multiple collapsible items.",
       "primary": {
         "section_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Section Title",
-            "placeholder": "Type the FAQ section title here..."
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         }
       },
@@ -30,7 +32,8 @@
           "config": {
             "label": "Accordion Content",
             "placeholder": "Type the accordion content here...",
-            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item"
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,heading3"
           }
         }
       },

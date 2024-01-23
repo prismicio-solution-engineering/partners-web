@@ -14,7 +14,7 @@ export type FeaturedPartnersProps = SliceComponentProps<Content.FeaturedPartners
  */
 const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
   return (
-    <section className="bg-[#EEEEEE]">
+    <section className="bg-white">
       <div className="max-w-screen-xl mx-auto py-12 px-6 sm:px-8 lg:py-24">
         <PrismicRichText
           field={slice.primary.section_title}
@@ -34,11 +34,10 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
                 key={index}
                 field={item.partner_link}
                 className="transition-transform hover:scale-105">
-                <div className="bg-white p-4 rounded-lg h-24 flex justify-center items-center shadow-sm">
+                <div className="p-4 rounded-lg h-24 w-52 object-fill flex justify-center items-center shadow-sm">
                   <PrismicNextImage
                     field={item.partner_logo}
-                    className="max-h-full max-w-full"
-                    style={{ objectFit: "contain" }}
+                    height={96}
                   />
                 </div>
               </PrismicNextLink>
@@ -48,7 +47,7 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
 
         <div className="mt-12 flex justify-center">
           <PrismicNextLink field={slice.primary.see_all_button_link}>
-            <button className="bg-[#50d71e] text-white px-8 py-2 rounded-md font-semibold tracking-[-0.01em] inline-flex items-center transition-colors hover:bg-[#35b314]">
+            <button className="flex items-center justify-center w-full max-w-xs mx-auto py-4 px-8 text-white font-bold bg-[#3BBB96] rounded-[16px] hover:bg-[#75DCC0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3BBB96] transform transition-all duration-300 ease-in-out lg:w-auto">
               {slice.primary.see_all_button_label}
               <ChevronRightIcon className="ml-2 w-5 h-5" />
             </button>

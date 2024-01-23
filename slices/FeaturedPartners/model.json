@@ -44,11 +44,11 @@
           "type": "Image",
           "config": {
             "label": "Partner Logo",
+            "thumbnails": [],
             "constraint": {
-              "width": 200,
-              "height": 200
-            },
-            "thumbnails": []
+              "height": 96,
+              "width": null
+            }
           }
         }
       },

@@ -575,12 +575,12 @@ export interface AccordionSectionSliceDefaultPrimary {
   /**
    * Section Title field in *AccordionSection → Primary*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Type the FAQ section title here...
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
    * - **API ID Path**: accordion_section.primary.section_title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  section_title: prismic.KeyTextField;
+  section_title: prismic.TitleField;
 }
 
 /**
