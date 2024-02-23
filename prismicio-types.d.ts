@@ -486,6 +486,146 @@ export type ReviewsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Reviews checklist → Criteria*
+ */
+export interface ReviewsChecklistDocumentDataCriteriaItem {
+  /**
+   * Topic field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_checklist.criteria[].topic
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  topic: prismic.SelectField<
+    | "Slices and types"
+    | "Queries"
+    | "Templating into React/Vue"
+    | "Routing"
+    | "Content relationship"
+    | "Assets"
+    | "Dev experience"
+    | "Editor experience"
+  >;
+
+  /**
+   * Name field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_checklist.criteria[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.TitleField;
+
+  /**
+   * Comment Next field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Comment for Next apps
+   * - **API ID Path**: reviews_checklist.criteria[].comment_next
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  comment_next: prismic.RichTextField;
+
+  /**
+   * Comment Nuxt field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Comment for Nuxt apps
+   * - **API ID Path**: reviews_checklist.criteria[].comment_nuxt
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  comment_nuxt: prismic.RichTextField;
+
+  /**
+   * Comment Sveltkit field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Comment for SveltKit apps
+   * - **API ID Path**: reviews_checklist.criteria[].comment_sveltkit
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  comment_sveltkit: prismic.RichTextField;
+
+  /**
+   * Priority field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Criteria priority
+   * - **API ID Path**: reviews_checklist.criteria[].priority
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  priority: prismic.SelectField<"High" | "Medium" | "Low">;
+
+  /**
+   * Is Slice library field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: reviews_checklist.criteria[].is_slice_library
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_slice_library: prismic.BooleanField;
+
+  /**
+   * Is Full Project field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: reviews_checklist.criteria[].is_full_project
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_full_project: prismic.BooleanField;
+
+  /**
+   * Review helper field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Helper for SE team
+   * - **API ID Path**: reviews_checklist.criteria[].review_helper
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  review_helper: prismic.RichTextField;
+}
+
+/**
+ * Content for Reviews checklist documents
+ */
+interface ReviewsChecklistDocumentData {
+  /**
+   * Criteria field in *Reviews checklist*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_checklist.criteria[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  criteria: prismic.GroupField<
+    Simplify<ReviewsChecklistDocumentDataCriteriaItem>
+  >;
+}
+
+/**
+ * Reviews checklist document from Prismic
+ *
+ * - **API ID**: `reviews_checklist`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReviewsChecklistDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ReviewsChecklistDocumentData>,
+    "reviews_checklist",
+    Lang
+  >;
+
 type UseCaseDocumentDataSlicesSlice =
   | NewsListSlice
   | TextSectionSlice
@@ -566,6 +706,7 @@ export type AllDocumentTypes =
   | PageDocument
   | ReviewDocument
   | ReviewsDocument
+  | ReviewsChecklistDocument
   | UseCaseDocument;
 
 /**
@@ -645,12 +786,12 @@ export interface CheckListSliceDefaultVariationPrimary {
   /**
    * Section Title field in *CheckList → Primary*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the section title for the checklist
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
    * - **API ID Path**: check_list.primary.section_title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  section_title: prismic.KeyTextField;
+  section_title: prismic.TitleField;
 }
 
 /**
@@ -660,22 +801,22 @@ export interface CheckListSliceDefaultVariationItem {
   /**
    * Item Title field in *CheckList → Items*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the title for the checklist item
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: check_list.items[].item_title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  item_title: prismic.KeyTextField;
+  item_title: prismic.RichTextField;
 
   /**
    * Item Description field in *CheckList → Items*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the description for the checklist item
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: check_list.items[].item_description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  item_description: prismic.KeyTextField;
+  item_description: prismic.RichTextField;
 
   /**
    * Item Image field in *CheckList → Items*
@@ -1596,6 +1737,9 @@ declare module "@prismicio/client" {
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
+      ReviewsChecklistDocument,
+      ReviewsChecklistDocumentData,
+      ReviewsChecklistDocumentDataCriteriaItem,
       UseCaseDocument,
       UseCaseDocumentData,
       UseCaseDocumentDataSlicesSlice,

@@ -4,9 +4,15 @@
 		"variation": "default_variation",
 		"primary": {
 			"section_title": {
-				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "Slice Library Checklist"
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Enter"
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -49,17 +55,29 @@
 					[
 						"item_description",
 						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "description"
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Occaecat officia culpa enim occaecat veniam sit in elit pariatur nulla aute in."
+									}
+								}
+							]
 						}
 					],
 					[
 						"item_title",
 						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "1st step"
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Interior"
+									}
+								}
+							]
 						}
 					]
 				]
@@ -94,26 +112,38 @@
 						}
 					],
 					[
-						"item_title",
+						"item_visibility",
 						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "2nd step"
+							"__TYPE__": "BooleanContent",
+							"value": true
 						}
 					],
 					[
 						"item_description",
 						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "description"
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Laboris elit labore eu velit et laboris anim minim ullamco cillum excepteur. Est nostrud elit aliquip mollit fugiat irure do id. Anim labore cillum deserunt elit ea occaecat deserunt dolor laboris."
+									}
+								}
+							]
 						}
 					],
 					[
-						"item_visibility",
+						"item_title",
 						{
-							"__TYPE__": "BooleanContent",
-							"value": true
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Black"
+									}
+								}
+							]
 						}
 					]
 				]

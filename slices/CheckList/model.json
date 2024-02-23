@@ -10,26 +10,32 @@
       "description": "Default variation where each item in the checklist contains a title, description, and image, with a toggle to hide description and image.",
       "primary": {
         "section_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Section Title",
-            "placeholder": "Enter the section title for the checklist"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         }
       },
       "items": {
         "item_title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Item Title",
-            "placeholder": "Enter the title for the checklist item"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3,strong,em,hyperlink,embed,list-item,o-list-item,preformatted"
           }
         },
         "item_description": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Item Description",
-            "placeholder": "Enter the description for the checklist item"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item"
           }
         },
         "item_image": {
