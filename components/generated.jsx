@@ -1186,17 +1186,21 @@ function AccordionItem({ faq, index, toggle, active }) {
 
     return (
         <div
-            className={`my-4 bg-[#F5E6FF] p-6 rounded-[16px] ${isActive ? 'shadow-md' : ''
+            className={`my-4 bg-[#F7F7F7] p-6 rounded-lg text-left ${isActive ? 'shadow-md' : ''
                 }`}
         >
             <h3
-                className="text-[#171717] font-sans text-lg cursor-pointer"
+                className="text-[#171717] font-sans text-lg cursor-pointer flex justify-between font-bold"
                 onClick={() => toggle(index)}
             >
+                <span>
                 {faq.question}
+                </span>
+                <span>{isActive ? '-' : '+'}</span>
+
             </h3>
             <div
-                className={`font-sans text-sm text-[#171717] transition-max-height duration-500 ease-in-out ${isActive ? 'max-h-96' : 'max-h-0 overflow-hidden'
+                className={`font-sans text-base text-[#171717] transition-max-height duration-500 ease-in-out ${isActive ? 'max-h-96' : 'max-h-0 overflow-hidden'
                     }`}
             >
                 <p className={`pt-4 ${isActive ? 'block' : 'hidden'}`}>{faq.answer}</p>
@@ -1213,7 +1217,7 @@ function Accordion() {
     };
 
     return (
-        <div className="font-sans">
+        <div>
             {faqs.map((faq, index) => (
                 <AccordionItem
                     key={index}
@@ -1229,8 +1233,8 @@ function Accordion() {
 
 export function FAQSection() {
     return (
-        <section className="bg-[#E8F8F3] text-center py-12 px-4 md:px-24">
-            <h2 className="text-[#171717] text-3xl font-bold font-sans mb-8">
+        <section className="bg-[#ffffff] text-center py-12 max-w-screen-xl mx-auto rounded-lg">
+            <h2 className="text-4xl font-sans font-bold text-[#171717] text-center mb-6">
                 Frequently Asked Questions
             </h2>
             <div className="max-w-screen-xl mx-auto">
@@ -1240,60 +1244,60 @@ export function FAQSection() {
     );
 }
 
-export const AccordionComponent = () => {
-    const faqs = [
-        {
-            question: "How do I apply for the partnership program?",
-            answer: "To apply, fill out the application form on our website with your agency details and submit it for review."
-        },
-        {
-            question: "What are the benefits of being a partner?",
-            answer: "As a partner, you'll receive access to exclusive resources, discounts on services, and priority support."
-        },
-        {
-            question: "What kind of training and certifications are provided?",
-            answer: "We provide comprehensive product and service training along with certifications to validate your expertise."
-        },
-        {
-            question: "Is there a cost associated with becoming a partner?",
-            answer: "No, there is no cost to join the partnership program. We aim to foster a mutually beneficial relationship."
-        },
-        {
-            question: "How long does the partnership process take?",
-            answer: "The timeframe can vary, but typically it may take a few weeks to complete the onboarding process."
-        }
-    ];
+// export const AccordionComponent = () => {
+//     const faqs = [
+//         {
+//             question: "How do I apply for the partnership program?",
+//             answer: "To apply, fill out the application form on our website with your agency details and submit it for review."
+//         },
+//         {
+//             question: "What are the benefits of being a partner?",
+//             answer: "As a partner, you'll receive access to exclusive resources, discounts on services, and priority support."
+//         },
+//         {
+//             question: "What kind of training and certifications are provided?",
+//             answer: "We provide comprehensive product and service training along with certifications to validate your expertise."
+//         },
+//         {
+//             question: "Is there a cost associated with becoming a partner?",
+//             answer: "No, there is no cost to join the partnership program. We aim to foster a mutually beneficial relationship."
+//         },
+//         {
+//             question: "How long does the partnership process take?",
+//             answer: "The timeframe can vary, but typically it may take a few weeks to complete the onboarding process."
+//         }
+//     ];
 
-    const [activeIndex, setActiveIndex] = useState(-1);
+//     const [activeIndex, setActiveIndex] = useState(-1);
 
-    const toggleItem = (index) => {
-        setActiveIndex(activeIndex === index ? -1 : index);
-    };
+//     const toggleItem = (index) => {
+//         setActiveIndex(activeIndex === index ? -1 : index);
+//     };
 
-    return (
-        <div className='flex flex-col items-center my-16'>
-            <h2 className="text-4xl font-sans font-bold text-[#171717] text-center mb-[88px]">
-                Frequently Asked Questions
-            </h2>
-            <div className='w-full max-w-screen-xl mx-auto'>
-                {faqs.map((faq, idx) => (
-                    <div key={idx} className={`mb-[16px] ${idx === faqs.length - 1 ? 'mb-0' : ''}`}>
-                        <button
-                            className='flex justify-between items-center w-full p-[32px] text-left font-sans font-bold text-[#171717] bg-[#FFFFFF] border-2 border-[#87D9FD] rounded-lg focus:outline-none focus:shadow-outline'
-                            onClick={() => toggleItem(idx)}
-                        >
-                            <span>{faq.question}</span>
-                            <span>{activeIndex === idx ? '-' : '+'}</span>
-                        </button>
-                        <div className={`${activeIndex === idx ? 'block' : 'hidden'} bg-[#F5E6FF] p-[32px] rounded-b-lg border-l border-r border-b-2 border-[#87D9FD]`}>
-                            <p className="text-[#171717] text-opacity-70">{faq.answer}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
+//     return (
+//         <div className='flex flex-col items-center my-16'>
+//             <h2 className="text-4xl font-sans font-bold text-[#171717] text-center mb-[88px]">
+//                 Frequently Asked Questions
+//             </h2>
+//             <div className='w-full max-w-screen-xl mx-auto'>
+//                 {faqs.map((faq, idx) => (
+//                     <div key={idx} className={`mb-[16px] ${idx === faqs.length - 1 ? 'mb-0' : ''}`}>
+//                         <button
+//                             className='flex justify-between items-center w-full p-[32px] text-left font-sans font-bold text-[#171717] bg-[#F7F7F7] rounded-lg focus:outline-none focus:shadow-outline'
+//                             onClick={() => toggleItem(idx)}
+//                         >
+//                             <span>{faq.question}</span>
+//                             <span>{activeIndex === idx ? '-' : '+'}</span>
+//                         </button>
+//                         <div className={`${activeIndex === idx ? 'block' : 'hidden'} bg-[#F7F7F7] p-[32px] rounded-b-lg transition duration-500 ease-in-out`}>
+//                             <p className="text-[#171717] text-opacity-70">{faq.answer}</p>
+//                         </div>
+//                     </div>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
 
 export const AccordionComponentWithImage = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -1402,7 +1406,7 @@ export const AccordionComponentTwoColumns = () => {
     };
 
     return (
-        <div className='flex flex-col lg:flex-row items-start justify-between gap-16 px-8 py-16'>
+        <div className='max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-16 px-8 py-16'>
             <div className='w-full lg:w-1/2'>
                 <p className='text-[#8E44EC] font-sans text-lg mb-4'>FAQs</p>
                 <h2 className='text-3xl font-bold font-sans text-[#171717] mb-8'>Frequently Asked Questions</h2>

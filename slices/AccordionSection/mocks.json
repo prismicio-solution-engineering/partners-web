@@ -1,7 +1,7 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
+		"variation": "withImage",
 		"primary": {
 			"section_title": {
 				"__TYPE__": "StructuredTextContent",
@@ -9,7 +9,395 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Glass"
+							"text": "Frequently Asked Questions",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "FAQ"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Here you'll find answers to the most common questions asked about our partner program.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "vXInUOv1n84",
+					"url": "https://images.unsplash.com/photo-1564865878688-9a244444042a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3MDg2OTAyODF8MA&ixlib=rb-4.0.3&q=85",
+					"width": 5472,
+					"height": 3648
+				},
+				"url": "https://images.unsplash.com/photo-1564865878688-9a244444042a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3MDg2OTAyODF8MA&ixlib=rb-4.0.3&q=85&rect=304%2C0%2C4864%2C3648&w=640&h=480",
+				"width": 640,
+				"height": 480,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 304,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": "black Android smartphone",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "What is the Prismic Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "The Prismic Partner Program is designed for agencies looking to expand their capabilities with Prismic and collaborate on exciting projects.",
+										"spans": []
+									},
+									"direction": "ltr"
+								},
+								{
+									"type": "preformatted",
+									"content": {
+										"text": "The Prismic Partner Program is designed for agencies looking to expand their capabilities with Prismic and collaborate on exciting projects.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "How do I apply for the Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "You can apply through our online form. Once submitted, we'll get in touch to discuss the next steps.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "What are the benefits of partnering with Prismic?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "preformatted",
+									"content": {
+										"text": "Benefits include access to exclusive training, support, and co-marketing opportunities to help grow your business.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Is there a cost associated with the Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "No, joining the Prismic Partner Program is free. We aim to build a mutually beneficial relationship.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "twoColumns",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "FAQ"
+			},
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Frequently Asked Questions",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ea ipsum tempor non mollit. Esse in enim laborum ut magna veniam duis dolor non fugiat magna. Minim ut amet ea amet velit veniam aliqua consequat ullamco aliquip.",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 116,
+									"end": 121,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "toto.fr",
+										"target": "_self"
+									}
+								},
+								{
+									"type": "em",
+									"start": 129,
+									"end": 135
+								},
+								{
+									"type": "strong",
+									"start": 146,
+									"end": 153
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "What is the Prismic Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "The Prismic Partner Program is designed for agencies looking to expand their capabilities with Prismic and collaborate on exciting projects.",
+										"spans": []
+									},
+									"direction": "ltr"
+								},
+								{
+									"type": "preformatted",
+									"content": {
+										"text": "The Prismic Partner Program is designed for agencies looking to expand their capabilities with Prismic and collaborate on exciting projects.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "How do I apply for the Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "You can apply through our online form. Once submitted, we'll get in touch to discuss the next steps.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "What are the benefits of partnering with Prismic?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "preformatted",
+									"content": {
+										"text": "Benefits include access to exclusive training, support, and co-marketing opportunities to help grow your business.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Is there a cost associated with the Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "No, joining the Prismic Partner Program is free. We aim to build a mutually beneficial relationship.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "centered",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "FAQ"
+			},
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Frequently Asked Questions",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit culpa ut culpa enim deserunt. Id ut minim labore ea ipsum sunt sint consectetur duis exercitation minim sint et."
 						}
 					}
 				]
@@ -24,7 +412,7 @@
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Text",
-							"value": "Again"
+							"value": "What is the Prismic Partner Program?"
 						}
 					],
 					[
@@ -35,98 +423,7 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.Sunt adipisicing elit cillum ex culpa elit mollit amet.Sunt adipisicing elit cillum ex culpa elit mollit amet.Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": [
-											{
-												"type": "hyperlink",
-												"start": 5,
-												"end": 16,
-												"data": {
-													"__TYPE__": "ExternalLink",
-													"url": "prismic.io",
-													"target": "_blank"
-												}
-											}
-										]
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "heading3",
-									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "list-item",
-									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "list-item",
-									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "list-item",
-									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "o-list-item",
-									"content": {
-										"text": "thrgdfkvhj",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "o-list-item",
-									"content": {
-										"text": "htrdfcgkvh",
-										"spans": []
-									},
-									"direction": "ltr"
-								},
-								{
-									"type": "o-list-item",
-									"content": {
-										"text": "ytjfgvkbl",
+										"text": "The Prismic Partner Program is designed for agencies looking to expand their capabilities with Prismic and collaborate on exciting projects.",
 										"spans": []
 									},
 									"direction": "ltr"
@@ -134,7 +431,94 @@
 								{
 									"type": "preformatted",
 									"content": {
-										"text": "Sunt adipisicing elit cillum ex culpa elit mollit amet.",
+										"text": "The Prismic Partner Program is designed for agencies looking to expand their capabilities with Prismic and collaborate on exciting projects.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "How do I apply for the Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "You can apply through our online form. Once submitted, we'll get in touch to discuss the next steps.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "What are the benefits of partnering with Prismic?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "preformatted",
+									"content": {
+										"text": "Benefits include access to exclusive training, support, and co-marketing opportunities to help grow your business.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"accordion_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Is there a cost associated with the Partner Program?"
+						}
+					],
+					[
+						"accordion_content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "No, joining the Prismic Partner Program is free. We aim to build a mutually beneficial relationship.",
 										"spans": []
 									},
 									"direction": "ltr"

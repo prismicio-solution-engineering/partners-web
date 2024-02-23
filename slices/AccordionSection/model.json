@@ -5,8 +5,125 @@
   "description": "A structured component suitable for presenting more detailed and linked content, such as FAQs or review checklist criteria. The accordion format allows for organized information display, ensuring a clean and user-friendly experience.",
   "variations": [
     {
-      "id": "default",
-      "name": "Default Variation",
+      "id": "withImage",
+      "name": "With image",
+      "description": "Default variation with multiple collapsible items.",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 640,
+              "height": 480
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "accordion_title": {
+          "type": "Text",
+          "config": {
+            "label": "Accordion Title",
+            "placeholder": "Type the accordion title here..."
+          }
+        },
+        "accordion_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Accordion Content",
+            "placeholder": "Type the accordion content here...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,em,embed,image"
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    },
+    {
+      "id": "twoColumns",
+      "name": "Two Columns",
+      "description": "Default variation with multiple collapsible items.",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink,preformatted"
+          }
+        }
+      },
+      "items": {
+        "accordion_title": {
+          "type": "Text",
+          "config": {
+            "label": "Accordion Title",
+            "placeholder": "Type the accordion title here..."
+          }
+        },
+        "accordion_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Accordion Content",
+            "placeholder": "Type the accordion content here...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,em,embed,image"
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    },
+    {
+      "id": "centered",
+      "name": "Centered",
       "description": "Default variation with multiple collapsible items.",
       "primary": {
         "section_title": {
@@ -33,7 +150,7 @@
             "label": "Accordion Content",
             "placeholder": "Type the accordion content here...",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,heading3"
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,em,embed,image"
           }
         }
       },

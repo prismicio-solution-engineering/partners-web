@@ -712,7 +712,17 @@ export type AllDocumentTypes =
 /**
  * Primary content in *AccordionSection → Primary*
  */
-export interface AccordionSectionSliceDefaultPrimary {
+export interface AccordionSectionSliceWithImagePrimary {
+  /**
+   * Eyebrow field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
   /**
    * Section Title field in *AccordionSection → Primary*
    *
@@ -722,12 +732,32 @@ export interface AccordionSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   section_title: prismic.TitleField;
+
+  /**
+   * Description field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**
  * Primary content in *AccordionSection → Items*
  */
-export interface AccordionSectionSliceDefaultItem {
+export interface AccordionSectionSliceWithImageItem {
   /**
    * Accordion Title field in *AccordionSection → Items*
    *
@@ -750,22 +780,151 @@ export interface AccordionSectionSliceDefaultItem {
 }
 
 /**
- * Default Variation variation for AccordionSection Slice
+ * With image variation for AccordionSection Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `withImage`
  * - **Description**: Default variation with multiple collapsible items.
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type AccordionSectionSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<AccordionSectionSliceDefaultPrimary>,
-  Simplify<AccordionSectionSliceDefaultItem>
+export type AccordionSectionSliceWithImage = prismic.SharedSliceVariation<
+  "withImage",
+  Simplify<AccordionSectionSliceWithImagePrimary>,
+  Simplify<AccordionSectionSliceWithImageItem>
+>;
+
+/**
+ * Primary content in *AccordionSection → Primary*
+ */
+export interface AccordionSectionSliceTwoColumnsPrimary {
+  /**
+   * Eyebrow field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Section Title field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.TitleField;
+
+  /**
+   * Description field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *AccordionSection → Items*
+ */
+export interface AccordionSectionSliceTwoColumnsItem {
+  /**
+   * Accordion Title field in *AccordionSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Type the accordion title here...
+   * - **API ID Path**: accordion_section.items[].accordion_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  accordion_title: prismic.KeyTextField;
+
+  /**
+   * Accordion Content field in *AccordionSection → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Type the accordion content here...
+   * - **API ID Path**: accordion_section.items[].accordion_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  accordion_content: prismic.RichTextField;
+}
+
+/**
+ * Two Columns variation for AccordionSection Slice
+ *
+ * - **API ID**: `twoColumns`
+ * - **Description**: Default variation with multiple collapsible items.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AccordionSectionSliceTwoColumns = prismic.SharedSliceVariation<
+  "twoColumns",
+  Simplify<AccordionSectionSliceTwoColumnsPrimary>,
+  Simplify<AccordionSectionSliceTwoColumnsItem>
+>;
+
+/**
+ * Primary content in *AccordionSection → Primary*
+ */
+export interface AccordionSectionSliceCenteredPrimary {
+  /**
+   * Section Title field in *AccordionSection → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_section.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *AccordionSection → Items*
+ */
+export interface AccordionSectionSliceCenteredItem {
+  /**
+   * Accordion Title field in *AccordionSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Type the accordion title here...
+   * - **API ID Path**: accordion_section.items[].accordion_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  accordion_title: prismic.KeyTextField;
+
+  /**
+   * Accordion Content field in *AccordionSection → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Type the accordion content here...
+   * - **API ID Path**: accordion_section.items[].accordion_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  accordion_content: prismic.RichTextField;
+}
+
+/**
+ * Centered variation for AccordionSection Slice
+ *
+ * - **API ID**: `centered`
+ * - **Description**: Default variation with multiple collapsible items.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AccordionSectionSliceCentered = prismic.SharedSliceVariation<
+  "centered",
+  Simplify<AccordionSectionSliceCenteredPrimary>,
+  Simplify<AccordionSectionSliceCenteredItem>
 >;
 
 /**
  * Slice variation for *AccordionSection*
  */
-type AccordionSectionSliceVariation = AccordionSectionSliceDefault;
+type AccordionSectionSliceVariation =
+  | AccordionSectionSliceWithImage
+  | AccordionSectionSliceTwoColumns
+  | AccordionSectionSliceCentered;
 
 /**
  * AccordionSection Shared Slice
@@ -1745,10 +1904,16 @@ declare module "@prismicio/client" {
       UseCaseDocumentDataSlicesSlice,
       AllDocumentTypes,
       AccordionSectionSlice,
-      AccordionSectionSliceDefaultPrimary,
-      AccordionSectionSliceDefaultItem,
+      AccordionSectionSliceWithImagePrimary,
+      AccordionSectionSliceWithImageItem,
+      AccordionSectionSliceTwoColumnsPrimary,
+      AccordionSectionSliceTwoColumnsItem,
+      AccordionSectionSliceCenteredPrimary,
+      AccordionSectionSliceCenteredItem,
       AccordionSectionSliceVariation,
-      AccordionSectionSliceDefault,
+      AccordionSectionSliceWithImage,
+      AccordionSectionSliceTwoColumns,
+      AccordionSectionSliceCentered,
       CheckListSlice,
       CheckListSliceDefaultVariationPrimary,
       CheckListSliceDefaultVariationItem,
