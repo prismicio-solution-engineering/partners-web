@@ -525,8 +525,8 @@ export const PartnershipProcessComponentVerticalTimeline = () => {
     ];
 
     return (
-        <div className="bg-[#FFFFFF] py-[80px] px-4 md:px-[84px]">
-            <div className="max-w-4xl mx-auto relative">
+        <div className="bg-[#FFFFFF] mx-auto max-w-screen-xl">
+            <div className="mx-auto relative">
                 <div className="border-l-2 border-[#8E44EC]">
                     {timelineData.map((milestone, index) => (
                         <div key={milestone.id} className={`ml-4 pb-[56px] ${index !== timelineData.length - 1 ? 'mb-[56px]' : ''}`}>
@@ -579,99 +579,34 @@ export const PartnershipProcessComponent = () => {
     ];
 
     return (
-        <section className="bg-[#FFFFFF] py-[80px]">
-            <div className="max-w-[1440px] mx-auto px-[84px]">
-                <h2 className="text-4xl font-sans font-bold text-[#171717] text-center mb-[64px]">
+        <section className="bg-[#FFFFFF] my-16">
+            <div className="max-w-screen-xl mx-auto">
+                <h2 className="text-4xl font-sans font-bold text-[#171717] text-center mb-6">
                     Partnership Process
                 </h2>
                 <p className="font-sans text-lg text-[#171717] max-w-2xl text-center mx-auto mb-[88px]">
                     Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.
                 </p>
-
-                <div className="flex flex-wrap justify-center gap-[64px]">
+                <div className="flex flex-wrap justify-start gap-10">
                     {milestones.map(milestone => (
-                        <div key={milestone.step} className="flex flex-col items-center p-[48px] max-w-md w-full bg-[#f0f0f0] rounded-[16px] text-center border border-[#EAEAEA] shadow-sm">
+                        <div key={milestone.step} className="flex flex-col items-center p-8 w-[30%] bg-[#F7F7F7] rounded-lg text-center shadow-sm">
                             <span className="font-sans font-bold text-[#8E44EC] text-xl mb-[8px]">{milestone.step}</span>
-                            <h3 className="text-2xl font-sans font-bold text-[#171717] mb-[16px]">{milestone.title}</h3>
+                            <h3 className="text-2xl font-sans font-bold text-[#171717] mb-4">{milestone.title}</h3>
                             <p className="font-sans text-base text-[#171717]">{milestone.description}</p>
                             <button
-                                className="text-[#171717] font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4"
+                                className="text-[#171717] font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4 mt-3"
                             >
                                 Read more
                             </button>
                         </div>
                     ))}
                 </div>
-
             </div>
         </section>
     );
 };
 
 // Make a component that will help agencies in the partnership process understand the different steps they need no go through in order to become partners. The section has a title and a description. Each milestone should be an asymmetric  card with step number, title and short description.
-
-export const PartnershipProcessComponentAsymmetric = () => {
-    const milestones = [
-        {
-            step: "01",
-            title: "Submit Your Application",
-            description: "Send in your application to express your interest in becoming a partner with our agency."
-        },
-        {
-            step: "02",
-            title: "Meet & Greet",
-            description: "We will have a session to get to know each other and discuss collaboration possibilities."
-        },
-        {
-            step: "03",
-            title: "Training & Certification",
-            description: "Go through training sessions to understand our product and services, followed by a certification."
-        },
-        {
-            step: "04",
-            title: "Launch Projects",
-            description: "Start launching projects and campaigns as an official partner agency."
-        },
-        {
-            step: "05",
-            title: "Continuous Support",
-            description: "Get continuous support and updates to ensure ongoing success in our partnership."
-        }
-    ];
-
-    return (
-        <section className="bg-[#FFFFFF] py-[80px]">
-            <div className="max-w-[1440px] mx-auto px-[84px]">
-                <div className="mb-[64px] text-center">
-                    <h2 className="text-4xl font-sans font-bold text-[#171717]">
-                        Partnership Process
-                    </h2>
-                    <p className="font-sans text-lg text-[#171717] max-w-2xl mx-auto">
-                        Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.
-                    </p>
-                </div>
-
-                <div className="flex flex-col gap-[56px]">
-                    {milestones.map((milestone, index) => (
-                        <div key={milestone.step} className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-[48px]`}>
-                            <div className={`flex-none w-[40%] h-[300px] bg-[url('https://source.unsplash.com/random/300x300/?business,${index}')] bg-cover bg-center rounded-[16px]`}></div>
-                            <div className="flex-grow bg-[#f8f8f8] p-[40px] rounded-[16px]">
-                                <span className="font-sans font-bold text-[#8E44EC] text-xl mb-[24px] block">{milestone.step}</span>
-                                <h3 className="text-2xl font-sans font-bold text-[#171717] mb-[16px]">{milestone.title}</h3>
-                                <p className="font-sans text-base text-[#171717]">{milestone.description}</p>
-                                <button
-                                    className="text-[#171717] font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4"
-                                >
-                                    Read more
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
 
 export const PrismicSlice = () => {
     const features = [
@@ -1194,7 +1129,7 @@ function AccordionItem({ faq, index, toggle, active }) {
                 onClick={() => toggle(index)}
             >
                 <span>
-                {faq.question}
+                    {faq.question}
                 </span>
                 <span>{isActive ? '-' : '+'}</span>
 
@@ -1243,61 +1178,6 @@ export function FAQSection() {
         </section>
     );
 }
-
-// export const AccordionComponent = () => {
-//     const faqs = [
-//         {
-//             question: "How do I apply for the partnership program?",
-//             answer: "To apply, fill out the application form on our website with your agency details and submit it for review."
-//         },
-//         {
-//             question: "What are the benefits of being a partner?",
-//             answer: "As a partner, you'll receive access to exclusive resources, discounts on services, and priority support."
-//         },
-//         {
-//             question: "What kind of training and certifications are provided?",
-//             answer: "We provide comprehensive product and service training along with certifications to validate your expertise."
-//         },
-//         {
-//             question: "Is there a cost associated with becoming a partner?",
-//             answer: "No, there is no cost to join the partnership program. We aim to foster a mutually beneficial relationship."
-//         },
-//         {
-//             question: "How long does the partnership process take?",
-//             answer: "The timeframe can vary, but typically it may take a few weeks to complete the onboarding process."
-//         }
-//     ];
-
-//     const [activeIndex, setActiveIndex] = useState(-1);
-
-//     const toggleItem = (index) => {
-//         setActiveIndex(activeIndex === index ? -1 : index);
-//     };
-
-//     return (
-//         <div className='flex flex-col items-center my-16'>
-//             <h2 className="text-4xl font-sans font-bold text-[#171717] text-center mb-[88px]">
-//                 Frequently Asked Questions
-//             </h2>
-//             <div className='w-full max-w-screen-xl mx-auto'>
-//                 {faqs.map((faq, idx) => (
-//                     <div key={idx} className={`mb-[16px] ${idx === faqs.length - 1 ? 'mb-0' : ''}`}>
-//                         <button
-//                             className='flex justify-between items-center w-full p-[32px] text-left font-sans font-bold text-[#171717] bg-[#F7F7F7] rounded-lg focus:outline-none focus:shadow-outline'
-//                             onClick={() => toggleItem(idx)}
-//                         >
-//                             <span>{faq.question}</span>
-//                             <span>{activeIndex === idx ? '-' : '+'}</span>
-//                         </button>
-//                         <div className={`${activeIndex === idx ? 'block' : 'hidden'} bg-[#F7F7F7] p-[32px] rounded-b-lg transition duration-500 ease-in-out`}>
-//                             <p className="text-[#171717] text-opacity-70">{faq.answer}</p>
-//                         </div>
-//                     </div>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// };
 
 export const AccordionComponentWithImage = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -2143,13 +2023,13 @@ export const SlideCarouselIndicators = () => {
                     </div>
                 ))} */}
                 {slides.map((slide, index) => (
-                <div key={index}
-                // className='flex flex-col md:flex-row w-full items-center justify-center bg-[#E8F8F3] h-[60vh]'
-                className={`flex flex-col md:flex-row w-full items-center justify-center bg-[#E8F8F3] h-[60vh] inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0 hidden'}`}
-                >
-                    {alternateLayout(slide, index)}
-                </div>
-            ))}
+                    <div key={index}
+                        // className='flex flex-col md:flex-row w-full items-center justify-center bg-[#E8F8F3] h-[60vh]'
+                        className={`flex flex-col md:flex-row w-full items-center justify-center bg-[#E8F8F3] h-[60vh] inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0 hidden'}`}
+                    >
+                        {alternateLayout(slide, index)}
+                    </div>
+                ))}
             </div>
             <div className="absolute w-full flex justify-between top-1/2 transform -translate-y-1/2 px-3">
                 <button
@@ -2284,7 +2164,7 @@ export const ArticleListComponent = () => {
 
     const [filteredCategory, setFilteredCategory] = useState('All');
 
-    const filteredArticles = articles.filter(article => 
+    const filteredArticles = articles.filter(article =>
         filteredCategory === 'All' || article.category === filteredCategory
     );
 

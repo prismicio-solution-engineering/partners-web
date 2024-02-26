@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import {
   ArticleCarousel,
-  FeaturedPartners,
+  // FeaturedPartners,
   FeaturesSlice,
   HeroBanner,
   PartnerLogoCarousel,
@@ -20,10 +20,9 @@ import {
   FeatureSliceComponentTwoColumns,
   FeatureSliceComponentCentered,
   FeatureSliceComponent,
-  PartnershipProcessComponentAsymmetric,
   PrismicCta,
   FAQSection,
-  AccordionComponent,
+  // AccordionComponent,
   AccordionComponentWithImage,
   AccordionComponentTwoColumns,
   TestimonialsSlider,
@@ -72,7 +71,6 @@ export default async function Page() {
       <TimelineComponent />
       <PartnershipProcessComponentVerticalTimeline />
       <PartnershipProcessComponent />
-      <PartnershipProcessComponentAsymmetric />
 
       <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
         Partnership Tiers
@@ -95,13 +93,12 @@ export default async function Page() {
       {/* New slice */}
       <PartnerLogoCarousel />
 
-      <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
+      {/* <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
         FAQ Acordion
       </h2>
       <FAQSection />
-      <AccordionComponent />
       <AccordionComponentWithImage />
-      <AccordionComponentTwoColumns />
+      <AccordionComponentTwoColumns /> */}
 
       <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
         Testimonials
