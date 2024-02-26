@@ -6,6 +6,7 @@ export const components = {
   accordion_section: dynamic(() => import("./AccordionSection")),
   check_list: dynamic(() => import("./CheckList")),
   featured_partners: dynamic(() => import("./FeaturedPartners")),
+  features: dynamic(() => import("./Features")),
   form_section: dynamic(() => import("./FormSection")),
   hero_banner: dynamic(() => import("./HeroBanner")),
   highlighted_text: dynamic(() => import("./HighlightedText")),

@@ -1044,6 +1044,16 @@ export interface FeaturedPartnersSliceDefaultVariationPrimary {
   section_title: prismic.TitleField;
 
   /**
+   * Section Description field in *FeaturedPartners → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_partners.primary.section_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_description: prismic.RichTextField;
+
+  /**
    * See All Button Label field in *FeaturedPartners → Primary*
    *
    * - **Field Type**: Text
@@ -1118,6 +1128,129 @@ type FeaturedPartnersSliceVariation = FeaturedPartnersSliceDefaultVariation;
 export type FeaturedPartnersSlice = prismic.SharedSlice<
   "featured_partners",
   FeaturedPartnersSliceVariation
+>;
+
+/**
+ * Primary content in *Features → Primary*
+ */
+export interface FeaturesSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *Features → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Feature name field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.feature_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_name: prismic.RichTextField;
+
+  /**
+   * Feature Description field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.feature_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Features Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Features → Primary*
+ */
+export interface FeaturesSliceWithImagePrimary {
+  /**
+   * Eyebrow field in *Features → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Feature name field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.feature_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_name: prismic.RichTextField;
+
+  /**
+   * Feature Description field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.feature_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_description: prismic.RichTextField;
+
+  /**
+   * Image field in *Features → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * With Image variation for Features Slice
+ *
+ * - **API ID**: `withImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSliceWithImage = prismic.SharedSliceVariation<
+  "withImage",
+  Simplify<FeaturesSliceWithImagePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Features*
+ */
+type FeaturesSliceVariation = FeaturesSliceDefault | FeaturesSliceWithImage;
+
+/**
+ * Features Shared Slice
+ *
+ * - **API ID**: `features`
+ * - **Description**: Features
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSlice = prismic.SharedSlice<
+  "features",
+  FeaturesSliceVariation
 >;
 
 /**
@@ -1778,12 +1911,12 @@ export type TextSectionSlice = prismic.SharedSlice<
 /**
  * Primary content in *Timeline → Primary*
  */
-export interface TimelineSliceDefaultPrimary {
+export interface TimelineSliceAlternatedWithImagePrimary {
   /**
    * Section Title field in *Timeline → Primary*
    *
    * - **Field Type**: Title
-   * - **Placeholder**: Insert the title here
+   * - **Placeholder**: Enter the title of the timeline here...
    * - **API ID Path**: timeline.primary.section_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
@@ -1793,7 +1926,7 @@ export interface TimelineSliceDefaultPrimary {
    * Section Description field in *Timeline → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Insert the description here
+   * - **Placeholder**: Enter a short description of the timeline here...
    * - **API ID Path**: timeline.primary.section_description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
@@ -1803,55 +1936,274 @@ export interface TimelineSliceDefaultPrimary {
 /**
  * Primary content in *Timeline → Items*
  */
-export interface TimelineSliceDefaultItem {
+export interface TimelineSliceAlternatedWithImageItem {
+  /**
+   * Step Number field in *Timeline → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 01, 02, etc.
+   * - **API ID Path**: timeline.items[].step_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  step_number: prismic.KeyTextField;
+
   /**
    * Step Title field in *Timeline → Items*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter step title here
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
    * - **API ID Path**: timeline.items[].step_title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  step_title: prismic.KeyTextField;
+  step_title: prismic.TitleField;
 
   /**
    * Step Description field in *Timeline → Items*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Describe this step of the timeline
+   * - **Placeholder**: *None*
    * - **API ID Path**: timeline.items[].step_description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   step_description: prismic.RichTextField;
 
   /**
-   * Step Image field in *Timeline → Items*
+   * Link label field in *Timeline → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Read more link label
+   * - **API ID Path**: timeline.items[].link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Read More Link field in *Timeline → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Add a link for more details...
+   * - **API ID Path**: timeline.items[].read_more_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  read_more_link: prismic.LinkField;
+
+  /**
+   * Milestone Image field in *Timeline → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: timeline.items[].step_image
+   * - **API ID Path**: timeline.items[].milestone_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  step_image: prismic.ImageField<never>;
+  milestone_image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Timeline Slice
+ * Alternated With Image variation for Timeline Slice
  *
- * - **API ID**: `default`
- * - **Description**: Default variation with a title and a dynamically generated list of events or steps.
+ * - **API ID**: `alternatedWithImage`
+ * - **Description**: The standard layout of the timeline component, showcasing the steps involved in the partnership process.
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TimelineSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TimelineSliceDefaultPrimary>,
-  Simplify<TimelineSliceDefaultItem>
+export type TimelineSliceAlternatedWithImage = prismic.SharedSliceVariation<
+  "alternatedWithImage",
+  Simplify<TimelineSliceAlternatedWithImagePrimary>,
+  Simplify<TimelineSliceAlternatedWithImageItem>
+>;
+
+/**
+ * Primary content in *Timeline → Primary*
+ */
+export interface TimelineSliceLinearPrimary {
+  /**
+   * Section Title field in *Timeline → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Enter the title of the timeline here...
+   * - **API ID Path**: timeline.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.TitleField;
+
+  /**
+   * Section Description field in *Timeline → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter a short description of the timeline here...
+   * - **API ID Path**: timeline.primary.section_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Timeline → Items*
+ */
+export interface TimelineSliceLinearItem {
+  /**
+   * Step Number field in *Timeline → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 01, 02, etc.
+   * - **API ID Path**: timeline.items[].step_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  step_number: prismic.KeyTextField;
+
+  /**
+   * Step Title field in *Timeline → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: timeline.items[].step_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_title: prismic.TitleField;
+
+  /**
+   * Step Description field in *Timeline → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: timeline.items[].step_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_description: prismic.RichTextField;
+
+  /**
+   * Link label field in *Timeline → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Read more link label
+   * - **API ID Path**: timeline.items[].link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Read More Link field in *Timeline → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Add a link for more details...
+   * - **API ID Path**: timeline.items[].read_more_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  read_more_link: prismic.LinkField;
+}
+
+/**
+ * Linear variation for Timeline Slice
+ *
+ * - **API ID**: `linear`
+ * - **Description**: The standard layout of the timeline component, showcasing the steps involved in the partnership process.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TimelineSliceLinear = prismic.SharedSliceVariation<
+  "linear",
+  Simplify<TimelineSliceLinearPrimary>,
+  Simplify<TimelineSliceLinearItem>
+>;
+
+/**
+ * Primary content in *Timeline → Primary*
+ */
+export interface TimelineSliceGridPrimary {
+  /**
+   * Section Title field in *Timeline → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Enter the title of the timeline here...
+   * - **API ID Path**: timeline.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.TitleField;
+
+  /**
+   * Section Description field in *Timeline → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter a short description of the timeline here...
+   * - **API ID Path**: timeline.primary.section_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Timeline → Items*
+ */
+export interface TimelineSliceGridItem {
+  /**
+   * Step Number field in *Timeline → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 01, 02, etc.
+   * - **API ID Path**: timeline.items[].step_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  step_number: prismic.KeyTextField;
+
+  /**
+   * Step Title field in *Timeline → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: timeline.items[].step_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_title: prismic.TitleField;
+
+  /**
+   * Step Description field in *Timeline → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: timeline.items[].step_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_description: prismic.RichTextField;
+
+  /**
+   * Link label field in *Timeline → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Read more link label
+   * - **API ID Path**: timeline.items[].link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Read More Link field in *Timeline → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Add a link for more details...
+   * - **API ID Path**: timeline.items[].read_more_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  read_more_link: prismic.LinkField;
+}
+
+/**
+ * Grid variation for Timeline Slice
+ *
+ * - **API ID**: `grid`
+ * - **Description**: The standard layout of the timeline component, showcasing the steps involved in the partnership process.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TimelineSliceGrid = prismic.SharedSliceVariation<
+  "grid",
+  Simplify<TimelineSliceGridPrimary>,
+  Simplify<TimelineSliceGridItem>
 >;
 
 /**
  * Slice variation for *Timeline*
  */
-type TimelineSliceVariation = TimelineSliceDefault;
+type TimelineSliceVariation =
+  | TimelineSliceAlternatedWithImage
+  | TimelineSliceLinear
+  | TimelineSliceGrid;
 
 /**
  * Timeline Shared Slice
@@ -1924,6 +2276,12 @@ declare module "@prismicio/client" {
       FeaturedPartnersSliceDefaultVariationItem,
       FeaturedPartnersSliceVariation,
       FeaturedPartnersSliceDefaultVariation,
+      FeaturesSlice,
+      FeaturesSliceDefaultPrimary,
+      FeaturesSliceWithImagePrimary,
+      FeaturesSliceVariation,
+      FeaturesSliceDefault,
+      FeaturesSliceWithImage,
       FormSectionSlice,
       FormSectionSliceDefaultPrimary,
       FormSectionSliceDefaultItem,
@@ -1964,10 +2322,16 @@ declare module "@prismicio/client" {
       TextSectionSliceDefault,
       TextSectionSliceTwoColumn,
       TimelineSlice,
-      TimelineSliceDefaultPrimary,
-      TimelineSliceDefaultItem,
+      TimelineSliceAlternatedWithImagePrimary,
+      TimelineSliceAlternatedWithImageItem,
+      TimelineSliceLinearPrimary,
+      TimelineSliceLinearItem,
+      TimelineSliceGridPrimary,
+      TimelineSliceGridItem,
       TimelineSliceVariation,
-      TimelineSliceDefault,
+      TimelineSliceAlternatedWithImage,
+      TimelineSliceLinear,
+      TimelineSliceGrid,
     };
   }
 }

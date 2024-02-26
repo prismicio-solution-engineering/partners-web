@@ -1,0 +1,146 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Featured benefit"
+			},
+			"feature_name": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Exclusive Partner Incentives",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"feature_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "As a Prismic Partner, you’ll gain access to exclusive incentives including co-marketing opportunities, a dedicated account manager, and potential leads that can help you grow your business. Our partnership is designed to be mutually beneficial, providing the support and resources you need to succeed.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withImage",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Exclusive benefits"
+			},
+			"feature_name": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Premier Support and Incentives",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"feature_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "As a Prismic Partner, enjoy direct access to our support team along with a range of incentives designed to boost your agency's growth and success.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Dedicated account management",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Access to partner-only events",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Enhanced exposure on our platforms",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Early access to new features",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Co-marketing opportunities",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+					"width": 3882,
+					"height": 2584
+				},
+				"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?rect=218%2C0%2C3445%2C2584&w=800&h=600",
+				"width": 800,
+				"height": 600,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 218,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

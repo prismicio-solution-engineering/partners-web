@@ -1,0 +1,91 @@
+{
+  "id": "features",
+  "type": "SharedSlice",
+  "name": "Features",
+  "description": "Features",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "feature_name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Feature name",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "feature_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Feature Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,preformatted,strong,em,list-item,o-list-item"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withImage",
+      "name": "With Image",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "feature_name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Feature name",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "feature_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Feature Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,preformatted,strong,em,list-item,o-list-item"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 800,
+              "height": 600
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
