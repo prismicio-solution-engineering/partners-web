@@ -13,7 +13,18 @@
           "type": "StructuredText",
           "config": {
             "label": "Section Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
             "single": "heading2"
+          }
+        },
+        "section_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
           }
         },
         "see_all_button_label": {
@@ -47,7 +58,7 @@
             "thumbnails": [],
             "constraint": {
               "height": 96,
-              "width": null
+              "width": 256
             }
           }
         }

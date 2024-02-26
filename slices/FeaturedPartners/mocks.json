@@ -27,6 +27,19 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://prismic.io"
 				}
+			},
+			"section_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "A selection of our esteemed partners who embrace our smooth payment experience",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
 			}
 		},
 		"items": [
@@ -46,24 +59,212 @@
 					[
 						"partner_logo",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
-								"width": 3648,
-								"height": 4560
+								"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+								"width": 3212,
+								"height": 3880
 							},
-							"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?rect=0%2C6%2C3648%2C4548&w=77&h=96",
-							"width": 77,
+							"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?rect=0%2C1338%2C3212%2C1205&w=256&h=96",
+							"width": 256,
 							"height": 96,
 							"edit": {
 								"zoom": 1,
 								"crop": {
 									"x": 0,
-									"y": 6
+									"y": 1338
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"partner_logo",
+						{
+							"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=0%2C1547%2C2749%2C1031&w=256&h=96",
+							"alt": "ripe pineapple fruit",
+							"origin": {
+								"id": "nAOZCYcLND8",
+								"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
+								"width": 2749,
+								"height": 4124
+							},
+							"width": 256,
+							"height": 96,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 1547
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"partner_logo",
+						{
+							"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=0%2C3676%2C7173%2C2690&w=256&h=96",
+							"alt": "red strawberry fruit with white background",
+							"origin": {
+								"id": "xnRg3xDcNnE",
+								"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
+								"width": 7173,
+								"height": 10041
+							},
+							"width": 256,
+							"height": 96,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 3676
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"partner_logo",
+						{
+							"url": "https://images.unsplash.com/photo-1557800636-894a64c1696f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=0%2C1460%2C3337%2C1251&w=256&h=96",
+							"alt": "orange fruit",
+							"origin": {
+								"id": "U1iYwZ8Dx7k",
+								"url": "https://images.unsplash.com/photo-1557800636-894a64c1696f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3337,
+								"height": 4171
+							},
+							"width": 256,
+							"height": 96,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 1460
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"partner_logo",
+						{
+							"url": "https://images.unsplash.com/photo-1584559582128-b8be739912e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8ZnJ1aXR8ZW58MHx8fHwxNzA4Nzc4ODQ0fDA&ixlib=rb-4.0.3&q=85&rect=0%2C1159%2C3710%2C1391&w=256&h=96",
+							"alt": "sliced fruits on white surface",
+							"origin": {
+								"id": "h5yMpgOI5nI",
+								"url": "https://images.unsplash.com/photo-1584559582128-b8be739912e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8ZnJ1aXR8ZW58MHx8fHwxNzA4Nzc4ODQ0fDA&ixlib=rb-4.0.3&q=85",
+								"width": 3710,
+								"height": 3710
+							},
+							"width": 256,
+							"height": 96,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 1159
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"partner_logo",
+						{
+							"url": "https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8ZnJ1aXR8ZW58MHx8fHwxNzA4Nzc4ODQ0fDA&ixlib=rb-4.0.3&q=85&rect=0%2C1449%2C3024%2C1134&w=256&h=96",
+							"alt": "sliced grapefruits",
+							"origin": {
+								"id": "ezSFnAFi9hY",
+								"url": "https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8ZnJ1aXR8ZW58MHx8fHwxNzA4Nzc4ODQ0fDA&ixlib=rb-4.0.3&q=85",
+								"width": 3024,
+								"height": 4032
+							},
+							"width": 256,
+							"height": 96,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 1449
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"partner_logo",
+						{
+							"url": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8ZnJ1aXR8ZW58MHx8fHwxNzA4Nzc4ODQ0fDA&ixlib=rb-4.0.3&q=85&rect=0%2C982%2C2244%2C842&w=256&h=96",
+							"alt": "two cherries",
+							"origin": {
+								"id": "vbAEHCrvXZ0",
+								"url": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8ZnJ1aXR8ZW58MHx8fHwxNzA4Nzc4ODQ0fDA&ixlib=rb-4.0.3&q=85",
+								"width": 2244,
+								"height": 2805
+							},
+							"width": 256,
+							"height": 96,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 982
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]
