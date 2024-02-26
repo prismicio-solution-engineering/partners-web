@@ -1,15 +1,15 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
+		"variation": "alternatedWithImage",
 		"primary": {
 			"section_title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Timeline",
+							"text": "Partnership Process",
 							"spans": []
 						},
 						"direction": "ltr"
@@ -22,8 +22,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Adipisicing aute pariatur incididunt eu commodo. Voluptate cupidatat commodo aliquip incididunt dolore aliqua reprehenderit."
-						}
+							"text": "Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
@@ -33,39 +35,36 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"step_title",
+						"step_number",
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Text",
-							"value": "Step 1"
+							"value": "01"
 						}
 					],
 					[
-						"step_description",
+						"read_more_link",
 						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Fugiat deserunt voluptate cillum ea fugiat Lorem ullamco. Id cillum et aliquip commodo et id sunt laborum anim. Fugiat mollit excepteur labore."
-									}
-								}
-							]
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
 						}
 					],
 					[
-						"step_image",
+						"milestone_image",
 						{
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
-								"width": 3456,
-								"height": 3456
+								"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+								"width": 4272,
+								"height": 2848
 							},
-							"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
-							"width": 3456,
-							"height": 3456,
+							"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?rect=0%2C0%2C4272%2C2848&w=480&h=320",
+							"width": 480,
+							"height": 320,
 							"edit": {
 								"zoom": 1,
 								"crop": {
@@ -79,18 +78,21 @@
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
-					]
-				]
-			},
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
+					],
 					[
 						"step_title",
 						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Step 2"
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Submit Your Application",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
 						}
 					],
 					[
@@ -101,7 +103,7 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Fugiat deserunt voluptate cillum ea fugiat Lorem ullamco. Id cillum et aliquip commodo et id sunt laborum anim. Fugiat mollit excepteur labore.",
+										"text": "Send in your application to express your interest in becoming a partner with our agency.",
 										"spans": []
 									},
 									"direction": "ltr"
@@ -110,19 +112,90 @@
 						}
 					],
 					[
-						"step_image",
+						"link_label",
 						{
-							"__TYPE__": "ImageContent",
-							"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDI5NzAwNTR8MA&ixlib=rb-4.0.3&q=85",
-							"alt": "red strawberry fruit with white background",
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "02"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Meet & Greet",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "We will have a session to get to know each other and discuss collaboration possibilities.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"milestone_image",
+						{
+							"url": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxtZWV0fGVufDB8fHx8MTcwODc3ODg1NHww&ixlib=rb-4.0.3&q=85&rect=0%2C0%2C4821%2C2711&w=569&h=320",
+							"alt": "people sitting on chair",
 							"origin": {
-								"id": "xnRg3xDcNnE",
-								"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDI5NzAwNTR8MA&ixlib=rb-4.0.3&q=85",
-								"width": 7173,
-								"height": 10041
+								"id": "5U_28ojjgms",
+								"url": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxtZWV0fGVufDB8fHx8MTcwODc3ODg1NHww&ixlib=rb-4.0.3&q=85",
+								"width": 4821,
+								"height": 2712
 							},
-							"width": 7173,
-							"height": 10041,
+							"width": 569,
+							"height": 320,
 							"edit": {
 								"background": "transparent",
 								"zoom": 1,
@@ -131,7 +204,769 @@
 									"y": 0
 								}
 							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Training & Certification",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Go through training sessions to understand our product and services, followed by a certification.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "03"
+						}
+					],
+					[
+						"milestone_image",
+						{
+							"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=2%2C0%2C2745%2C4124&w=213&h=320",
+							"alt": "ripe pineapple fruit",
+							"origin": {
+								"id": "nAOZCYcLND8",
+								"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
+								"width": 2749,
+								"height": 4124
+							},
+							"width": 213,
+							"height": 320,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 2,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "04"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Launch Projects",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Start launching projects and campaigns as an official partner agency.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"milestone_image",
+						{
+							"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=0%2C9%2C7173%2C10023&w=229&h=320",
+							"alt": "red strawberry fruit with white background",
+							"origin": {
+								"id": "xnRg3xDcNnE",
+								"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
+								"width": 7173,
+								"height": 10041
+							},
+							"width": 229,
+							"height": 320,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 9
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "linear",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Partnership Process",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"section_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "01"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Submit Your Application",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Send in your application to express your interest in becoming a partner with our agency.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "02"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Meet & Greet",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "We will have a session to get to know each other and discuss collaboration possibilities.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Training & Certification",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Go through training sessions to understand our product and services, followed by a certification.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "03"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "04"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Launch Projects",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Start launching projects and campaigns as an official partner agency.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "grid",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Partnership Process",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"section_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "01"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Submit Your Application",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Send in your application to express your interest in becoming a partner with our agency.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "02"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Meet & Greet",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "We will have a session to get to know each other and discuss collaboration possibilities.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Training & Certification",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Go through training sessions to understand our product and services, followed by a certification.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "03"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"step_number",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "04"
+						}
+					],
+					[
+						"step_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Launch Projects",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"step_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Start launching projects and campaigns as an official partner agency.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"link_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Read more"
+						}
+					],
+					[
+						"read_more_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io/",
+								"target": "_blank"
+							}
 						}
 					]
 				]

@@ -5,49 +5,221 @@
   "description": "The Timeline component displays a chronological series of events or steps along a vertical line.",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "description": "Default variation with a title and a dynamically generated list of events or steps.",
+      "id": "alternatedWithImage",
+      "name": "Alternated With Image",
+      "description": "The standard layout of the timeline component, showcasing the steps involved in the partnership process.",
       "primary": {
         "section_title": {
           "type": "StructuredText",
           "config": {
             "label": "Section Title",
-            "placeholder": "Insert the title here",
-            "single": "heading1"
+            "placeholder": "Enter the title of the timeline here...",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "section_description": {
           "type": "StructuredText",
           "config": {
             "label": "Section Description",
-            "placeholder": "Insert the description here",
+            "placeholder": "Enter a short description of the timeline here...",
+            "allowTargetBlank": true,
             "single": "paragraph"
           }
         }
       },
       "items": {
-        "step_title": {
+        "step_number": {
           "type": "Text",
           "config": {
+            "label": "Step Number",
+            "placeholder": "01, 02, etc."
+          }
+        },
+        "step_title": {
+          "type": "StructuredText",
+          "config": {
             "label": "Step Title",
-            "placeholder": "Enter step title here"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
           }
         },
         "step_description": {
           "type": "StructuredText",
           "config": {
             "label": "Step Description",
-            "placeholder": "Describe this step of the timeline",
-            "multi": "paragraph"
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong,hyperlink"
           }
         },
-        "step_image": {
+        "link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link label",
+            "placeholder": "Read more link label"
+          }
+        },
+        "read_more_link": {
+          "type": "Link",
+          "config": {
+            "label": "Read More Link",
+            "placeholder": "Add a link for more details...",
+            "allowTargetBlank": true,
+            "select": "web"
+          }
+        },
+        "milestone_image": {
           "type": "Image",
           "config": {
-            "label": "Step Image",
-            "constraint": {},
+            "label": "Milestone Image",
+            "constraint": {
+              "height": 320
+            },
             "thumbnails": []
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "description": "The standard layout of the timeline component, showcasing the steps involved in the partnership process.",
+      "primary": {
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Title",
+            "placeholder": "Enter the title of the timeline here...",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "section_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Description",
+            "placeholder": "Enter a short description of the timeline here...",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {
+        "step_number": {
+          "type": "Text",
+          "config": {
+            "label": "Step Number",
+            "placeholder": "01, 02, etc."
+          }
+        },
+        "step_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Step Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "step_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Step Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong,hyperlink"
+          }
+        },
+        "link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link label",
+            "placeholder": "Read more link label"
+          }
+        },
+        "read_more_link": {
+          "type": "Link",
+          "config": {
+            "label": "Read More Link",
+            "placeholder": "Add a link for more details...",
+            "allowTargetBlank": true,
+            "select": "web"
+          }
+        }
+      },
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
+    },
+    {
+      "id": "grid",
+      "name": "Grid",
+      "description": "The standard layout of the timeline component, showcasing the steps involved in the partnership process.",
+      "primary": {
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Title",
+            "placeholder": "Enter the title of the timeline here...",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "section_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Description",
+            "placeholder": "Enter a short description of the timeline here...",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {
+        "step_number": {
+          "type": "Text",
+          "config": {
+            "label": "Step Number",
+            "placeholder": "01, 02, etc."
+          }
+        },
+        "step_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Step Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "step_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Step Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong,hyperlink"
+          }
+        },
+        "link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link label",
+            "placeholder": "Read more link label"
+          }
+        },
+        "read_more_link": {
+          "type": "Link",
+          "config": {
+            "label": "Read More Link",
+            "placeholder": "Add a link for more details...",
+            "allowTargetBlank": true,
+            "select": "web"
           }
         }
       },
