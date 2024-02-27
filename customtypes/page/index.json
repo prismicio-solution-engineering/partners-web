@@ -32,9 +32,6 @@
             "hero_banner": {
               "type": "SharedSlice"
             },
-            "highlighted_text": {
-              "type": "SharedSlice"
-            },
             "news_list": {
               "type": "SharedSlice"
             },

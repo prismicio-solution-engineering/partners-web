@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 
 export const components = {
   accordion_section: dynamic(() => import("./AccordionSection")),
+  call_to_action: dynamic(() => import("./CallToAction")),
   check_list: dynamic(() => import("./CheckList")),
   featured_partners: dynamic(() => import("./FeaturedPartners")),
   features: dynamic(() => import("./Features")),
   form_section: dynamic(() => import("./FormSection")),
   hero_banner: dynamic(() => import("./HeroBanner")),
-  highlighted_text: dynamic(() => import("./HighlightedText")),
   menu_item: dynamic(() => import("./MenuItem")),
   news_list: dynamic(() => import("./NewsList")),
   text: dynamic(() => import("./Text")),

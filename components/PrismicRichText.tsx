@@ -31,7 +31,7 @@ const defaultComponents: JSXMapSerializer = {
   heading5: ({ children }) => <h5 className="text-2xl font-sans font-bold text-[#171717] mb-4">{children}</h5>,
   heading6: ({ children }) => <h6 className="text-xl font-sans font-bold text-[#171717] mb-4">{children}</h6>,
   paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-[#171717] max-w-2xl text-center mx-auto mb-[88px]">
+    <p className="font-sans text-lg text-[#171717] max-w-2xl text-center mx-auto mb-4">
       {children}
     </p>
   ),

@@ -20,9 +20,6 @@
             "hero_banner": {
               "type": "SharedSlice"
             },
-            "highlighted_text": {
-              "type": "SharedSlice"
-            },
             "text": {
               "type": "SharedSlice"
             }

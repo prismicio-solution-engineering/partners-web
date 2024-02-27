@@ -28,23 +28,6 @@ const serializer = {
     ),
   };
 
-const faqs = [
-  {
-      question: 'How do I become a Prismic Partner?',
-      answer:
-          'To become a Prismic Partner, register through our website’s partner program section and fulfill the certification requirements.',
-  },
-  {
-      question: 'What are the benefits of partnering with Prismic?',
-      answer:
-          'Partnership with Prismic offers access to exclusive training, resources, and support to ensure you get the most out of our products.',
-  },
-  {
-      question: 'Are there different levels of partnership?',
-      answer:
-          'Yes, we offer various levels of partnership based on the agency size, expertise, and commitment to using Prismic in projects.',
-  },
-];
 
 function AccordionItem({ item, index, toggle, active }) {
   const isActive = active === index;
@@ -76,8 +59,6 @@ function AccordionItem({ item, index, toggle, active }) {
       </div>
   );
 }
-
-
 
 const AccordionCentered = ({ slice }: {slice:
   | Content.AccordionSectionSliceCentered}) => {

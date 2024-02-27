@@ -32,9 +32,6 @@
             "text": {
               "type": "SharedSlice"
             },
-            "highlighted_text": {
-              "type": "SharedSlice"
-            },
             "form_section": {
               "type": "SharedSlice"
             }

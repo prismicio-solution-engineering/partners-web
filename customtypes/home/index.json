@@ -20,9 +20,6 @@
             "text_section": {
               "type": "SharedSlice"
             },
-            "highlighted_text": {
-              "type": "SharedSlice"
-            },
             "check_list": {
               "type": "SharedSlice"
             },

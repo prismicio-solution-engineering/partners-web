@@ -29,9 +29,6 @@
             "check_list": {
               "type": "SharedSlice"
             },
-            "highlighted_text": {
-              "type": "SharedSlice"
-            },
             "hero_banner": {
               "type": "SharedSlice"
             },

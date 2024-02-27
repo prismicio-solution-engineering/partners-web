@@ -8,7 +8,6 @@ type BestPracticeDocumentDataSlicesSlice =
   | AccordionSectionSlice
   | TextSectionSlice
   | HeroBannerSlice
-  | HighlightedTextSlice
   | TextSlice;
 
 /**
@@ -78,7 +77,6 @@ type HomeDocumentDataSlicesSlice =
   | TimelineSlice
   | TextSlice
   | TextSectionSlice
-  | HighlightedTextSlice
   | CheckListSlice
   | AccordionSectionSlice
   | NewsListSlice
@@ -283,7 +281,6 @@ type PageDocumentDataSlicesSlice =
   | CheckListSlice
   | TextSlice
   | HeroBannerSlice
-  | HighlightedTextSlice
   | NewsListSlice
   | FormSectionSlice
   | FeaturedPartnersSlice
@@ -353,7 +350,6 @@ type ReviewDocumentDataSlicesSlice =
   | TextSlice
   | TextSectionSlice
   | CheckListSlice
-  | HighlightedTextSlice
   | HeroBannerSlice
   | AccordionSectionSlice;
 
@@ -420,7 +416,6 @@ type ReviewsDocumentDataSlicesSlice =
   | FormSectionSlice
   | AccordionSectionSlice
   | HeroBannerSlice
-  | HighlightedTextSlice
   | TextSlice;
 
 /**
@@ -632,7 +627,6 @@ type UseCaseDocumentDataSlicesSlice =
   | AccordionSectionSlice
   | HeroBannerSlice
   | TextSlice
-  | HighlightedTextSlice
   | FormSectionSlice;
 
 /**
@@ -936,6 +930,168 @@ type AccordionSectionSliceVariation =
 export type AccordionSectionSlice = prismic.SharedSlice<
   "accordion_section",
   AccordionSectionSliceVariation
+>;
+
+/**
+ * Primary content in *CallToAction → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Title field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Cta Label field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * Cta Link field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+
+  /**
+   * Cta Type field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Primary, secondary or link
+   * - **Default Value**: primary
+   * - **API ID Path**: call_to_action.primary.cta_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  cta_type: prismic.SelectField<"primary" | "secondary" | "link", "filled">;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *CallToAction → Primary*
+ */
+export interface CallToActionSliceTwoColumnsPrimary {
+  /**
+   * Title field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CallToAction → Items*
+ */
+export interface CallToActionSliceTwoColumnsItem {
+  /**
+   * Cta Label field in *CallToAction → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.items[].cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * Cta Link field in *CallToAction → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.items[].cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+
+  /**
+   * Cta Type field in *CallToAction → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: primary
+   * - **API ID Path**: call_to_action.items[].cta_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  cta_type: prismic.SelectField<"primary" | "secondary" | "link", "filled">;
+}
+
+/**
+ * Two Columns variation for CallToAction Slice
+ *
+ * - **API ID**: `twoColumns`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceTwoColumns = prismic.SharedSliceVariation<
+  "twoColumns",
+  Simplify<CallToActionSliceTwoColumnsPrimary>,
+  Simplify<CallToActionSliceTwoColumnsItem>
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation =
+  | CallToActionSliceDefault
+  | CallToActionSliceTwoColumns;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
 >;
 
 /**
@@ -1437,140 +1593,6 @@ type HeroBannerSliceVariation = HeroBannerSliceDefault;
 export type HeroBannerSlice = prismic.SharedSlice<
   "hero_banner",
   HeroBannerSliceVariation
->;
-
-/**
- * Primary content in *HighlightedText → Primary*
- */
-export interface HighlightedTextSliceInformationPrimary {
-  /**
-   * Title field in *HighlightedText → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: This is where it all begins...
-   * - **API ID Path**: highlighted_text.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Content field in *HighlightedText → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_text.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Information variation for HighlightedText Slice
- *
- * - **API ID**: `information`
- * - **Description**: HighlightedText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HighlightedTextSliceInformation = prismic.SharedSliceVariation<
-  "information",
-  Simplify<HighlightedTextSliceInformationPrimary>,
-  never
->;
-
-/**
- * Primary content in *HighlightedText → Primary*
- */
-export interface HighlightedTextSliceWarningPrimary {
-  /**
-   * Title field in *HighlightedText → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: This is where it all begins...
-   * - **API ID Path**: highlighted_text.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Content field in *HighlightedText → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_text.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Warning variation for HighlightedText Slice
- *
- * - **API ID**: `warning`
- * - **Description**: HighlightedText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HighlightedTextSliceWarning = prismic.SharedSliceVariation<
-  "warning",
-  Simplify<HighlightedTextSliceWarningPrimary>,
-  never
->;
-
-/**
- * Primary content in *HighlightedText → Primary*
- */
-export interface HighlightedTextSliceUpdatePrimary {
-  /**
-   * Title field in *HighlightedText → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: This is where it all begins...
-   * - **API ID Path**: highlighted_text.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Content field in *HighlightedText → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_text.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Update variation for HighlightedText Slice
- *
- * - **API ID**: `update`
- * - **Description**: HighlightedText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HighlightedTextSliceUpdate = prismic.SharedSliceVariation<
-  "update",
-  Simplify<HighlightedTextSliceUpdatePrimary>,
-  never
->;
-
-/**
- * Slice variation for *HighlightedText*
- */
-type HighlightedTextSliceVariation =
-  | HighlightedTextSliceInformation
-  | HighlightedTextSliceWarning
-  | HighlightedTextSliceUpdate;
-
-/**
- * HighlightedText Shared Slice
- *
- * - **API ID**: `highlighted_text`
- * - **Description**: HighlightedText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HighlightedTextSlice = prismic.SharedSlice<
-  "highlighted_text",
-  HighlightedTextSliceVariation
 >;
 
 /**
@@ -2266,6 +2288,13 @@ declare module "@prismicio/client" {
       AccordionSectionSliceWithImage,
       AccordionSectionSliceTwoColumns,
       AccordionSectionSliceCentered,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceTwoColumnsPrimary,
+      CallToActionSliceTwoColumnsItem,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
+      CallToActionSliceTwoColumns,
       CheckListSlice,
       CheckListSliceDefaultVariationPrimary,
       CheckListSliceDefaultVariationItem,
@@ -2291,14 +2320,6 @@ declare module "@prismicio/client" {
       HeroBannerSliceDefaultPrimary,
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,
-      HighlightedTextSlice,
-      HighlightedTextSliceInformationPrimary,
-      HighlightedTextSliceWarningPrimary,
-      HighlightedTextSliceUpdatePrimary,
-      HighlightedTextSliceVariation,
-      HighlightedTextSliceInformation,
-      HighlightedTextSliceWarning,
-      HighlightedTextSliceUpdate,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceWithSubMenuPrimary,
