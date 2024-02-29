@@ -39,7 +39,7 @@ const AccordionTwoColumns = ({
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-start justify-between gap-16 px-8 py-16 max-w-screen-xl mx-auto overflow-clip">
+    <div className="flex flex-col lg:flex-row items-start justify-between gap-16 mt-16 max-w-screen-xl mx-auto px-8 overflow-clip">
       <div className="w-full lg:w-1/2">
         <p className="text-[#8E44EC] font-sans text-lg mb-4">
           {slice.primary.eyebrow}

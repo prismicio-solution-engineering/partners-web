@@ -1,5 +1,5 @@
+import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
 
 import { useState } from "react";
 
@@ -70,7 +70,7 @@ const AccordionCentered = ({ slice }: {slice:
   };
 
   return (
-    <section className="bg-[#ffffff] text-center py-12 max-w-screen-xl mx-auto rounded-lg">
+    <section className="bg-[#ffffff] text-center mt-16 max-w-screen-xl mx-auto px-8 rounded-lg">
         <PrismicRichText field={slice.primary.section_title} components={serializer}/>
             <div className="max-w-screen-xl mx-auto">
             {slice.items.map((item, index) => (

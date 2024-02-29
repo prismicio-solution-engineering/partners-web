@@ -40,7 +40,7 @@ const AccordionWithImage = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center my-16 max-w-screen-xl mx-auto">
+    <div className="flex flex-col md:flex-row items-center mt-16 max-w-screen-xl mx-auto px-8">
       <div className="w-full md:w-1/2">
         <PrismicNextImage
           className="w-full h-full object-cover rounded-lg"

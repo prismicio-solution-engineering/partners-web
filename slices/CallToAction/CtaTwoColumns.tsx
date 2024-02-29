@@ -16,7 +16,7 @@ const CtaTwoColumns = ({
   slice: Content.CallToActionSliceTwoColumns;
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center pt-16 pb-16 bg-[#E8F8F3] max-w-screen-xl rounded-xl mx-auto my-16">
+    <div className="flex flex-col md:flex-row items-center justify-center py-16 bg-[#E8F8F3] rounded-xl mt-16 max-w-screen-xl mx-8">
       <div className="md:w-1/2 p-8">
         <PrismicRichText field={slice.primary.title} components={serializer} />
         <PrismicRichText

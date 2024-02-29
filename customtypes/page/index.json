@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "features": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "partnership_tiers": {
+              "type": "SharedSlice"
+            },
             "text_section": {
               "type": "SharedSlice"
             },
