@@ -12,6 +12,7 @@ export const components = {
   hero_banner: dynamic(() => import("./HeroBanner")),
   menu_item: dynamic(() => import("./MenuItem")),
   news_list: dynamic(() => import("./NewsList")),
+  partnership_tiers: dynamic(() => import("./PartnershipTiers")),
   text: dynamic(() => import("./Text")),
   text_section: dynamic(() => import("./TextSection")),
   timeline: dynamic(() => import("./Timeline")),

@@ -276,6 +276,9 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FeaturesSlice
+  | CallToActionSlice
+  | PartnershipTiersSlice
   | TextSectionSlice
   | TimelineSlice
   | CheckListSlice
@@ -344,6 +347,98 @@ interface PageDocumentData {
  */
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+/**
+ * Item in *Partnership Tier → Tier features*
+ */
+export interface PartnershipTierDocumentDataTierFeaturesItem {
+  /**
+   * Feature Description field in *Partnership Tier → Tier features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.tier_features[].feature_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_description: prismic.RichTextField;
+
+  /**
+   * Feature Icon field in *Partnership Tier → Tier features*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.tier_features[].feature_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  feature_icon: prismic.ImageField<never>;
+
+  /**
+   * Is Featured tier field in *Partnership Tier → Tier features*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: partnership_tier.tier_features[].is_featured_tier
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_featured_tier: prismic.BooleanField;
+}
+
+/**
+ * Content for Partnership Tier documents
+ */
+interface PartnershipTierDocumentData {
+  /**
+   * Tier name field in *Partnership Tier*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.tier_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tier_name: prismic.TitleField;
+
+  /**
+   * Tier description field in *Partnership Tier*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.tier_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tier_description: prismic.RichTextField;
+
+  /**
+   * Tier features field in *Partnership Tier*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.tier_features[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tier_features: prismic.GroupField<
+    Simplify<PartnershipTierDocumentDataTierFeaturesItem>
+  >;
+}
+
+/**
+ * Partnership Tier document from Prismic
+ *
+ * - **API ID**: `partnership_tier`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PartnershipTierDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PartnershipTierDocumentData>,
+    "partnership_tier",
+    Lang
+  >;
 
 type ReviewDocumentDataSlicesSlice =
   | TimelineSlice
@@ -698,6 +793,7 @@ export type AllDocumentTypes =
   | HomepageDocument
   | NavigationDocument
   | PageDocument
+  | PartnershipTierDocument
   | ReviewDocument
   | ReviewsDocument
   | ReviewsChecklistDocument
@@ -1814,6 +1910,131 @@ export type NewsListSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PartnershipTiers → Primary*
+ */
+export interface PartnershipTiersSliceHorizontalCardsPrimary {
+  /**
+   * TItle field in *PartnershipTiers → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tiers.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *PartnershipTiers → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tiers.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *PartnershipTiers → Items*
+ */
+export interface PartnershipTiersSliceHorizontalCardsItem {
+  /**
+   * Tier field in *PartnershipTiers → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tiers.items[].tier
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  tier: prismic.ContentRelationshipField<"partnership_tier">;
+}
+
+/**
+ * Horizontal Cards variation for PartnershipTiers Slice
+ *
+ * - **API ID**: `horizontalCards`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PartnershipTiersSliceHorizontalCards = prismic.SharedSliceVariation<
+  "horizontalCards",
+  Simplify<PartnershipTiersSliceHorizontalCardsPrimary>,
+  Simplify<PartnershipTiersSliceHorizontalCardsItem>
+>;
+
+/**
+ * Primary content in *PartnershipTiers → Primary*
+ */
+export interface PartnershipTiersSliceFullWidthCardsPrimary {
+  /**
+   * TItle field in *PartnershipTiers → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tiers.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *PartnershipTiers → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tiers.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *PartnershipTiers → Items*
+ */
+export interface PartnershipTiersSliceFullWidthCardsItem {
+  /**
+   * Tier field in *PartnershipTiers → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tiers.items[].tier
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  tier: prismic.ContentRelationshipField<"partnership_tier">;
+}
+
+/**
+ * Full Width Cards variation for PartnershipTiers Slice
+ *
+ * - **API ID**: `fullWidthCards`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PartnershipTiersSliceFullWidthCards = prismic.SharedSliceVariation<
+  "fullWidthCards",
+  Simplify<PartnershipTiersSliceFullWidthCardsPrimary>,
+  Simplify<PartnershipTiersSliceFullWidthCardsItem>
+>;
+
+/**
+ * Slice variation for *PartnershipTiers*
+ */
+type PartnershipTiersSliceVariation =
+  | PartnershipTiersSliceHorizontalCards
+  | PartnershipTiersSliceFullWidthCards;
+
+/**
+ * PartnershipTiers Shared Slice
+ *
+ * - **API ID**: `partnership_tiers`
+ * - **Description**: PartnershipTiers
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PartnershipTiersSlice = prismic.SharedSlice<
+  "partnership_tiers",
+  PartnershipTiersSliceVariation
+>;
+
+/**
  * Primary content in *Text → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -2264,6 +2485,9 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PartnershipTierDocument,
+      PartnershipTierDocumentData,
+      PartnershipTierDocumentDataTierFeaturesItem,
       ReviewDocument,
       ReviewDocumentData,
       ReviewDocumentDataSlicesSlice,
@@ -2332,6 +2556,14 @@ declare module "@prismicio/client" {
       NewsListSliceDefaultItem,
       NewsListSliceVariation,
       NewsListSliceDefault,
+      PartnershipTiersSlice,
+      PartnershipTiersSliceHorizontalCardsPrimary,
+      PartnershipTiersSliceHorizontalCardsItem,
+      PartnershipTiersSliceFullWidthCardsPrimary,
+      PartnershipTiersSliceFullWidthCardsItem,
+      PartnershipTiersSliceVariation,
+      PartnershipTiersSliceHorizontalCards,
+      PartnershipTiersSliceFullWidthCards,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceVariation,
