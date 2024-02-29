@@ -56,26 +56,24 @@
 					[
 						"milestone_image",
 						{
+							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
-								"width": 4272,
-								"height": 2848
+								"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+								"width": 12288,
+								"height": 16384
 							},
-							"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?rect=0%2C0%2C4272%2C2848&w=480&h=320",
-							"width": 480,
+							"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?rect=0%2C4180%2C12288%2C8025&w=490&h=320",
+							"width": 490,
 							"height": 320,
 							"edit": {
 								"zoom": 1,
 								"crop": {
 									"x": 0,
-									"y": 0
+									"y": 4180
 								},
 								"background": "transparent"
 							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -186,26 +184,24 @@
 					[
 						"milestone_image",
 						{
-							"url": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxtZWV0fGVufDB8fHx8MTcwODc3ODg1NHww&ixlib=rb-4.0.3&q=85&rect=0%2C0%2C4821%2C2711&w=569&h=320",
-							"alt": "people sitting on chair",
+							"__TYPE__": "ImageContent",
 							"origin": {
-								"id": "5U_28ojjgms",
-								"url": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxtZWV0fGVufDB8fHx8MTcwODc3ODg1NHww&ixlib=rb-4.0.3&q=85",
-								"width": 4821,
-								"height": 2712
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+								"width": 3424,
+								"height": 3424
 							},
-							"width": 569,
+							"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?rect=0%2C594%2C3424%2C2236&w=490&h=320",
+							"width": 490,
 							"height": 320,
 							"edit": {
-								"background": "transparent",
 								"zoom": 1,
 								"crop": {
 									"x": 0,
-									"y": 0
-								}
+									"y": 594
+								},
+								"background": "transparent"
 							},
-							"credits": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]
@@ -276,26 +272,24 @@
 					[
 						"milestone_image",
 						{
-							"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=2%2C0%2C2745%2C4124&w=213&h=320",
-							"alt": "ripe pineapple fruit",
+							"__TYPE__": "ImageContent",
 							"origin": {
-								"id": "nAOZCYcLND8",
-								"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
-								"width": 2749,
-								"height": 4124
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+								"width": 3935,
+								"height": 5894
 							},
-							"width": 213,
+							"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?rect=0%2C1662%2C3935%2C2570&w=490&h=320",
+							"width": 490,
 							"height": 320,
 							"edit": {
-								"background": "transparent",
 								"zoom": 1,
 								"crop": {
-									"x": 2,
-									"y": 0
-								}
+									"x": 0,
+									"y": 1662
+								},
+								"background": "transparent"
 							},
-							"credits": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]
@@ -366,26 +360,24 @@
 					[
 						"milestone_image",
 						{
-							"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85&rect=0%2C9%2C7173%2C10023&w=229&h=320",
-							"alt": "red strawberry fruit with white background",
+							"__TYPE__": "ImageContent",
 							"origin": {
-								"id": "xnRg3xDcNnE",
-								"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDg3Nzg4NDR8MA&ixlib=rb-4.0.3&q=85",
-								"width": 7173,
-								"height": 10041
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+								"width": 4380,
+								"height": 2895
 							},
-							"width": 229,
+							"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=0%2C17%2C4380%2C2860&w=490&h=320",
+							"width": 490,
 							"height": 320,
 							"edit": {
-								"background": "transparent",
 								"zoom": 1,
 								"crop": {
 									"x": 0,
-									"y": 9
-								}
+									"y": 17
+								},
+								"background": "transparent"
 							},
-							"credits": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]

@@ -75,7 +75,8 @@
           "config": {
             "label": "Milestone Image",
             "constraint": {
-              "height": 320
+              "height": 320,
+              "width": 490
             },
             "thumbnails": []
           }
