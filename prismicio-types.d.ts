@@ -371,17 +371,6 @@ export interface PartnershipTierDocumentDataTierFeaturesItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   feature_icon: prismic.ImageField<never>;
-
-  /**
-   * Is Featured tier field in *Partnership Tier → Tier features*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: partnership_tier.tier_features[].is_featured_tier
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  is_featured_tier: prismic.BooleanField;
 }
 
 /**
@@ -409,6 +398,29 @@ interface PartnershipTierDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   tier_description: prismic.RichTextField;
+
+  /**
+   * Tier image field in *Partnership Tier*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.tier_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  tier_image: prismic.ImageField<never>;
+
+  /**
+   * Is Featured tier field in *Partnership Tier*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: partnership_tier.is_featured_tier
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_featured_tier: prismic.BooleanField;
 
   /**
    * Tier features field in *Partnership Tier*

@@ -30,6 +30,26 @@
           "multi": "paragraph"
         }
       },
+      "tier_image": {
+        "type": "Image",
+        "config": {
+          "label": "Tier image",
+          "constraint": {
+            "height": 320,
+            "width": 490
+          },
+          "thumbnails": []
+        }
+      },
+      "is_featured_tier": {
+        "type": "Boolean",
+        "config": {
+          "label": "Is Featured tier",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
       "tier_features": {
         "type": "Group",
         "config": {
@@ -50,15 +70,6 @@
                 "label": "Feature Icon",
                 "constraint": {},
                 "thumbnails": []
-              }
-            },
-            "is_featured_tier": {
-              "type": "Boolean",
-              "config": {
-                "label": "Is Featured tier",
-                "default_value": false,
-                "placeholder_true": "true",
-                "placeholder_false": "false"
               }
             }
           }

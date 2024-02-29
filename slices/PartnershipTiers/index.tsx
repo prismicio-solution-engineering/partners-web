@@ -1,5 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import PartnershipTiersHorizontal from "./PartnershipTiersHorizontal";
+import PartnershipTiersFullWidthCards from "./PartnershipTiersFullWidthCards";
 
 /**
  * Props for `PartnershipTiers`.
@@ -11,15 +13,12 @@ export type PartnershipTiersProps =
  * Component for "PartnershipTiers" Slices.
  */
 const PartnershipTiers = ({ slice }: PartnershipTiersProps): JSX.Element => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for partnership_tiers (variation: {slice.variation})
-      Slices
-    </section>
-  );
+  switch (slice.variation) {
+    case "horizontalCards":
+      return <PartnershipTiersHorizontal slice={slice} />;
+      case "fullWidthCards":
+        return <PartnershipTiersFullWidthCards slice={slice} />
+  }
 };
 
 export default PartnershipTiers;

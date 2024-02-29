@@ -38,6 +38,7 @@ import {
   AuthForm,
   ArticleListComponent,
   NewsArticleListComponent,
+  PartnershipTiersComponentVertical,
 } from "@/components/generated";
 
 export default async function Page() {
@@ -78,6 +79,7 @@ export default async function Page() {
       <PartnershipTiersComponentTwo />
       {/* New slice */}
       <PartnershipTiersComponent />
+      <PartnershipTiersComponentVertical />
 
       <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
         Features

@@ -358,6 +358,81 @@ export const PartnershipTiersComponentTwo = () => {
     );
 };
 
+export const PartnershipTiersComponentVertical = () => {
+    const tiers = [
+        {
+            name: "Bronze Tier",
+            description: "Great for startups",
+            featured: false,
+            imageUrl: "https://source.unsplash.com/random/300x200?business&bronze",
+            features: [
+                { description: "Basic partnership support", icon: "🤝" },
+                { description: "Newsletter mentions", icon: "📰" },
+                { description: "Community access", icon: "👥" },
+            ],
+        },
+        {
+            name: "Gold Tier",
+            description: "Popular among professionals",
+            featured: true,
+            imageUrl: "https://source.unsplash.com/random/300x200?business&gold",
+            features: [
+                { description: "Extended partnership support", icon: "💼" },
+                { description: "Featured in marketing materials", icon: "🌟" },
+                { description: "Priority on new features", icon: "⚙️" },
+            ],
+        },
+        {
+            name: "Silver Tier",
+            description: "Best for growing businesses",
+            featured: false,
+            imageUrl: "https://source.unsplash.com/random/300x200?business&silver",
+            features: [
+                { description: "Advanced partnership support", icon: "🚀" },
+                { description: "Branded collaborations", icon: "🏆" },
+                { description: "Sponsored events", icon: "🎉" },
+            ],
+        },
+    ];
+
+    return (
+        <div className='flex flex-col items-center pt-16 pb-16 my-8 bg-[#ffffff]'>
+            <h2 className='text-center text-4xl font-sans font-bold text-[#171717] mb-8'>Partnership Tiers</h2>
+            <p className="font-sans text-lg text-[#171717] max-w-2xl text-center mx-auto mb-[88px]">
+                Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.
+            </p>
+            <div className='w-full max-w-screen-xl mx-auto'>
+                {tiers.map((tier, idx) => (
+                    <div key={idx} className={`flex ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center mb-10 gap-12 p-10 md:p-16 last:mb-0 rounded-lg overflow-hidden ${tier.featured && "bg-[#E8F8F3]"} shadow-lg`}>
+                        <div className='md:w-3/5 px-12'>
+                            <div className='bg-[#ffffff] border-2 border-[#171717] p-9 rounded-lg'>
+                                <img
+                                    src={tier.imageUrl}
+                                    alt={`${tier.name}`}
+                                    className="w-full h-80 rounded-lg object-cover"
+                                />
+                            </div>
+                        </div>
+                        <div className={`flex-1 p-6 text-[#171717] ${idx % 2 === 0 ? 'pl-12' : 'pr-12'}`}>
+                            <h3 className='text-xl font-sans font-bold mb-4'>{tier.name}</h3>
+                            <p className='text-sm mb-6'>{tier.description}</p>
+                            <ul>
+                                {tier.features.map((feature, featureIdx) => (
+                                    <li key={featureIdx} className="flex items-center mb-4">
+                                        <span className="mr-2 text-lg">{feature.icon}</span>
+                                        {feature.description}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+
 
 // ArticleCarousel
 // Now generate a featured blog articles carousel using the same design guidelines, articles being displayed as cards with a "Read more" CTA with tilting effect on hover
