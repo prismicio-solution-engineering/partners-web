@@ -2047,6 +2047,186 @@ export type PartnershipTiersSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Testimonials → Primary*
+ */
+export interface TestimonialsSliceSinglePrimary {
+  /**
+   * Company logo field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Quote field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+
+  /**
+   * Author name field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.author_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_name: prismic.KeyTextField;
+
+  /**
+   * Author role field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.author_role
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_role: prismic.KeyTextField;
+
+  /**
+   * Author image field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.author_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  author_image: prismic.ImageField<never>;
+
+  /**
+   * Author company field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.author_company
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_company: prismic.KeyTextField;
+}
+
+/**
+ * Single variation for Testimonials Slice
+ *
+ * - **API ID**: `single`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSliceSingle = prismic.SharedSliceVariation<
+  "single",
+  Simplify<TestimonialsSliceSinglePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Testimonials → Primary*
+ */
+export interface TestimonialsSliceSliderPrimary {
+  /**
+   * Title field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *Testimonials → Items*
+ */
+export interface TestimonialsSliceSliderItem {
+  /**
+   * Quote field in *Testimonials → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.items[].quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+
+  /**
+   * Author name field in *Testimonials → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.items[].author_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_name: prismic.KeyTextField;
+
+  /**
+   * Author role field in *Testimonials → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.items[].author_role
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_role: prismic.KeyTextField;
+
+  /**
+   * Author image field in *Testimonials → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.items[].author_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  author_image: prismic.ImageField<never>;
+
+  /**
+   * Author company field in *Testimonials → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.items[].author_company
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_company: prismic.KeyTextField;
+}
+
+/**
+ * Slider variation for Testimonials Slice
+ *
+ * - **API ID**: `slider`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSliceSlider = prismic.SharedSliceVariation<
+  "slider",
+  Simplify<TestimonialsSliceSliderPrimary>,
+  Simplify<TestimonialsSliceSliderItem>
+>;
+
+/**
+ * Slice variation for *Testimonials*
+ */
+type TestimonialsSliceVariation =
+  | TestimonialsSliceSingle
+  | TestimonialsSliceSlider;
+
+/**
+ * Testimonials Shared Slice
+ *
+ * - **API ID**: `testimonials`
+ * - **Description**: Testimonials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSlice = prismic.SharedSlice<
+  "testimonials",
+  TestimonialsSliceVariation
+>;
+
+/**
  * Primary content in *Text → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -2576,6 +2756,13 @@ declare module "@prismicio/client" {
       PartnershipTiersSliceVariation,
       PartnershipTiersSliceHorizontalCards,
       PartnershipTiersSliceFullWidthCards,
+      TestimonialsSlice,
+      TestimonialsSliceSinglePrimary,
+      TestimonialsSliceSliderPrimary,
+      TestimonialsSliceSliderItem,
+      TestimonialsSliceVariation,
+      TestimonialsSliceSingle,
+      TestimonialsSliceSlider,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceVariation,

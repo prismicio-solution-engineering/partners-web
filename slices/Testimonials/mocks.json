@@ -1,0 +1,335 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "single",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "What our partners say",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"quote": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "This is an example of a quote by someone from the agency. Working with Prismic has been transformative for our work.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"author_name": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Jane Doe"
+			},
+			"author_role": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Content Strategy Head"
+			},
+			"author_company": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Creative Solutions"
+			},
+			"author_image": {
+				"origin": {
+					"id": "YzLMmxDTrvI",
+					"url": "https://images.unsplash.com/photo-1664575198308-3959904fa430?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHx3cml0ZXJ8ZW58MHx8fHwxNzA5MjMyMjk1fDA&ixlib=rb-4.0.3&q=85",
+					"width": 8256,
+					"height": 5504
+				},
+				"url": "https://images.unsplash.com/photo-1664575198308-3959904fa430?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHx3cml0ZXJ8ZW58MHx8fHwxNzA5MjMyMjk1fDA&ixlib=rb-4.0.3&q=85&rect=1376%2C0%2C5504%2C5504&w=64&h=64",
+				"width": 64,
+				"height": 64,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 1376,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": "a woman sitting at a table with a laptop",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"company_logo": {
+				"url": "https://images.unsplash.com/photo-1603352525945-bb62a311295b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMHx8bG9nb3xlbnwwfHx8fDE3MDkyMzIxMzd8MA&ixlib=rb-4.0.3&q=85&rect=337%2C1356%2C1938%2C664&w=140&h=48",
+				"alt": "Ikea logo",
+				"origin": {
+					"id": "PF0cKb2tX4E",
+					"url": "https://images.unsplash.com/photo-1603352525945-bb62a311295b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMHx8bG9nb3xlbnwwfHx8fDE3MDkyMzIxMzd8MA&ixlib=rb-4.0.3&q=85",
+					"width": 2646,
+					"height": 3969
+				},
+				"width": 140,
+				"height": 48,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1.3650000000000002,
+					"crop": {
+						"x": 337,
+						"y": 1356
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "slider",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "What our partners say",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"quote",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Prismic has transformed the way we approach website development. It's an integral part of our toolkit now.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"author_image",
+						{
+							"origin": {
+								"id": "c_GmwfHBDzk",
+								"url": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxwZXJzb258ZW58MHx8fHwxNzA5MjMyMjAzfDA&ixlib=rb-4.0.3&q=85",
+								"width": 6000,
+								"height": 4000
+							},
+							"url": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxwZXJzb258ZW58MHx8fHwxNzA5MjMyMjAzfDA&ixlib=rb-4.0.3&q=85&rect=1000%2C0%2C4000%2C4000&w=48&h=48",
+							"width": 48,
+							"height": 48,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 1000,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"alt": "grayscale photo of man",
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"author_name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Liam Wong"
+						}
+					],
+					[
+						"author_role",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "CEO"
+						}
+					],
+					[
+						"author_company",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "PixelPerfect"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"quote",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Since partnering with Prismic, we've been able to scale our content delivery and simplify our workflows, positively impacting our bottom line.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"author_name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Alex Johnson"
+						}
+					],
+					[
+						"author_role",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Content Strategy Head"
+						}
+					],
+					[
+						"author_company",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Creative Solutions"
+						}
+					],
+					[
+						"author_image",
+						{
+							"url": "https://images.unsplash.com/photo-1597208631566-21eb136a600c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxBbGV4fGVufDB8fHx8MTcwOTIzMzQzN3ww&ixlib=rb-4.0.3&q=85&rect=0%2C1000%2C4000%2C4000&w=48&h=48",
+							"alt": "man in black coat standing beside black steel gate during daytime",
+							"origin": {
+								"id": "QVFhb-CeBwU",
+								"url": "https://images.unsplash.com/photo-1597208631566-21eb136a600c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxBbGV4fGVufDB8fHx8MTcwOTIzMzQzN3ww&ixlib=rb-4.0.3&q=85",
+								"width": 4000,
+								"height": 6000
+							},
+							"width": 48,
+							"height": 48,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 1000
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"quote",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "The support and insights from the Prismic team have been game changers for our agency. Our clients are thrilled with the results!",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"author_name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Maria Garcia"
+						}
+					],
+					[
+						"author_role",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "CTO"
+						}
+					],
+					[
+						"author_company",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "InnovateTech"
+						}
+					],
+					[
+						"author_image",
+						{
+							"url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxwZXJzb258ZW58MHx8fHwxNzA5MjMyMjAzfDA&ixlib=rb-4.0.3&q=85&rect=864%2C0%2C3456%2C3456&w=48&h=48",
+							"alt": "shallow focus photography of woman outdoor during day",
+							"origin": {
+								"id": "rDEOVtE7vOs",
+								"url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxwZXJzb258ZW58MHx8fHwxNzA5MjMyMjAzfDA&ixlib=rb-4.0.3&q=85",
+								"width": 5184,
+								"height": 3456
+							},
+							"width": 48,
+							"height": 48,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 864,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]

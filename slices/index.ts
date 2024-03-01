@@ -13,6 +13,7 @@ export const components = {
   menu_item: dynamic(() => import("./MenuItem")),
   news_list: dynamic(() => import("./NewsList")),
   partnership_tiers: dynamic(() => import("./PartnershipTiers")),
+  testimonials: dynamic(() => import("./Testimonials")),
   text: dynamic(() => import("./Text")),
   text_section: dynamic(() => import("./TextSection")),
   timeline: dynamic(() => import("./Timeline")),

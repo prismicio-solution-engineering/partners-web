@@ -1,0 +1,133 @@
+{
+  "id": "testimonials",
+  "type": "SharedSlice",
+  "name": "Testimonials",
+  "description": "Testimonials",
+  "variations": [
+    {
+      "id": "single",
+      "name": "Single",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "company_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Company logo",
+            "constraint": {
+              "width": 140,
+              "height": 48
+            },
+            "thumbnails": []
+          }
+        },
+        "quote": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Quote",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "author_name": {
+          "type": "Text",
+          "config": {
+            "label": "Author name",
+            "placeholder": ""
+          }
+        },
+        "author_role": {
+          "type": "Text",
+          "config": {
+            "label": "Author role",
+            "placeholder": ""
+          }
+        },
+        "author_image": {
+          "type": "Image",
+          "config": {
+            "label": "Author image",
+            "constraint": {
+              "width": 64,
+              "height": 64
+            },
+            "thumbnails": []
+          }
+        },
+        "author_company": {
+          "type": "Text",
+          "config": {
+            "label": "Author company",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "quote": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Quote",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "author_name": {
+          "type": "Text",
+          "config": {
+            "label": "Author name",
+            "placeholder": ""
+          }
+        },
+        "author_role": {
+          "type": "Text",
+          "config": {
+            "label": "Author role",
+            "placeholder": ""
+          }
+        },
+        "author_image": {
+          "type": "Image",
+          "config": {
+            "label": "Author image",
+            "constraint": {
+              "width": 48,
+              "height": 48
+            },
+            "thumbnails": []
+          }
+        },
+        "author_company": {
+          "type": "Text",
+          "config": {
+            "label": "Author company",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
