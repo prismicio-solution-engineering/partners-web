@@ -57,8 +57,8 @@
             "label": "Partner Logo",
             "thumbnails": [],
             "constraint": {
-              "height": 96,
-              "width": 256
+              "height": 100,
+              "width": null
             }
           }
         }
