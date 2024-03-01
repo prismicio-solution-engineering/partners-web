@@ -38,22 +38,6 @@ export default async function Page() {
     <>
       <Header navigation={navigation} />
       <SliceZone slices={page?.data?.slices} components={components} />
-      <HeroBanner/>
-      <FeatureSliceComponentTwoColumns/>
-      <TimelineComponent/>
-      <CallToActionTwoColumnsMultipleCtas/>
-      <PartnershipTiersComponentTwo/>
-      <FeatureSliceComponentReversed/>
-      <FeatureSliceComponent/>
-      <CallToActionTwoColumns/>
-      <PartnerLogoCarousel/>
-      <CallToActionSection/>
-      <h2 className="text-center text-2xl">V1</h2>
-      <ArticleCarousel />
-      <h2 className="text-center text-2xl">Prismic slices</h2>
-      <PrismicSlice/>
-      <h2 className="text-center text-2xl">New slices</h2>
-      <PartnershipTiersComponent/>
     </>
   );
 }
