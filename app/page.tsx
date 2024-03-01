@@ -37,7 +37,7 @@ export default async function Page() {
   return (
     <>
       <Header navigation={navigation} />
-      {/* <SliceZone slices={page?.data?.slices} components={components} /> */}
+      <SliceZone slices={page?.data?.slices} components={components} />
       <HeroBanner/>
       <FeatureSliceComponentTwoColumns/>
       <TimelineComponent/>

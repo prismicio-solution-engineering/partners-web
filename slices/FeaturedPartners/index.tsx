@@ -50,7 +50,7 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
                   style={{ scrollSnapAlign: "start" }}
                 >
                   <PrismicNextLink
-                    className="block h-24 rounded-lg overflow-hidden bg-[#171717] cursor-pointer transform hover:scale-110 transition-transform duration-300"
+                    className="block h-24 rounded-lg overflow-hidden cursor-pointer transform hover:scale-110 transition-transform duration-300"
                     field={item.partner_link}
                   >
                     <PrismicNextImage
