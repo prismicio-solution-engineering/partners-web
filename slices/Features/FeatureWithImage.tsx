@@ -21,6 +21,14 @@ const FeatureWithImage = ({
   return (
     <div className="bg-[#ffffff] px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        {slice.primary.image_side === false && (
+          <div className="md:w-1/2">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="w-full h-80 md:h-auto rounded-lg object-cover bg-[#E8F8F3]"
+            />
+          </div>
+        )}
         <div className="md:w-1/2">
           <div className="max-w-fit text-center font-sans font-semibold text-sm uppercase text-[#171717] rounded-lg bg-[#E8F8F3] px-3 py-1 mb-4">
             {slice.primary.eyebrow}
@@ -34,12 +42,14 @@ const FeatureWithImage = ({
             components={serializer}
           />
         </div>
-        <div className="md:w-1/2">
-          <PrismicNextImage
-            field={slice.primary.image}
-            className="w-full h-80 md:h-auto rounded-lg object-cover bg-[#E8F8F3]"
-          />
-        </div>
+        {slice.primary.image_side === true && (
+          <div className="md:w-1/2">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="w-full h-80 md:h-auto rounded-lg object-cover bg-[#E8F8F3]"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

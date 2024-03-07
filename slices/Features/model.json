@@ -83,6 +83,15 @@
             },
             "thumbnails": []
           }
+        },
+        "image_side": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image side",
+            "placeholder_false": "left",
+            "placeholder_true": "right",
+            "default_value": true
+          }
         }
       },
       "items": {}

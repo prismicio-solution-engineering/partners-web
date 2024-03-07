@@ -9,7 +9,7 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Prismic Partner Website",
+							"text": "Empower Your Agency With Prismic Partner Website",
 							"spans": []
 						},
 						"direction": "ltr"
@@ -22,7 +22,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "You'll find in here all the information related to the Prismic partnership program and valuable assets that can help you buildawesome Prismic projects.",
+							"text": "Join our Prismic Partner Program to leverage the full potential of content management for your clients. You'll find in here all the information related to the Prismic partnership program and valuable assets that can help you buildawesome Prismic projects.",
 							"spans": []
 						},
 						"direction": "ltr"
@@ -38,8 +38,81 @@
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "http://google.com"
+					"url": "https://prismic.io"
 				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withImage",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Empower Your Agency With Prismic Partner Website",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Join our Prismic Partner Program to leverage the full potential of content management for your clients.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Get started"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"image": {
+				"origin": {
+					"id": "AQTA5E6mCNU",
+					"url": "https://images.unsplash.com/photo-1629904869392-ae2a682d4d01?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8cHJvZ3JhbW1lcnxlbnwwfHx8fDE3MDk4MDU2ODN8MA&ixlib=rb-4.0.3&q=85",
+					"width": 5090,
+					"height": 3372
+				},
+				"url": "https://images.unsplash.com/photo-1629904869392-ae2a682d4d01?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8cHJvZ3JhbW1lcnxlbnwwfHx8fDE3MDk4MDU2ODN8MA&ixlib=rb-4.0.3&q=85&rect=0%2C0%2C5090%2C3098&w=608&h=370",
+				"width": 608,
+				"height": 370,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": "woman in pink shirt sitting in front of black laptop computer",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
 			}
 		},
 		"items": [

@@ -45,6 +45,59 @@
       "docURL": "...",
       "version": "initial",
       "imageUrl": ""
+    },
+    {
+      "id": "withImage",
+      "name": "With image",
+      "description": "Default variation with a title, a description, and a button",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "Enter the banner title here...",
+            "single": "heading1"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Enter the description here...",
+            "single": "paragraph"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": "Enter the button text here..."
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "URL or link to the document",
+            "select": null
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 608,
+              "height": 370
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "docURL": "...",
+      "version": "initial",
+      "imageUrl": ""
     }
   ]
 }
