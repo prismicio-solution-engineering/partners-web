@@ -22,7 +22,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Join our Prismic Partner Program to leverage the full potential of content management for your clients. You'll find in here all the information related to the Prismic partnership program and valuable assets that can help you buildawesome Prismic projects.",
+							"text": "Transform the way you build websites, optimize workflows, and exceed your project goals. You'll find in here all the information related to the Prismic partnership program and valuable assets that can help you build awesome Prismic projects.",
 							"spans": []
 						},
 						"direction": "ltr"
@@ -45,7 +45,66 @@
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": []
+				"value": [
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Get started"
+						}
+					],
+					[
+						"cta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "primary"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"cta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com",
+								"target": ""
+							}
+						}
+					],
+					[
+						"cta_label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Sign in"
+						}
+					],
+					[
+						"cta_type",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "link"
+						}
+					]
+				]
 			}
 		]
 	},

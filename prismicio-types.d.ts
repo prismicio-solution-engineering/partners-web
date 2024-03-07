@@ -1620,6 +1620,42 @@ export interface HeroBannerSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *HeroBanner → Items*
+ */
+export interface HeroBannerSliceDefaultItem {
+  /**
+   * Cta Label field in *HeroBanner → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.items[].cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * Cta Link field in *HeroBanner → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.items[].cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+
+  /**
+   * Cta Type field in *HeroBanner → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: primary
+   * - **API ID Path**: hero_banner.items[].cta_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  cta_type: prismic.SelectField<"primary" | "secondary" | "link", "filled">;
+}
+
+/**
  * Default Variation variation for HeroBanner Slice
  *
  * - **API ID**: `default`
@@ -1629,7 +1665,7 @@ export interface HeroBannerSliceDefaultPrimary {
 export type HeroBannerSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<HeroBannerSliceDefaultPrimary>,
-  never
+  Simplify<HeroBannerSliceDefaultItem>
 >;
 
 /**
@@ -2747,6 +2783,7 @@ declare module "@prismicio/client" {
       FormSectionSliceDefault,
       HeroBannerSlice,
       HeroBannerSliceDefaultPrimary,
+      HeroBannerSliceDefaultItem,
       HeroBannerSliceWithImagePrimary,
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,

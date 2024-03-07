@@ -10,6 +10,7 @@ const serializer = {
     </p>
   ),
 };
+
 const HeroWithImage = ({
   slice,
 }: {
