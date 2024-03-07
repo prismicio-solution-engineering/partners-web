@@ -211,6 +211,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TestimonialsSlice
   | FeaturesSlice
   | CallToActionSlice
   | PartnershipTiersSlice
@@ -1419,6 +1420,17 @@ export interface FeaturesSliceWithImagePrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image side field in *Features → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: features.primary.image_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_side: prismic.BooleanField;
 }
 
 /**
@@ -1621,9 +1633,79 @@ export type HeroBannerSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *HeroBanner → Primary*
+ */
+export interface HeroBannerSliceWithImagePrimary {
+  /**
+   * Title field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Enter the banner title here...
+   * - **API ID Path**: hero_banner.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter the description here...
+   * - **API ID Path**: hero_banner.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Label field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter the button text here...
+   * - **API ID Path**: hero_banner.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: URL or link to the document
+   * - **API ID Path**: hero_banner.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Image field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * With image variation for HeroBanner Slice
+ *
+ * - **API ID**: `withImage`
+ * - **Description**: Default variation with a title, a description, and a button
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroBannerSliceWithImage = prismic.SharedSliceVariation<
+  "withImage",
+  Simplify<HeroBannerSliceWithImagePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *HeroBanner*
  */
-type HeroBannerSliceVariation = HeroBannerSliceDefault;
+type HeroBannerSliceVariation =
+  | HeroBannerSliceDefault
+  | HeroBannerSliceWithImage;
 
 /**
  * HeroBanner Shared Slice
@@ -2665,8 +2747,10 @@ declare module "@prismicio/client" {
       FormSectionSliceDefault,
       HeroBannerSlice,
       HeroBannerSliceDefaultPrimary,
+      HeroBannerSliceWithImagePrimary,
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,
+      HeroBannerSliceWithImage,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceWithSubMenuPrimary,
