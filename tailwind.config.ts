@@ -31,6 +31,50 @@ const config: Config = {
         "8xl": ["6rem", { lineHeight: "1" }],
         "9xl": ["8rem", { lineHeight: "1" }],
       },
+      colors: {
+        primary: {
+          orange: "#ED6B22",
+          pink: "#F97289",
+          green: "#3BBB96",
+          purple: "#8E44EC",
+          blue: "#59B5F8"
+        },
+        secondary: {
+          orange: "#F39A68",
+          pink: "#F7A1B0",
+          green: "#75DCC0",
+          purple: "#B382F2",
+          blue: "#87D9FD"
+        },
+        tertiary: {
+          orange: "#FCDAC4",
+          pink: "#FFD6DE",
+          green: "#D4F2E9",
+          purple: "#E8C7FF",
+          blue: "#C3EEFE"
+        },
+        quaternary: {
+          orange: "#FEF1E9",
+          pink: "#FFE5EA",
+          green: "#D4F2E9",
+          purple: "#F5E6FF",
+          blue: "#E6F7FE"
+        },
+        gray: {
+          darker: "#1F1F1F",
+          dark: "#303030",
+          base: "#505050",
+        },
+        silver: {
+          darker: "#A4A4A4",
+          dark: "#ACACAC",
+          base: "#EEEEEE",
+          light: "#F7F7F7"
+        },
+        white: "#FFFFFF",
+        black: "#000000",
+        transparent: "transparent"
+      },
       maxWidth: {
         "2xl": "40rem",
       },
