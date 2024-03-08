@@ -268,10 +268,12 @@ interface NavigationDocumentData {
    * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: navigation.logo
-   * - **Tab**: Main
+   * - **Tab**: Header
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  logo: prismic.ImageField<never> /**
+  logo: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone
@@ -279,7 +281,7 @@ interface NavigationDocumentData {
    * - **API ID Path**: navigation.slices1[]
    * - **Tab**: Header
    * - **Documentation**: https://prismic.io/docs/field#slices
-   */;
+   */
   slices1: prismic.SliceZone<NavigationDocumentDataSlices1Slice> /**
    * Search bar placeholder field in *Navigation*
    *
@@ -300,7 +302,179 @@ interface NavigationDocumentData {
    * - **Tab**: Search
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  search_result_page_title: prismic.KeyTextField;
+  search_result_page_title: prismic.KeyTextField /**
+   * Sign in title field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_in_title
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  sign_in_title: prismic.KeyTextField;
+
+  /**
+   * Email field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_label
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_label: prismic.KeyTextField;
+
+  /**
+   * Email field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_placeholder
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Password field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_label
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_label: prismic.KeyTextField;
+
+  /**
+   * Password field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_placeholder
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Sign in button label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_in_button_label
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sign_in_button_label: prismic.KeyTextField;
+
+  /**
+   * Switch to Sign up text field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.switch_to_sign_up_text
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  switch_to_sign_up_text: prismic.KeyTextField;
+
+  /**
+   * Non existing account error message field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Message if the account doesn't exist
+   * - **API ID Path**: navigation.non_existing_account_error_message
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  non_existing_account_error_message: prismic.KeyTextField /**
+   * Sign up title field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_up_title
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  sign_up_title: prismic.KeyTextField;
+
+  /**
+   * Email field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_label: prismic.KeyTextField;
+
+  /**
+   * Email field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_placeholder
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Password field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_label: prismic.KeyTextField;
+
+  /**
+   * Password field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_placeholder
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Sign up button label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_up_button_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sign_up_button_label: prismic.KeyTextField;
+
+  /**
+   * Switch to Sign in text field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.switch_to_sign_in_text
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  switch_to_sign_in_text: prismic.KeyTextField;
+
+  /**
+   * Existing account error message field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Message if the account already exists
+   * - **API ID Path**: navigation.existing_account_error_message
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  existing_account_error_message: prismic.KeyTextField;
 }
 
 /**
