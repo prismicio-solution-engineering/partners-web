@@ -189,11 +189,7 @@ type HomeDocumentDataSlicesSlice =
   | CallToActionSlice
   | TimelineSlice
   | TextSlice
-  | TextSectionSlice
-  | CheckListSlice
   | AccordionSectionSlice
-  | NewsListSlice
-  | FormSectionSlice
   | HeroBannerSlice
   | FeaturedPartnersSlice;
 
@@ -504,6 +500,17 @@ type ResourcesDocumentDataSlicesSlice = NewsListSlice;
  */
 interface ResourcesDocumentData {
   /**
+   * Page title field in *Resources*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resources.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_title: prismic.TitleField;
+
+  /**
    * Slice Zone field in *Resources*
    *
    * - **Field Type**: Slice Zone
@@ -515,15 +522,15 @@ interface ResourcesDocumentData {
   slices: prismic.SliceZone<ResourcesDocumentDataSlicesSlice>;
 
   /**
-   * Page title field in *Resources*
+   * Description field in *Resources*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: resources.page_title
+   * - **API ID Path**: resources.description
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  page_title: prismic.TitleField /**
+  description: prismic.RichTextField /**
    * Meta Description field in *Resources*
    *
    * - **Field Type**: Text

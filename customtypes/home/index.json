@@ -29,19 +29,7 @@
             "text": {
               "type": "SharedSlice"
             },
-            "text_section": {
-              "type": "SharedSlice"
-            },
-            "check_list": {
-              "type": "SharedSlice"
-            },
             "accordion_section": {
-              "type": "SharedSlice"
-            },
-            "news_list": {
-              "type": "SharedSlice"
-            },
-            "form_section": {
               "type": "SharedSlice"
             },
             "hero_banner": {

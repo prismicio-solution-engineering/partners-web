@@ -6,6 +6,15 @@
   "status": true,
   "json": {
     "Main": {
+      "page_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Page title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -17,13 +26,13 @@
           }
         }
       },
-      "page_title": {
+      "description": {
         "type": "StructuredText",
         "config": {
-          "label": "Page title",
+          "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "heading1"
+          "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       }
     },
