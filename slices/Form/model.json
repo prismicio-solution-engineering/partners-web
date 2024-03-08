@@ -1,7 +1,7 @@
 {
   "id": "form_section",
   "type": "SharedSlice",
-  "name": "FormSection",
+  "name": "Form",
   "description": "An interactive component for agencies to contact an executive, including fields for name, email, and message, to facilitate seamless communication and streamline the agency qualification process.",
   "variations": [
     {
@@ -46,11 +46,7 @@
           "config": {
             "label": "Input Type",
             "placeholder": "Select the type of the input field",
-            "options": [
-              "text",
-              "email",
-              "textarea"
-            ]
+            "options": ["text", "email", "textarea"]
           }
         },
         "input_name": {

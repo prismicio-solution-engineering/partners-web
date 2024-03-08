@@ -747,11 +747,11 @@ export type AllDocumentTypes =
   | UseCaseDocument;
 
 /**
- * Primary content in *AccordionSection → Primary*
+ * Primary content in *Accordion → Primary*
  */
 export interface AccordionSectionSliceWithImagePrimary {
   /**
-   * Eyebrow field in *AccordionSection → Primary*
+   * Eyebrow field in *Accordion → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -761,7 +761,7 @@ export interface AccordionSectionSliceWithImagePrimary {
   eyebrow: prismic.KeyTextField;
 
   /**
-   * Section Title field in *AccordionSection → Primary*
+   * Section Title field in *Accordion → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -771,7 +771,7 @@ export interface AccordionSectionSliceWithImagePrimary {
   section_title: prismic.TitleField;
 
   /**
-   * Description field in *AccordionSection → Primary*
+   * Description field in *Accordion → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -781,7 +781,7 @@ export interface AccordionSectionSliceWithImagePrimary {
   description: prismic.RichTextField;
 
   /**
-   * Image field in *AccordionSection → Primary*
+   * Image field in *Accordion → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -792,11 +792,11 @@ export interface AccordionSectionSliceWithImagePrimary {
 }
 
 /**
- * Primary content in *AccordionSection → Items*
+ * Primary content in *Accordion → Items*
  */
 export interface AccordionSectionSliceWithImageItem {
   /**
-   * Accordion Title field in *AccordionSection → Items*
+   * Accordion Title field in *Accordion → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Type the accordion title here...
@@ -806,7 +806,7 @@ export interface AccordionSectionSliceWithImageItem {
   accordion_title: prismic.KeyTextField;
 
   /**
-   * Accordion Content field in *AccordionSection → Items*
+   * Accordion Content field in *Accordion → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Type the accordion content here...
@@ -817,7 +817,7 @@ export interface AccordionSectionSliceWithImageItem {
 }
 
 /**
- * With image variation for AccordionSection Slice
+ * With image variation for Accordion Slice
  *
  * - **API ID**: `withImage`
  * - **Description**: Default variation with multiple collapsible items.
@@ -830,11 +830,11 @@ export type AccordionSectionSliceWithImage = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *AccordionSection → Primary*
+ * Primary content in *Accordion → Primary*
  */
 export interface AccordionSectionSliceTwoColumnsPrimary {
   /**
-   * Eyebrow field in *AccordionSection → Primary*
+   * Eyebrow field in *Accordion → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -844,7 +844,7 @@ export interface AccordionSectionSliceTwoColumnsPrimary {
   eyebrow: prismic.KeyTextField;
 
   /**
-   * Section Title field in *AccordionSection → Primary*
+   * Section Title field in *Accordion → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -854,7 +854,7 @@ export interface AccordionSectionSliceTwoColumnsPrimary {
   section_title: prismic.TitleField;
 
   /**
-   * Description field in *AccordionSection → Primary*
+   * Description field in *Accordion → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -865,11 +865,11 @@ export interface AccordionSectionSliceTwoColumnsPrimary {
 }
 
 /**
- * Primary content in *AccordionSection → Items*
+ * Primary content in *Accordion → Items*
  */
 export interface AccordionSectionSliceTwoColumnsItem {
   /**
-   * Accordion Title field in *AccordionSection → Items*
+   * Accordion Title field in *Accordion → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Type the accordion title here...
@@ -879,7 +879,7 @@ export interface AccordionSectionSliceTwoColumnsItem {
   accordion_title: prismic.KeyTextField;
 
   /**
-   * Accordion Content field in *AccordionSection → Items*
+   * Accordion Content field in *Accordion → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Type the accordion content here...
@@ -890,7 +890,7 @@ export interface AccordionSectionSliceTwoColumnsItem {
 }
 
 /**
- * Two Columns variation for AccordionSection Slice
+ * Two Columns variation for Accordion Slice
  *
  * - **API ID**: `twoColumns`
  * - **Description**: Default variation with multiple collapsible items.
@@ -903,11 +903,11 @@ export type AccordionSectionSliceTwoColumns = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *AccordionSection → Primary*
+ * Primary content in *Accordion → Primary*
  */
 export interface AccordionSectionSliceCenteredPrimary {
   /**
-   * Section Title field in *AccordionSection → Primary*
+   * Section Title field in *Accordion → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -918,11 +918,11 @@ export interface AccordionSectionSliceCenteredPrimary {
 }
 
 /**
- * Primary content in *AccordionSection → Items*
+ * Primary content in *Accordion → Items*
  */
 export interface AccordionSectionSliceCenteredItem {
   /**
-   * Accordion Title field in *AccordionSection → Items*
+   * Accordion Title field in *Accordion → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Type the accordion title here...
@@ -932,7 +932,7 @@ export interface AccordionSectionSliceCenteredItem {
   accordion_title: prismic.KeyTextField;
 
   /**
-   * Accordion Content field in *AccordionSection → Items*
+   * Accordion Content field in *Accordion → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Type the accordion content here...
@@ -943,7 +943,7 @@ export interface AccordionSectionSliceCenteredItem {
 }
 
 /**
- * Centered variation for AccordionSection Slice
+ * Centered variation for Accordion Slice
  *
  * - **API ID**: `centered`
  * - **Description**: Default variation with multiple collapsible items.
@@ -956,7 +956,7 @@ export type AccordionSectionSliceCentered = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *AccordionSection*
+ * Slice variation for *Accordion*
  */
 type AccordionSectionSliceVariation =
   | AccordionSectionSliceWithImage
@@ -964,7 +964,7 @@ type AccordionSectionSliceVariation =
   | AccordionSectionSliceCentered;
 
 /**
- * AccordionSection Shared Slice
+ * Accordion Shared Slice
  *
  * - **API ID**: `accordion_section`
  * - **Description**: A structured component suitable for presenting more detailed and linked content, such as FAQs or review checklist criteria. The accordion format allows for organized information display, ensuring a clean and user-friendly experience.
@@ -1464,11 +1464,11 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *FormSection → Primary*
+ * Primary content in *Form → Primary*
  */
 export interface FormSectionSliceDefaultPrimary {
   /**
-   * Section Title field in *FormSection → Primary*
+   * Section Title field in *Form → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: Enter the section title here
@@ -1478,7 +1478,7 @@ export interface FormSectionSliceDefaultPrimary {
   section_title: prismic.TitleField;
 
   /**
-   * Section Description field in *FormSection → Primary*
+   * Section Description field in *Form → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Enter the section description here
@@ -1488,7 +1488,7 @@ export interface FormSectionSliceDefaultPrimary {
   section_description: prismic.RichTextField;
 
   /**
-   * Submit Button Text field in *FormSection → Primary*
+   * Submit Button Text field in *Form → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Enter the text for the submit button
@@ -1499,11 +1499,11 @@ export interface FormSectionSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *FormSection → Items*
+ * Primary content in *Form → Items*
  */
 export interface FormSectionSliceDefaultItem {
   /**
-   * Input Label field in *FormSection → Items*
+   * Input Label field in *Form → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Enter the label for the input field
@@ -1513,7 +1513,7 @@ export interface FormSectionSliceDefaultItem {
   input_label: prismic.KeyTextField;
 
   /**
-   * Input Type field in *FormSection → Items*
+   * Input Type field in *Form → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: Select the type of the input field
@@ -1523,7 +1523,7 @@ export interface FormSectionSliceDefaultItem {
   input_type: prismic.SelectField<"text" | "email" | "textarea">;
 
   /**
-   * Input Name field in *FormSection → Items*
+   * Input Name field in *Form → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Enter the name attribute for the input field
@@ -1533,7 +1533,7 @@ export interface FormSectionSliceDefaultItem {
   input_name: prismic.KeyTextField;
 
   /**
-   * Is Input Required? field in *FormSection → Items*
+   * Is Input Required? field in *Form → Items*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
@@ -1545,7 +1545,7 @@ export interface FormSectionSliceDefaultItem {
 }
 
 /**
- * Default Variation variation for FormSection Slice
+ * Default Variation variation for Form Slice
  *
  * - **API ID**: `default`
  * - **Description**: The default layout of the Form slice which includes text inputs for name, email, and a message area.
@@ -1558,12 +1558,12 @@ export type FormSectionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *FormSection*
+ * Slice variation for *Form*
  */
 type FormSectionSliceVariation = FormSectionSliceDefault;
 
 /**
- * FormSection Shared Slice
+ * Form Shared Slice
  *
  * - **API ID**: `form_section`
  * - **Description**: An interactive component for agencies to contact an executive, including fields for name, email, and message, to facilitate seamless communication and streamline the agency qualification process.

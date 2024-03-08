@@ -1,7 +1,7 @@
 {
   "id": "accordion_section",
   "type": "SharedSlice",
-  "name": "AccordionSection",
+  "name": "Accordion",
   "description": "A structured component suitable for presenting more detailed and linked content, such as FAQs or review checklist criteria. The accordion format allows for organized information display, ensuring a clean and user-friendly experience.",
   "variations": [
     {
