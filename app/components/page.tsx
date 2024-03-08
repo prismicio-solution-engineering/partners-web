@@ -9,7 +9,6 @@ import {
   AuthForm,
   ArticleListComponent,
   NewsArticleListComponent,
-  PartnershipTiersComponentVertical,
 } from "@/components/generated";
 
 export default async function Page() {
@@ -20,12 +19,6 @@ export default async function Page() {
   return (
     <>
       <Header navigation={navigation} />
-
-      <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
-        Partnership Tiers
-      </h2>
-      {/* New slice */}
-      <PartnershipTiersComponentVertical />
 
       <h2 className="mt-16 mb-4 text-center text-purple-600 text-2xl font-bold leading-7 border-t-2 pt-4 sm:truncate sm:text-3xl sm:tracking-tight">
         Slides

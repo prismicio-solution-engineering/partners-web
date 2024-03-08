@@ -41,6 +41,7 @@ export function Button({
   href = "#",
   field,
   submit,
+  button,
   ...props
 }: {
   variant?: string;
@@ -50,6 +51,7 @@ export function Button({
   href?: string;
   field?: prismic.LinkField;
   submit?: boolean;
+  button?: boolean;
 }) {
   className = clsx(
     baseStyles[variant],
@@ -59,6 +61,10 @@ export function Button({
 
   if (submit) {
     return <button type="submit" className={className} {...props} />;
+  }
+
+  if (button) {
+    return <button type="button" className={className} {...props} />;
   }
 
   return field ? (

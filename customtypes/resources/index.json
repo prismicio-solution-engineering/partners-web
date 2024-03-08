@@ -1,41 +1,29 @@
 {
-  "id": "review",
-  "label": "Review",
+  "id": "resources",
+  "label": "Resources",
   "format": "page",
-  "repeatable": true,
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "config": {
-          "label": "UID"
-        },
-        "type": "UID"
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "timeline": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            },
-            "text_section": {
-              "type": "SharedSlice"
-            },
-            "check_list": {
-              "type": "SharedSlice"
-            },
-            "hero_banner": {
-              "type": "SharedSlice"
-            },
-            "accordion_section": {
+            "news_list": {
               "type": "SharedSlice"
             }
           }
+        }
+      },
+      "page_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Page title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
         }
       }
     },

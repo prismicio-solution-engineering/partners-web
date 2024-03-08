@@ -4,16 +4,26 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import Header from "@/components/Header";
+import { Content } from "@prismicio/client";
 
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
-    .getByUID("best_practice", params.uid)
+    .getByUID("article", params.uid)
     .catch(() => notFound());
 
-  return <SliceZone slices={page?.data?.slices} components={components} />;
+  const navigation =
+    await client.getSingle<Content.NavigationDocument>("navigation");
+
+  return (
+    <>
+      <Header navigation={navigation} />
+      <SliceZone slices={page?.data?.slices} components={components} />
+    </>
+  );
 }
 
 export async function generateMetadata({
@@ -23,18 +33,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const client = createClient();
   const page = await client
-    .getByUID("best_practice", params.uid)
+    .getByUID("article", params.uid)
     .catch(() => notFound());
 
   return {
-    title: page?.data?.meta_title,
-    description: page?.data?.meta_description,
+    title: page.data.meta_title,
+    description: page.data.meta_description,
   };
 }
 
 export async function generateStaticParams() {
   const client = createClient();
-  const pages = await client.getAllByType("best_practice");
+  const pages = await client.getAllByType("article");
 
   return pages.map((page) => {
     return { uid: page.uid };

@@ -4,72 +4,181 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BestPracticeDocumentDataSlicesSlice =
+type ArticleDocumentDataSlicesSlice =
+  | TimelineSlice
+  | TextSlice
+  | TestimonialsSlice
   | AccordionSectionSlice
-  | TextSectionSlice
-  | HeroBannerSlice
+  | FormSectionSlice
+  | NewsListSlice
+  | CallToActionSlice;
+
+type ArticleDocumentDataSlices2Slice =
+  | AccordionSectionSlice
+  | FormSectionSlice
+  | CallToActionSlice
+  | NewsListSlice
+  | TestimonialsSlice
+  | TimelineSlice
   | TextSlice;
 
 /**
- * Content for Best practice documents
+ * Content for Article documents
  */
-interface BestPracticeDocumentData {
+interface ArticleDocumentData {
   /**
-   * Slice Zone field in *Best practice*
+   * Category field in *Article*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField;
+
+  /**
+   * Title field in *Article*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Featured Image field in *Article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Date of publication field in *Article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.date_of_publication
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date_of_publication: prismic.DateField;
+
+  /**
+   * Featured field in *Article*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: article.featured
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  featured: prismic.BooleanField;
+
+  /**
+   * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: best_practice.slices[]
+   * - **API ID Path**: article.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BestPracticeDocumentDataSlicesSlice> /**
-   * Meta Description field in *Best practice*
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice> /**
+   * Meta Description field in *Article*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: best_practice.meta_description
+   * - **API ID Path**: article.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Best practice*
+   * Meta Image field in *Article*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: best_practice.meta_image
+   * - **API ID Path**: article.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *Best practice*
+   * Meta Title field in *Article*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: best_practice.meta_title
+   * - **API ID Path**: article.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_title: prismic.KeyTextField;
+  meta_title: prismic.KeyTextField /**
+   * Slice Zone field in *Article*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.slices2[]
+   * - **Tab**: Content
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */;
+  slices2: prismic.SliceZone<ArticleDocumentDataSlices2Slice>;
 }
 
 /**
- * Best practice document from Prismic
+ * Article document from Prismic
  *
- * - **API ID**: `best_practice`
+ * - **API ID**: `article`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BestPracticeDocument<Lang extends string = string> =
+export type ArticleDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
-    Simplify<BestPracticeDocumentData>,
-    "best_practice",
+    Simplify<ArticleDocumentData>,
+    "article",
+    Lang
+  >;
+
+/**
+ * Content for Article Category documents
+ */
+interface ArticleCategoryDocumentData {
+  /**
+   * Name field in *Article Category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_category.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+}
+
+/**
+ * Article Category document from Prismic
+ *
+ * - **API ID**: `article_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticleCategoryDocumentData>,
+    "article_category",
     Lang
   >;
 
@@ -388,55 +497,60 @@ export type PartnershipTierDocument<Lang extends string = string> =
     Lang
   >;
 
-type ReviewDocumentDataSlicesSlice =
-  | TimelineSlice
-  | TextSlice
-  | TextSectionSlice
-  | CheckListSlice
-  | HeroBannerSlice
-  | AccordionSectionSlice;
+type ResourcesDocumentDataSlicesSlice = NewsListSlice;
 
 /**
- * Content for Review documents
+ * Content for Resources documents
  */
-interface ReviewDocumentData {
+interface ResourcesDocumentData {
   /**
-   * Slice Zone field in *Review*
+   * Slice Zone field in *Resources*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: review.slices[]
+   * - **API ID Path**: resources.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ReviewDocumentDataSlicesSlice> /**
-   * Meta Description field in *Review*
+  slices: prismic.SliceZone<ResourcesDocumentDataSlicesSlice>;
+
+  /**
+   * Page title field in *Resources*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resources.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_title: prismic.TitleField /**
+   * Meta Description field in *Resources*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: review.meta_description
+   * - **API ID Path**: resources.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Review*
+   * Meta Image field in *Resources*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: review.meta_image
+   * - **API ID Path**: resources.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *Review*
+   * Meta Title field in *Resources*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: review.meta_title
+   * - **API ID Path**: resources.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -444,16 +558,20 @@ interface ReviewDocumentData {
 }
 
 /**
- * Review document from Prismic
+ * Resources document from Prismic
  *
- * - **API ID**: `review`
- * - **Repeatable**: `true`
+ * - **API ID**: `resources`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ReviewDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<ReviewDocumentData>, "review", Lang>;
+export type ResourcesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ResourcesDocumentData>,
+    "resources",
+    Lang
+  >;
 
 type ReviewsDocumentDataSlicesSlice =
   | FormSectionSlice
@@ -474,7 +592,29 @@ interface ReviewsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice> /**
+  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice>;
+
+  /**
+   * Page title field in *Reviews*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_title: prismic.TitleField;
+
+  /**
+   * Description field in *Reviews*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField /**
    * Meta Description field in *Reviews*
    *
    * - **Field Type**: Text
@@ -664,87 +804,16 @@ export type ReviewsChecklistDocument<Lang extends string = string> =
     Lang
   >;
 
-type UseCaseDocumentDataSlicesSlice =
-  | NewsListSlice
-  | TextSectionSlice
-  | AccordionSectionSlice
-  | HeroBannerSlice
-  | TextSlice
-  | FormSectionSlice;
-
-/**
- * Content for Use case documents
- */
-interface UseCaseDocumentData {
-  /**
-   * Slice Zone field in *Use case*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: use_case.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<UseCaseDocumentDataSlicesSlice> /**
-   * Meta Description field in *Use case*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: use_case.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Use case*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: use_case.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Use case*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: use_case.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
-}
-
-/**
- * Use case document from Prismic
- *
- * - **API ID**: `use_case`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type UseCaseDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<UseCaseDocumentData>,
-    "use_case",
-    Lang
-  >;
-
 export type AllDocumentTypes =
-  | BestPracticeDocument
+  | ArticleDocument
+  | ArticleCategoryDocument
   | HomeDocument
   | NavigationDocument
   | PageDocument
   | PartnershipTierDocument
-  | ReviewDocument
+  | ResourcesDocument
   | ReviewsDocument
-  | ReviewsChecklistDocument
-  | UseCaseDocument;
+  | ReviewsChecklistDocument;
 
 /**
  * Primary content in *Accordion → Primary*
@@ -2714,9 +2783,12 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      BestPracticeDocument,
-      BestPracticeDocumentData,
-      BestPracticeDocumentDataSlicesSlice,
+      ArticleDocument,
+      ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
+      ArticleDocumentDataSlices2Slice,
+      ArticleCategoryDocument,
+      ArticleCategoryDocumentData,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -2729,18 +2801,15 @@ declare module "@prismicio/client" {
       PartnershipTierDocument,
       PartnershipTierDocumentData,
       PartnershipTierDocumentDataTierFeaturesItem,
-      ReviewDocument,
-      ReviewDocumentData,
-      ReviewDocumentDataSlicesSlice,
+      ResourcesDocument,
+      ResourcesDocumentData,
+      ResourcesDocumentDataSlicesSlice,
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
       ReviewsChecklistDocument,
       ReviewsChecklistDocumentData,
       ReviewsChecklistDocumentDataCriteriaItem,
-      UseCaseDocument,
-      UseCaseDocumentData,
-      UseCaseDocumentDataSlicesSlice,
       AllDocumentTypes,
       AccordionSectionSlice,
       AccordionSectionSliceWithImagePrimary,
