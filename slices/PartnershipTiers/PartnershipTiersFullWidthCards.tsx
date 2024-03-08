@@ -50,10 +50,10 @@ const PartnershipTiersFullWidthCards = async ({
               <div
                 className={`flex-1 p-6 text-[#171717] ${idx % 2 === 0 ? "pl-12" : "pr-12"}`}
               >
-                <h3 className="text-xl font-sans font-bold mb-4">
+                <h3 className="text-xl font-sans font-bold">
                   <PrismicText field={tier.data.tier_name} />
                 </h3>
-                <p className="text-sm mb-6">
+                <p className="text-sm mb-6 text-silver-darker">
                   <PrismicText field={tier.data.tier_description} />
                 </p>
                 <ul>
