@@ -30,7 +30,10 @@ const routes: prismic.ClientConfig["routes"] = [
   },
   {
     type: "article",
-    path: "/resources/:uid",
+    resolvers: {
+      category: "category",
+    },
+    path: "/resources/:category?/:uid",
   },
   //Find how we'll name that part
   // {

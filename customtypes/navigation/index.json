@@ -5,7 +5,7 @@
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
+    "Header": {
       "logo": {
         "type": "Image",
         "config": {
@@ -13,9 +13,7 @@
           "constraint": {},
           "thumbnails": []
         }
-      }
-    },
-    "Header": {
+      },
       "slices1": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -41,6 +39,122 @@
         "config": {
           "label": "Search result page title",
           "placeholder": ""
+        }
+      }
+    },
+    "Sign in": {
+      "sign_in_title": {
+        "type": "Text",
+        "config": {
+          "label": "Sign in title",
+          "placeholder": ""
+        }
+      },
+      "email_field_label": {
+        "type": "Text",
+        "config": {
+          "label": "Email field label",
+          "placeholder": ""
+        }
+      },
+      "email_field_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Email field placeholder",
+          "placeholder": ""
+        }
+      },
+      "password_field_label": {
+        "type": "Text",
+        "config": {
+          "label": "Password field label",
+          "placeholder": ""
+        }
+      },
+      "password_field_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Password field placeholder",
+          "placeholder": ""
+        }
+      },
+      "sign_in_button_label": {
+        "type": "Text",
+        "config": {
+          "label": "Sign in button label",
+          "placeholder": ""
+        }
+      },
+      "switch_to_sign_up_text": {
+        "type": "Text",
+        "config": {
+          "label": "Switch to Sign up text",
+          "placeholder": ""
+        }
+      },
+      "non_existing_account_error_message": {
+        "type": "Text",
+        "config": {
+          "label": "Non existing account error message",
+          "placeholder": "Message if the account doesn't exist"
+        }
+      }
+    },
+    "Sign up": {
+      "sign_up_title": {
+        "type": "Text",
+        "config": {
+          "label": "Sign up title",
+          "placeholder": ""
+        }
+      },
+      "email_field_label": {
+        "type": "Text",
+        "config": {
+          "label": "Email field label",
+          "placeholder": ""
+        }
+      },
+      "email_field_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Email field placeholder",
+          "placeholder": ""
+        }
+      },
+      "password_field_label": {
+        "type": "Text",
+        "config": {
+          "label": "Password field label",
+          "placeholder": ""
+        }
+      },
+      "password_field_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Password field placeholder",
+          "placeholder": ""
+        }
+      },
+      "sign_up_button_label": {
+        "type": "Text",
+        "config": {
+          "label": "Sign up button label",
+          "placeholder": ""
+        }
+      },
+      "switch_to_sign_in_text": {
+        "type": "Text",
+        "config": {
+          "label": "Switch to Sign in text",
+          "placeholder": ""
+        }
+      },
+      "existing_account_error_message": {
+        "type": "Text",
+        "config": {
+          "label": "Existing account error message",
+          "placeholder": "Message if the account already exists"
         }
       }
     }

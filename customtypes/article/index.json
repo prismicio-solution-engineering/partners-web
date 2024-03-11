@@ -16,7 +16,8 @@
         "type": "Link",
         "config": {
           "label": "Category",
-          "select": "document"
+          "select": "document",
+          "customtypes": ["article_category"]
         }
       },
       "title": {

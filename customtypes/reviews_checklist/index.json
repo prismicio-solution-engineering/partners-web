@@ -11,21 +11,12 @@
         "config": {
           "label": "Criteria",
           "fields": {
-            "topic": {
-              "type": "Select",
+            "category": {
+              "type": "Link",
               "config": {
-                "label": "Topic",
-                "placeholder": "",
-                "options": [
-                  "Slices and types",
-                  "Queries",
-                  "Templating into React/Vue",
-                  "Routing",
-                  "Content relationship",
-                  "Assets",
-                  "Dev experience",
-                  "Editor experience"
-                ]
+                "label": "Category",
+                "select": "document",
+                "customtypes": ["review_criteria_category"]
               }
             },
             "name": {
@@ -97,6 +88,15 @@
                 "placeholder": "Helper for SE team",
                 "allowTargetBlank": true,
                 "multi": "paragraph,strong,em,hyperlink,image,embed,list-item,o-list-item,preformatted"
+              }
+            },
+            "where_to_check": {
+              "type": "Select",
+              "config": {
+                "label": "Where to check",
+                "placeholder": "",
+                "options": ["Code", "Slice Machine", "Website"],
+                "default_value": "Code"
               }
             }
           }

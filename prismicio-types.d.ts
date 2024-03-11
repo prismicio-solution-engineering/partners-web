@@ -35,7 +35,7 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  category: prismic.ContentRelationshipField;
+  category: prismic.ContentRelationshipField<"article_category">;
 
   /**
    * Title field in *Article*
@@ -264,10 +264,12 @@ interface NavigationDocumentData {
    * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: navigation.logo
-   * - **Tab**: Main
+   * - **Tab**: Header
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  logo: prismic.ImageField<never> /**
+  logo: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone
@@ -275,7 +277,7 @@ interface NavigationDocumentData {
    * - **API ID Path**: navigation.slices1[]
    * - **Tab**: Header
    * - **Documentation**: https://prismic.io/docs/field#slices
-   */;
+   */
   slices1: prismic.SliceZone<NavigationDocumentDataSlices1Slice> /**
    * Search bar placeholder field in *Navigation*
    *
@@ -296,7 +298,179 @@ interface NavigationDocumentData {
    * - **Tab**: Search
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  search_result_page_title: prismic.KeyTextField;
+  search_result_page_title: prismic.KeyTextField /**
+   * Sign in title field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_in_title
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  sign_in_title: prismic.KeyTextField;
+
+  /**
+   * Email field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_label
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_label: prismic.KeyTextField;
+
+  /**
+   * Email field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_placeholder
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Password field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_label
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_label: prismic.KeyTextField;
+
+  /**
+   * Password field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_placeholder
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Sign in button label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_in_button_label
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sign_in_button_label: prismic.KeyTextField;
+
+  /**
+   * Switch to Sign up text field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.switch_to_sign_up_text
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  switch_to_sign_up_text: prismic.KeyTextField;
+
+  /**
+   * Non existing account error message field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Message if the account doesn't exist
+   * - **API ID Path**: navigation.non_existing_account_error_message
+   * - **Tab**: Sign in
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  non_existing_account_error_message: prismic.KeyTextField /**
+   * Sign up title field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_up_title
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  sign_up_title: prismic.KeyTextField;
+
+  /**
+   * Email field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_label: prismic.KeyTextField;
+
+  /**
+   * Email field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.email_field_placeholder
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Password field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_label: prismic.KeyTextField;
+
+  /**
+   * Password field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.password_field_placeholder
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password_field_placeholder: prismic.KeyTextField;
+
+  /**
+   * Sign up button label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.sign_up_button_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sign_up_button_label: prismic.KeyTextField;
+
+  /**
+   * Switch to Sign in text field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.switch_to_sign_in_text
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  switch_to_sign_in_text: prismic.KeyTextField;
+
+  /**
+   * Existing account error message field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Message if the account already exists
+   * - **API ID Path**: navigation.existing_account_error_message
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  existing_account_error_message: prismic.KeyTextField;
 }
 
 /**
@@ -580,27 +754,44 @@ export type ResourcesDocument<Lang extends string = string> =
     Lang
   >;
 
-type ReviewsDocumentDataSlicesSlice =
-  | FormSectionSlice
-  | AccordionSectionSlice
-  | HeroBannerSlice
-  | TextSlice;
+/**
+ * Content for Review criteria category documents
+ */
+interface ReviewCriteriaCategoryDocumentData {
+  /**
+   * Category Name field in *Review criteria category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: review_criteria_category.category_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category_name: prismic.KeyTextField;
+}
+
+/**
+ * Review criteria category document from Prismic
+ *
+ * - **API ID**: `review_criteria_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReviewCriteriaCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ReviewCriteriaCategoryDocumentData>,
+    "review_criteria_category",
+    Lang
+  >;
+
+type ReviewsDocumentDataSlicesSlice = never;
 
 /**
  * Content for Reviews documents
  */
 interface ReviewsDocumentData {
-  /**
-   * Slice Zone field in *Reviews*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: reviews.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice>;
-
   /**
    * Page title field in *Reviews*
    *
@@ -621,7 +812,18 @@ interface ReviewsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.RichTextField /**
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Reviews*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice> /**
    * Meta Description field in *Reviews*
    *
    * - **Field Type**: Text
@@ -676,23 +878,14 @@ export type ReviewsDocument<Lang extends string = string> =
  */
 export interface ReviewsChecklistDocumentDataCriteriaItem {
   /**
-   * Topic field in *Reviews checklist → Criteria*
+   * Category field in *Reviews checklist → Criteria*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: reviews_checklist.criteria[].topic
-   * - **Documentation**: https://prismic.io/docs/field#select
+   * - **API ID Path**: reviews_checklist.criteria[].category
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  topic: prismic.SelectField<
-    | "Slices and types"
-    | "Queries"
-    | "Templating into React/Vue"
-    | "Routing"
-    | "Content relationship"
-    | "Assets"
-    | "Dev experience"
-    | "Editor experience"
-  >;
+  category: prismic.ContentRelationshipField<"review_criteria_category">;
 
   /**
    * Name field in *Reviews checklist → Criteria*
@@ -775,6 +968,20 @@ export interface ReviewsChecklistDocumentDataCriteriaItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   review_helper: prismic.RichTextField;
+
+  /**
+   * Where to check field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Code
+   * - **API ID Path**: reviews_checklist.criteria[].where_to_check
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  where_to_check: prismic.SelectField<
+    "Code" | "Slice Machine" | "Website",
+    "filled"
+  >;
 }
 
 /**
@@ -819,6 +1026,7 @@ export type AllDocumentTypes =
   | PageDocument
   | PartnershipTierDocument
   | ResourcesDocument
+  | ReviewCriteriaCategoryDocument
   | ReviewsDocument
   | ReviewsChecklistDocument;
 
@@ -2811,6 +3019,8 @@ declare module "@prismicio/client" {
       ResourcesDocument,
       ResourcesDocumentData,
       ResourcesDocumentDataSlicesSlice,
+      ReviewCriteriaCategoryDocument,
+      ReviewCriteriaCategoryDocumentData,
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
