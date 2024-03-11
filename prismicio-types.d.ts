@@ -35,7 +35,7 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  category: prismic.ContentRelationshipField;
+  category: prismic.ContentRelationshipField<"article_category">;
 
   /**
    * Title field in *Article*
@@ -747,27 +747,44 @@ export type ResourcesDocument<Lang extends string = string> =
     Lang
   >;
 
-type ReviewsDocumentDataSlicesSlice =
-  | FormSectionSlice
-  | AccordionSectionSlice
-  | HeroBannerSlice
-  | TextSlice;
+/**
+ * Content for Review criteria category documents
+ */
+interface ReviewCriteriaCategoryDocumentData {
+  /**
+   * Category Name field in *Review criteria category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: review_criteria_category.category_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category_name: prismic.KeyTextField;
+}
+
+/**
+ * Review criteria category document from Prismic
+ *
+ * - **API ID**: `review_criteria_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReviewCriteriaCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ReviewCriteriaCategoryDocumentData>,
+    "review_criteria_category",
+    Lang
+  >;
+
+type ReviewsDocumentDataSlicesSlice = never;
 
 /**
  * Content for Reviews documents
  */
 interface ReviewsDocumentData {
-  /**
-   * Slice Zone field in *Reviews*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: reviews.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice>;
-
   /**
    * Page title field in *Reviews*
    *
@@ -788,7 +805,18 @@ interface ReviewsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.RichTextField /**
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Reviews*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice> /**
    * Meta Description field in *Reviews*
    *
    * - **Field Type**: Text
@@ -843,23 +871,14 @@ export type ReviewsDocument<Lang extends string = string> =
  */
 export interface ReviewsChecklistDocumentDataCriteriaItem {
   /**
-   * Topic field in *Reviews checklist → Criteria*
+   * Category field in *Reviews checklist → Criteria*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: reviews_checklist.criteria[].topic
-   * - **Documentation**: https://prismic.io/docs/field#select
+   * - **API ID Path**: reviews_checklist.criteria[].category
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  topic: prismic.SelectField<
-    | "Slices and types"
-    | "Queries"
-    | "Templating into React/Vue"
-    | "Routing"
-    | "Content relationship"
-    | "Assets"
-    | "Dev experience"
-    | "Editor experience"
-  >;
+  category: prismic.ContentRelationshipField<"review_criteria_category">;
 
   /**
    * Name field in *Reviews checklist → Criteria*
@@ -942,6 +961,20 @@ export interface ReviewsChecklistDocumentDataCriteriaItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   review_helper: prismic.RichTextField;
+
+  /**
+   * Where to check field in *Reviews checklist → Criteria*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Code
+   * - **API ID Path**: reviews_checklist.criteria[].where_to_check
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  where_to_check: prismic.SelectField<
+    "Code" | "Slice Machine" | "Website",
+    "filled"
+  >;
 }
 
 /**
@@ -986,6 +1019,7 @@ export type AllDocumentTypes =
   | PageDocument
   | PartnershipTierDocument
   | ResourcesDocument
+  | ReviewCriteriaCategoryDocument
   | ReviewsDocument
   | ReviewsChecklistDocument;
 
@@ -2978,6 +3012,8 @@ declare module "@prismicio/client" {
       ResourcesDocument,
       ResourcesDocumentData,
       ResourcesDocumentDataSlicesSlice,
+      ReviewCriteriaCategoryDocument,
+      ReviewCriteriaCategoryDocumentData,
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
