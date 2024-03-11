@@ -49,7 +49,6 @@ export async function generateStaticParams() {
   const client = createClient();
   const pages = await client.getAllByType("article");
 
-  console.log(pages);
   return pages.map((page) => {
     return {
       category: page.data.category.uid,

@@ -1,5 +1,5 @@
+import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
 import { useState } from "react";
 
 const serializer = {
@@ -31,7 +31,6 @@ const AccordionTwoColumns = ({
 }: {
   slice: Content.AccordionSectionSliceTwoColumns;
 }) => {
-
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -73,7 +72,10 @@ const AccordionTwoColumns = ({
               aria-labelledby={`accordion${index}`}
               className={`py-4 px-6 mt-2 transition-height ${activeIndex === index ? "block" : "hidden"}`}
             >
-              <PrismicRichText field={item.accordion_content} components={serializer}/>
+              <PrismicRichText
+                field={item.accordion_content}
+                components={serializer}
+              />
             </div>
           </div>
         ))}

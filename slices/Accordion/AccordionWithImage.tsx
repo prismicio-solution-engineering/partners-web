@@ -1,6 +1,6 @@
+import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText } from "@prismicio/react";
 import { useState } from "react";
 
 const serializer = {
@@ -32,7 +32,6 @@ const AccordionWithImage = ({
 }: {
   slice: Content.AccordionSectionSliceWithImage;
 }) => {
-
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -50,10 +49,16 @@ const AccordionWithImage = ({
       <div className="flex flex-col w-full md:w-1/2 px-12">
         <div className="text-center md:text-left p-4">
           <span className="text-[#8E44EC] font-sans font-semibold uppercase text-sm mb-2 block">
-          {slice.primary.eyebrow}
+            {slice.primary.eyebrow}
           </span>
-          <PrismicRichText field={slice.primary.section_title} components={serializer} />
-          <PrismicRichText field={slice.primary.description} components={serializer}/>
+          <PrismicRichText
+            field={slice.primary.section_title}
+            components={serializer}
+          />
+          <PrismicRichText
+            field={slice.primary.description}
+            components={serializer}
+          />
         </div>
         <div>
           {slice.items.map((item, index) => (
@@ -81,7 +86,10 @@ const AccordionWithImage = ({
                   index === activeIndex ? "block" : "hidden"
                 } pb-4 animate-fade-in-down`}
               >
-                <PrismicRichText field={item.accordion_content} components={serializer}/>
+                <PrismicRichText
+                  field={item.accordion_content}
+                  components={serializer}
+                />
               </div>
             </div>
           ))}

@@ -14,7 +14,8 @@
           "config": {
             "label": "Content",
             "placeholder": "Type your engaging rich content here...",
-            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item,heading2,heading3,heading4,heading5,heading6"
+            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item,heading2,heading3,heading4,heading5,heading6",
+            "labels": ["inline code"]
           }
         }
       },
@@ -33,7 +34,8 @@
           "config": {
             "label": "Content",
             "placeholder": "Type your engaging rich content here...",
-            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item,heading2,heading3,heading4,heading5,heading6"
+            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item,heading2,heading3,heading4,heading5,heading6",
+            "labels": ["inline code"]
           }
         }
       },

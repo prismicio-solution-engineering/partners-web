@@ -60,7 +60,8 @@
             "label": "Accordion Content",
             "placeholder": "Type the accordion content here...",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,em,embed,image"
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,hyperlink,list-item,o-list-item,em,embed,image",
+            "labels": ["inline code"]
           }
         }
       },
