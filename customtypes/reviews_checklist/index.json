@@ -34,7 +34,7 @@
                 "label": "Comment Next",
                 "placeholder": "Comment for Next apps",
                 "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading3",
+                "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                 "labels": ["inline code"]
               }
             },
@@ -44,7 +44,7 @@
                 "label": "Comment Nuxt",
                 "placeholder": "Comment for Nuxt apps",
                 "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading3",
+                "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                 "labels": ["inline code"]
               }
             },
@@ -54,7 +54,7 @@
                 "label": "Comment Sveltkit",
                 "placeholder": "Comment for SveltKit apps",
                 "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                 "labels": ["inline code"]
               }
             },

@@ -20,7 +20,7 @@ function ChecklistItem({ item, index, toggle, active }) {
       }`}
     >
       <h3
-        className="text-[#171717] font-sans text-lg cursor-pointer flex justify-between font-bold"
+        className="text-[#171717] text-2xl font-sans cursor-pointer flex justify-between font-bold"
         onClick={() => toggle(index)}
       >
         <PrismicText field={item.name} />
