@@ -11,8 +11,11 @@ type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
+
+  // const uid = params.pagePath[params.pagePath.length - 1];
+
   const page = await client
-    .getByUID("article", params.uid)
+    .getByUID<Content.ArticleDocument>("article", params.uid)
     .catch(() => notFound());
 
   const navigation =
@@ -46,7 +49,11 @@ export async function generateStaticParams() {
   const client = createClient();
   const pages = await client.getAllByType("article");
 
+  console.log(pages);
   return pages.map((page) => {
-    return { uid: page.uid };
+    return {
+      category: page.data.category.uid,
+      uid: page.uid,
+    };
   });
 }
