@@ -11,9 +11,6 @@ type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
-
-  // const uid = params.pagePath[params.pagePath.length - 1];
-
   const page = await client
     .getByUID<Content.ArticleDocument>("article", params.uid)
     .catch(() => notFound());

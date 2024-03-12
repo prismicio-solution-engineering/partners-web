@@ -2,7 +2,6 @@ import React from 'react';
 
 const ArticleCarousel = () => {
   const articles = [
-    // Dummy articles data, would be replaced by actual data
     {
       id: 1,
       title: 'Efficiently Manage Your Projects with Prismic',
@@ -27,7 +26,6 @@ const ArticleCarousel = () => {
       readTime: '6 mins',
       imageUrl: 'https://source.unsplash.com/random/200x200?sig=3',
     },
-    // ... more articles
   ];
 
   return (

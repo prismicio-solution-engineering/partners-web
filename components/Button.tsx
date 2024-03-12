@@ -68,10 +68,8 @@ export function Button({
   }
 
   return field ? (
-    // <Link href={href} className={className} {...props} />
     <PrismicLink className={className} {...props} field={field} />
   ) : (
-    // <button className={className} {...props} />
     <PrismicLink className={className} {...props} href={href} />
   );
 }

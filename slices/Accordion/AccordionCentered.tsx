@@ -1,11 +1,10 @@
+"use client";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
-
 import { useState } from "react";
 
 const serializer = {
   heading2: ({ children }) => (
-    //   <h2 className="text-3xl font-bold font-sans text-gray-darker mb-8">
     <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-6">
       {children}
     </h2>
@@ -55,7 +54,6 @@ function AccordionItem({ item, index, toggle, active }) {
             components={serializer}
           />
         </div>
-        {/* <p className={`pt-4 ${isActive ? 'block' : 'hidden'}`}>{item.answer}</p> */}
       </div>
     </div>
   );

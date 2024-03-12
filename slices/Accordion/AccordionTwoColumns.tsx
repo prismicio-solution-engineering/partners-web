@@ -1,3 +1,4 @@
+"use client";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { useState } from "react";

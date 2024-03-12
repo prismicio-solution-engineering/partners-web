@@ -1,5 +1,3 @@
-"use client";
-import React, { useState } from "react";
 import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
 import AccordionCentered from "./AccordionCentered";

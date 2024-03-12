@@ -1,12 +1,6 @@
-import { Metadata } from "next";
-import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
-import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
-import { Container } from "@/components/Container";
 import { ReviewTable } from "@/components/ReviewTable";
 
 export default async function Page() {

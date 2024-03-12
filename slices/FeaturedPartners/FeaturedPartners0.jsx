@@ -1,7 +1,5 @@
 import React from 'react';
-// import { FaArrowRight } from 'react-icons/fa';
 
-// Mock list of partner logos with links to their pages
 const partners = [
   { name: 'Partner 1', link: '#', logo: 'https://source.unsplash.com/random/100x100?sig=1' },
   { name: 'Partner 2', link: '#', logo: 'https://source.unsplash.com/random/100x100?sig=2' },
@@ -38,7 +36,6 @@ const FeaturedPartners = () => {
       <div className="text-left inline-block">
         <button className="text-lg sm:text-xl font-semibold tracking-tighter text-white bg-[#50d71e] py-4 px-8 rounded-lg hover:bg-[#45c11a] transition duration-300 ease-in-out flex items-center">
           See all partners
-          {/* <FaArrowRight className="ml-2" /> */}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ml-2">
             <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
           </svg>

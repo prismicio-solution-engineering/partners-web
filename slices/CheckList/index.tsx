@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { Content } from "@prismicio/client";
+import { PrismicRichText } from "@/components/PrismicRichText";
 
 /**
  * Props for `Checklist`.

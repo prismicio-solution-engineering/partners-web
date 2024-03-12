@@ -4,27 +4,17 @@ import { PrismicNextLink } from "@prismicio/next";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2
-      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
-      className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
-    >
+    <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-4">
       {children}
     </h2>
   ),
   heading3: ({ children }) => (
-    <h3
-      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
-      // className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
-      className="text-xl font-sans font-bold text-gray-darker mb-4"
-    >
+    <h3 className="text-xl font-sans font-bold text-gray-darker mb-4">
       {children}
     </h3>
   ),
   paragraph: ({ children }) => (
-    <p
-      // className="mb-4 text-gray-darker font-sans text-lg"
-      className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]"
-    >
+    <p className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
       {children}
     </p>
   ),

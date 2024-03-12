@@ -2,22 +2,16 @@ import React from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@/components/PrismicRichText";
+import { Content } from "@prismicio/client";
 
 const serializer = {
   heading3: ({ children }) => (
-    <h3
-      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
-      // className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
-      className="text-xl font-sans font-bold text-gray-darker mb-4"
-    >
+    <h3 className="text-xl font-sans font-bold text-gray-darker mb-4">
       {children}
     </h3>
   ),
   paragraph: ({ children }) => (
-    <p
-      // className="mb-4 text-gray-darker font-sans text-lg"
-      className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]"
-    >
+    <p className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
       {children}
     </p>
   ),

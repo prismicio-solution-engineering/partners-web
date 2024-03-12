@@ -12,7 +12,6 @@ export type TextSectionProps = SliceComponentProps<Content.TextSectionSlice>;
  * Component for "TextSection" Slices.
  */
 const TextSection = ({ slice }: TextSectionProps): JSX.Element => {
-  // Check if the slice variation is 'twoColumn'
   const isTwoColumn = slice.variation === "twoColumn";
 
   return (

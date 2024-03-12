@@ -1,8 +1,8 @@
 import React from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText } from "@prismicio/react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText } from "@/components/PrismicRichText";
 
 /**
  * Props for `NewsList`.

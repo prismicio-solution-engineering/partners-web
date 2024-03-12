@@ -9,7 +9,10 @@ export function Container({
 }) {
   return (
     <div
-      className={clsx("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", className)}
+      className={clsx(
+        "mx-auto max-w-screen-xl mt-16 px-4 sm:px-6 lg:px-8",
+        className
+      )}
       {...props}
     />
   );

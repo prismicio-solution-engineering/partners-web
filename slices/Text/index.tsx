@@ -1,12 +1,9 @@
 import type { Content } from "@prismicio/client";
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  PrismicLink,
-  PrismicRichText,
-  SliceComponentProps,
-} from "@prismicio/react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { PrismicLink, SliceComponentProps } from "@prismicio/react";
 
-import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { dark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { PrismicRichText } from "@/components/PrismicRichText";
 
 export type TextProps = SliceComponentProps<Content.TextSlice>;
 
@@ -48,7 +45,13 @@ export default function Text({ slice }: TextProps) {
           ),
           preformatted: ({ node }) => (
             <pre className="my-3 p-2 md:p-6 bg-[#0d1117] rounded-xl shadow-lg">
-              <SyntaxHighlighter style={dark} customStyle={{backgroundColor: "#0d1117", borderColor: "#0d1117"}}>
+              <SyntaxHighlighter
+                style={dark}
+                customStyle={{
+                  backgroundColor: "#0d1117",
+                  borderColor: "#0d1117",
+                }}
+              >
                 {node.text}
               </SyntaxHighlighter>
             </pre>
@@ -71,17 +74,11 @@ export default function Text({ slice }: TextProps) {
             </ol>
           ),
           oListItem: ({ children }) => <li className="mb-4">{children}</li>,
-          // image: ({ node }) =>
-          //   node.linkTo
-          //     ? `[![${node.alt}](${node.url})](${node.linkTo.url})\n\n`
-          //     : `![${node.alt}](${node.url})\n\n`,
-          // embed: ({ node }) => `${node.oembed.html}\n\n`,
           embed: ({ node }) => (
             <div
               data-oembed={node.oembed.embed_url}
               data-oembed-type={node.oembed.type}
               data-oembed-provider={node.oembed.provider_name}
-              // {label(node)}
               dangerouslySetInnerHTML={{ __html: node.oembed.html ?? "" }}
               className={`${
                 node.oembed.type === "video" && "youtube-video"

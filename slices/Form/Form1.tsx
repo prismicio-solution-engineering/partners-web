@@ -1,10 +1,7 @@
 import React from "react";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { PaperAirplaneIcon } from "@heroicons/react/solid";
+import { PrismicRichText } from "@/components/PrismicRichText";
 
 /**
  * Props for `FormSection`.
@@ -76,8 +73,6 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
             type="submit"
             className="w-full px-[16px] py-[12px] text-white bg-primary-purple rounded-[16px] font-bold text-[18px] leading-[24px] hover:bg-secondary-purple transition-all ease-in-out duration-300"
           >
-            {/* Not using FontAwesomeIcon as icon styles/classes are from Prismic */}
-            {/* <FontAwesomeIcon icon={faPaperPlane} className="mr-[8px]" /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

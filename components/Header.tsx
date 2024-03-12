@@ -36,7 +36,6 @@ export default function Header({ navigation }: NavigationDocumentData) {
         </button>
 
         {/* Desktop Navigation */}
-        {/* <div className="hidden md:flex items-center space-x-4"> */}
         <nav
           className={`${isMobileMenuOpen ? "block md:hidden w-full" : "hidden md:flex items-center space-x-4"}`}
         >
