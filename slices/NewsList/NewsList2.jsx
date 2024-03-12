@@ -27,7 +27,7 @@ const NewsList = () => {
   return (
     <div className="bg-[#E8F8F3] p-10 md:p-20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-[#3BBB96] font-bold text-4xl md:text-[48px] leading-[52px] md:leading-[72px] tracking-[-3%] mb-16 text-center">
+        <h2 className="text-primary-green font-bold text-4xl md:text-[48px] leading-[52px] md:leading-[72px] tracking-[-3%] mb-16 text-center">
           Latest News & Updates
         </h2>
         <div className="space-y-16">
@@ -40,16 +40,16 @@ const NewsList = () => {
                 <h3 className="font-bold text-[24px] md:text-[32px] leading-[30px] md:leading-[36px] tracking-[-3%] text-[#151515] mb-4">
                   {item.title}
                 </h3>
-                <p className="text-[#505050] text-[18px] md:text-[22px] leading-[24px] md:leading-[32px] tracking-[-1%] mb-8">
+                <p className="text-gray-base text-[18px] md:text-[22px] leading-[24px] md:leading-[32px] tracking-[-1%] mb-8">
                   {item.date}
                 </p>
-                <p className="text-[#303030] text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] tracking-[-1%]">
+                <p className="text-gray-dark text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] tracking-[-1%]">
                   {item.excerpt}
                 </p>
               </div>
               <a
                 href={item.link}
-                className="mt-8 md:mt-0 bg-[#3BBB96] text-white font-medium rounded-[8px] py-3 px-8 inline-flex items-center"
+                className="mt-8 md:mt-0 bg-primary-green text-white font-medium rounded-[8px] py-3 px-8 inline-flex items-center"
               >
                 Read more
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 ml-2">

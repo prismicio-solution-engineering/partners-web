@@ -13,7 +13,7 @@ export default function ReviewLayout({
   criteria,
 }: Content.ReviewsChecklistDocumentData) {
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
       <div className="sm:hidden">
         <label htmlFor="tabs" className="sr-only">
           Select a Review

@@ -12,7 +12,7 @@ const FeaturedPartners = () => {
   ];
 
   return (
-    <div className="bg-[#FFFFFF] px-8 py-16 md:px-28">
+    <div className="bg-white px-8 py-16 md:px-28">
       <div className="max-w-6xl mx-auto">
         <h3 className="text-center font-rational text-4xl md:text-6xl font-bold text-[#151515] leading-snug mb-16">
           Featured Partners
@@ -22,7 +22,7 @@ const FeaturedPartners = () => {
             <a
               key={partner.id}
               href={partner.link}
-              className="flex justify-center items-center p-4 border border-[#EEEEEE] rounded-lg hover:shadow-lg transition-shadow"
+              className="flex justify-center items-center p-4 border border-silver-base rounded-lg hover:shadow-lg transition-shadow"
             >
               <img
                 src={partner.logo}

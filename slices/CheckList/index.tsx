@@ -26,7 +26,7 @@ const CheckList = ({ slice }: CheckListProps): JSX.Element => {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-8">
-        <div className="text-center text-[64px] font-bold leading-none text-[#8E44EC] mb-12">
+        <div className="text-center text-[64px] font-bold leading-none text-primary-purple mb-12">
           <PrismicRichText field={slice.primary.section_title} />
         </div>
         <div className="space-y-12">
@@ -40,7 +40,7 @@ const CheckList = ({ slice }: CheckListProps): JSX.Element => {
                 field={item.item_image}
               />
               <div className="md:ml-6 w-full">
-                <div className="text-[#3BBB96] font-bold text-lg leading-6 my-4">
+                <div className="text-primary-green font-bold text-lg leading-6 my-4">
                   <PrismicRichText field={item.item_title} />
                 </div>
 
@@ -52,7 +52,7 @@ const CheckList = ({ slice }: CheckListProps): JSX.Element => {
 
                 <button
                   onClick={() => toggleItemVisibility(index)}
-                  className="mt-4 px-4 py-2 bg-[#3BBB96] text-white rounded-lg cursor-pointer hover:bg-[#75DCC0] transition-colors duration-300"
+                  className="mt-4 px-4 py-2 bg-primary-green text-white rounded-lg cursor-pointer hover:bg-secondary-green transition-colors duration-300"
                 >
                   {itemsVisibility[index] ? "Hide Details" : "Show Details"}
                 </button>

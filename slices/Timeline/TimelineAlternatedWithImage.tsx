@@ -6,31 +6,31 @@ import { useState } from "react";
 const serializer = {
   heading2: ({ children }) => (
     <h2
-      // className="font-sans font-bold text-3xl text-[#171717] mb-8"
-      className="text-4xl font-sans font-bold text-[#171717] text-center mb-4"
+      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
+      className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
     >
       {children}
     </h2>
   ),
   heading3: ({ children }) => (
     <h3
-      // className="font-sans font-bold text-3xl text-[#171717] mb-8"
-      // className="text-4xl font-sans font-bold text-[#171717] text-center mb-4"
-      className="text-xl font-sans font-bold text-[#171717] mb-4"
+      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
+      // className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
+      className="text-xl font-sans font-bold text-gray-darker mb-4"
     >
       {children}
     </h3>
   ),
   paragraph: ({ children }) => (
     <p
-      // className="mb-4 text-[#171717] font-sans text-lg"
-      className="font-sans text-lg text-[#171717] max-w-2xl text-center mx-auto mb-[88px]"
+      // className="mb-4 text-gray-darker font-sans text-lg"
+      className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]"
     >
       {children}
     </p>
   ),
   preformatted: ({ node }) => (
-    <pre className="my-3 p-2 text-lg text-gray-200 bg-[#171717] border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
+    <pre className="my-3 p-2 text-lg text-gray-200 bg-gray-darker border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
       {node.text}
     </pre>
   ),
@@ -99,28 +99,30 @@ const TimelineAlternatedWithImage = ({
             className={`flex flex-col md:flex-row gap-12 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""} items-center mb-10 last:mb-0 bg-[#F5F5F5] rounded-lg p-10 md:p-16`}
           >
             <div className="md:w-2/5 px-4 mb-8 md:mb-0">
-              <span className="font-sans font-bold text-[#8E44EC] text-xl mb-[24px] block">
+              <span className="font-sans font-bold text-primary-purple text-xl mb-[24px] block">
                 {item.step_number}
               </span>
-              <PrismicRichText field={item.step_title} components={serializer} />
+              <PrismicRichText
+                field={item.step_title}
+                components={serializer}
+              />
               <PrismicRichText
                 field={item.step_description}
                 components={{
-                  paragraph: ({children}) => {
-                    <p className='text-left'>{children}</p>
-
-                  }
+                  paragraph: ({ children }) => {
+                    <p className="text-left">{children}</p>;
+                  },
                 }}
               />
               <PrismicNextLink
                 field={item.read_more_link}
-                className="text-[#171717] font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4 mt-4 transition-all duration-300 ease-in-out"
+                className="text-gray-darker font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4 mt-4 transition-all duration-300 ease-in-out"
               >
                 {item.link_label}
               </PrismicNextLink>
             </div>
             <div className="md:w-3/5 px-12">
-              <div className="bg-[#F5E6FF] border-2 border-[#171717] p-9 rounded-lg">
+              <div className="bg-quaternary-purple border-2 border-gray-darker p-9 rounded-lg">
                 <PrismicNextImage
                   field={item.milestone_image}
                   className="w-full h-80 rounded-lg object-cover"

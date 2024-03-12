@@ -17,21 +17,19 @@ function ChecklistItem({ item }) {
 
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden">
-      <div className="flex justify-between items-center p-8 bg-[#F7F7F7]">
+      <div className="flex justify-between items-center p-8 bg-silver-light">
         <h3 className="text-[64px] leading-[72px] font-bold tracking-[calc(-3%)] text-gray-900 lg:text-[48px] lg:leading-[52px]">
           {item.title}
         </h3>
         <Switch
           checked={showDetails}
           onChange={setShowDetails}
-          className={`${
-            showDetails ? 'bg-blue-600' : 'bg-gray-200'
-          } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none`}
+          className={`${showDetails ? 'bg-blue-600' : 'bg-gray-200'
+            } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none`}
         >
           <span
-            className={`${
-              showDetails ? 'translate-x-6' : 'translate-x-1'
-            } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
+            className={`${showDetails ? 'translate-x-6' : 'translate-x-1'
+              } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
           />
         </Switch>
       </div>
@@ -55,7 +53,7 @@ function ChecklistItem({ item }) {
 
 export default function ChecklistSection() {
   return (
-    <section className="py-[160px] px-[84px] bg-[#E6F7FE] lg:py-[128px] lg:px-[24px]">
+    <section className="py-[160px] px-[84px] bg-quaternary-blue lg:py-[128px] lg:px-[24px]">
       <div className="max-w-[1440px] mx-auto">
         <h2 className="text-[48px] leading-[52px] font-bold tracking-[calc(-3%)] text-center text-gray-900 mb-[64px] lg:text-[32px] lg:leading-[36px]">
           Certification Checklist

@@ -4,7 +4,7 @@ import { PrismicNextImage } from "@prismicio/next";
 
 const serializer = {
   paragraph: ({ children }) => (
-    <blockquote className="italic text-xl text-[#171717]">
+    <blockquote className="italic text-xl text-gray-darker">
       {children}
     </blockquote>
   ),
@@ -17,7 +17,7 @@ const TestimonialsSingle = async ({
 }) => {
   return (
     <>
-      <div className="bg-[#F7F7F7] shadow rounded-lg p-8 md:p-12 max-w-screen-xl mx-auto my-16">
+      <div className="bg-silver-light shadow rounded-lg p-8 md:p-12 max-w-screen-xl mx-auto my-16">
         <div className="flex justify-start mb-4">
           <PrismicNextImage
             className="h-12 object-contain"
@@ -51,10 +51,10 @@ const TestimonialsSingle = async ({
             />
           </div>
           <div className="flex-grow">
-            <div className="text-lg font-sans font-bold text-[#171717]">
+            <div className="text-lg font-sans font-bold text-gray-darker">
               {slice.primary.author_name}
             </div>
-            <p className="text-sm font-sans text-[#8E44EC]">
+            <p className="text-sm font-sans text-primary-purple">
               {slice.primary.author_role} - {slice.primary.author_company}
             </p>
           </div>

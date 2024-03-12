@@ -6,14 +6,14 @@ const TextSection = () => {
   return (
     <section className="p-8 bg-[#E8F8F3]">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold leading-snug text-center text-[#59B5F8] lg:text-6xl mb-8">
+        <h2 className="text-4xl font-bold leading-snug text-center text-primary-blue lg:text-6xl mb-8">
           Engaging Rich Content
         </h2>
         <div className="prose prose-lg text-[#151515]">
           <p className="text-lg font-medium mb-6 leading-relaxed">
             Prismic is a content management system that empowers teams to build web experiences that just keep getting better. With support for rich text and all modern web formats, Prismic ensures your content is as dynamic as your vision.
           </p>
-          <h3 className="text-2xl font-medium mb-4 text-[#ED6B22] lg:text-3xl">
+          <h3 className="text-2xl font-medium mb-4 text-primary-orange lg:text-3xl">
             Start with Bullet Points
           </h3>
           <ul className="list-disc pl-5 mb-6 space-y-2">
@@ -21,7 +21,7 @@ const TextSection = () => {
             <li>Versatile Integration</li>
             <li>Scalable Architecture</li>
           </ul>
-          <h3 className="text-2xl font-medium mb-4 text-[#ED6B22] lg:text-3xl">
+          <h3 className="text-2xl font-medium mb-4 text-primary-orange lg:text-3xl">
             Numbering is Key
           </h3>
           <ol className="list-decimal pl-5 mb-6 space-y-2">
@@ -29,10 +29,10 @@ const TextSection = () => {
             <li>Design with flexibility</li>
             <li>Deliver outstanding experiences</li>
           </ol>
-          <h4 className="text-xl font-medium mb-4 text-[#8E44EC] lg:text-2xl">
+          <h4 className="text-xl font-medium mb-4 text-primary-purple lg:text-2xl">
             Highlight with Headings
           </h4>
-          <h5 className="text-lg font-medium mb-4 text-[#3BBB96] lg:text-xl">
+          <h5 className="text-lg font-medium mb-4 text-primary-green lg:text-xl">
             Medium Subheading
           </h5>
           <p className="mb-6 font-medium italic">

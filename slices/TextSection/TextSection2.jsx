@@ -5,12 +5,12 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const TextSection = () => {
   return (
-    <div className="flex flex-col items-center px-[84px] py-[96px] bg-white min-h-screen text-[#1F1F1F]">
+    <div className="flex flex-col items-center px-[84px] py-[96px] bg-white min-h-screen text-gray-darker">
       {/* Content Container */}
       <div className="w-full max-w-screen-xl">
         {/* Rich Text Section */}
         <div className="prose prose-xl text-left">
-          <h2 className="font-bold text-[48px] leading-[52px] text-[#8E44EC] mb-8">
+          <h2 className="font-bold text-[48px] leading-[52px] text-primary-purple mb-8">
             Building for the future
           </h2>
           <p className="text-[22px] leading-[32px] mb-8">
@@ -23,7 +23,7 @@ const TextSection = () => {
           <p className="text-[18px] leading-[28px] mb-8">
             Our approach combines a sleek design with an intuitive interface to ensure a frictionless user experience.
           </p>
-      
+
           <h4 className="text-[24px] leading-[30px] mt-8 mb-4">
             Key Features
           </h4>
@@ -39,20 +39,20 @@ const TextSection = () => {
           <ol className="list-decimal pl-5 space-y-2 mb-8">
             <li className="text-[18px] leading-[28px]">API-First Approach</li>
             <li className="text-[18px] leading-[28px]">Framework Agnostic</li>
-          </ol>          
+          </ol>
 
           <p className="text-[18px] leading-[28px] mb-8 italic">
             Delivering content-rich websites has never been so straightforward.
-          </p>      
+          </p>
 
-          <a href="#more-info" className="text-[18px] leading-[28px] text-[#59B5F8] underline mb-16">
+          <a href="#more-info" className="text-[18px] leading-[28px] text-primary-blue underline mb-16">
             Learn more about our approach
           </a>
         </div>
 
         {/* Dropdown */}
         <div className="relative w-full mb-8">
-          <select className="block w-full appearance-none bg-white border border-[#EEEEEE] text-[#151515] py-4 px-6 rounded-[8px] leading-tight focus:outline-none focus:ring-2 focus:ring-[#B382F2] focus:border-transparent" id="grid-state">
+          <select className="block w-full appearance-none bg-white border border-silver-base text-[#151515] py-4 px-6 rounded-[8px] leading-tight focus:outline-none focus:ring-2 focus:ring-secondary-purple focus:border-transparent" id="grid-state">
             <option>Choose an option</option>
             <option>Option One</option>
             <option>Option Two</option>
@@ -63,10 +63,10 @@ const TextSection = () => {
 
         {/* Buttons */}
         <div className="flex space-x-4">
-          <button className="bg-[#8E44EC] text-white font-bold py-4 px-8 rounded-[8px] hover:bg-[#B382F2] transition-colors duration-200">
+          <button className="bg-primary-purple text-white font-bold py-4 px-8 rounded-[8px] hover:bg-secondary-purple transition-colors duration-200">
             Get Started
           </button>
-          <button className="bg-[#EEEEEE] text-[#1F1F1F] font-bold py-4 px-8 rounded-[8px] hover:bg-[#F7F7F7] transition-colors duration-200">
+          <button className="bg-silver-base text-gray-darker font-bold py-4 px-8 rounded-[8px] hover:bg-silver-light transition-colors duration-200">
             Contact Sales
           </button>
         </div>

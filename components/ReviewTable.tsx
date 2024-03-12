@@ -7,7 +7,9 @@ import ReviewForm from "./ReviewForm";
 
 export function ReviewTable({ criteria }: ReviewsChecklistDocumentData) {
   const [summaryComments, setSummaryComments] = useState([]);
-  const [formData, setFormData] = useState({ /* initial form data */ });
+  const [formData, setFormData] = useState({
+    /* initial form data */
+  });
 
   const handleSelectChange = (e, item, idx) => {
     const status = e.target.value;
@@ -22,9 +24,9 @@ export function ReviewTable({ criteria }: ReviewsChecklistDocumentData) {
 
   const handleFormUpdate = (updatedFormData) => {
     setFormData(updatedFormData);
-    console.log(formData)
+    console.log(formData);
     // You can also update summaryComments or other state based on the form data
-};
+  };
 
   return (
     <>

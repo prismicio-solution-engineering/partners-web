@@ -30,7 +30,7 @@ const PartnershipTiersHorizontal = async ({
   );
 
   return (
-    <div className="flex flex-col items-center pt-16 pb-16 my-8 bg-[#ffffff] mt-16 max-w-screen-xl mx-auto px-8">
+    <div className="flex flex-col items-center pt-16 pb-16 my-8 bg-white mt-16 max-w-screen-xl mx-auto px-8">
       <PrismicRichText field={slice.primary.title} />
       <PrismicRichText field={slice.primary.description} />
       <div className="w-full max-w-screen-xl mx-auto">
@@ -41,7 +41,7 @@ const PartnershipTiersHorizontal = async ({
               className={`flex-shrink-0 w-full md:w-1/3 p-6 rounded-lg overflow-hidden ${tier.data.is_featured_tier && "bg-[#E8F8F3]"} shadow-lg `}
               style={{ maxWidth: "360px" }}
             >
-              <div className="flex flex-col items-start text-[#171717]">
+              <div className="flex flex-col items-start text-gray-darker">
                 <h3 className="text-xl font-sans font-bold">
                   <PrismicText field={tier.data.tier_name} />
                 </h3>

@@ -4,12 +4,12 @@ import { PrismicNextImage } from "@prismicio/next";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2 className="text-4xl font-sans font-bold text-[#171717] mb-6">
+    <h2 className="text-4xl font-sans font-bold text-gray-darker mb-6">
       {children}
     </h2>
   ),
   paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-[#171717] mb-8">{children}</p>
+    <p className="font-sans text-lg text-gray-darker mb-8">{children}</p>
   ),
 };
 
@@ -19,7 +19,7 @@ const FeatureWithImage = ({
   slice: Content.FeaturesSliceWithImage;
 }) => {
   return (
-    <div className="bg-[#ffffff] px-4 sm:px-6 lg:px-8 py-16">
+    <div className="bg-white px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-16">
         {slice.primary.image_side === false && (
           <div className="md:w-1/2">
@@ -30,7 +30,7 @@ const FeatureWithImage = ({
           </div>
         )}
         <div className="md:w-1/2">
-          <div className="max-w-fit text-center font-sans font-semibold text-sm uppercase text-[#171717] rounded-lg bg-[#E8F8F3] px-3 py-1 mb-4">
+          <div className="max-w-fit text-center font-sans font-semibold text-sm uppercase text-gray-darker rounded-lg bg-[#E8F8F3] px-3 py-1 mb-4">
             {slice.primary.eyebrow}
           </div>
           <PrismicRichText

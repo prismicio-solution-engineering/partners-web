@@ -30,7 +30,7 @@ const PartnershipTiersFullWidthCards = async ({
 
   return (
     <>
-      <div className="flex flex-col items-center pt-16 pb-16 my-16 bg-[#ffffff]">
+      <div className="flex flex-col items-center pt-16 pb-16 my-16 bg-white">
         <PrismicRichText field={slice.primary.title} />
         <PrismicRichText field={slice.primary.description} />
         <div className="w-full max-w-screen-xl mx-auto">
@@ -40,7 +40,7 @@ const PartnershipTiersFullWidthCards = async ({
               className={`flex ${idx % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center mb-10 gap-12 p-10 md:p-16 last:mb-0 rounded-lg overflow-hidden ${tier.data.is_featured_tier && "bg-[#E8F8F3]"} shadow-lg`}
             >
               <div className="md:w-3/5 px-12">
-                <div className="bg-[#ffffff] border-2 border-[#171717] p-9 rounded-lg">
+                <div className="bg-white border-2 border-gray-darker p-9 rounded-lg">
                   <PrismicNextImage
                     className="w-full h-80 rounded-lg object-cover"
                     field={tier.data.tier_image}
@@ -48,7 +48,7 @@ const PartnershipTiersFullWidthCards = async ({
                 </div>
               </div>
               <div
-                className={`flex-1 p-6 text-[#171717] ${idx % 2 === 0 ? "pl-12" : "pr-12"}`}
+                className={`flex-1 p-6 text-gray-darker ${idx % 2 === 0 ? "pl-12" : "pr-12"}`}
               >
                 <h3 className="text-xl font-sans font-bold">
                   <PrismicText field={tier.data.tier_name} />

@@ -5,9 +5,7 @@ import { PrismicNextImage } from "@prismicio/next";
 
 const serializer = {
   paragraph: ({ children }) => (
-    <p className="text-[#171717] text-center lg:text-left mb-8">
-      {children}
-    </p>
+    <p className="text-gray-darker text-center lg:text-left mb-8">{children}</p>
   ),
 };
 
@@ -22,7 +20,10 @@ const HeroWithImage = ({
         <div className="flex flex-wrap items-center -mx-4 px-4">
           <div className="w-full lg:w-1/2 px-4">
             <PrismicRichText field={slice.primary.title} />
-            <PrismicRichText field={slice.primary.description} components={serializer}/>
+            <PrismicRichText
+              field={slice.primary.description}
+              components={serializer}
+            />
             <div className="text-center lg:text-left">
               <Button
                 field={slice.primary.button_link}

@@ -51,7 +51,7 @@ const NewsList = () => {
                 <h2 className="text-[32px] md:text-[24px] leading-[36px] md:leading-[30px] font-medium text-[#151515] tracking-[-0.03em]">
                   {newsItem.title}
                 </h2>
-                <p className="text-[18px] md:text-[16px] leading-[28px] md:leading-[24px] text-[#303030] tracking-[-0.01em] mt-4">
+                <p className="text-[18px] md:text-[16px] leading-[28px] md:leading-[24px] text-gray-dark tracking-[-0.01em] mt-4">
                   {newsItem.date}
                 </p>
               </div>

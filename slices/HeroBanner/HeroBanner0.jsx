@@ -2,15 +2,15 @@ import React from 'react';
 import { PhotographIcon } from '@heroicons/react/solid';
 
 const HeroBanner = () => (
-  <div className="relative bg-[#E6F7FE] px-8 pt-[88px] pb-[160px] flex flex-col items-center justify-center text-center overflow-hidden">
+  <div className="relative bg-quaternary-blue px-8 pt-[88px] pb-[160px] flex flex-col items-center justify-center text-center overflow-hidden">
     <div className="max-w-screen-xl mx-auto">
       <h1 className="text-[64px] leading-[72px] font-bold text-[#151515] tracking-[-0.03em] sm:text-[48px] sm:leading-[52px]">
         Lightning Fast Website Building
       </h1>
-      <p className="mt-8 text-[28px] leading-[42px] font-medium text-[#303030] tracking-[-0.01em] sm:text-[24px] sm:leading-[36px]">
+      <p className="mt-8 text-[28px] leading-[42px] font-medium text-gray-dark tracking-[-0.01em] sm:text-[24px] sm:leading-[36px]">
         Create responsive websites with ease, without compromise on speed or aesthetics.
       </p>
-      <button className="mt-12 inline-flex items-center justify-center px-[64px] py-[16px] text-[#FFFFFF] bg-[#59B5F8] rounded-lg text-[18px] leading-[24px] font-bold tracking-[-0.01em] hover:bg-[#87D9FD] focus:outline-none focus:ring-2 focus:ring-[#8E44EC] focus:ring-opacity-50 transition-all">
+      <button className="mt-12 inline-flex items-center justify-center px-[64px] py-[16px] text-white bg-primary-blue rounded-lg text-[18px] leading-[24px] font-bold tracking-[-0.01em] hover:bg-secondary-blue focus:outline-none focus:ring-2 focus:ring-primary-purple focus:ring-opacity-50 transition-all">
         Get Started
         <PhotographIcon className="ml-3 h-5 w-5" aria-hidden="true" />
       </button>

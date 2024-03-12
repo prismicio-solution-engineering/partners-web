@@ -5,15 +5,15 @@ import FeatureDefault from "./FeatureDefault";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2 className="text-left font-sans text-4xl font-bold text-[#171717]">
+    <h2 className="text-left font-sans text-4xl font-bold text-gray-darker">
       {children}
     </h2>
   ),
   paragraph: ({ children }) => (
-    <p className="mb-4 text-[#171717] font-sans text-lg">{children}</p>
+    <p className="mb-4 text-gray-darker font-sans text-lg">{children}</p>
   ),
   preformatted: ({ node }) => (
-    <pre className="my-3 p-2 text-lg text-gray-200 bg-[#171717] border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
+    <pre className="my-3 p-2 text-lg text-gray-200 bg-gray-darker border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
       {node.text}
     </pre>
   ),

@@ -10,7 +10,7 @@ const FeaturedPartners = () => {
   ];
 
   return (
-    <section className="bg-[#EEEEEE]">
+    <section className="bg-silver-base">
       <div className="max-w-screen-xl mx-auto py-12 px-6 sm:px-8 lg:py-24">
         <h2 className="text-center text-[48px] leading-[52px] md:text-[64px] md:leading-[72px] font-bold tracking-[-0.03em] text-[#151515] mb-12">
           Featured Partners
@@ -25,7 +25,7 @@ const FeaturedPartners = () => {
                     src={partner.logo}
                     alt={`Logo of ${partner.name}`}
                     className="max-h-full max-w-full"
-                    style={{objectFit: "contain"}}
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               </a>

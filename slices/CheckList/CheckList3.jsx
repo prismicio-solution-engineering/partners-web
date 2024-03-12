@@ -6,13 +6,13 @@ import { faCheckCircle, faToggleOn, faToggleOff } from '@fortawesome/free-solid-
 const ChecklistItem = ({ id, title, description, onToggle, showDetails }) => (
   <div className="flex flex-col my-8">
     <div className="flex items-center justify-between">
-      <h3 className="text-[#8E44EC] font-medium text-h3-desktop md:text-h3-mobile leading-tight">
+      <h3 className="text-primary-purple font-medium text-h3-desktop md:text-h3-mobile leading-tight">
         {title}
       </h3>
       <button onClick={() => onToggle(id)} aria-label="Toggle Details">
         <FontAwesomeIcon
           icon={showDetails ? faToggleOn : faToggleOff}
-          className="text-3xl text-[#8E44EC]"
+          className="text-3xl text-primary-purple"
         />
       </button>
     </div>

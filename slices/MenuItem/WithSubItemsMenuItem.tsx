@@ -31,7 +31,7 @@ const WithSubItemsMenuItem = ({
         <div className="relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center justify-between w-full text-[#151515] hover:text-[#59B5F8] py-2"
+            className="flex items-center justify-between w-full text-[#151515] hover:text-primary-blue py-2"
           >
             {slice.primary.label}
             <ChevronDownIcon
@@ -57,7 +57,7 @@ const WithSubItemsMenuItem = ({
             onMouseOver={() => setIsMobileMenuOpen(true)}
             onMouseLeave={() => setIsMobileMenuOpen(false)}
           >
-            <Menu.Button className="text-[#151515] hover:text-[#59B5F8] flex items-center">
+            <Menu.Button className="text-[#151515] hover:text-primary-blue flex items-center">
               {slice.primary.label}
               <ChevronDownIcon className="ml-2 h-5 w-5" aria-hidden="true" />
             </Menu.Button>

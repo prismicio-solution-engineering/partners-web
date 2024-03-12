@@ -19,7 +19,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative bg-[#F5E6FF] py-[64px] flex justify-center"
+      className="relative bg-quaternary-purple py-[64px] flex justify-center"
     >
       <div className="w-full max-w-[1440px] px-[84px] space-y-[48px]">
         <div className="text-center">
@@ -27,7 +27,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
             field={slice.primary.section_title}
             components={{
               heading1: ({ children }) => (
-                <h1 className="font-bold text-[64px] leading-[72px] tracking-[-0.03em] text-[#8E44EC] mb-[24px]">
+                <h1 className="font-bold text-[64px] leading-[72px] tracking-[-0.03em] text-primary-purple mb-[24px]">
                   {children}
                 </h1>
               ),
@@ -57,7 +57,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
                 <textarea
                   id={item.input_name}
                   name={item.input_name}
-                  className="w-full px-[16px] py-[12px] text-[18px] leading-[28px] border-2 border-[#8E44EC] rounded-[8px] focus:outline-none focus:border-[#3BBB96]"
+                  className="w-full px-[16px] py-[12px] text-[18px] leading-[28px] border-2 border-primary-purple rounded-[8px] focus:outline-none focus:border-primary-green"
                   rows="5"
                   required={item.input_required}
                 />
@@ -66,7 +66,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
                   type={item.input_type}
                   id={item.input_name}
                   name={item.input_name}
-                  className="w-full px-[16px] py-[12px] text-[18px] leading-[28px] border-2 border-[#8E44EC] rounded-[8px] focus:outline-none focus:border-[#3BBB96]"
+                  className="w-full px-[16px] py-[12px] text-[18px] leading-[28px] border-2 border-primary-purple rounded-[8px] focus:outline-none focus:border-primary-green"
                   required={item.input_required}
                 />
               )}
@@ -74,7 +74,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
           ))}
           <button
             type="submit"
-            className="w-full px-[16px] py-[12px] text-white bg-[#8E44EC] rounded-[16px] font-bold text-[18px] leading-[24px] hover:bg-[#B382F2] transition-all ease-in-out duration-300"
+            className="w-full px-[16px] py-[12px] text-white bg-primary-purple rounded-[16px] font-bold text-[18px] leading-[24px] hover:bg-secondary-purple transition-all ease-in-out duration-300"
           >
             {/* Not using FontAwesomeIcon as icon styles/classes are from Prismic */}
             {/* <FontAwesomeIcon icon={faPaperPlane} className="mr-[8px]" /> */}

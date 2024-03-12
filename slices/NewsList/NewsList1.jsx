@@ -1,9 +1,9 @@
 import React from 'react';
 
 const NewsList = () => (
-  <div className="py-[80px] px-[24px] md:px-[84px] bg-[#F5E6FF]">
+  <div className="py-[80px] px-[24px] md:px-[84px] bg-quaternary-purple">
     <h2
-      className="text-[64px] md:text-[48px] leading-[72px] md:leading-[52px] font-bold text-[#8E44EC] tracking-[normal] text-center mb-[64px]"
+      className="text-[64px] md:text-[48px] leading-[72px] md:leading-[52px] font-bold text-primary-purple tracking-[normal] text-center mb-[64px]"
       style={{
         letterSpacing: '-0.03em',
       }}
@@ -12,12 +12,12 @@ const NewsList = () => (
     </h2>
     <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[40px] gap-y-[48px]">
       {[...Array(6)].map((_, index) => (
-        <a 
-          key={index} 
-          href="#!" 
-          className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8E44EC] rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+        <a
+          key={index}
+          href="#!"
+          className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-purple rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
         >
-          <div className="aspect-w-4 aspect-h-3 bg-[#8E44EC]">
+          <div className="aspect-w-4 aspect-h-3 bg-primary-purple">
             <img
               src={`https://source.unsplash.com/random/400x300?sig=${index}`}
               alt={`News ${index + 1}`}
@@ -34,7 +34,7 @@ const NewsList = () => (
               Prismic Release {index + 1}
             </h3>
             <p
-              className="font-medium text-[18px] md:text-[16px] leading-[28px] md:leading-[24px] text-[#1F1F1F] mb-[32px]"
+              className="font-medium text-[18px] md:text-[16px] leading-[28px] md:leading-[24px] text-gray-darker mb-[32px]"
               style={{
                 letterSpacing: '-0.01em',
               }}
@@ -43,7 +43,7 @@ const NewsList = () => (
             </p>
             <div className="text-left">
               <button
-                className="text-white bg-[#8E44EC] hover:bg-[#B382F2] focus:outline-none focus:ring focus:ring-[#8E44EC] rounded-[8px] px-[24px] py-[12px] transition-colors duration-300"
+                className="text-white bg-primary-purple hover:bg-secondary-purple focus:outline-none focus:ring focus:ring-primary-purple rounded-[8px] px-[24px] py-[12px] transition-colors duration-300"
               >
                 Read more
               </button>

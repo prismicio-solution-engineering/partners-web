@@ -4,7 +4,7 @@ import type { Content } from "@prismicio/client";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2 className="text-left text-4xl font-sans font-bold text-[#171717] mb-6">
+    <h2 className="text-left text-4xl font-sans font-bold text-gray-darker mb-6">
       {children}
     </h2>
   ),

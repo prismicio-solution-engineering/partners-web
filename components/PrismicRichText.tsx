@@ -9,29 +9,22 @@ import type * as prismic from "@prismicio/client";
 
 const defaultComponents: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <h1 className="text-black text-center lg:text-left text-4xl lg:text-5xl font-sans font-bold mb-6">
+    <h1 className="text-gray-darker text-center lg:text-left text-4xl lg:text-5xl font-sans font-bold mb-6">
       {children}
     </h1>
   ),
   heading2: ({ children }) => (
-    <h2
-      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
-      className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
-    >
+    <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-4">
       {children}
     </h2>
   ),
   heading3: ({ children }) => (
-    <h3
-      // className="font-sans font-bold text-3xl text-gray-darker mb-8"
-      // className="text-4xl font-sans font-bold text-gray-darker text-center mb-4"
-      className="text-3xl font-sans font-bold text-gray-darker mb-4"
-    >
+    <h3 className="text-3xl font-sans font-bold text-gray-darker mb-4">
       {children}
     </h3>
   ),
   heading4: ({ children }) => (
-    <h4 className="text-2xl font-sans font-bold text-gray-base mb-4">
+    <h4 className="text-2xl font-sans font-bold text-gray-darker mb-4">
       {children}
     </h4>
   ),
@@ -41,32 +34,29 @@ const defaultComponents: JSXMapSerializer = {
     </h5>
   ),
   heading6: ({ children }) => (
-    <h6 className="text-xl font-sans font-bold text-gray-darker mb-4">
+    <h6 className="text-xl font-sans font-bold text-gray-base mb-4">
       {children}
     </h6>
   ),
   paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-4">
+    <p className="font-sans text-lg text-gray-base max-w-2xl text-center mx-auto mb-4">
       {children}
     </p>
   ),
   preformatted: ({ children }) => (
-    <pre
-      // className="mb-7 rounded bg-slate-100 p-4 text-sm last:mb-0 md:p-8 md:text-lg"
-      className="mt-3 mb-7 p-4 text-lg text-gray-200 bg-gray-darker border-gray-dark rounded-lg shadow-lg whitespace-break-spaces"
-    >
+    <pre className="mt-3 mb-7 p-4 text-sm text-silver-light bg-gray-dark border-gray-darker rounded-lg shadow-lg whitespace-break-spaces">
       <code>{children}</code>
     </pre>
   ),
   strong: ({ children }) => <strong>{children}</strong>,
   em: ({ children }) => <em>{children}</em>,
   listItem: ({ children }) => (
-    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2 text-lg list-inside text-gray-darker">
+    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2 text-lg list-inside text-gray-base">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="mb-1 list-decimal pl-1 last:mb-0 md:pl-2 text-lg list-inside text-gray-darker">
+    <li className="mb-1 list-decimal pl-1 last:mb-0 md:pl-2 text-lg list-inside text-gray-base">
       {children}
     </li>
   ),
@@ -79,7 +69,7 @@ const defaultComponents: JSXMapSerializer = {
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className="text-primary-blue font-sans font-semibold text-base underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+      className="text-primary-blue font-sans font-medium text-base underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
     >
       {children}
     </PrismicNextLink>

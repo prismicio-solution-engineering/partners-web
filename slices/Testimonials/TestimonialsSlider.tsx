@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const serializer = {
   paragraph: ({ children }) => (
-    <blockquote className="text-xl font-sans text-[#171717] italic mb-8">
+    <blockquote className="text-xl font-sans text-gray-darker italic mb-8">
       {children}
     </blockquote>
   ),
@@ -21,7 +21,6 @@ const TestimonialsSlider = async ({
 }: {
   slice: Content.TestimonialsSliceSlider;
 }) => {
-
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const nextTestimonial = () => {
@@ -41,7 +40,7 @@ const TestimonialsSlider = async ({
       <div className="text-center mb-12">
         <PrismicRichText field={slice.primary.title} />
       </div>
-      <div className="overflow-hidden relative bg-[#F7F7F7] py-20 mx-auto max-w-screen-xl px-8 rounded-lg shadow-sm">
+      <div className="overflow-hidden relative bg-silver-light py-20 mx-auto max-w-screen-xl px-8 rounded-lg shadow-sm">
         <div
           className="whitespace-nowrap transition-transform duration-500"
           style={{
@@ -62,10 +61,10 @@ const TestimonialsSlider = async ({
                   height={80}
                 />
                 <div className="text-left">
-                  <p className="text-lg font-sans font-bold text-[#171717]">
+                  <p className="text-lg font-sans font-bold text-gray-darker">
                     {item.author_name}
                   </p>
-                  <p className="text-[#171717]">
+                  <p className="text-gray-darker">
                     {item.author_role} - {item.author_company}
                   </p>
                 </div>

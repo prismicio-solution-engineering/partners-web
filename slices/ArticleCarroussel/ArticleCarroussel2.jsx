@@ -40,10 +40,10 @@ const ArticleCard = ({ article }) => {
 
 const ArticleCarousel = () => {
   return (
-    <div className="px-6 py-8 bg-[#F5E6FF]">
+    <div className="px-6 py-8 bg-quaternary-purple">
       <div className="container mx-auto">
         <div className="flex justify-center">
-          <h2 className="text-5xl lg:text-6xl font-bold text-[#8E44EC] leading-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold text-primary-purple leading-tight">
             Latest Articles
           </h2>
         </div>

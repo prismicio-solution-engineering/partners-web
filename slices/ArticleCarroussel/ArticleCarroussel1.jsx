@@ -31,26 +31,26 @@ const ArticleCarousel = () => {
   ];
 
   return (
-    <div className="bg-[#FFFFFF] py-16">
+    <div className="bg-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-[64px] leading-[72px] text-[#151515] font-bold text-center mb-10">
           Latest Articles
         </h2>
         <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2">
           {articles.map((article) => (
-            <div key={article.id} className="bg-[#F7F7F7] rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
+            <div key={article.id} className="bg-silver-light rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
               <img
                 className="w-full h-48 object-cover"
                 src={article.imageUrl}
                 alt={article.title}
               />
               <div className="px-6 py-4">
-                <h3 className="text-[#8E44EC] font-semibold mb-2">{article.category}</h3>
+                <h3 className="text-primary-purple font-semibold mb-2">{article.category}</h3>
                 <h4 className="text-[24px] leading-[30px] text-[#151515] mb-2">
                   {article.title}
                 </h4>
                 <div className="flex justify-between items-center mt-4">
-                  <p className="text-[#505050]">
+                  <p className="text-gray-base">
                     <span className="font-bold">{article.author}</span> - {article.readTime} read
                   </p>
                 </div>

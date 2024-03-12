@@ -33,10 +33,10 @@ const articles = [
 
 const ArticleCarousel = () => {
   return (
-    <div className="bg-[#F5E6FF] px-[84px] py-[64px]">
+    <div className="bg-quaternary-purple px-[84px] py-[64px]">
       <div className="flex overflow-hidden justify-between">
         <button className="self-center">
-          <FontAwesomeIcon icon={faChevronLeft} size="2x" className="text-[#8E44EC]" />
+          <FontAwesomeIcon icon={faChevronLeft} size="2x" className="text-primary-purple" />
         </button>
         <div className="flex space-x-[48px]">
           {articles.map((article, index) => (
@@ -47,7 +47,7 @@ const ArticleCarousel = () => {
               <img src={article.imageUrl} alt={article.title} className="w-full h-[200px] object-cover rounded-t-[16px]" />
               <p className="font-bold mt-[24px]">{article.category}</p>
               <h3 className="font-rational-bold text-[24px] leading-[30px] my-[24px]">{article.title}</h3>
-              <div className="flex items-center text-[#505050]">
+              <div className="flex items-center text-gray-base">
                 <FontAwesomeIcon icon={faUser} />
                 <span className="text-[18px] leading-[24px] px-[12px]">{article.author}</span>
                 <FontAwesomeIcon icon={faClock} />
@@ -57,7 +57,7 @@ const ArticleCarousel = () => {
           ))}
         </div>
         <button className="self-center">
-          <FontAwesomeIcon icon={faChevronRight} size="2x" className="text-[#8E44EC]" />
+          <FontAwesomeIcon icon={faChevronRight} size="2x" className="text-primary-purple" />
         </button>
       </div>
     </div>
