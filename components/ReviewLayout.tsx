@@ -5,15 +5,13 @@ import { Content } from "@prismicio/client";
 import { Tab } from "@headlessui/react";
 
 const tabs = [
-  { name: "Slice Library", href: "#", current: true },
-  { name: "Full project", href: "#", current: false },
+  { name: "Slice Library", current: true },
+  { name: "Full project", current: false },
 ];
 
 export default function ReviewLayout({
   criteria,
 }: Content.ReviewsChecklistDocumentData) {
-  const libraryChecklist = criteria.filter((item) => item.is_slice_library);
-
   return (
     <div>
       <div className="sm:hidden">
@@ -39,11 +37,11 @@ export default function ReviewLayout({
               key={idx}
               className={({ selected }) =>
                 `
-                  w-1/4 border-b-2 py-4 px-1 text-center text-sm font-medium
+                  w-1/4 border-b-2 py-4 px-1 text-center text-xl
                   ${
                     selected
-                      ? "border-indigo-500 text-indigo-600"
-                      : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      ? "border-primary-blue text-primary-blue font-bold"
+                      : "border-transparent text-silver-darker hover:border-silver-dark hover:text-gray-base"
                   }
                 `
               }

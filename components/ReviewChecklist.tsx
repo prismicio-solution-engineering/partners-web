@@ -15,7 +15,7 @@ function ChecklistItem({ item, index, toggle, active }) {
 
   return (
     <div
-      className={`my-4 bg-[#F7F7F7] p-6 rounded-lg text-left ${
+      className={`my-4 bg-silver-light p-6 rounded-lg text-left ${
         isActive ? "shadow-md" : ""
       }`}
     >
@@ -39,10 +39,7 @@ function ChecklistItem({ item, index, toggle, active }) {
   );
 }
 
-export function ReviewChecklist(
-  { criteria }: ReviewsChecklistDocumentData,
-  tab: string
-) {
+export function ReviewChecklist({ criteria }: ReviewsChecklistDocumentData) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -50,7 +47,7 @@ export function ReviewChecklist(
   };
 
   return (
-    <section className="bg-[#ffffff] text-center mt-16 max-w-screen-xl mx-auto px-8 rounded-lg">
+    <section className="bg-[#ffffff] text-center my-16 max-w-screen-xl mx-auto px-8 rounded-lg">
       <div className="max-w-screen-xl mx-auto">
         {criteria.map((item, index) => (
           <ChecklistItem

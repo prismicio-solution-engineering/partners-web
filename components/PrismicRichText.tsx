@@ -79,7 +79,7 @@ const defaultComponents: JSXMapSerializer = {
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className="text-gray-darker font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+      className="text-primary-blue font-sans font-semibold text-base underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
     >
       {children}
     </PrismicNextLink>
@@ -91,7 +91,7 @@ const defaultComponents: JSXMapSerializer = {
           <span className="text-primary-blue">{children}</span>
         )}
         {node.data.label === "inline code" && (
-          <span className="px-2 py-1 bg-silver-dark font-code rounded text-sm font-semibold text-black">
+          <span className="px-2 py-1 bg-silver-light border border-silver-base font-mono rounded-md text-sm font-normal text-primary-orange">
             {children}
           </span>
         )}
