@@ -1,30 +1,10 @@
 import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
-import {
-  ArticleCarousel,
-  FeaturedPartners,
-  FeaturesSlice,
-  HeroBanner,
-  PartnerLogoCarousel,
-  PartnershipTiersComponent,
-  PartnershipTiersComponentTwo,
-  PrismicSlice,
-  TimelineComponent,
-  CallToActionSection,
-  CallToActionTwoColumns,
-  CallToActionTwoColumnsMultipleCtas,
-  CallToActionSectionWithBackgroundImage,
-  FeatureSliceComponentTwoColumns,
-  FeatureSliceComponentCentered,
-  FeatureSliceComponent,
-  FeatureSliceComponentReversed
-} from "@/components/generated";
 
 export default async function Page() {
   const client = createClient();
