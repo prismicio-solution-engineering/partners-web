@@ -108,6 +108,20 @@
           "placeholder": ""
         }
       },
+      "name_field_label": {
+        "type": "Text",
+        "config": {
+          "label": "Name field label",
+          "placeholder": ""
+        }
+      },
+      "name_field_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Name field placeholder",
+          "placeholder": ""
+        }
+      },
       "email_field_label": {
         "type": "Text",
         "config": {

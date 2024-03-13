@@ -396,6 +396,28 @@ interface NavigationDocumentData {
   sign_up_title: prismic.KeyTextField;
 
   /**
+   * Name field label field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.name_field_label
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name_field_label: prismic.KeyTextField;
+
+  /**
+   * Name field placeholder field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.name_field_placeholder
+   * - **Tab**: Sign up
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name_field_placeholder: prismic.KeyTextField;
+
+  /**
    * Email field label field in *Navigation*
    *
    * - **Field Type**: Text
