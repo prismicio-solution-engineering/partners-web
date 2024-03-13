@@ -78,12 +78,12 @@ export const AuthForm = ({ data }: AuthProps) => {
         </div>
         <div className="flex flex-col gap-2">
           <Button submit color="black" variant="primary">
-            {isSignUp ? "Sign Up" : "Log In"}
+            {isSignUp ? data.sign_up_button_label : data.sign_in_button_label}
           </Button>
           <Button variant="link" button onClick={() => setIsSignUp(!isSignUp)}>
             {isSignUp
-              ? "Already have an account? Log In"
-              : "Dont have an account? Sign Up"}
+              ? data.switch_to_sign_in_text
+              : data.switch_to_sign_up_text}
           </Button>
         </div>
       </form>
