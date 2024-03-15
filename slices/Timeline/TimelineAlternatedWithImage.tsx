@@ -38,39 +38,6 @@ const TimelineAlternatedWithImage = ({
 }: {
   slice: Content.TimelineSliceAlternatedWithImage;
 }) => {
-  const milestones = [
-    {
-      step: "01",
-      title: "Submit Your Application",
-      description:
-        "Send in your application to express your interest in becoming a partner with our agency.",
-    },
-    {
-      step: "02",
-      title: "Meet & Greet",
-      description:
-        "We will have a session to get to know each other and discuss collaboration possibilities.",
-    },
-    {
-      step: "03",
-      title: "Training & Certification",
-      description:
-        "Go through training sessions to understand our product and services, followed by a certification.",
-    },
-    {
-      step: "04",
-      title: "Launch Projects",
-      description:
-        "Start launching projects and campaigns as an official partner agency.",
-    },
-    {
-      step: "05",
-      title: "Continuous Support",
-      description:
-        "Get continuous support and updates to ensure ongoing success in our partnership.",
-    },
-  ];
-
   return (
     <div className="flex flex-col items-center my-16">
       <PrismicRichText
