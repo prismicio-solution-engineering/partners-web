@@ -34,7 +34,7 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
         <PrismicRichText field={slice.primary.section_description} />
         <div className="px-4">
           <div
-            className="flex flex-row gap-8 overflow-x-auto scroll-smooth scrollbar-hide"
+            className="flex flex-row gap-8 overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar"
             style={{ scrollSnapType: "x mandatory" }}
           >
             {slice.items.map((item, idx) => (
