@@ -44,9 +44,6 @@
             "hero_banner": {
               "type": "SharedSlice"
             },
-            "news_list": {
-              "type": "SharedSlice"
-            },
             "form_section": {
               "type": "SharedSlice"
             },

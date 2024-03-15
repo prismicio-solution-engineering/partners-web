@@ -760,51 +760,6 @@ export const NewsletterSubscriptionForm = () => {
     );
 };
 
-export const AuthForm = () => {
-    const [isSignUp, setIsSignUp] = useState(false);
-
-    return (
-        <div className="flex flex-col items-center my-16 bg-silver-light rounded-lg p-8 max-w-screen-xl mx-auto shadow-sm">
-            <h3 className="text-2xl font-sans font-bold text-gray-darker mb-6">{isSignUp ? "Sign Up" : "Log In"}</h3>
-            <form className="w-full max-w-md flex flex-col items-center gap-4">
-                {isSignUp && (
-                    <input
-                        type="text"
-                        placeholder="Full Name"
-                        className="w-full p-4 text-gray-darker bg-white rounded-lg border-2 border-gray-darker"
-                    />
-                )}
-                <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full p-4 text-gray-darker bg-white rounded-lg border-2 border-gray-darker"
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    className="w-full p-4 text-gray-darker bg-white rounded-lg border-2 border-gray-darker"
-                />
-                <div className="flex flex-col gap-2">
-                    <Button
-                        submit color="black"
-                        variant="primary"
-                    >
-                        {isSignUp ? "Sign Up" : "Log In"}
-                    </Button>
-                    <Button
-                        color="black"
-                        variant="link"
-                        button
-                        onClick={() => setIsSignUp(!isSignUp)}
-                    >
-                        {isSignUp ? "Already have an account? Log In" : "Dont have an account? Sign Up"}
-                    </Button>
-                </div>
-            </form>
-        </div>
-    );
-};
-
 const getCategoryStyle = (category) => {
     switch (category) {
         case "Best practices":
@@ -907,7 +862,43 @@ export const ArticleListComponent = () => {
 };
 
 // New & updates
-export const ArticleListComponentNews = ({ articles }) => {
+export const ArticleListComponentNews = () => {
+    const [articles] = useState([
+        {
+            id: 1,
+            title: "How to Improve Website Conversion Rates with Prismic",
+            excerpt:
+                "Learn the best practices for boosting your website conversion rates using Prismic...",
+            imageUrl: "https://source.unsplash.com/random/800x600?business&1",
+            category: "Business of Web Development",
+            publicationDate: "2023-07-19",
+            author: "Lea Thomas",
+            readTime: "6",
+        },
+        {
+            id: 2,
+            title: "How to win an award for your website",
+            excerpt:
+                "Awards can lend credibility to your work. Find out how to make your website stand out...",
+            imageUrl: "https://source.unsplash.com/random/800x600?business&2",
+            category: "Design Inspiration",
+            publicationDate: "2023-01-05",
+            author: "Coner Murphy",
+            readTime: "7",
+        },
+        {
+            id: 3,
+            title: "How much should you charge for a website in 2023?",
+            excerpt:
+                "Pricing your services can be tricky. Get insights into pricing strategies for this year...",
+            imageUrl: "https://source.unsplash.com/random/800x600?business&3",
+            category: "Freelancing Career Tips",
+            publicationDate: "2022-12-01",
+            author: "Alex Trost",
+            readTime: "12",
+        },
+        // You can add more dummy articles here
+    ]);
     const [filteredArticles, setFilteredArticles] = useState(articles);
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");

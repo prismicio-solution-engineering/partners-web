@@ -12,14 +12,6 @@
         },
         "type": "UID"
       },
-      "category": {
-        "type": "Link",
-        "config": {
-          "label": "Category",
-          "select": "document",
-          "customtypes": ["article_category"]
-        }
-      },
       "title": {
         "type": "StructuredText",
         "config": {
@@ -27,6 +19,13 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "heading1"
+        }
+      },
+      "excerpt": {
+        "type": "Text",
+        "config": {
+          "label": "Excerpt",
+          "placeholder": "Short description for lists"
         }
       },
       "featured_image": {
@@ -44,39 +43,52 @@
           "placeholder": ""
         }
       },
-      "featured": {
-        "type": "Boolean",
+      "category": {
+        "type": "Link",
         "config": {
-          "label": "Featured",
-          "default_value": false,
-          "placeholder_true": "true",
-          "placeholder_false": "false"
+          "label": "Category",
+          "select": "document",
+          "customtypes": ["article_category"]
+        }
+      },
+      "author": {
+        "type": "Link",
+        "config": {
+          "label": "Author",
+          "select": "document",
+          "customtypes": ["author"]
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
+          "choices": {}
+        }
+      }
+    },
+    "Content": {
+      "slices2": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
           "choices": {
-            "timeline": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            },
-            "testimonials": {
-              "type": "SharedSlice"
-            },
             "accordion_section": {
               "type": "SharedSlice"
             },
             "form_section": {
               "type": "SharedSlice"
             },
-            "news_list": {
+            "call_to_action": {
               "type": "SharedSlice"
             },
-            "call_to_action": {
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "timeline": {
+              "type": "SharedSlice"
+            },
+            "text": {
               "type": "SharedSlice"
             }
           }
@@ -108,37 +120,6 @@
           "placeholder": "A title of the page used for social media and search engines"
         },
         "type": "Text"
-      }
-    },
-    "Content": {
-      "slices2": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "accordion_section": {
-              "type": "SharedSlice"
-            },
-            "form_section": {
-              "type": "SharedSlice"
-            },
-            "call_to_action": {
-              "type": "SharedSlice"
-            },
-            "news_list": {
-              "type": "SharedSlice"
-            },
-            "testimonials": {
-              "type": "SharedSlice"
-            },
-            "timeline": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            }
-          }
-        }
       }
     }
   }

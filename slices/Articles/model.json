@@ -1,0 +1,324 @@
+{
+  "id": "articles",
+  "type": "SharedSlice",
+  "name": "Articles",
+  "description": "Articles",
+  "variations": [
+    {
+      "id": "list",
+      "name": "List",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        },
+        "link_to_blog_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link to blog label",
+            "placeholder": ""
+          }
+        },
+        "link_to_blog": {
+          "type": "Link",
+          "config": {
+            "label": "Link to blog",
+            "placeholder": "Link to blog page",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "filter_label": {
+          "type": "Text",
+          "config": {
+            "label": "Filter label",
+            "placeholder": ""
+          }
+        },
+        "articles_read_more_label": {
+          "type": "Text",
+          "config": {
+            "label": "Articles read more label",
+            "placeholder": "To display on each article"
+          }
+        }
+      },
+      "items": {
+        "article": {
+          "type": "Link",
+          "config": {
+            "label": "Article",
+            "select": "document",
+            "customtypes": [
+              "article"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "autoList",
+      "name": "Auto list",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        },
+        "link_to_blog_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link to blog label",
+            "placeholder": ""
+          }
+        },
+        "link_to_blog": {
+          "type": "Link",
+          "config": {
+            "label": "Link to blog",
+            "placeholder": "Link to blog page",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "filter_label": {
+          "type": "Text",
+          "config": {
+            "label": "Filter label",
+            "placeholder": ""
+          }
+        },
+        "articles_read_more_label": {
+          "type": "Text",
+          "config": {
+            "label": "Articles read more label",
+            "placeholder": "To display on each article"
+          }
+        },
+        "number_of_articles": {
+          "type": "Number",
+          "config": {
+            "label": "Number of articles",
+            "placeholder": ""
+          }
+        },
+        "category": {
+          "type": "Link",
+          "config": {
+            "label": "Category filter",
+            "select": "document",
+            "customtypes": [
+              "article_category"
+            ]
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "horizontalScroll",
+      "name": "Horizontal Scroll",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        },
+        "link_to_blog_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link to blog label",
+            "placeholder": ""
+          }
+        },
+        "link_to_blog": {
+          "type": "Link",
+          "config": {
+            "label": "Link to blog",
+            "placeholder": "Link to blog page",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "filter_label": {
+          "type": "Text",
+          "config": {
+            "label": "Filter label",
+            "placeholder": ""
+          }
+        },
+        "articles_read_more_label": {
+          "type": "Text",
+          "config": {
+            "label": "Articles read more label",
+            "placeholder": "To display on each article"
+          }
+        }
+      },
+      "items": {
+        "article": {
+          "type": "Link",
+          "config": {
+            "label": "Article",
+            "select": "document",
+            "customtypes": [
+              "article"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "autoHorizontalScroll",
+      "name": "Auto Horizontal Scroll",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        },
+        "link_to_blog_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link to blog label",
+            "placeholder": ""
+          }
+        },
+        "link_to_blog": {
+          "type": "Link",
+          "config": {
+            "label": "Link to blog",
+            "placeholder": "Link to blog page",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "filter_label": {
+          "type": "Text",
+          "config": {
+            "label": "Filter label",
+            "placeholder": ""
+          }
+        },
+        "articles_read_more_label": {
+          "type": "Text",
+          "config": {
+            "label": "Articles read more label",
+            "placeholder": "To display on each article"
+          }
+        },
+        "number_of_articles": {
+          "type": "Number",
+          "config": {
+            "label": "Number of articles",
+            "placeholder": ""
+          }
+        },
+        "category": {
+          "type": "Link",
+          "config": {
+            "label": "Category filter",
+            "select": "document",
+            "customtypes": [
+              "article_category"
+            ]
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "autoFilterableGrid",
+      "name": "Auto Filterable Grid",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        },
+        "link_to_blog_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link to blog label",
+            "placeholder": ""
+          }
+        },
+        "link_to_blog": {
+          "type": "Link",
+          "config": {
+            "label": "Link to blog",
+            "placeholder": "Link to blog page",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "filter_label": {
+          "type": "Text",
+          "config": {
+            "label": "Filter label",
+            "placeholder": ""
+          }
+        },
+        "articles_read_more_label": {
+          "type": "Text",
+          "config": {
+            "label": "Articles read more label",
+            "placeholder": "To display on each article"
+          }
+        },
+        "category": {
+          "type": "Link",
+          "config": {
+            "label": "Category filter",
+            "select": "document",
+            "customtypes": [
+              "article_category"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
