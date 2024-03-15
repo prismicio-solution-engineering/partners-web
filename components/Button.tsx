@@ -40,6 +40,7 @@ export function Button({
   className,
   href = "#",
   field,
+  document,
   submit,
   button,
   ...props
@@ -50,6 +51,7 @@ export function Button({
   children?: React.ReactNode;
   href?: string;
   field?: prismic.LinkField;
+  document?: prismic.PrismicDocument;
   submit?: boolean;
   button?: boolean;
 }) {
@@ -67,8 +69,10 @@ export function Button({
     return <button type="button" className={className} {...props} />;
   }
 
-  return field ? (
-    <PrismicLink className={className} {...props} field={field} />
+  if (field) <PrismicLink className={className} {...props} field={field} />;
+  
+  return document ? (
+    <PrismicLink className={className} {...props} document={document} />
   ) : (
     <PrismicLink className={className} {...props} href={href} />
   );
