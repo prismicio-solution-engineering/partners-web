@@ -171,6 +171,31 @@
           "placeholder": "Message if the account already exists"
         }
       }
+    },
+    "Footer": {
+      "links": {
+        "type": "Group",
+        "config": {
+          "label": "Links",
+          "fields": {
+            "link_label": {
+              "type": "Text",
+              "config": {
+                "label": "Link label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
