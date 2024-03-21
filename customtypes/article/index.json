@@ -73,12 +73,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "accordion_section": {
-              "type": "SharedSlice"
-            },
-            "form_section": {
-              "type": "SharedSlice"
-            },
             "call_to_action": {
               "type": "SharedSlice"
             },
@@ -89,6 +83,25 @@
               "type": "SharedSlice"
             },
             "text": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "Footer": {
+      "slices3": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "articles": {
+              "type": "SharedSlice"
+            },
+            "accordion_section": {
+              "type": "SharedSlice"
+            },
+            "form_section": {
               "type": "SharedSlice"
             }
           }

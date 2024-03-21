@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 export const ScrollContainer = ({
   ...props
 }: {

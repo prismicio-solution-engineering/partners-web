@@ -1,6 +1,5 @@
 import { Button } from "../Button";
-import { ArticleDocumentData } from "@/prismicio-types";
-import { isFilled, type Content } from "@prismicio/client";
+import { isFilled, type Content, asDate } from "@prismicio/client";
 import React from "react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "../PrismicRichText";
@@ -12,6 +11,21 @@ const serializer = {
   heading1: ({ children }) => (
     <h3 className="text-xl font-bold mb-4 text-gray-darker">{children}</h3>
   ),
+};
+
+const categoryPill = (category: string) => {
+  if (category === "Use case") {
+    return "bg-quaternary-purple text-primary-purple";
+  }
+  else if (category === "Best practice") {
+    return "bg-quaternary-green text-primary-green";
+  }
+  else if (category === "Tutorial") {
+    return "bg-quaternary-orange text-primary-orange";
+  }
+  else if(category === "Solution engineering team projects"){
+    return "bg-quaternary-blue text-primary-blue";
+  }
 };
 
 export const HorizontalScroll = async ({
@@ -53,11 +67,11 @@ export const HorizontalScroll = async ({
 
             <div className="px-8 py-4 whitespace-normal h-80 flex flex-col justify-between">
               {/* Create a category pill component */}
-                <span
-                  className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${article.data.category.data.name === "Use case" && "bg-quaternary-blue text-primary-blue"} ${article.data.category.data.name === "Best practice" && "bg-[#E8F8F3] text-primary-green"} ${article.data.category.data.name === "Tutorial" && "bg-quaternary-orange text-primary-orange"}`}
-                >
-                  {article.data.category.data.name}
-                </span>
+              <span
+                className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
+              >
+                {article.data.category.data.name}
+              </span>
               <div className="flex flex-col gap-y-1">
                 <PrismicRichText
                   field={article.data.title}
@@ -71,7 +85,7 @@ export const HorizontalScroll = async ({
                 </Button>
               </div>
               <div className="text-sm text-gray-darker">
-                <span>{article.data.date_of_publication}</span> by{" "}
+                <span>{asDate(article.data.date_of_publication)?.toLocaleDateString()}</span> by{" "}
                 <span>
                   {isFilled.contentRelationship(article.data.author)
                     ? article.data.author.data.name

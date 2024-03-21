@@ -34,10 +34,10 @@ const Articles = async ({ slice }: ArticlesProps): JSX.Element => {
             ("autoHorizontalScroll" || "horizontalScroll") && (
             <HorizontalScroll slice={slice} />
           )}
-          {/* {slice.variation === "autoFilterableGrid" && (
-            <Grid slice={slice} data={await getArticles(articleQuery, slice.primary.number_of_articles ? slice.primary.number_of_articles : 100)} />
+          {slice.variation === "autoFilterableGrid" && (
+            <Grid slice={slice} />
           )}
-          {slice.variation === ("autoList" || "list") && (
+          {/* {slice.variation === ("autoList" || "list") && (
             <List slice={slice} data={await getArticles(articleQuery, slice.primary.number_of_articles ? slice.primary.number_of_articles : 100)} />
           )} */}
         </div>
