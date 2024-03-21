@@ -7,12 +7,15 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 type ArticleDocumentDataSlicesSlice = never;
 
 type ArticleDocumentDataSlices2Slice =
-  | AccordionSectionSlice
-  | FormSectionSlice
   | CallToActionSlice
   | TestimonialsSlice
   | TimelineSlice
   | TextSlice;
+
+type ArticleDocumentDataSlices3Slice =
+  | ArticlesSlice
+  | AccordionSectionSlice
+  | FormSectionSlice;
 
 /**
  * Content for Article documents
@@ -103,6 +106,15 @@ interface ArticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */;
   slices2: prismic.SliceZone<ArticleDocumentDataSlices2Slice> /**
+   * Slice Zone field in *Article*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.slices3[]
+   * - **Tab**: Footer
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */;
+  slices3: prismic.SliceZone<ArticleDocumentDataSlices3Slice> /**
    * Meta Description field in *Article*
    *
    * - **Field Type**: Text
@@ -587,13 +599,14 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ArticlesSlice
+  | SliderSlice
   | TestimonialsSlice
   | FeaturesSlice
   | CallToActionSlice
   | PartnershipTiersSlice
   | TextSectionSlice
   | TimelineSlice
-  | CheckListSlice
   | TextSlice
   | HeroBannerSlice
   | FormSectionSlice
@@ -604,17 +617,6 @@ type PageDocumentDataSlicesSlice =
  * Content for Page documents
  */
 interface PageDocumentData {
-  /**
-   * Slice Zone field in *Page*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice>;
-
   /**
    * Title field in *Page*
    *
@@ -635,7 +637,18 @@ interface PageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.RichTextField /**
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
    * Meta Description field in *Page*
    *
    * - **Field Type**: Text
@@ -1139,6 +1152,47 @@ export type ReviewsChecklistDocument<Lang extends string = string> =
     Lang
   >;
 
+type SliderDocumentDataSlicesSlice = SlideSlice;
+
+/**
+ * Content for Slider documents
+ */
+interface SliderDocumentData {
+  /**
+   * Slider Name field in *Slider*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.slider_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  slider_name: prismic.TitleField;
+
+  /**
+   * Slice Zone field in *Slider*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SliderDocumentDataSlicesSlice>;
+}
+
+/**
+ * Slider document from Prismic
+ *
+ * - **API ID**: `slider`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SliderDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<SliderDocumentData>, "slider", Lang>;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1150,7 +1204,8 @@ export type AllDocumentTypes =
   | ResourcesDocument
   | ReviewCriteriaCategoryDocument
   | ReviewsDocument
-  | ReviewsChecklistDocument;
+  | ReviewsChecklistDocument
+  | SliderDocument;
 
 /**
  * Primary content in *Accordion → Primary*
@@ -1986,97 +2041,6 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *CheckList → Primary*
- */
-export interface CheckListSliceDefaultVariationPrimary {
-  /**
-   * Section Title field in *CheckList → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: check_list.primary.section_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_title: prismic.TitleField;
-}
-
-/**
- * Primary content in *CheckList → Items*
- */
-export interface CheckListSliceDefaultVariationItem {
-  /**
-   * Item Title field in *CheckList → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: check_list.items[].item_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  item_title: prismic.RichTextField;
-
-  /**
-   * Item Description field in *CheckList → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: check_list.items[].item_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  item_description: prismic.RichTextField;
-
-  /**
-   * Item Image field in *CheckList → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: check_list.items[].item_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  item_image: prismic.ImageField<never>;
-
-  /**
-   * Item Visibility field in *CheckList → Items*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: check_list.items[].item_visibility
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  item_visibility: prismic.BooleanField;
-}
-
-/**
- * Default Variation variation for CheckList Slice
- *
- * - **API ID**: `default_variation`
- * - **Description**: Default variation where each item in the checklist contains a title, description, and image, with a toggle to hide description and image.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CheckListSliceDefaultVariation = prismic.SharedSliceVariation<
-  "default_variation",
-  Simplify<CheckListSliceDefaultVariationPrimary>,
-  Simplify<CheckListSliceDefaultVariationItem>
->;
-
-/**
- * Slice variation for *CheckList*
- */
-type CheckListSliceVariation = CheckListSliceDefaultVariation;
-
-/**
- * CheckList Shared Slice
- *
- * - **API ID**: `check_list`
- * - **Description**: The Check List component displays the list of items to cover to become certified. Each item has a title, a description and an image. In each item it is possible to hide the description and image with a toggle.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CheckListSlice = prismic.SharedSlice<
-  "check_list",
-  CheckListSliceVariation
->;
-
-/**
  * Primary content in *FeaturedPartners → Primary*
  */
 export interface FeaturedPartnersSliceDefaultVariationPrimary {
@@ -2847,6 +2811,291 @@ export type PartnershipTiersSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceWithVideoPrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Video thumbnail field in *Slide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.video_thumbnail
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Video link field in *Slide → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.video_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_link: prismic.KeyTextField;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Media side field in *Slide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+}
+
+/**
+ * With Video variation for Slide Slice
+ *
+ * - **API ID**: `withVideo`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceWithVideo = prismic.SharedSliceVariation<
+  "withVideo",
+  Simplify<SlideSliceWithVideoPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceWithImagePrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide title
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *Slide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Media side field in *Slide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+}
+
+/**
+ * With Image variation for Slide Slice
+ *
+ * - **API ID**: `withImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceWithImage = prismic.SharedSliceVariation<
+  "withImage",
+  Simplify<SlideSliceWithImagePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceContentOnlyPrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Content Only variation for Slide Slice
+ *
+ * - **API ID**: `contentOnly`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceContentOnly = prismic.SharedSliceVariation<
+  "contentOnly",
+  Simplify<SlideSliceContentOnlyPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceWithYoutubeVideoPrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Video embed link field in *Slide → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.video_embed_link
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video_embed_link: prismic.EmbedField;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Media side field in *Slide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+}
+
+/**
+ * With Youtube Video variation for Slide Slice
+ *
+ * - **API ID**: `withYoutubeVideo`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceWithYoutubeVideo = prismic.SharedSliceVariation<
+  "withYoutubeVideo",
+  Simplify<SlideSliceWithYoutubeVideoPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Slide*
+ */
+type SlideSliceVariation =
+  | SlideSliceWithVideo
+  | SlideSliceWithImage
+  | SlideSliceContentOnly
+  | SlideSliceWithYoutubeVideo;
+
+/**
+ * Slide Shared Slice
+ *
+ * - **API ID**: `slide`
+ * - **Description**: Slide
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSlice = prismic.SharedSlice<"slide", SlideSliceVariation>;
+
+/**
+ * Primary content in *Slider → Primary*
+ */
+export interface SliderSliceDefaultPrimary {
+  /**
+   * Slider field in *Slider → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.primary.slider
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  slider: prismic.ContentRelationshipField<"slider">;
+}
+
+/**
+ * Default variation for Slider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SliderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Slider*
+ */
+type SliderSliceVariation = SliderSliceDefault;
+
+/**
+ * Slider Shared Slice
+ *
+ * - **API ID**: `slider`
+ * - **Description**: Slider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderSlice = prismic.SharedSlice<"slider", SliderSliceVariation>;
+
+/**
  * Primary content in *Testimonials → Primary*
  */
 export interface TestimonialsSliceSinglePrimary {
@@ -3466,6 +3715,7 @@ declare module "@prismicio/client" {
       ArticleDocumentData,
       ArticleDocumentDataSlicesSlice,
       ArticleDocumentDataSlices2Slice,
+      ArticleDocumentDataSlices3Slice,
       ArticleCategoryDocument,
       ArticleCategoryDocumentData,
       AuthorDocument,
@@ -3494,6 +3744,9 @@ declare module "@prismicio/client" {
       ReviewsChecklistDocument,
       ReviewsChecklistDocumentData,
       ReviewsChecklistDocumentDataCriteriaItem,
+      SliderDocument,
+      SliderDocumentData,
+      SliderDocumentDataSlicesSlice,
       AllDocumentTypes,
       AccordionSectionSlice,
       AccordionSectionSliceWithImagePrimary,
@@ -3527,11 +3780,6 @@ declare module "@prismicio/client" {
       CallToActionSliceVariation,
       CallToActionSliceDefault,
       CallToActionSliceTwoColumns,
-      CheckListSlice,
-      CheckListSliceDefaultVariationPrimary,
-      CheckListSliceDefaultVariationItem,
-      CheckListSliceVariation,
-      CheckListSliceDefaultVariation,
       FeaturedPartnersSlice,
       FeaturedPartnersSliceDefaultVariationPrimary,
       FeaturedPartnersSliceDefaultVariationItem,
@@ -3570,6 +3818,20 @@ declare module "@prismicio/client" {
       PartnershipTiersSliceVariation,
       PartnershipTiersSliceHorizontalCards,
       PartnershipTiersSliceFullWidthCards,
+      SlideSlice,
+      SlideSliceWithVideoPrimary,
+      SlideSliceWithImagePrimary,
+      SlideSliceContentOnlyPrimary,
+      SlideSliceWithYoutubeVideoPrimary,
+      SlideSliceVariation,
+      SlideSliceWithVideo,
+      SlideSliceWithImage,
+      SlideSliceContentOnly,
+      SlideSliceWithYoutubeVideo,
+      SliderSlice,
+      SliderSliceDefaultPrimary,
+      SliderSliceVariation,
+      SliderSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceSinglePrimary,
       TestimonialsSliceSliderPrimary,

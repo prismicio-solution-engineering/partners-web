@@ -9,7 +9,7 @@ import type * as prismic from "@prismicio/client";
 
 const defaultComponents: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <h1 className="text-gray-darker text-center lg:text-left text-4xl lg:text-5xl font-sans font-bold mb-6">
+    <h1 className="text-gray-darker text-center text-4xl lg:text-5xl font-sans font-bold mb-6 mt-16">
       {children}
     </h1>
   ),
