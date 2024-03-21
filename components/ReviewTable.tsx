@@ -3,6 +3,7 @@ import { ReviewsChecklistDocumentData } from "@/prismicio-types";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 import { PrismicRichText } from "./PrismicRichText";
+import { PrismicText } from "@prismicio/react";
 
 export function ReviewTable({ criteria }: ReviewsChecklistDocumentData) {
   const [summaryComments, setSummaryComments] = useState([]);
@@ -80,10 +81,10 @@ export function ReviewTable({ criteria }: ReviewsChecklistDocumentData) {
                     {criteria.map((item, idx) => (
                       <tr key={idx}>
                         <td className="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                          {item.topic}
+                          {item.category.data.category_name}
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
-                          <PrismicRichText field={item.name} />
+                          <PrismicText field={item.name} />
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
                           {item.priority}
@@ -134,7 +135,7 @@ export function ReviewTable({ criteria }: ReviewsChecklistDocumentData) {
           <ul className="prose-sm list-disc">
             {summaryComments.map(({ item }) => (
               <li key={item.idx}>
-                <PrismicRichText field={item.comment_next} />
+                <PrismicText field={item.comment_next} />
               </li>
             ))}
           </ul>
