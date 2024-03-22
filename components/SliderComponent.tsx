@@ -142,7 +142,7 @@ const SliderComponent = ({ data }: { data: Content.SliderDocument }) => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`flex flex-col h-[95vh] gap-y-2 transition-opacity duration-500 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0 hidden"}`}
+            className={`flex flex-col h-[95vh] min-h-[600px] gap-y-2 transition-opacity duration-500 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0 hidden"}`}
           >
             <PrismicRichText
               field={slide.primary.title}
