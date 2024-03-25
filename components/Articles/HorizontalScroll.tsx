@@ -6,6 +6,9 @@ import { PrismicRichText } from "../PrismicRichText";
 import { ScrollContainer } from "./ScrollContainer";
 import { getArticles } from "@/utils/getArticles";
 import { getArticlesByUids } from "@/utils/getArticlesByUids";
+import { getArticlesByCategory } from "@/utils/getArticlesByCategory";
+import { getCategory } from "@/utils/getCategory";
+import { ArticleDocument } from "@/prismicio-types";
 
 const serializer = {
   heading1: ({ children }) => (
@@ -16,14 +19,11 @@ const serializer = {
 const categoryPill = (category: string) => {
   if (category === "Use case") {
     return "bg-quaternary-purple text-primary-purple";
-  }
-  else if (category === "Best practice") {
+  } else if (category === "Best practice") {
     return "bg-quaternary-green text-primary-green";
-  }
-  else if (category === "Tutorial") {
+  } else if (category === "Tutorial") {
     return "bg-quaternary-orange text-primary-orange";
-  }
-  else if(category === "Solution engineering team projects"){
+  } else if (category === "Solution engineering team projects") {
     return "bg-quaternary-blue text-primary-blue";
   }
 };
@@ -35,6 +35,12 @@ export const HorizontalScroll = async ({
     | Content.ArticlesSliceHorizontalScroll
     | Content.ArticlesSliceAutoHorizontalScroll;
 }) => {
+
+  
+  const category =
+    isFilled.contentRelationship(slice.primary.category) ?
+    await getCategory(slice.primary.category) : ""
+
   const articlesUids: string[] = slice.items.map((item) => {
     if (isFilled.contentRelationship(item.article)) {
       return item.article.uid!;
@@ -42,15 +48,31 @@ export const HorizontalScroll = async ({
     return "";
   });
 
-  const articles =
-    slice.variation === "autoHorizontalScroll"
-      ? await getArticles(
-          // slice.primary.category,
-          slice.primary.number_of_articles
-            ? slice.primary.number_of_articles
-            : 100
-        )
-      : await getArticlesByUids(articlesUids);
+  let  articles: ArticleDocument[] = [];
+
+    if (
+      slice.variation === "autoHorizontalScroll" &&
+      isFilled.contentRelationship(slice.primary.category)
+      ) {
+      articles =  await getArticlesByCategory(
+        slice.primary.category.id,
+        slice.primary.number_of_articles
+        ? slice.primary.number_of_articles
+        : 100
+        );
+      }
+      if (slice.variation === "autoHorizontalScroll" &&
+      !isFilled.contentRelationship(slice.primary.category)) {
+      articles = await getArticles(
+        slice.primary.number_of_articles
+        ? slice.primary.number_of_articles
+        : 100
+        );
+      }
+      if (slice.variation === "horizontalScroll") {
+      articles = await getArticlesByUids(articlesUids);
+    }
+
 
   return (
     <div className="bg-white relative max-w-screen-xl mx-auto">
@@ -64,9 +86,7 @@ export const HorizontalScroll = async ({
               className="w-full object-cover h-[200px]"
               field={article.data.featured_image}
             />
-
             <div className="px-8 py-4 whitespace-normal h-80 flex flex-col justify-between">
-              {/* Create a category pill component */}
               <span
                 className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
               >
@@ -85,7 +105,12 @@ export const HorizontalScroll = async ({
                 </Button>
               </div>
               <div className="text-sm text-gray-darker">
-                <span>{asDate(article.data.date_of_publication)?.toLocaleDateString()}</span> by{" "}
+                <span>
+                  {asDate(
+                    article.data.date_of_publication
+                  )?.toLocaleDateString()}
+                </span>{" "}
+                by{" "}
                 <span>
                   {isFilled.contentRelationship(article.data.author)
                     ? article.data.author.data.name

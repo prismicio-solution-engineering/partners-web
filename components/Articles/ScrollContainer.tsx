@@ -17,7 +17,7 @@ export const ScrollContainer = ({
   return (
     <div className="bg-white mt-16 px-4 sm:px-6 lg:px-8 relative">
       <button
-        onClick={() => scroll(-300)}
+        onClick={() => scroll(-1280)}
         className="absolute left-0 z-10 text-silver-darker hidden md:block"
         style={{ top: "50%", transform: "translateY(-50%)" }}
         aria-label="Scroll left"
@@ -25,7 +25,7 @@ export const ScrollContainer = ({
         <ChevronLeftIcon className="h-5 w-5"/>
       </button>
       <button
-        onClick={() => scroll(300)}
+        onClick={() => scroll(1280)}
         className="absolute right-0 z-10 text-silver-darker hidden md:block"
         style={{ top: "50%", transform: "translateY(-50%)" }}
         aria-label="Scroll right"
