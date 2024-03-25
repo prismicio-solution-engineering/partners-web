@@ -4,42 +4,50 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
 import { useState } from "react";
 import { PrismicRichText } from "./PrismicRichText";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SlideSlice } from "@/prismicio-types";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2 className="text-4xl font-bold font-sans py-4 text-secondary-orange">
+    <h2 className="text-4xl font-bold font-sans mt-10 text-primary-orange">
       {children}
     </h2>
   ),
   heading3: ({ children }) => (
-    <h3 className="text-2xl font-semibold font-sans mb-4 text-primary-orange">
+    <h3 className="text-3xl font-semibold font-sans text-gray-base">
       {children}
     </h3>
   ),
   heading4: ({ children }) => (
-    <h4 className="text-xl font-semibold font-sans mb-4 text-primary-orange">
+    <h4 className="text-3xl font-semibold font-sans mb-2 text-secondary-orange">
       {children}
     </h4>
   ),
   heading5: ({ children }) => (
-    <h5 className="text-lg font-semibold font-sans mb-4 text-gray-dark">
+    <h5 className="text-2xl font-semibold font-sans mb-2 text-secondary-orange">
       {children}
     </h5>
   ),
   paragraph: ({ children }) => (
-    <p className="text-base font-sans pb-2 text-gray-base">{children}</p>
+    <p className="text-xl font-sans pb-2 text-gray-base">{children}</p>
   ),
   listItem: ({ children }) => (
-    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2 text-base list-inside text-gray-base">
+    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2 text-xl list-inside text-gray-base">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="mb-1 list-decimal pl-1 last:mb-0 md:pl-2 text-base list-inside text-gray-base">
+    <li className="mb-1 list-decimal pl-1 last:mb-0 md:pl-2 text-xl list-inside text-gray-base">
       {children}
     </li>
+  ),
+  hyperlink: ({ children, node }) => (
+    <PrismicNextLink
+      field={node.data}
+      className="text-gray-base font-sans text-xl underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+    >
+      {children}
+    </PrismicNextLink>
   ),
   label: ({ node, children }) => {
     return (
@@ -48,7 +56,7 @@ const serializer = {
           <span className="text-primary-orange font-semibold">{children}</span>
         )}
         {node.data.label === "inline code" && (
-          <span className="px-2 py-1 bg-silver-light border border-silver-base font-mono rounded-md text-sm font-normal text-primary-orange">
+          <span className="px-2 py-1 bg-silver-light border border-silver-base font-mono rounded-md text-lg font-normal text-primary-orange">
             {children}
           </span>
         )}
@@ -62,7 +70,7 @@ const SliderComponent = ({ data }: { data: Content.SliderDocument }) => {
 
   const alternateLayout = (slide: SlideSlice) => {
     const textSection = (
-      <div className="text-left flex flex-col justify-start   p-4 overflow-y-scroll">
+      <div className="text-left flex flex-col justify-start px-4 pt-10 pb-4 overflow-y-scroll">
         <PrismicRichText
           field={slide.primary.content}
           components={serializer}
@@ -70,7 +78,7 @@ const SliderComponent = ({ data }: { data: Content.SliderDocument }) => {
       </div>
     );
     const altTextSection = (
-      <div className="text-left flex flex-col justify-start md:w-1/2  overflow-clip p-4 overflow-y-scroll">
+      <div className="text-left flex flex-col justify-start md:w-1/2 overflow-clip px-4 pt-10 pb-4 overflow-y-scroll">
         <PrismicRichText
           field={slide.primary.content}
           components={serializer}
