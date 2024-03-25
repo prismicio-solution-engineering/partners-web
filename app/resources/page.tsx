@@ -14,7 +14,6 @@ export default async function Page() {
     await client.getSingle<Content.NavigationDocument>("navigation");
   const articlesCategories = await client.getAllByType("article_category");
 
-  console.log(articlesCategories);
   return (
     <>
       <Header navigation={navigation} />
@@ -24,7 +23,7 @@ export default async function Page() {
       />
       <div>
         {articlesCategories.map((cat, idx) => (
-          <div>
+          <div key={idx}>
             <h2>{cat.data.name}</h2>
           </div>
         ))}
