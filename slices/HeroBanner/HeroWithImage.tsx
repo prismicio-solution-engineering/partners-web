@@ -4,8 +4,13 @@ import type { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
 const serializer = {
+  heading1: ({ children }) => (
+    <h1 className="text-gray-darker text-4xl lg:text-5xl font-sans font-bold mb-6">
+      {children}
+    </h1>
+  ),
   paragraph: ({ children }) => (
-    <p className="text-gray-darker text-center lg:text-left mb-8">{children}</p>
+    <p className="font-sans text-lg text-gray-base max-w-2xl mx-auto mb-4">{children}</p>
   ),
 };
 
@@ -15,11 +20,11 @@ const HeroWithImage = ({
   slice: Content.HeroBannerSliceWithImage;
 }) => {
   return (
-    <div className="relative pt-16 pb-16 overflow-hidden">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 bg-[#F5F5F5] rounded-lg">
-        <div className="flex flex-wrap items-center -mx-4 px-4">
-          <div className="w-full lg:w-1/2 px-4">
-            <PrismicRichText field={slice.primary.title} />
+    <div className="relative overflow-hidden mt-16">
+      <div className="max-w-screen-xl mx-auto py-16 px-8 md:py-24 rounded-lg">
+        <div className="flex flex-col lg:flex-row items-center -mx-4 px-4 gap-16 lg:text-left text-center">
+          <div className="w-full lg:w-1/2">
+            <PrismicRichText field={slice.primary.title} components={serializer} />
             <PrismicRichText
               field={slice.primary.description}
               components={serializer}
@@ -28,7 +33,7 @@ const HeroWithImage = ({
               <Button
                 field={slice.primary.button_link}
                 variant="primary"
-                color="purple"
+                color="black"
               >
                 {slice.primary.button_label}
               </Button>
