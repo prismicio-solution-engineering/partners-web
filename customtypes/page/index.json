@@ -27,7 +27,7 @@
           "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "multi": "paragraph,strong,em,hyperlink"
         }
       },
       "slices": {
@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "project": {
+              "type": "SharedSlice"
+            },
             "articles": {
               "type": "SharedSlice"
             },
@@ -53,9 +56,6 @@
             "partnership_tiers": {
               "type": "SharedSlice"
             },
-            "text_section": {
-              "type": "SharedSlice"
-            },
             "timeline": {
               "type": "SharedSlice"
             },
@@ -63,9 +63,6 @@
               "type": "SharedSlice"
             },
             "hero_banner": {
-              "type": "SharedSlice"
-            },
-            "form_section": {
               "type": "SharedSlice"
             },
             "featured_partners": {
