@@ -29,7 +29,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "form_section": {
+            "project": {
               "type": "SharedSlice"
             },
             "call_to_action": {

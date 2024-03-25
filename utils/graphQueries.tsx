@@ -19,6 +19,45 @@ export const articleQuery = `
 }
 `;
 
+export const fullArticleQuery = `
+{
+  article {
+    ...articleFields
+    category {
+      ...on article_category {
+        ...article_categoryFields
+      }
+    }
+    author {
+      ...on author {
+        ...authorFields
+      }
+    }
+  }
+}
+`;
+
+export const reviewsQuery = `
+{
+  reviews_checklist {
+    criteria {
+      name
+      category {
+        ...on review_criteria_category {
+          ...review_criteria_categoryFields
+        }
+      }
+      comment_next
+      comment_nuxt
+      comment_sveltkit
+      priority
+      is_slice_library
+      is_full_project
+    }
+  }
+}
+`;
+
 export const reviewsChecklistQuery = `
 {
   reviews_checklist {

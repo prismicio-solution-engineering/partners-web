@@ -7,15 +7,13 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 type ArticleDocumentDataSlicesSlice = never;
 
 type ArticleDocumentDataSlices2Slice =
+  | ProjectSlice
   | CallToActionSlice
   | TestimonialsSlice
   | TimelineSlice
   | TextSlice;
 
-type ArticleDocumentDataSlices3Slice =
-  | ArticlesSlice
-  | AccordionSectionSlice
-  | FormSectionSlice;
+type ArticleDocumentDataSlices3Slice = ArticlesSlice | AccordionSectionSlice;
 
 /**
  * Content for Article documents
@@ -599,17 +597,16 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ProjectSlice
   | ArticlesSlice
   | SliderSlice
   | TestimonialsSlice
   | FeaturesSlice
   | CallToActionSlice
   | PartnershipTiersSlice
-  | TextSectionSlice
   | TimelineSlice
   | TextSlice
   | HeroBannerSlice
-  | FormSectionSlice
   | FeaturedPartnersSlice
   | AccordionSectionSlice;
 
@@ -798,8 +795,171 @@ export type PartnershipTierDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Project documents
+ */
+interface ProjectDocumentData {
+  /**
+   * Project name field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  project_name: prismic.KeyTextField;
+
+  /**
+   * Project description field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_description: prismic.RichTextField;
+
+  /**
+   * Featured image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Live project link field in *Project*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.live_project_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  live_project_link: prismic.LinkField;
+
+  /**
+   * Source code link field in *Project*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.source_code_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  source_code_link: prismic.LinkField;
+}
+
+/**
+ * Project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectDocumentData>,
+    "project",
+    Lang
+  >;
+
+type ProjectsDocumentDataSlicesSlice = AccordionSectionSlice;
+
+/**
+ * Content for Projects documents
+ */
+interface ProjectsDocumentData {
+  /**
+   * Title field in *Projects*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *Projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Projects*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProjectsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: projects.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: projects.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Projects document from Prismic
+ *
+ * - **API ID**: `projects`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ProjectsDocumentData>,
+    "projects",
+    Lang
+  >;
+
 type ResourcesDocumentDataSlicesSlice =
-  | FormSectionSlice
+  | ProjectSlice
   | CallToActionSlice
   | ArticlesSlice;
 
@@ -957,7 +1117,29 @@ interface ReviewsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice> /**
+  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice>;
+
+  /**
+   * Sample project description field in *Reviews*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.sample_project_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sample_project_description: prismic.RichTextField;
+
+  /**
+   * Full project description field in *Reviews*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.full_project_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  full_project_description: prismic.RichTextField /**
    * Meta Description field in *Reviews*
    *
    * - **Field Type**: Text
@@ -1201,6 +1383,8 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | PartnershipTierDocument
+  | ProjectDocument
+  | ProjectsDocument
   | ResourcesDocument
   | ReviewCriteriaCategoryDocument
   | ReviewsDocument
@@ -2276,117 +2460,6 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Form → Primary*
- */
-export interface FormSectionSliceDefaultPrimary {
-  /**
-   * Section Title field in *Form → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Enter the section title here
-   * - **API ID Path**: form_section.primary.section_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_title: prismic.TitleField;
-
-  /**
-   * Section Description field in *Form → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Enter the section description here
-   * - **API ID Path**: form_section.primary.section_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_description: prismic.RichTextField;
-
-  /**
-   * Submit Button Text field in *Form → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the text for the submit button
-   * - **API ID Path**: form_section.primary.submit_button_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  submit_button_text: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Form → Items*
- */
-export interface FormSectionSliceDefaultItem {
-  /**
-   * Input Label field in *Form → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the label for the input field
-   * - **API ID Path**: form_section.items[].input_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  input_label: prismic.KeyTextField;
-
-  /**
-   * Input Type field in *Form → Items*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Select the type of the input field
-   * - **API ID Path**: form_section.items[].input_type
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  input_type: prismic.SelectField<"text" | "email" | "textarea">;
-
-  /**
-   * Input Name field in *Form → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter the name attribute for the input field
-   * - **API ID Path**: form_section.items[].input_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  input_name: prismic.KeyTextField;
-
-  /**
-   * Is Input Required? field in *Form → Items*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: form_section.items[].input_required
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  input_required: prismic.BooleanField;
-}
-
-/**
- * Default Variation variation for Form Slice
- *
- * - **API ID**: `default`
- * - **Description**: The default layout of the Form slice which includes text inputs for name, email, and a message area.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type FormSectionSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<FormSectionSliceDefaultPrimary>,
-  Simplify<FormSectionSliceDefaultItem>
->;
-
-/**
- * Slice variation for *Form*
- */
-type FormSectionSliceVariation = FormSectionSliceDefault;
-
-/**
- * Form Shared Slice
- *
- * - **API ID**: `form_section`
- * - **Description**: An interactive component for agencies to contact an executive, including fields for name, email, and message, to facilitate seamless communication and streamline the agency qualification process.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type FormSectionSlice = prismic.SharedSlice<
-  "form_section",
-  FormSectionSliceVariation
->;
-
-/**
  * Primary content in *HeroBanner → Primary*
  */
 export interface HeroBannerSliceDefaultPrimary {
@@ -2811,6 +2884,51 @@ export type PartnershipTiersSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Project → Primary*
+ */
+export interface ProjectSliceDefaultPrimary {
+  /**
+   * Project field in *Project → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+}
+
+/**
+ * Default variation for Project Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Project*
+ */
+type ProjectSliceVariation = ProjectSliceDefault;
+
+/**
+ * Project Shared Slice
+ *
+ * - **API ID**: `project`
+ * - **Description**: Project
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSlice = prismic.SharedSlice<
+  "project",
+  ProjectSliceVariation
+>;
+
+/**
  * Primary content in *Slide → Primary*
  */
 export interface SlideSliceWithVideoPrimary {
@@ -2901,7 +3019,7 @@ export interface SlideSliceWithImagePrimary {
    * - **API ID Path**: slide.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  image: prismic.ImageField<"large screen">;
 
   /**
    * Content field in *Slide → Primary*
@@ -3318,81 +3436,6 @@ type TextSliceVariation = TextSliceDefault;
 export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
 
 /**
- * Primary content in *TextSection → Primary*
- */
-export interface TextSectionSliceDefaultPrimary {
-  /**
-   * Content field in *TextSection → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Type your engaging rich content here...
-   * - **API ID Path**: text_section.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Default Variation variation for TextSection Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default variation with full rich text formatting support for engaging content.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSectionSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TextSectionSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *TextSection → Primary*
- */
-export interface TextSectionSliceTwoColumnPrimary {
-  /**
-   * Content field in *TextSection → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Type your engaging rich content here...
-   * - **API ID Path**: text_section.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Two Column variation for TextSection Slice
- *
- * - **API ID**: `twoColumn`
- * - **Description**: Default variation with full rich text formatting support for engaging content.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSectionSliceTwoColumn = prismic.SharedSliceVariation<
-  "twoColumn",
-  Simplify<TextSectionSliceTwoColumnPrimary>,
-  never
->;
-
-/**
- * Slice variation for *TextSection*
- */
-type TextSectionSliceVariation =
-  | TextSectionSliceDefault
-  | TextSectionSliceTwoColumn;
-
-/**
- * TextSection Shared Slice
- *
- * - **API ID**: `text_section`
- * - **Description**: A rich and engaging text section for long form content, with advanced styling for various formatting options including lists, headings, bold, italic, and links.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSectionSlice = prismic.SharedSlice<
-  "text_section",
-  TextSectionSliceVariation
->;
-
-/**
  * Primary content in *Timeline → Primary*
  */
 export interface TimelineSliceAlternatedWithImagePrimary {
@@ -3733,6 +3776,11 @@ declare module "@prismicio/client" {
       PartnershipTierDocument,
       PartnershipTierDocumentData,
       PartnershipTierDocumentDataTierFeaturesItem,
+      ProjectDocument,
+      ProjectDocumentData,
+      ProjectsDocument,
+      ProjectsDocumentData,
+      ProjectsDocumentDataSlicesSlice,
       ResourcesDocument,
       ResourcesDocumentData,
       ResourcesDocumentDataSlicesSlice,
@@ -3791,11 +3839,6 @@ declare module "@prismicio/client" {
       FeaturesSliceVariation,
       FeaturesSliceDefault,
       FeaturesSliceWithImage,
-      FormSectionSlice,
-      FormSectionSliceDefaultPrimary,
-      FormSectionSliceDefaultItem,
-      FormSectionSliceVariation,
-      FormSectionSliceDefault,
       HeroBannerSlice,
       HeroBannerSliceDefaultPrimary,
       HeroBannerSliceDefaultItem,
@@ -3818,6 +3861,10 @@ declare module "@prismicio/client" {
       PartnershipTiersSliceVariation,
       PartnershipTiersSliceHorizontalCards,
       PartnershipTiersSliceFullWidthCards,
+      ProjectSlice,
+      ProjectSliceDefaultPrimary,
+      ProjectSliceVariation,
+      ProjectSliceDefault,
       SlideSlice,
       SlideSliceWithVideoPrimary,
       SlideSliceWithImagePrimary,
@@ -3843,12 +3890,6 @@ declare module "@prismicio/client" {
       TextSliceDefaultPrimary,
       TextSliceVariation,
       TextSliceDefault,
-      TextSectionSlice,
-      TextSectionSliceDefaultPrimary,
-      TextSectionSliceTwoColumnPrimary,
-      TextSectionSliceVariation,
-      TextSectionSliceDefault,
-      TextSectionSliceTwoColumn,
       TimelineSlice,
       TimelineSliceAlternatedWithImagePrimary,
       TimelineSliceAlternatedWithImageItem,

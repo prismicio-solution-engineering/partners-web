@@ -9,12 +9,12 @@ import type * as prismic from "@prismicio/client";
 
 const defaultComponents: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <h1 className="text-gray-darker text-center text-4xl lg:text-5xl font-sans font-bold mb-6 mt-16">
+    <h1 className="text-gray-darker text-4xl lg:text-5xl font-sans font-bold mb-6 mt-16">
       {children}
     </h1>
   ),
   heading2: ({ children }) => (
-    <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-4">
+    <h2 className="text-4xl font-sans font-bold text-gray-darker mb-4">
       {children}
     </h2>
   ),
@@ -39,7 +39,7 @@ const defaultComponents: JSXMapSerializer = {
     </h6>
   ),
   paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-gray-base max-w-2xl text-center mx-auto mb-4">
+    <p className="font-sans text-lg text-gray-base mb-4">
       {children}
     </p>
   ),
@@ -69,7 +69,7 @@ const defaultComponents: JSXMapSerializer = {
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className="text-primary-blue font-sans font-medium text-base underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+      className="font-sans font-medium text-base underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
     >
       {children}
     </PrismicNextLink>

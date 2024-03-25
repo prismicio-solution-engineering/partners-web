@@ -73,6 +73,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "project": {
+              "type": "SharedSlice"
+            },
             "call_to_action": {
               "type": "SharedSlice"
             },
@@ -99,9 +102,6 @@
               "type": "SharedSlice"
             },
             "accordion_section": {
-              "type": "SharedSlice"
-            },
-            "form_section": {
               "type": "SharedSlice"
             }
           }

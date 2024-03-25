@@ -24,6 +24,10 @@ const routes: prismic.ClientConfig["routes"] = [
     path: "/:uid",
   },
   {
+    type: "resources",
+    path: "/resources",
+  },
+  {
     type: "reviews",
     path: "/reviews",
   },
@@ -34,11 +38,10 @@ const routes: prismic.ClientConfig["routes"] = [
     },
     path: "/resources/:category?/:uid",
   },
-  //Find how we'll name that part
-  // {
-  // 	type: "process",
-  // 	path: "/building-with-prismic/process",
-  // },
+  {
+    type: "projects",
+    path: "/resources/projects",
+  }
 ];
 
 /**

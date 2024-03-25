@@ -12,7 +12,9 @@ export default async function Page() {
   const page = await client.getSingle("resources");
   const navigation =
     await client.getSingle<Content.NavigationDocument>("navigation");
+  const articlesCategories = await client.getAllByType("article_category");
 
+  console.log(articlesCategories);
   return (
     <>
       <Header navigation={navigation} />
@@ -20,6 +22,13 @@ export default async function Page() {
         title={page.data.page_title}
         description={page.data.description}
       />
+      <div>
+        {articlesCategories.map((cat, idx) => (
+          <div>
+            <h2>{cat.data.name}</h2>
+          </div>
+        ))}
+      </div>
       <SliceZone slices={page?.data?.slices} components={components} />
     </>
   );
