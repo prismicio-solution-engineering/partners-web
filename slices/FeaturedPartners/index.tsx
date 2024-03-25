@@ -2,20 +2,8 @@ import React from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import { Content } from "@prismicio/client";
-
-const serializer = {
-  heading3: ({ children }) => (
-    <h3 className="text-xl font-sans font-bold text-gray-darker mb-4">
-      {children}
-    </h3>
-  ),
-  paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
-      {children}
-    </p>
-  ),
-};
+import { Content, isFilled } from "@prismicio/client";
+import { Button } from "@/components/Button";
 
 /**
  * Props for `FeaturedPartners`.
@@ -29,9 +17,11 @@ export type FeaturedPartnersProps =
 const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
   return (
     <section className="bg-white">
-      <div className="flex flex-col items-center my-16 mx-auto max-w-full">
+      <div className="flex flex-col items-center my-16 mx-auto text-center max-w-full">
         <PrismicRichText field={slice.primary.section_title} />
-        <PrismicRichText field={slice.primary.section_description} />
+        {isFilled.richText(slice.primary.section_description) && (
+          <PrismicRichText field={slice.primary.section_description} />
+        )}
         <div className="px-4">
           <div
             className="flex flex-row gap-8 overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar"
@@ -48,7 +38,7 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
                   field={item.partner_link}
                 >
                   <PrismicNextImage
-                    className="mx-auto h-full w-full object-cover"
+                    className="mx-auto h-full w-full object-contain"
                     field={item.partner_logo}
                   />
                 </PrismicNextLink>
@@ -56,13 +46,9 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
             ))}
           </div>
         </div>
-        <div className="mt-12 flex justify-center">
-          <PrismicNextLink field={slice.primary.see_all_button_link}>
-            <button className="flex items-center justify-center w-full max-w-xs mx-auto py-4 px-8 text-gray-darker font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4 mt-4 transform transition-all duration-300 ease-in-out lg:w-auto">
-              {slice.primary.see_all_button_label}
-            </button>
-          </PrismicNextLink>
-        </div>
+        <Button field={slice.primary.see_all_button_link} variant="link">
+          {slice.primary.see_all_button_label}
+        </Button>
       </div>
     </section>
   );
