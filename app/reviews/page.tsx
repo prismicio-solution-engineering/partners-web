@@ -7,12 +7,14 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import ReviewLayout from "@/components/ReviewLayout";
+import { PrismicRichText } from "@/components/PrismicRichText";
+import { reviewsQuery } from "@/utils/graphQueries";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("reviews").catch(() => notFound());
   const checklist = await client
-    .getSingle("reviews_checklist")
+    .getSingle("reviews_checklist", {graphQuery: reviewsQuery})
     .catch(() => notFound());
   const navigation =
     await client.getSingle<Content.NavigationDocument>("navigation");
@@ -20,8 +22,12 @@ export default async function Page() {
   return (
     <>
       <Header navigation={navigation} />
+      <div className="text-center mx-auto max-w-screen-xl">
+        <PrismicRichText field={page.data.page_title} />
+        <PrismicRichText field={page.data.description} />
+      </div>
       <SliceZone slices={page?.data?.slices} components={components} />;
-      <ReviewLayout criteria={checklist.data.criteria} />
+      <ReviewLayout criteria={checklist.data.criteria} page={page} />
     </>
   );
 }

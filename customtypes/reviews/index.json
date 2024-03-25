@@ -30,6 +30,24 @@
         "config": {
           "choices": {}
         }
+      },
+      "sample_project_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Sample project description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+        }
+      },
+      "full_project_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Full project description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+        }
       }
     },
     "SEO & Metadata": {

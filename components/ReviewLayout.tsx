@@ -1,35 +1,51 @@
 "use client";
 
 import { ReviewChecklist } from "./ReviewChecklist";
-import { Content } from "@prismicio/client";
+import { BooleanField, Content, ContentRelationshipField, KeyTextField, RichTextField, SelectField, asText } from "@prismicio/client";
 import { Tab } from "@headlessui/react";
 
-const tabs = [
-  { name: "Slice Library", current: true },
-  { name: "Full project", current: false },
-];
+export type ChecklistProps = {
+  name: RichTextField;
+  category: ContentRelationshipField;
+  comment_next: RichTextField;
+  comment_nuxt: RichTextField;
+  comment_sveltkit: RichTextField;
+  priority: SelectField;
+  is_slice_library: BooleanField;
+  is_full_project: BooleanField;
+};
+
+export type CategoryProps = {
+  category_name: KeyTextField;
+};
 
 export default function ReviewLayout({
   criteria,
-}: Content.ReviewsChecklistDocumentData) {
+  page,
+}: {
+  criteria: ChecklistProps;
+  page: Content.ReviewsDocumentData;
+}) {
+  const tabs = [
+    {
+      name: "Sample project",
+      description: asText(page.sample_project_description),
+      current: true,
+    },
+    {
+      name: "Full project",
+      description: asText(page.full_project_description),
+      current: false,
+    },
+  ];
+
+  const categories: CategoryProps[] = [
+    ...new Set(criteria.map((e) => e.category.data.category_name)),
+  ];
+
   return (
     <div className="max-w-screen-xl mx-auto">
-      <div className="sm:hidden">
-        <label htmlFor="tabs" className="sr-only">
-          Select a Review
-        </label>
-        {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
-        <select
-          id="tabs"
-          name="tabs"
-          className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-          defaultValue={tabs.find((tab) => tab.current).name}
-        >
-          {tabs.map((tab) => (
-            <option key={tab.name}>{tab.name}</option>
-          ))}
-        </select>
-      </div>
+
       <Tab.Group>
         <Tab.List className="flex space-x-1 bg-white p-1">
           {tabs.map((tab, idx) => (
@@ -37,10 +53,10 @@ export default function ReviewLayout({
               key={idx}
               className={({ selected }) =>
                 `
-                  w-1/4 border-b-2 py-4 px-1 text-center text-xl
+                  w-1/4 border-b-2 py-4 px-1 text-center text-xl outline-0 
                   ${
                     selected
-                      ? "border-primary-blue text-primary-blue font-bold"
+                      ? "border-gray-dark text-gray-dark font-bold"
                       : "border-transparent text-silver-darker hover:border-silver-dark hover:text-gray-base"
                   }
                 `
@@ -53,12 +69,14 @@ export default function ReviewLayout({
         <Tab.Panels className="mt-2">
           {tabs.map((tab, idx) => (
             <Tab.Panel key={idx}>
+              {tab.description}
               <ReviewChecklist
                 criteria={
-                  tab.name === "Slice Library"
+                  tab.name === "Sample project"
                     ? criteria.filter((item) => item.is_slice_library)
                     : criteria.filter((item) => item.is_full_project)
                 }
+                categories={categories}
               />
             </Tab.Panel>
           ))}
