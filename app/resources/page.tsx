@@ -21,13 +21,6 @@ export default async function Page() {
         title={page.data.page_title}
         description={page.data.description}
       />
-      <div>
-        {articlesCategories.map((cat, idx) => (
-          <div key={idx}>
-            <h2>{cat.data.name}</h2>
-          </div>
-        ))}
-      </div>
       <SliceZone slices={page?.data?.slices} components={components} />
     </>
   );

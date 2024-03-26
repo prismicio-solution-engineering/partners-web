@@ -20,6 +20,18 @@ const serializer = {
   ),
 };
 
+const categoryPill = (category: string) => {
+  if (category === "Use case") {
+    return "bg-quaternary-purple text-primary-purple";
+  } else if (category === "Best practice") {
+    return "bg-quaternary-green text-primary-green";
+  } else if (category === "Tutorial") {
+    return "bg-quaternary-orange text-primary-orange";
+  } else if (category === "Solution engineering team projects") {
+    return "bg-quaternary-blue text-primary-blue";
+  }
+};
+
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
@@ -37,7 +49,9 @@ export default async function Page({ params }: { params: Params }) {
       <div className="bg-white px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-16">
           <div className="md:w-1/2">
-            <div className="max-w-fit text-center font-sans font-semibold text-sm uppercase text-gray-darker rounded-lg bg-[#E8F8F3] px-3 py-1 mb-4">
+            <div
+              className={`h-8 w-fit inline-flex text-center rounded-lg px-3 py-1 font-sans font-semibold text-sm mb-4 ${categoryPill(page.data.category.data.name)}`}
+            >
               {page.data.category.data.name}
             </div>
             <PrismicRichText field={page.data.title} components={serializer} />
@@ -48,7 +62,9 @@ export default async function Page({ params }: { params: Params }) {
           <div className="md:w-1/2">
             <PrismicNextImage
               field={page.data.featured_image}
-              className="w-full h-80 md:h-auto rounded-lg object-cover bg-[#E8F8F3]"
+              width={600}
+              height={370}
+              className="w-[600px] h-[370px] md:h-auto rounded-lg object-contain bg-silver-base"
             />
           </div>
         </div>
