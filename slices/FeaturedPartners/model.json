@@ -38,6 +38,7 @@
           "config": {
             "label": "See All Button Link",
             "placeholder": "Link to all partners",
+            "allowTargetBlank": true,
             "select": "web"
           }
         }
