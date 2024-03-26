@@ -32,8 +32,17 @@
         "type": "Image",
         "config": {
           "label": "Featured Image",
-          "constraint": {},
-          "thumbnails": []
+          "constraint": {
+            "width": 600,
+            "height": 370
+          },
+          "thumbnails": [
+            {
+              "name": "thumbnail",
+              "width": 350,
+              "height": 200
+            }
+          ]
         }
       },
       "date_of_publication": {

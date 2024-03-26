@@ -4,21 +4,19 @@ import { articleQuery } from "./graphQueries";
 
 const client = createClient();
 
-export const getArticles = async (
-  size: number,
-) => {
+export const getAllArticlesByCategory = async (category: string) => {
   try {
-    const articles = await client.getByType("article", {
+    const articles = await client.getAllByType("article", {
       graphQuery: articleQuery,
-      pageSize: size,
+      filters: [prismic.filter.at("my.article.category", category)],
       orderings: {
         field: "document.data.date_of_publication",
         direction: "desc",
       },
     });
-    return articles.results;
+    return articles;
   } catch (error) {
-    console.log("Error fetching articles :", error);
+    console.log("Error fetching articles by category :", error);
     return [];
   }
 };

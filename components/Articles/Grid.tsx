@@ -2,12 +2,14 @@
 import { useState } from "react";
 import { Button } from "../Button";
 import {
+  ArticleDocument,
   ArticlesSliceAutoFilterableGrid,
 } from "@/prismicio-types";
 import { asDate, isFilled } from "@prismicio/client";
-import { getArticles } from "@/utils/getArticles";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "../PrismicRichText";
+import { getAllArticles } from "@/utils/getAllArticles";
+import { getAllArticlesByCategory } from "@/utils/getAllArticlesByCategory";
 
 const serializer = {
   heading1: ({ children }) => (
@@ -18,25 +20,34 @@ const serializer = {
 const categoryPill = (category: string) => {
   if (category === "Use case") {
     return "bg-quaternary-purple text-primary-purple";
-  }
-  else if (category === "Best practice") {
+  } else if (category === "Best practice") {
     return "bg-quaternary-green text-primary-green";
-  }
-  else if (category === "Tutorial") {
+  } else if (category === "Tutorial") {
     return "bg-quaternary-orange text-primary-orange";
-  }
-  else if(category === "Solution engineering team projects"){
+  } else if (category === "Solution engineering team projects") {
     return "bg-quaternary-blue text-primary-blue";
   }
 };
 
-export async function Grid ({
+export async function Grid({
   slice,
 }: {
   slice: ArticlesSliceAutoFilterableGrid;
 }) {
+  let articles: ArticleDocument[] = [];
 
-  const articles = await getArticles(100);
+  if (
+    slice.variation === "autoFilterableGrid" &&
+    isFilled.contentRelationship(slice.primary.category)
+  ) {
+    articles = await getAllArticlesByCategory(slice.primary.category.id);
+  }
+  if (
+    slice.variation === "autoFilterableGrid" &&
+    !isFilled.contentRelationship(slice.primary.category)
+  ) {
+    articles = await getAllArticles();
+  }
 
   // State for the filtered articles after applying date filter
   // const [filteredArticles, setFilteredArticles] = useState([]);
@@ -59,7 +70,7 @@ export async function Grid ({
   // };
 
   return (
-    <div className="container mx-auto my-16 px-4">
+    <div className="max-w-screen-xl mx-auto my-16 px-4">
       {/* <div className="flex flex-col md:flex-row justify-between items-center mb-8">
         <div className="flex gap-4 mb-4 md:mb-0">
           <input
@@ -86,42 +97,53 @@ export async function Grid ({
         {articles.map((article, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-lg overflow-hidden shadow-lg"
+            className="bg-white rounded-lg overflow-hidden shadow-lg max-w-[350px]"
           >
-            <PrismicNextImage
-              className="w-full object-cover h-48"
-              field={article.data.featured_image}
-            />
-            <div className="p-6">
-              {/* <p className="text-xs text-secondary-blue uppercase mb-1">
-                {article.data.category.data.name}
-              </p> */}
+            {isFilled.image(article.data.featured_image) ? (
+              <PrismicNextImage
+                className="object-contain"
+                field={
+                  isFilled.imageThumbnail(article.data.featured_image.thumbnail)
+                    ? article.data.featured_image.thumbnail
+                    : article.data.featured_image
+                }
+                width={350}
+                height={200}
+              />
+            ) : (
+              <img
+                src="https://images.prismic.io/prismic-partners-web/65e19e9027237c2bb829b42b_illu-library_double-question-marks.png?auto=format,compress"
+                className="w-[350px] h-[200px] object-cover"
+              />
+            )}
+            <div className="px-8 py-4 whitespace-normal flex flex-col justify-between">
               <span
                 className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
               >
-                {isFilled.contentRelationship(article.data.author)
-                    ? article.data.category.data.name
-                    : "Anonymous"}
+                {article.data.category.data.name}
               </span>
-              <p className="text-xs text-gray-darker mb-2">
-                {new Date(asDate(article.data.date_of_publication)?.toISOString()).toLocaleDateString()}
-              </p>
-              {/* <h3 className="text-lg font-semibold text-gray-darker mb-2">
-                {article.data.title}
-              </h3> */}
+
               <PrismicRichText
-                  field={article.data.title}
-                  components={serializer}
-                />
-              <p className="text-xs text-gray-darker mb-4">
-                By {isFilled.contentRelationship(article.data.author)
+                field={article.data.title}
+                components={serializer}
+              />
+              <div>
+                <span className="text-xs text-gray-darker mb-2">
+                  {asDate(
+                    article.data.date_of_publication
+                  )?.toLocaleDateString()}
+                </span>{" "}
+                <span className="text-xs text-gray-darker mb-4">
+                  by{" "}
+                  {isFilled.contentRelationship(article.data.author)
                     ? article.data.author.data.name
                     : "Anonymous"}
-              </p>
+                </span>
+              </div>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-};
+}

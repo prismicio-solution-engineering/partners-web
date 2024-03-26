@@ -36,11 +36,6 @@ export const HorizontalScroll = async ({
     | Content.ArticlesSliceAutoHorizontalScroll;
 }) => {
 
-  
-  const category =
-    isFilled.contentRelationship(slice.primary.category) ?
-    await getCategory(slice.primary.category) : ""
-
   const articlesUids: string[] = slice.items.map((item) => {
     if (isFilled.contentRelationship(item.article)) {
       return item.article.uid!;
@@ -82,10 +77,23 @@ export const HorizontalScroll = async ({
             key={idx}
             className="inline-block bg-white rounded-xl shadow overflow-hidden mb-8 max-w-[350px] shrink-0"
           >
-            <PrismicNextImage
-              className="w-full object-cover h-[200px]"
-              field={article.data.featured_image}
-            />
+            {isFilled.image(article.data.featured_image) ? (
+              <PrismicNextImage
+                className="object-contain"
+                field={
+                  isFilled.imageThumbnail(article.data.featured_image.thumbnail)
+                    ? article.data.featured_image.thumbnail
+                    : article.data.featured_image
+                }
+                width={350}
+                height={200}
+              />
+            ) : (
+              <img
+                src="https://images.prismic.io/prismic-partners-web/65e19e9027237c2bb829b42b_illu-library_double-question-marks.png?auto=format,compress"
+                className="w-[350px] h-[200px] object-cover"
+              />
+            )}
             <div className="px-8 py-4 whitespace-normal h-80 flex flex-col justify-between">
               <span
                 className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}

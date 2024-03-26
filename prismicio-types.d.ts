@@ -50,7 +50,7 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  featured_image: prismic.ImageField<never>;
+  featured_image: prismic.ImageField<"thumbnail">;
 
   /**
    * Date of publication field in *Article*
