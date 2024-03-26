@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Header navigation={navigation} />
-      <PageLayout title={page.data.title} description={page.data.description} />
+      <PageLayout title={page?.data?.title} description={page?.data?.description} />
       <SliceZone
         slices={page?.data?.slices}
         components={{

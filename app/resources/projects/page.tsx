@@ -1,11 +1,10 @@
 import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import { components } from "@/slices/resources";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
-import { PrismicRichText } from "@/components/PrismicRichText";
+import { PageLayout } from "@/components/PageLayout";
 
 export default async function Page() {
   const client = createClient();
@@ -15,8 +14,7 @@ export default async function Page() {
   return (
     <>
       <Header navigation={navigation} />
-      <PrismicRichText field={page.data.title} />
-      <PrismicRichText field={page.data.description} />
+      <PageLayout title={page.data.title} description={page.data.description} />
       <SliceZone slices={page?.data?.slices} components={components} />
     </>
   );

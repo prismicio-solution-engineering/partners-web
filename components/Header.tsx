@@ -49,14 +49,8 @@ export default function Header({ navigation }: NavigationDocumentData) {
               />
             )}
           </div>
-          <div className="flex items-center gap-x-5 md:gap-x-8">
-            {/* Search Bar */}
+          {/* <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="flex items-center p-1 mt-4 md:mt-0">
-              {/* <input
-                type="text"
-                className="block w-full border-none py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                placeholder={navigation.data.search_bar_placeholder}
-              /> */}
               <button
                 type="button"
                 className="ml-auto flex h-8 w-8 items-center justify-center rounded-lg lg:ml-8"
@@ -81,7 +75,7 @@ export default function Header({ navigation }: NavigationDocumentData) {
             <div className="flex items-center p-1 mt-4 md:mt-0">
               <Modal data={navigation.data} />
             </div>
-          </div>
+          </div> */}
         </nav>
       </div>
 

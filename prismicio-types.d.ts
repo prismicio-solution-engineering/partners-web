@@ -1152,17 +1152,6 @@ interface ReviewsDocumentData {
   description: prismic.RichTextField;
 
   /**
-   * Slice Zone field in *Reviews*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: reviews.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice>;
-
-  /**
    * Sample project description field in *Reviews*
    *
    * - **Field Type**: Rich Text
@@ -1182,7 +1171,18 @@ interface ReviewsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  full_project_description: prismic.RichTextField /**
+  full_project_description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Reviews*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ReviewsDocumentDataSlicesSlice> /**
    * Meta Description field in *Reviews*
    *
    * - **Field Type**: Text

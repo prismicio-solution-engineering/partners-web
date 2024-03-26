@@ -14,8 +14,8 @@ export function PageLayout({
   description,
   featuredImage,
 }: {
-  title: prismic.RichTextField | prismic.KeyTextField;
-  description?: prismic.RichTextField | prismic.KeyTextField;
+  title?: prismic.RichTextField;
+  description?: prismic.RichTextField;
   featuredImage?: prismic.ImageField;
 }) {
   return (
@@ -29,20 +29,20 @@ export function PageLayout({
           />
         )}
         <div>
-          {title && (
+          {title ? (
             <h1 className="text-5xl font-sans font-bold text-gray-darker text-center">
-              {fieldType(title) === "richText" && <PrismicText field={title} />}
-              {fieldType(title) === "keyText" && { title }}
+              {prismic.isFilled.richText(title) ? (
+                <PrismicText field={title} />
+              ) : null}
             </h1>
-          )}
-          {description && (
+          ) : null}
+          {description ? (
             <p className="mb-4 text-center text-gray-base font-sans text-lg">
-              {fieldType(description) === "richText" && (
+              {prismic.isFilled.richText(description) ? (
                 <PrismicText field={description} />
-              )}
-              {fieldType(description) === "keyText" && { description }}
+              ) : null}
             </p>
-          )}
+          ) : null}
         </div>
       </div>
     </>

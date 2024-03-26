@@ -21,7 +21,7 @@
           "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,hyperlink,strong,em"
+          "multi": "paragraph,strong,em,hyperlink"
         }
       },
       "slices": {
