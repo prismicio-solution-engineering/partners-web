@@ -2,6 +2,7 @@
 import React from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 export const ScrollContainer = ({
+  gap,
   ...props
 }: {
   children: React.ReactNode;
@@ -34,7 +35,7 @@ export const ScrollContainer = ({
       </button>
       <div
         ref={scrollContainerRef}
-        className="overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide no-scrollbar px-2 flex flex-row gap-10 max-w-screen-xl mx-auto"
+        className={`overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide no-scrollbar px-2 flex flex-row max-w-screen-xl mx-auto gap-${gap}`}
         {...props}
       />
     </div>

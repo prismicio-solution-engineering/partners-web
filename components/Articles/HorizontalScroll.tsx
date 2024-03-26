@@ -71,11 +71,11 @@ export const HorizontalScroll = async ({
 
   return (
     <div className="bg-white relative max-w-screen-2xl mx-auto">
-      <ScrollContainer>
+      <ScrollContainer gap={10}>
         {articles.map((article, idx) => (
           <div
             key={idx}
-            className="inline-block bg-white rounded-xl shadow overflow-hidden mb-8 max-w-[350px] shrink-0"
+            className="flex-none inline-block bg-white rounded-xl shadow overflow-hidden mb-8 max-w-[350px] shrink-0"
           >
             {isFilled.image(article.data.featured_image) ? (
               <PrismicNextImage
@@ -85,8 +85,6 @@ export const HorizontalScroll = async ({
                     ? article.data.featured_image.thumbnail
                     : article.data.featured_image
                 }
-                width={350}
-                height={200}
               />
             ) : (
               <img

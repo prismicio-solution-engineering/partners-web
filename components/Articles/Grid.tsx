@@ -93,7 +93,7 @@ export async function Grid({
           {slice.primary.filter_label}
         </button>
       </div> */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
         {articles.map((article, idx) => (
           <div
             key={idx}
@@ -107,8 +107,6 @@ export async function Grid({
                     ? article.data.featured_image.thumbnail
                     : article.data.featured_image
                 }
-                width={350}
-                height={200}
               />
             ) : (
               <img
