@@ -3,10 +3,12 @@ import { notFound } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import { components as commonComponents } from "@/slices/common";
+import { components as navComponents } from "@/slices/navigation";
+import { components as resourcesComponents } from "@/slices/resources";
+import { components as slidesComponents } from "@/slices/slides";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
-import { PrismicRichText } from "@/components/PrismicRichText";
 import { PageLayout } from "@/components/PageLayout";
 
 type Params = { uid: string };
@@ -21,8 +23,16 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Header navigation={navigation} />
-      <PageLayout title={page.data.title} description={page.data.description}/>
-      <SliceZone slices={page?.data?.slices} components={components} />
+      <PageLayout title={page.data.title} description={page.data.description} />
+      <SliceZone
+        slices={page?.data?.slices}
+        components={{
+          ...commonComponents,
+          ...navComponents,
+          ...resourcesComponents,
+          ...slidesComponents,
+        }}
+      />
     </>
   );
 }

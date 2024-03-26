@@ -4,7 +4,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { NavigationDocumentData } from "@/prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceZone } from "@prismicio/react";
-import { components } from "@/slices";
+import { components } from "@/slices/navigation";
 import Modal from "./Modal";
 
 export default function Header({ navigation }: NavigationDocumentData) {

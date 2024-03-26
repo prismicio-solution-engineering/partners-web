@@ -77,6 +77,7 @@ const SliderComponent = ({ data }: { data: Content.SliderDocument }) => {
         />
       </div>
     );
+    
     const altTextSection = (
       <div className="text-left flex flex-col justify-start md:w-1/2 overflow-clip px-4 pt-10 pb-4 overflow-y-scroll">
         <PrismicRichText

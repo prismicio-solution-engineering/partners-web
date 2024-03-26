@@ -4,17 +4,11 @@ import dynamic from "next/dynamic";
 
 export const components = {
   accordion_section: dynamic(() => import("./Accordion")),
-  articles: dynamic(() => import("./Articles")),
   call_to_action: dynamic(() => import("./CallToAction")),
   featured_partners: dynamic(() => import("./FeaturedPartners")),
   features: dynamic(() => import("./Features")),
   hero_banner: dynamic(() => import("./HeroBanner")),
-  menu_item: dynamic(() => import("./MenuItem")),
   partnership_tiers: dynamic(() => import("./PartnershipTiers")),
-  project: dynamic(() => import("./Project")),
-  slide: dynamic(() => import("./Slide")),
-  slider: dynamic(() => import("./Slider")),
   testimonials: dynamic(() => import("./Testimonials")),
-  text: dynamic(() => import("./Text")),
   timeline: dynamic(() => import("./Timeline")),
 };

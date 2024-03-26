@@ -1,0 +1,151 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+					"width": 3648,
+					"height": 4560
+				},
+				"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+				"width": 3648,
+				"height": 4560,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "orange"
+			},
+			"date": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2024"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Prismic Partners Technical Enablement",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "index",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Especially"
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+					"width": 3500,
+					"height": 2338
+				},
+				"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?rect=96%2C0%2C3308%2C2338&w=631&h=446",
+				"width": 631,
+				"height": 446,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 96,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {
+					"large screen": {
+						"origin": {
+							"id": "large screen",
+							"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+							"width": 3168,
+							"height": 4752
+						},
+						"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?rect=0%2C1397%2C3168%2C1959&w=896&h=554",
+						"width": 896,
+						"height": 554,
+						"edit": {
+							"zoom": 1,
+							"crop": {
+								"x": 0,
+								"y": 1397
+							},
+							"background": "transparent"
+						},
+						"credits": null,
+						"alt": null
+					}
+				}
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "orange",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"summary_item_name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Id ex veniam id aliqua est laborum adipisicing cupidatat amet sint."
+									}
+								}
+							]
+						}
+					],
+					[
+						"summary_item_number",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "91",
+							"type": "Number"
+						}
+					]
+				]
+			}
+		]
+	}
+]

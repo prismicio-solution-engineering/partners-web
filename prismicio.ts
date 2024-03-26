@@ -16,6 +16,13 @@ export const repositoryName = process.env.NEXT_PUBLIC_PRISMIC_REPO
  */
 const routes: prismic.ClientConfig["routes"] = [
   {
+    type: "article",
+    resolvers: {
+      category: "category",
+    },
+    path: "/resources/:category?/:uid",
+  },
+  {
     type: "home",
     path: "/",
   },
@@ -24,23 +31,16 @@ const routes: prismic.ClientConfig["routes"] = [
     path: "/:uid",
   },
   {
+    type: "projects",
+    path: "/resources/projects",
+  },
+  {
     type: "resources",
     path: "/resources",
   },
   {
     type: "reviews",
     path: "/reviews",
-  },
-  {
-    type: "article",
-    resolvers: {
-      category: "category",
-    },
-    path: "/resources/:category?/:uid",
-  },
-  {
-    type: "projects",
-    path: "/resources/projects",
   }
 ];
 

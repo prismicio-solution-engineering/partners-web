@@ -1,0 +1,142 @@
+{
+  "id": "intro_slide",
+  "type": "SharedSlice",
+  "name": "IntroSlide",
+  "description": "IntroSlide",
+  "variations": [
+    {
+      "id": "default",
+      "name": "First slice",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "date": {
+          "type": "Text",
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2",
+            "labels": [
+              "highlight"
+            ]
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 631,
+              "height": 446
+            },
+            "thumbnails": [
+              {
+                "name": "large screen",
+                "width": 896,
+                "height": 554
+              }
+            ]
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background color",
+            "placeholder": "Slide background color",
+            "options": [
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "index",
+      "name": "Index",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2",
+            "labels": [
+              "highlight"
+            ]
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 631,
+              "height": 446
+            },
+            "thumbnails": [
+              {
+                "name": "large screen",
+                "width": 896,
+                "height": 554
+              }
+            ]
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background color",
+            "placeholder": "Slide background color",
+            "options": [
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        }
+      },
+      "items": {
+        "summary_item_name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Summary item name",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,paragraph,em"
+          }
+        },
+        "summary_item_number": {
+          "type": "Number",
+          "config": {
+            "label": "Summary item number",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

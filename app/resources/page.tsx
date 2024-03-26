@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { PrismicText, SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import { components } from "@/slices/resources";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import { PageLayout } from "@/components/PageLayout";

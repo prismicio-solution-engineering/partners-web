@@ -811,6 +811,17 @@ interface ProjectDocumentData {
   project_name: prismic.KeyTextField;
 
   /**
+   * Category field in *Project*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"project_category">;
+
+  /**
    * Project description field in *Project*
    *
    * - **Field Type**: Rich Text
@@ -820,17 +831,6 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   project_description: prismic.RichTextField;
-
-  /**
-   * Featured image field in *Project*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.featured_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  featured_image: prismic.ImageField<never>;
 
   /**
    * Live project link field in *Project*
@@ -853,6 +853,17 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   source_code_link: prismic.LinkField;
+
+  /**
+   * Featured image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
 }
 
 /**
@@ -868,6 +879,38 @@ export type ProjectDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<ProjectDocumentData>,
     "project",
+    Lang
+  >;
+
+/**
+ * Content for Project category documents
+ */
+interface ProjectCategoryDocumentData {
+  /**
+   * Category Name field in *Project category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_category.category_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category_name: prismic.KeyTextField;
+}
+
+/**
+ * Project category document from Prismic
+ *
+ * - **API ID**: `project_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectCategoryDocumentData>,
+    "project_category",
     Lang
   >;
 
@@ -1361,6 +1404,17 @@ interface SliderDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<SliderDocumentDataSlicesSlice>;
+
+  /**
+   * Logo field in *Slider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
 }
 
 /**
@@ -1384,6 +1438,7 @@ export type AllDocumentTypes =
   | PageDocument
   | PartnershipTierDocument
   | ProjectDocument
+  | ProjectCategoryDocument
   | ProjectsDocument
   | ResourcesDocument
   | ReviewCriteriaCategoryDocument
@@ -1618,448 +1673,6 @@ type AccordionSectionSliceVariation =
 export type AccordionSectionSlice = prismic.SharedSlice<
   "accordion_section",
   AccordionSectionSliceVariation
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
-export interface ArticlesSliceListPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Articles → Items*
- */
-export interface ArticlesSliceListItem {
-  /**
-   * Article field in *Articles → Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.items[].article
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  article: prismic.ContentRelationshipField<"article">;
-}
-
-/**
- * List variation for Articles Slice
- *
- * - **API ID**: `list`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceList = prismic.SharedSliceVariation<
-  "list",
-  Simplify<ArticlesSliceListPrimary>,
-  Simplify<ArticlesSliceListItem>
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
-export interface ArticlesSliceAutoListPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-
-  /**
-   * Number of articles field in *Articles → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.number_of_articles
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  number_of_articles: prismic.NumberField;
-
-  /**
-   * Category filter field in *Articles → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.category
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  category: prismic.ContentRelationshipField<"article_category">;
-}
-
-/**
- * Auto list variation for Articles Slice
- *
- * - **API ID**: `autoList`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceAutoList = prismic.SharedSliceVariation<
-  "autoList",
-  Simplify<ArticlesSliceAutoListPrimary>,
-  never
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
-export interface ArticlesSliceHorizontalScrollPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Articles → Items*
- */
-export interface ArticlesSliceHorizontalScrollItem {
-  /**
-   * Article field in *Articles → Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.items[].article
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  article: prismic.ContentRelationshipField<"article">;
-}
-
-/**
- * Horizontal Scroll variation for Articles Slice
- *
- * - **API ID**: `horizontalScroll`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceHorizontalScroll = prismic.SharedSliceVariation<
-  "horizontalScroll",
-  Simplify<ArticlesSliceHorizontalScrollPrimary>,
-  Simplify<ArticlesSliceHorizontalScrollItem>
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
-export interface ArticlesSliceAutoHorizontalScrollPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-
-  /**
-   * Number of articles field in *Articles → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.number_of_articles
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  number_of_articles: prismic.NumberField;
-
-  /**
-   * Category filter field in *Articles → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.category
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  category: prismic.ContentRelationshipField<"article_category">;
-}
-
-/**
- * Auto Horizontal Scroll variation for Articles Slice
- *
- * - **API ID**: `autoHorizontalScroll`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceAutoHorizontalScroll = prismic.SharedSliceVariation<
-  "autoHorizontalScroll",
-  Simplify<ArticlesSliceAutoHorizontalScrollPrimary>,
-  never
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
-export interface ArticlesSliceAutoFilterableGridPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-
-  /**
-   * Category filter field in *Articles → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.category
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  category: prismic.ContentRelationshipField<"article_category">;
-}
-
-/**
- * Auto Filterable Grid variation for Articles Slice
- *
- * - **API ID**: `autoFilterableGrid`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceAutoFilterableGrid = prismic.SharedSliceVariation<
-  "autoFilterableGrid",
-  Simplify<ArticlesSliceAutoFilterableGridPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Articles*
- */
-type ArticlesSliceVariation =
-  | ArticlesSliceList
-  | ArticlesSliceAutoList
-  | ArticlesSliceHorizontalScroll
-  | ArticlesSliceAutoHorizontalScroll
-  | ArticlesSliceAutoFilterableGrid;
-
-/**
- * Articles Shared Slice
- *
- * - **API ID**: `articles`
- * - **Description**: Articles
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSlice = prismic.SharedSlice<
-  "articles",
-  ArticlesSliceVariation
 >;
 
 /**
@@ -2641,124 +2254,6 @@ export type HeroBannerSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *MenuItem → Primary*
- */
-export interface MenuItemSliceDefaultPrimary {
-  /**
-   * Label field in *MenuItem → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *MenuItem → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Default variation for MenuItem Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type MenuItemSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<MenuItemSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *MenuItem → Primary*
- */
-export interface MenuItemSliceWithSubMenuPrimary {
-  /**
-   * Label field in *MenuItem → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *MenuItem → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Primary content in *MenuItem → Items*
- */
-export interface MenuItemSliceWithSubMenuItem {
-  /**
-   * Sub menu item label field in *MenuItem → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.items[].sub_menu_item_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  sub_menu_item_label: prismic.KeyTextField;
-
-  /**
-   * Sub menu item link field in *MenuItem → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.items[].sub_menu_item_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  sub_menu_item_link: prismic.LinkField;
-}
-
-/**
- * With sub menu variation for MenuItem Slice
- *
- * - **API ID**: `withSubMenu`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type MenuItemSliceWithSubMenu = prismic.SharedSliceVariation<
-  "withSubMenu",
-  Simplify<MenuItemSliceWithSubMenuPrimary>,
-  Simplify<MenuItemSliceWithSubMenuItem>
->;
-
-/**
- * Slice variation for *MenuItem*
- */
-type MenuItemSliceVariation = MenuItemSliceDefault | MenuItemSliceWithSubMenu;
-
-/**
- * MenuItem Shared Slice
- *
- * - **API ID**: `menu_item`
- * - **Description**: MenuItem
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type MenuItemSlice = prismic.SharedSlice<
-  "menu_item",
-  MenuItemSliceVariation
->;
-
-/**
  * Primary content in *PartnershipTiers → Primary*
  */
 export interface PartnershipTiersSliceHorizontalCardsPrimary {
@@ -2882,336 +2377,6 @@ export type PartnershipTiersSlice = prismic.SharedSlice<
   "partnership_tiers",
   PartnershipTiersSliceVariation
 >;
-
-/**
- * Primary content in *Project → Primary*
- */
-export interface ProjectSliceDefaultPrimary {
-  /**
-   * Project field in *Project → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.project
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project: prismic.ContentRelationshipField<"project">;
-}
-
-/**
- * Default variation for Project Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ProjectSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Project*
- */
-type ProjectSliceVariation = ProjectSliceDefault;
-
-/**
- * Project Shared Slice
- *
- * - **API ID**: `project`
- * - **Description**: Project
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSlice = prismic.SharedSlice<
-  "project",
-  ProjectSliceVariation
->;
-
-/**
- * Primary content in *Slide → Primary*
- */
-export interface SlideSliceWithVideoPrimary {
-  /**
-   * Title field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Video thumbnail field in *Slide → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.video_thumbnail
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  video_thumbnail: prismic.ImageField<never>;
-
-  /**
-   * Video link field in *Slide → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.video_link
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  video_link: prismic.KeyTextField;
-
-  /**
-   * Content field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Slide content
-   * - **API ID Path**: slide.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Media side field in *Slide → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: slide.primary.media_side
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  media_side: prismic.BooleanField;
-}
-
-/**
- * With Video variation for Slide Slice
- *
- * - **API ID**: `withVideo`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlideSliceWithVideo = prismic.SharedSliceVariation<
-  "withVideo",
-  Simplify<SlideSliceWithVideoPrimary>,
-  never
->;
-
-/**
- * Primary content in *Slide → Primary*
- */
-export interface SlideSliceWithImagePrimary {
-  /**
-   * Title field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Slide title
-   * - **API ID Path**: slide.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Image field in *Slide → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<"large screen">;
-
-  /**
-   * Content field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Slide content
-   * - **API ID Path**: slide.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Media side field in *Slide → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: slide.primary.media_side
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  media_side: prismic.BooleanField;
-}
-
-/**
- * With Image variation for Slide Slice
- *
- * - **API ID**: `withImage`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlideSliceWithImage = prismic.SharedSliceVariation<
-  "withImage",
-  Simplify<SlideSliceWithImagePrimary>,
-  never
->;
-
-/**
- * Primary content in *Slide → Primary*
- */
-export interface SlideSliceContentOnlyPrimary {
-  /**
-   * Title field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Content field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Slide content
-   * - **API ID Path**: slide.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Content Only variation for Slide Slice
- *
- * - **API ID**: `contentOnly`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlideSliceContentOnly = prismic.SharedSliceVariation<
-  "contentOnly",
-  Simplify<SlideSliceContentOnlyPrimary>,
-  never
->;
-
-/**
- * Primary content in *Slide → Primary*
- */
-export interface SlideSliceWithYoutubeVideoPrimary {
-  /**
-   * Title field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Video embed link field in *Slide → Primary*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.video_embed_link
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  video_embed_link: prismic.EmbedField;
-
-  /**
-   * Content field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Slide content
-   * - **API ID Path**: slide.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Media side field in *Slide → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: slide.primary.media_side
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  media_side: prismic.BooleanField;
-}
-
-/**
- * With Youtube Video variation for Slide Slice
- *
- * - **API ID**: `withYoutubeVideo`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlideSliceWithYoutubeVideo = prismic.SharedSliceVariation<
-  "withYoutubeVideo",
-  Simplify<SlideSliceWithYoutubeVideoPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Slide*
- */
-type SlideSliceVariation =
-  | SlideSliceWithVideo
-  | SlideSliceWithImage
-  | SlideSliceContentOnly
-  | SlideSliceWithYoutubeVideo;
-
-/**
- * Slide Shared Slice
- *
- * - **API ID**: `slide`
- * - **Description**: Slide
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlideSlice = prismic.SharedSlice<"slide", SlideSliceVariation>;
-
-/**
- * Primary content in *Slider → Primary*
- */
-export interface SliderSliceDefaultPrimary {
-  /**
-   * Slider field in *Slider → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slider.primary.slider
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  slider: prismic.ContentRelationshipField<"slider">;
-}
-
-/**
- * Default variation for Slider Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SliderSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<SliderSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Slider*
- */
-type SliderSliceVariation = SliderSliceDefault;
-
-/**
- * Slider Shared Slice
- *
- * - **API ID**: `slider`
- * - **Description**: Slider
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SliderSlice = prismic.SharedSlice<"slider", SliderSliceVariation>;
 
 /**
  * Primary content in *Testimonials → Primary*
@@ -3392,48 +2557,6 @@ export type TestimonialsSlice = prismic.SharedSlice<
   "testimonials",
   TestimonialsSliceVariation
 >;
-
-/**
- * Primary content in *Text → Primary*
- */
-export interface TextSliceDefaultPrimary {
-  /**
-   * Text Section field in *Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text.primary.text_section
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text_section: prismic.RichTextField;
-}
-
-/**
- * Default variation for Text Slice
- *
- * - **API ID**: `default`
- * - **Description**: Text
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TextSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Text*
- */
-type TextSliceVariation = TextSliceDefault;
-
-/**
- * Text Shared Slice
- *
- * - **API ID**: `text`
- * - **Description**: Text
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
 
 /**
  * Primary content in *Timeline → Primary*
@@ -3744,6 +2867,1109 @@ export type TimelineSlice = prismic.SharedSlice<
   TimelineSliceVariation
 >;
 
+/**
+ * Primary content in *Articles → Primary*
+ */
+export interface ArticlesSliceListPrimary {
+  /**
+   * Title field in *Articles → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Link to blog label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.link_to_blog_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_to_blog_label: prismic.KeyTextField;
+
+  /**
+   * Link to blog field in *Articles → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link to blog page
+   * - **API ID Path**: articles.primary.link_to_blog
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_to_blog: prismic.LinkField;
+
+  /**
+   * Filter label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.filter_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_label: prismic.KeyTextField;
+
+  /**
+   * Articles read more label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: To display on each article
+   * - **API ID Path**: articles.primary.articles_read_more_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  articles_read_more_label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Articles → Items*
+ */
+export interface ArticlesSliceListItem {
+  /**
+   * Article field in *Articles → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.items[].article
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  article: prismic.ContentRelationshipField<"article">;
+}
+
+/**
+ * List variation for Articles Slice
+ *
+ * - **API ID**: `list`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSliceList = prismic.SharedSliceVariation<
+  "list",
+  Simplify<ArticlesSliceListPrimary>,
+  Simplify<ArticlesSliceListItem>
+>;
+
+/**
+ * Primary content in *Articles → Primary*
+ */
+export interface ArticlesSliceAutoListPrimary {
+  /**
+   * Title field in *Articles → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Link to blog label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.link_to_blog_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_to_blog_label: prismic.KeyTextField;
+
+  /**
+   * Link to blog field in *Articles → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link to blog page
+   * - **API ID Path**: articles.primary.link_to_blog
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_to_blog: prismic.LinkField;
+
+  /**
+   * Filter label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.filter_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_label: prismic.KeyTextField;
+
+  /**
+   * Articles read more label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: To display on each article
+   * - **API ID Path**: articles.primary.articles_read_more_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  articles_read_more_label: prismic.KeyTextField;
+
+  /**
+   * Number of articles field in *Articles → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.number_of_articles
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  number_of_articles: prismic.NumberField;
+
+  /**
+   * Category filter field in *Articles → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.category
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"article_category">;
+}
+
+/**
+ * Auto list variation for Articles Slice
+ *
+ * - **API ID**: `autoList`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSliceAutoList = prismic.SharedSliceVariation<
+  "autoList",
+  Simplify<ArticlesSliceAutoListPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Articles → Primary*
+ */
+export interface ArticlesSliceHorizontalScrollPrimary {
+  /**
+   * Title field in *Articles → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Link to blog label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.link_to_blog_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_to_blog_label: prismic.KeyTextField;
+
+  /**
+   * Link to blog field in *Articles → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link to blog page
+   * - **API ID Path**: articles.primary.link_to_blog
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_to_blog: prismic.LinkField;
+
+  /**
+   * Filter label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.filter_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_label: prismic.KeyTextField;
+
+  /**
+   * Articles read more label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: To display on each article
+   * - **API ID Path**: articles.primary.articles_read_more_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  articles_read_more_label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Articles → Items*
+ */
+export interface ArticlesSliceHorizontalScrollItem {
+  /**
+   * Article field in *Articles → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.items[].article
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  article: prismic.ContentRelationshipField<"article">;
+}
+
+/**
+ * Horizontal Scroll variation for Articles Slice
+ *
+ * - **API ID**: `horizontalScroll`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSliceHorizontalScroll = prismic.SharedSliceVariation<
+  "horizontalScroll",
+  Simplify<ArticlesSliceHorizontalScrollPrimary>,
+  Simplify<ArticlesSliceHorizontalScrollItem>
+>;
+
+/**
+ * Primary content in *Articles → Primary*
+ */
+export interface ArticlesSliceAutoHorizontalScrollPrimary {
+  /**
+   * Title field in *Articles → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Link to blog label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.link_to_blog_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_to_blog_label: prismic.KeyTextField;
+
+  /**
+   * Link to blog field in *Articles → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link to blog page
+   * - **API ID Path**: articles.primary.link_to_blog
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_to_blog: prismic.LinkField;
+
+  /**
+   * Filter label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.filter_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_label: prismic.KeyTextField;
+
+  /**
+   * Articles read more label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: To display on each article
+   * - **API ID Path**: articles.primary.articles_read_more_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  articles_read_more_label: prismic.KeyTextField;
+
+  /**
+   * Number of articles field in *Articles → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.number_of_articles
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  number_of_articles: prismic.NumberField;
+
+  /**
+   * Category filter field in *Articles → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.category
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"article_category">;
+}
+
+/**
+ * Auto Horizontal Scroll variation for Articles Slice
+ *
+ * - **API ID**: `autoHorizontalScroll`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSliceAutoHorizontalScroll = prismic.SharedSliceVariation<
+  "autoHorizontalScroll",
+  Simplify<ArticlesSliceAutoHorizontalScrollPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Articles → Primary*
+ */
+export interface ArticlesSliceAutoFilterableGridPrimary {
+  /**
+   * Title field in *Articles → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Link to blog label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.link_to_blog_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_to_blog_label: prismic.KeyTextField;
+
+  /**
+   * Link to blog field in *Articles → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Link to blog page
+   * - **API ID Path**: articles.primary.link_to_blog
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_to_blog: prismic.LinkField;
+
+  /**
+   * Filter label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.filter_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_label: prismic.KeyTextField;
+
+  /**
+   * Articles read more label field in *Articles → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: To display on each article
+   * - **API ID Path**: articles.primary.articles_read_more_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  articles_read_more_label: prismic.KeyTextField;
+
+  /**
+   * Category filter field in *Articles → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles.primary.category
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"article_category">;
+}
+
+/**
+ * Auto Filterable Grid variation for Articles Slice
+ *
+ * - **API ID**: `autoFilterableGrid`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSliceAutoFilterableGrid = prismic.SharedSliceVariation<
+  "autoFilterableGrid",
+  Simplify<ArticlesSliceAutoFilterableGridPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Articles*
+ */
+type ArticlesSliceVariation =
+  | ArticlesSliceList
+  | ArticlesSliceAutoList
+  | ArticlesSliceHorizontalScroll
+  | ArticlesSliceAutoHorizontalScroll
+  | ArticlesSliceAutoFilterableGrid;
+
+/**
+ * Articles Shared Slice
+ *
+ * - **API ID**: `articles`
+ * - **Description**: Articles
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticlesSlice = prismic.SharedSlice<
+  "articles",
+  ArticlesSliceVariation
+>;
+
+/**
+ * Primary content in *Project → Primary*
+ */
+export interface ProjectSliceDefaultPrimary {
+  /**
+   * Project field in *Project → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+}
+
+/**
+ * Default variation for Project Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Project*
+ */
+type ProjectSliceVariation = ProjectSliceDefault;
+
+/**
+ * Project Shared Slice
+ *
+ * - **API ID**: `project`
+ * - **Description**: Project
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSlice = prismic.SharedSlice<
+  "project",
+  ProjectSliceVariation
+>;
+
+/**
+ * Primary content in *Text → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+  /**
+   * Text Section field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.text_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_section: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text*
+ */
+type TextSliceVariation = TextSliceDefault;
+
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
+
+/**
+ * Primary content in *IntroSlide → Primary*
+ */
+export interface IntroSlideSliceDefaultPrimary {
+  /**
+   * Date field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.primary.date
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  date: prismic.KeyTextField;
+
+  /**
+   * Title field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"large screen">;
+
+  /**
+   * Background color field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: intro_slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+}
+
+/**
+ * First slice variation for IntroSlide Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSlideSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntroSlideSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *IntroSlide → Primary*
+ */
+export interface IntroSlideSliceIndexPrimary {
+  /**
+   * Title field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"large screen">;
+
+  /**
+   * Background color field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: intro_slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+}
+
+/**
+ * Primary content in *IntroSlide → Items*
+ */
+export interface IntroSlideSliceIndexItem {
+  /**
+   * Summary item name field in *IntroSlide → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.items[].summary_item_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  summary_item_name: prismic.RichTextField;
+
+  /**
+   * Summary item number field in *IntroSlide → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.items[].summary_item_number
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  summary_item_number: prismic.NumberField;
+}
+
+/**
+ * Index variation for IntroSlide Slice
+ *
+ * - **API ID**: `index`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSlideSliceIndex = prismic.SharedSliceVariation<
+  "index",
+  Simplify<IntroSlideSliceIndexPrimary>,
+  Simplify<IntroSlideSliceIndexItem>
+>;
+
+/**
+ * Slice variation for *IntroSlide*
+ */
+type IntroSlideSliceVariation = IntroSlideSliceDefault | IntroSlideSliceIndex;
+
+/**
+ * IntroSlide Shared Slice
+ *
+ * - **API ID**: `intro_slide`
+ * - **Description**: IntroSlide
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSlideSlice = prismic.SharedSlice<
+  "intro_slide",
+  IntroSlideSliceVariation
+>;
+
+/**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceWithImagePrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide title
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *Slide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"large screen">;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Media side field in *Slide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+}
+
+/**
+ * With Image variation for Slide Slice
+ *
+ * - **API ID**: `withImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceWithImage = prismic.SharedSliceVariation<
+  "withImage",
+  Simplify<SlideSliceWithImagePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceContentOnlyPrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Content Only variation for Slide Slice
+ *
+ * - **API ID**: `contentOnly`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceContentOnly = prismic.SharedSliceVariation<
+  "contentOnly",
+  Simplify<SlideSliceContentOnlyPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Slide*
+ */
+type SlideSliceVariation = SlideSliceWithImage | SlideSliceContentOnly;
+
+/**
+ * Slide Shared Slice
+ *
+ * - **API ID**: `slide`
+ * - **Description**: Slide
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSlice = prismic.SharedSlice<"slide", SlideSliceVariation>;
+
+/**
+ * Primary content in *Slider → Primary*
+ */
+export interface SliderSliceDefaultPrimary {
+  /**
+   * Slider field in *Slider → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.primary.slider
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  slider: prismic.ContentRelationshipField<"slider">;
+}
+
+/**
+ * Default variation for Slider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SliderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Slider*
+ */
+type SliderSliceVariation = SliderSliceDefault;
+
+/**
+ * Slider Shared Slice
+ *
+ * - **API ID**: `slider`
+ * - **Description**: Slider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderSlice = prismic.SharedSlice<"slider", SliderSliceVariation>;
+
+/**
+ * Primary content in *VideoSlide → Primary*
+ */
+export interface VideoSlideSliceWithYoutubeVideoPrimary {
+  /**
+   * Title field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Video embed link field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_slide.primary.video_embed_link
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video_embed_link: prismic.EmbedField;
+
+  /**
+   * Content field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: video_slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Media side field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: video_slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+}
+
+/**
+ * With Youtube Video variation for VideoSlide Slice
+ *
+ * - **API ID**: `withYoutubeVideo`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlideSliceWithYoutubeVideo = prismic.SharedSliceVariation<
+  "withYoutubeVideo",
+  Simplify<VideoSlideSliceWithYoutubeVideoPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *VideoSlide → Primary*
+ */
+export interface VideoSlideSliceWithVideoPrimary {
+  /**
+   * Title field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Video thumbnail field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_slide.primary.video_thumbnail
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Video link field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_slide.primary.video_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_link: prismic.KeyTextField;
+
+  /**
+   * Content field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide content
+   * - **API ID Path**: video_slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Media side field in *VideoSlide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: video_slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+}
+
+/**
+ * With Video variation for VideoSlide Slice
+ *
+ * - **API ID**: `withVideo`
+ * - **Description**: With video src
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlideSliceWithVideo = prismic.SharedSliceVariation<
+  "withVideo",
+  Simplify<VideoSlideSliceWithVideoPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoSlide*
+ */
+type VideoSlideSliceVariation =
+  | VideoSlideSliceWithYoutubeVideo
+  | VideoSlideSliceWithVideo;
+
+/**
+ * VideoSlide Shared Slice
+ *
+ * - **API ID**: `video_slide`
+ * - **Description**: Slide for videos
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlideSlice = prismic.SharedSlice<
+  "video_slide",
+  VideoSlideSliceVariation
+>;
+
+/**
+ * Primary content in *MenuItem → Primary*
+ */
+export interface MenuItemSliceDefaultPrimary {
+  /**
+   * Label field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for MenuItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MenuItemSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *MenuItem → Primary*
+ */
+export interface MenuItemSliceWithSubMenuPrimary {
+  /**
+   * Label field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *MenuItem → Items*
+ */
+export interface MenuItemSliceWithSubMenuItem {
+  /**
+   * Sub menu item label field in *MenuItem → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.items[].sub_menu_item_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_menu_item_label: prismic.KeyTextField;
+
+  /**
+   * Sub menu item link field in *MenuItem → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.items[].sub_menu_item_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  sub_menu_item_link: prismic.LinkField;
+}
+
+/**
+ * With sub menu variation for MenuItem Slice
+ *
+ * - **API ID**: `withSubMenu`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSliceWithSubMenu = prismic.SharedSliceVariation<
+  "withSubMenu",
+  Simplify<MenuItemSliceWithSubMenuPrimary>,
+  Simplify<MenuItemSliceWithSubMenuItem>
+>;
+
+/**
+ * Slice variation for *MenuItem*
+ */
+type MenuItemSliceVariation = MenuItemSliceDefault | MenuItemSliceWithSubMenu;
+
+/**
+ * MenuItem Shared Slice
+ *
+ * - **API ID**: `menu_item`
+ * - **Description**: MenuItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSlice = prismic.SharedSlice<
+  "menu_item",
+  MenuItemSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -3778,6 +4004,8 @@ declare module "@prismicio/client" {
       PartnershipTierDocumentDataTierFeaturesItem,
       ProjectDocument,
       ProjectDocumentData,
+      ProjectCategoryDocument,
+      ProjectCategoryDocumentData,
       ProjectsDocument,
       ProjectsDocumentData,
       ProjectsDocumentDataSlicesSlice,
@@ -3807,20 +4035,6 @@ declare module "@prismicio/client" {
       AccordionSectionSliceWithImage,
       AccordionSectionSliceTwoColumns,
       AccordionSectionSliceCentered,
-      ArticlesSlice,
-      ArticlesSliceListPrimary,
-      ArticlesSliceListItem,
-      ArticlesSliceAutoListPrimary,
-      ArticlesSliceHorizontalScrollPrimary,
-      ArticlesSliceHorizontalScrollItem,
-      ArticlesSliceAutoHorizontalScrollPrimary,
-      ArticlesSliceAutoFilterableGridPrimary,
-      ArticlesSliceVariation,
-      ArticlesSliceList,
-      ArticlesSliceAutoList,
-      ArticlesSliceHorizontalScroll,
-      ArticlesSliceAutoHorizontalScroll,
-      ArticlesSliceAutoFilterableGrid,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceTwoColumnsPrimary,
@@ -3846,13 +4060,6 @@ declare module "@prismicio/client" {
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,
       HeroBannerSliceWithImage,
-      MenuItemSlice,
-      MenuItemSliceDefaultPrimary,
-      MenuItemSliceWithSubMenuPrimary,
-      MenuItemSliceWithSubMenuItem,
-      MenuItemSliceVariation,
-      MenuItemSliceDefault,
-      MenuItemSliceWithSubMenu,
       PartnershipTiersSlice,
       PartnershipTiersSliceHorizontalCardsPrimary,
       PartnershipTiersSliceHorizontalCardsItem,
@@ -3861,24 +4068,6 @@ declare module "@prismicio/client" {
       PartnershipTiersSliceVariation,
       PartnershipTiersSliceHorizontalCards,
       PartnershipTiersSliceFullWidthCards,
-      ProjectSlice,
-      ProjectSliceDefaultPrimary,
-      ProjectSliceVariation,
-      ProjectSliceDefault,
-      SlideSlice,
-      SlideSliceWithVideoPrimary,
-      SlideSliceWithImagePrimary,
-      SlideSliceContentOnlyPrimary,
-      SlideSliceWithYoutubeVideoPrimary,
-      SlideSliceVariation,
-      SlideSliceWithVideo,
-      SlideSliceWithImage,
-      SlideSliceContentOnly,
-      SlideSliceWithYoutubeVideo,
-      SliderSlice,
-      SliderSliceDefaultPrimary,
-      SliderSliceVariation,
-      SliderSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceSinglePrimary,
       TestimonialsSliceSliderPrimary,
@@ -3886,10 +4075,6 @@ declare module "@prismicio/client" {
       TestimonialsSliceVariation,
       TestimonialsSliceSingle,
       TestimonialsSliceSlider,
-      TextSlice,
-      TextSliceDefaultPrimary,
-      TextSliceVariation,
-      TextSliceDefault,
       TimelineSlice,
       TimelineSliceAlternatedWithImagePrimary,
       TimelineSliceAlternatedWithImageItem,
@@ -3901,6 +4086,58 @@ declare module "@prismicio/client" {
       TimelineSliceAlternatedWithImage,
       TimelineSliceLinear,
       TimelineSliceGrid,
+      ArticlesSlice,
+      ArticlesSliceListPrimary,
+      ArticlesSliceListItem,
+      ArticlesSliceAutoListPrimary,
+      ArticlesSliceHorizontalScrollPrimary,
+      ArticlesSliceHorizontalScrollItem,
+      ArticlesSliceAutoHorizontalScrollPrimary,
+      ArticlesSliceAutoFilterableGridPrimary,
+      ArticlesSliceVariation,
+      ArticlesSliceList,
+      ArticlesSliceAutoList,
+      ArticlesSliceHorizontalScroll,
+      ArticlesSliceAutoHorizontalScroll,
+      ArticlesSliceAutoFilterableGrid,
+      ProjectSlice,
+      ProjectSliceDefaultPrimary,
+      ProjectSliceVariation,
+      ProjectSliceDefault,
+      TextSlice,
+      TextSliceDefaultPrimary,
+      TextSliceVariation,
+      TextSliceDefault,
+      IntroSlideSlice,
+      IntroSlideSliceDefaultPrimary,
+      IntroSlideSliceIndexPrimary,
+      IntroSlideSliceIndexItem,
+      IntroSlideSliceVariation,
+      IntroSlideSliceDefault,
+      IntroSlideSliceIndex,
+      SlideSlice,
+      SlideSliceWithImagePrimary,
+      SlideSliceContentOnlyPrimary,
+      SlideSliceVariation,
+      SlideSliceWithImage,
+      SlideSliceContentOnly,
+      SliderSlice,
+      SliderSliceDefaultPrimary,
+      SliderSliceVariation,
+      SliderSliceDefault,
+      VideoSlideSlice,
+      VideoSlideSliceWithYoutubeVideoPrimary,
+      VideoSlideSliceWithVideoPrimary,
+      VideoSlideSliceVariation,
+      VideoSlideSliceWithYoutubeVideo,
+      VideoSlideSliceWithVideo,
+      MenuItemSlice,
+      MenuItemSliceDefaultPrimary,
+      MenuItemSliceWithSubMenuPrimary,
+      MenuItemSliceWithSubMenuItem,
+      MenuItemSliceVariation,
+      MenuItemSliceDefault,
+      MenuItemSliceWithSubMenu,
     };
   }
 }

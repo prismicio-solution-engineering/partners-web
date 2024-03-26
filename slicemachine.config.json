@@ -1,6 +1,6 @@
 {
   "repositoryName": "prismic-partners-web",
   "adapter": "@slicemachine/adapter-next",
-  "libraries": ["./slices"],
+  "libraries": ["./slices/common", "./slices/resources", "./slices/slides", "./slices/navigation"],
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }

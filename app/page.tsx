@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import { components as commonComponents } from "@/slices/common";
+import { components as resourcesComponents } from "@/slices/resources";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
@@ -17,7 +18,13 @@ export default async function Page() {
   return (
     <>
       <Header navigation={navigation} />
-      <SliceZone slices={page?.data?.slices} components={components} />
+      <SliceZone
+        slices={page?.data?.slices}
+        components={{
+          ...commonComponents,
+          ...resourcesComponents,
+        }}
+      />
     </>
   );
 }

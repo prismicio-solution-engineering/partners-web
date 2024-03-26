@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+import { components } from "@/slices/resources";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@/components/PrismicRichText";
