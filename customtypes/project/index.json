@@ -19,6 +19,14 @@
           "placeholder": ""
         }
       },
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "Category",
+          "select": "document",
+          "customtypes": ["project_category"]
+        }
+      },
       "project_description": {
         "type": "StructuredText",
         "config": {
@@ -26,14 +34,6 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,embed,list-item,hyperlink,em,strong,o-list-item"
-        }
-      },
-      "featured_image": {
-        "type": "Image",
-        "config": {
-          "label": "Featured image",
-          "constraint": {},
-          "thumbnails": []
         }
       },
       "live_project_link": {
@@ -50,6 +50,14 @@
           "label": "Source code link",
           "placeholder": "",
           "select": null
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured image",
+          "constraint": {},
+          "thumbnails": []
         }
       }
     }

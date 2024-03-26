@@ -1,0 +1,24 @@
+{
+  "id": "project_category",
+  "label": "Project category",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "category_name": {
+        "type": "Text",
+        "config": {
+          "label": "Category Name",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
