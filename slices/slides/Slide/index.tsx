@@ -1,5 +1,5 @@
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, SliceZoneProps } from "@prismicio/react";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SlideSlice } from "@/prismicio-types";
@@ -78,12 +78,6 @@ const layout = (slice: SlideSlice) => {
     </div>
   );
 
-  const summarySection = (
-    <div className="text-left flex flex-col justify-start px-4 pt-10 pb-4 overflow-y-scroll">
-      <PrismicRichText field={slice.primary.content} components={serializer} />
-    </div>
-  );
-
   const altTextSection = (
     <div className="text-left flex flex-col justify-start md:w-1/2 overflow-clip px-4 pt-10 pb-4 overflow-y-scroll">
       <PrismicRichText field={slice.primary.content} components={serializer} />
@@ -100,37 +94,11 @@ const layout = (slice: SlideSlice) => {
         />
       )}
 
-      {slice.variation === "withVideo" && (
-        <video
-          className="w-full h-auto object-cover rounded-lg aspect-video"
-          src={slice.primary.video_link}
-          alt={slice.primary.video_thumbnail.alt}
-          poster={
-            isFilled.image(slice.primary.video_thumbnail)
-              ? asImageSrc(slice.primary.video_thumbnail)
-              : ""
-          }
-          controls
-        ></video>
-      )}
-
-      {slice.variation === "withYoutubeVideo" && (
-        <div
-          id="youtube-video"
-          className="h-full w-auto object-cover rounded-lg aspect-video"
-          dangerouslySetInnerHTML={{
-            __html: slice.primary.video_embed_link.html || "",
-          }}
-        />
-      )}
+     
     </div>
   );
 
   if (slice.variation === "contentOnly") {
-    return [textSection];
-  }
-
-  if (slice.variation === "title") {
     return [textSection];
   }
 
@@ -142,11 +110,11 @@ const layout = (slice: SlideSlice) => {
   }
 };
 
-const Slide = ({ slice }: SlideProps): JSX.Element => {
+const Slide = ({ slice, context }: {slice: SlideSlice, context: SliceZoneProps}): JSX.Element => {
   return (
     <>
-      <div className="relative">
-        <div className="overflow-hidden relative border border-silver-base shadow-sm px-10 mx-4 rounded-lg mt-16 mb-5 bg-quaternary-orange">
+      <div className="w-[1280px]">
+        <div className="w-[1280px] h-[715px] mx-auto border boreder-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-orange">
           <PrismicRichText
             field={slice.primary.title}
             components={serializer}

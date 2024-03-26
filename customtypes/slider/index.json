@@ -21,23 +21,29 @@
           "single": "heading2,heading1"
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "slide": {
-              "type": "SharedSlice"
-            }
-          }
-        }
-      },
       "logo": {
         "type": "Image",
         "config": {
           "label": "Logo",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "intro_slide": {
+              "type": "SharedSlice"
+            },
+            "video_slide": {
+              "type": "SharedSlice"
+            },
+            "slide": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

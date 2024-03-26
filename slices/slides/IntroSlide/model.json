@@ -35,17 +35,11 @@
           "type": "Image",
           "config": {
             "label": "Image",
+            "thumbnails": [],
             "constraint": {
-              "width": 631,
-              "height": 446
-            },
-            "thumbnails": [
-              {
-                "name": "large screen",
-                "width": 896,
-                "height": 554
-              }
-            ]
+              "height": 633,
+              "width": 599
+            }
           }
         },
         "background_color": {
@@ -91,16 +85,10 @@
           "config": {
             "label": "Image",
             "constraint": {
-              "width": 631,
-              "height": 446
+              "width": 599,
+              "height": 633
             },
-            "thumbnails": [
-              {
-                "name": "large screen",
-                "width": 896,
-                "height": 554
-              }
-            ]
+            "thumbnails": []
           }
         },
         "background_color": {

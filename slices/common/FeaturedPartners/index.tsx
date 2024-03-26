@@ -4,7 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { Content, isFilled } from "@prismicio/client";
 import { Button } from "@/components/Button";
-import { ScrollContainer } from "@/components/Articles/ScrollContainer";
+import { ScrollContainer } from "@/components/ScrollContainer";
 
 /**
  * Props for `FeaturedPartners`.

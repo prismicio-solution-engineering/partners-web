@@ -1377,7 +1377,10 @@ export type ReviewsChecklistDocument<Lang extends string = string> =
     Lang
   >;
 
-type SliderDocumentDataSlicesSlice = SlideSlice;
+type SliderDocumentDataSlicesSlice =
+  | IntroSlideSlice
+  | VideoSlideSlice
+  | SlideSlice;
 
 /**
  * Content for Slider documents
@@ -1395,17 +1398,6 @@ interface SliderDocumentData {
   slider_name: prismic.TitleField;
 
   /**
-   * Slice Zone field in *Slider*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slider.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<SliderDocumentDataSlicesSlice>;
-
-  /**
    * Logo field in *Slider*
    *
    * - **Field Type**: Image
@@ -1415,6 +1407,17 @@ interface SliderDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Slider*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SliderDocumentDataSlicesSlice>;
 }
 
 /**
@@ -3428,7 +3431,7 @@ export interface IntroSlideSliceDefaultPrimary {
    * - **API ID Path**: intro_slide.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<"large screen">;
+  image: prismic.ImageField<never>;
 
   /**
    * Background color field in *IntroSlide → Primary*
@@ -3480,7 +3483,7 @@ export interface IntroSlideSliceIndexPrimary {
    * - **API ID Path**: intro_slide.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<"large screen">;
+  image: prismic.ImageField<never>;
 
   /**
    * Background color field in *IntroSlide → Primary*

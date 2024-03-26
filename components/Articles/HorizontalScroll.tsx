@@ -3,7 +3,7 @@ import { isFilled, type Content, asDate } from "@prismicio/client";
 import React from "react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "../PrismicRichText";
-import { ScrollContainer } from "./ScrollContainer";
+import { ScrollContainer } from "../ScrollContainer";
 import { getArticles } from "@/utils/getArticles";
 import { getArticlesByUids } from "@/utils/getArticlesByUids";
 import { getArticlesByCategory } from "@/utils/getArticlesByCategory";
