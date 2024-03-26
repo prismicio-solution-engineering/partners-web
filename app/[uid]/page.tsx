@@ -7,6 +7,7 @@ import { components } from "@/slices";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@/components/PrismicRichText";
+import { PageLayout } from "@/components/PageLayout";
 
 type Params = { uid: string };
 
@@ -20,8 +21,7 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Header navigation={navigation} />
-      <PrismicRichText field={page.data.title} />
-      <PrismicRichText field={page.data.description} />
+      <PageLayout title={page.data.title} description={page.data.description}/>
       <SliceZone slices={page?.data?.slices} components={components} />
     </>
   );
