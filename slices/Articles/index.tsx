@@ -21,7 +21,7 @@ const Articles = async ({ slice }: ArticlesProps): JSX.Element => {
     <>
       <div className="flex flex-col items-center my-16">
         <PrismicRichText field={slice.primary.title} />
-        <div className="w-full max-w-screen-xl mx-auto ">
+        <div className="w-full mx-auto">
           {slice.variation ===
             ("autoHorizontalScroll" || "horizontalScroll") && (
             <HorizontalScroll slice={slice} />

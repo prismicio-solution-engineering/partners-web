@@ -34,7 +34,7 @@ export const ScrollContainer = ({
       </button>
       <div
         ref={scrollContainerRef}
-        className="overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide no-scrollbar px-2 flex flex-row gap-10"
+        className="overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide no-scrollbar px-2 flex flex-row gap-10 max-w-screen-xl mx-auto"
         {...props}
       />
     </div>

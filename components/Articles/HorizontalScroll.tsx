@@ -70,7 +70,7 @@ export const HorizontalScroll = async ({
 
 
   return (
-    <div className="bg-white relative max-w-screen-xl mx-auto">
+    <div className="bg-white relative max-w-screen-2xl mx-auto">
       <ScrollContainer>
         {articles.map((article, idx) => (
           <div
