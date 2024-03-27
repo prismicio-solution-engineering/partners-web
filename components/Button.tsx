@@ -69,8 +69,10 @@ export function Button({
     return <button type="button" className={className} {...props} />;
   }
 
-  if (field) <PrismicLink className={className} {...props} field={field} />;
-  
+  if (field) {
+    return <PrismicLink className={className} {...props} field={field} />;
+  }
+
   return document ? (
     <PrismicLink className={className} {...props} document={document} />
   ) : (
