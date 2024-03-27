@@ -6,7 +6,7 @@ import {
   ArticlesSliceAutoFilterableGrid,
 } from "@/prismicio-types";
 import { asDate, isFilled } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "../PrismicRichText";
 import { getAllArticles } from "@/utils/getAllArticles";
 import { getAllArticlesByCategory } from "@/utils/getAllArticlesByCategory";
@@ -97,48 +97,52 @@ export async function Grid({
         {articles.map((article, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-lg overflow-hidden shadow-lg max-w-[350px]"
+            className="bg-white rounded-lg overflow-hidden shadow-lg max-w-[350px] hover:-translate-y-6 ease-in-out duration-300"
           >
-            {isFilled.image(article.data.featured_image) ? (
-              <PrismicNextImage
-                className="object-contain"
-                field={
-                  isFilled.imageThumbnail(article.data.featured_image.thumbnail)
-                    ? article.data.featured_image.thumbnail
-                    : article.data.featured_image
-                }
-              />
-            ) : (
-              <img
-                src="https://images.prismic.io/prismic-partners-web/65e19e9027237c2bb829b42b_illu-library_double-question-marks.png?auto=format,compress"
-                className="w-[350px] h-[200px] object-cover"
-              />
-            )}
-            <div className="px-8 py-4 whitespace-normal flex flex-col justify-between">
-              <span
-                className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
-              >
-                {article.data.category.data.name}
-              </span>
-
-              <PrismicRichText
-                field={article.data.title}
-                components={serializer}
-              />
-              <div>
-                <span className="text-xs text-gray-darker mb-2">
-                  {asDate(
-                    article.data.date_of_publication
-                  )?.toLocaleDateString()}
-                </span>{" "}
-                <span className="text-xs text-gray-darker mb-4">
-                  by{" "}
-                  {isFilled.contentRelationship(article.data.author)
-                    ? article.data.author.data.name
-                    : "Anonymous"}
+            <PrismicNextLink document={article}>
+              {isFilled.image(article.data.featured_image) ? (
+                <PrismicNextImage
+                  className="object-contain"
+                  field={
+                    isFilled.imageThumbnail(
+                      article.data.featured_image.thumbnail
+                    )
+                      ? article.data.featured_image.thumbnail
+                      : article.data.featured_image
+                  }
+                />
+              ) : (
+                <img
+                  src="https://images.prismic.io/prismic-partners-web/65e19e9027237c2bb829b42b_illu-library_double-question-marks.png?auto=format,compress"
+                  className="w-[350px] h-[200px] object-cover"
+                />
+              )}
+              <div className="px-8 py-4 whitespace-normal flex flex-col justify-between">
+                <span
+                  className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
+                >
+                  {article.data.category.data.name}
                 </span>
+
+                <PrismicRichText
+                  field={article.data.title}
+                  components={serializer}
+                />
+                <div>
+                  <span className="text-xs text-gray-darker mb-2">
+                    {asDate(
+                      article.data.date_of_publication
+                    )?.toLocaleDateString()}
+                  </span>{" "}
+                  <span className="text-xs text-gray-darker mb-4">
+                    by{" "}
+                    {isFilled.contentRelationship(article.data.author)
+                      ? article.data.author.data.name
+                      : "Anonymous"}
+                  </span>
+                </div>
               </div>
-            </div>
+            </PrismicNextLink>
           </div>
         ))}
       </div>
