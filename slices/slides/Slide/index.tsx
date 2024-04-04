@@ -1,127 +1,88 @@
-import { Content, asImageSrc, isFilled } from "@prismicio/client";
-import { SliceComponentProps, SliceZoneProps } from "@prismicio/react";
+"use client";
+
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { SlideSlice } from "@/prismicio-types";
-
-const serializer = {
-  heading2: ({ children }) => (
-    <h2 className="text-4xl font-bold font-sans mt-10 text-primary-orange">
-      {children}
-    </h2>
-  ),
-  heading3: ({ children }) => (
-    <h3 className="text-3xl font-semibold font-sans text-gray-base">
-      {children}
-    </h3>
-  ),
-  heading4: ({ children }) => (
-    <h4 className="text-3xl font-semibold font-sans mb-2 text-secondary-orange">
-      {children}
-    </h4>
-  ),
-  heading5: ({ children }) => (
-    <h5 className="text-2xl font-semibold font-sans mb-2 text-secondary-orange">
-      {children}
-    </h5>
-  ),
-  paragraph: ({ children }) => (
-    <p className="text-xl font-sans pb-2 text-gray-base">{children}</p>
-  ),
-  listItem: ({ children }) => (
-    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2 text-xl list-inside text-gray-base">
-      {children}
-    </li>
-  ),
-  oListItem: ({ children }) => (
-    <li className="mb-1 list-decimal pl-1 last:mb-0 md:pl-2 text-xl list-inside text-gray-base">
-      {children}
-    </li>
-  ),
-  hyperlink: ({ children, node }) => (
-    <PrismicNextLink
-      field={node.data}
-      className="text-gray-base font-sans text-xl underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
-    >
-      {children}
-    </PrismicNextLink>
-  ),
-  label: ({ node, children }) => {
-    return (
-      <>
-        {node.data.label === "highlight" && (
-          <span className="text-primary-orange font-semibold">{children}</span>
-        )}
-        {node.data.label === "inline code" && (
-          <span className="px-2 py-1 bg-silver-light border border-silver-base font-mono rounded-md text-lg font-normal text-primary-orange">
-            {children}
-          </span>
-        )}
-      </>
-    );
-  },
-};
+import { SlideSlice, SliderDocumentData } from "@/prismicio-types";
+import { useEffect, useRef, useState } from "react";
+import WithImage from "./WithImage";
+import Content from "./Content";
+import ContentTwoCol from "./ContentTwoCol";
 
 /**
  * Props for `Slide`.
  */
-export type SlideProps = SliceComponentProps<Content.SlideSlice>;
+export type SlideProps = SliceComponentProps<SlideSlice>;
 
 /**
  * Component for "Slide" Slices.
  */
 
-const layout = (slice: SlideSlice) => {
-  const textSection = (
-    <div className="text-left flex flex-col justify-start px-4 pt-10 pb-4 overflow-y-scroll">
-      <PrismicRichText field={slice.primary.content} components={serializer} />
-    </div>
-  );
+const Slide = ({
+  slice,
+  context,
+}: {
+  slice: SlideSlice;
+  context: SliderDocumentData;
+}): JSX.Element => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const contentRef = useRef(null); // Ref for the content container
 
-  const altTextSection = (
-    <div className="text-left flex flex-col justify-start md:w-1/2 overflow-clip px-4 pt-10 pb-4 overflow-y-scroll">
-      <PrismicRichText field={slice.primary.content} components={serializer} />
-    </div>
-  );
+  // Check for overflow and open the modal
+  const checkForOverflow = () => {
+    const current = contentRef.current;
+    if (current && current.scrollHeight > current.clientHeight) {
+      console.log("Content is too long !");
+      setIsModalOpen(true); // Overflow detected, open the modal
+    }
+    if (current && current.scrollHeight < current.clientHeight) {
+      console.log("Content is fixed !");
+      setIsModalOpen(false); // Overflow detected, open the modal
+    }
+  };
 
-  const altMediaSection = (
-    <div className="flex flex-col md:w-1/2 p-4 ">
+  useEffect(() => {
+    const currentContent = contentRef.current;
+    checkForOverflow();
 
-      {slice.variation === "withImage" && (
-        <PrismicNextImage
-          field={slice.primary.image}
-          className="w-full h-full object-cover rounded-xl"
-        />
-      )}
+    // Create a MutationObserver to observe changes in the content area
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type === "childList" || mutation.type === "subtree") {
+          checkForOverflow();
+        }
+      }
+    });
 
-     
-    </div>
-  );
+    // Start observing the content area
+    if (currentContent) {
+      observer.observe(currentContent, {
+        childList: true, // observe direct children
+        subtree: true, // and lower descendants too
+        characterData: true, // observe text changes
+      });
+    }
 
-  if (slice.variation === "contentOnly") {
-    return [textSection];
-  }
+    // Disconnect the observer on cleanup
+    return () => observer.disconnect();
+  }, []); // The empty dependency array ensures this effect runs only once after the initial render
 
-  if (slice.primary.media_side) {
-    return [altTextSection, altMediaSection];
-  }
-  if (!slice.primary.media_side) {
-    return [altMediaSection, altTextSection];
-  }
-};
-
-const Slide = ({ slice, context }: {slice: SlideSlice, context: SliceZoneProps}): JSX.Element => {
   return (
     <>
-      <div className="w-[1280px]">
-        <div className="w-[1280px] h-[715px] mx-auto border boreder-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-orange">
-          <PrismicRichText
-            field={slice.primary.title}
-            components={serializer}
-          />
-          <div className="flex flex-col md:flex-row w-full h-2/3 inset-0 mb-10 overflow-clip">
-            {layout(slice)}
-          </div>
+      <div
+        ref={contentRef}
+        className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-${slice.primary.background_color}`}
+      >
+        <div className="h-full flex flex-col md:flex-row w-full inset-0 mb-10 overflow-y-clip justify-start gap-10">
+          {slice.variation === "withImage" && (
+            <WithImage slice={slice} context={context} />
+          )}
+          {slice.variation === "contentOnly" && (
+            <Content slice={slice} context={context} />
+          )}
+          {slice.variation === "contentTwoColumns" && (
+            <ContentTwoCol slice={slice} context={context} />
+          )}
         </div>
       </div>
     </>

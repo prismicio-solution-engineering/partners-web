@@ -6,5 +6,6 @@ export const components = {
   intro_slide: dynamic(() => import("./IntroSlide")),
   slide: dynamic(() => import("./Slide")),
   slider: dynamic(() => import("./Slider")),
+  slider_index: dynamic(() => import("./SliderIndex")),
   video_slide: dynamic(() => import("./VideoSlide")),
 };

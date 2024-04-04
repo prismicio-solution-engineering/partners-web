@@ -1,24 +1,17 @@
 {
-  "id": "intro_slide",
+  "id": "slider_index",
   "type": "SharedSlice",
-  "name": "IntroSlide",
-  "description": "IntroSlide",
+  "name": "SliderIndex",
+  "description": "SliderIndex",
   "variations": [
     {
-      "id": "default",
-      "name": "First slice",
+      "id": "index",
+      "name": "Index",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "date": {
-          "type": "Text",
-          "config": {
-            "label": "Date",
-            "placeholder": ""
-          }
-        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -35,11 +28,11 @@
           "type": "Image",
           "config": {
             "label": "Image",
-            "thumbnails": [],
             "constraint": {
-              "height": 633,
-              "width": 599
-            }
+              "width": 599,
+              "height": 633
+            },
+            "thumbnails": []
           }
         },
         "background_color": {
@@ -58,7 +51,17 @@
           }
         }
       },
-      "items": {}
+      "items": {
+        "summary_item_name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Summary item name",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,paragraph,em"
+          }
+        }
+      }
     }
   ]
 }

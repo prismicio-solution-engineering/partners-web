@@ -1378,6 +1378,7 @@ export type ReviewsChecklistDocument<Lang extends string = string> =
   >;
 
 type SliderDocumentDataSlicesSlice =
+  | SliderIndexSlice
   | IntroSlideSlice
   | VideoSlideSlice
   | SlideSlice;
@@ -3462,86 +3463,9 @@ export type IntroSlideSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *IntroSlide → Primary*
- */
-export interface IntroSlideSliceIndexPrimary {
-  /**
-   * Title field in *IntroSlide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: intro_slide.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Image field in *IntroSlide → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: intro_slide.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Background color field in *IntroSlide → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Slide background color
-   * - **Default Value**: orange
-   * - **API ID Path**: intro_slide.primary.background_color
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  background_color: prismic.SelectField<
-    "orange" | "pink" | "green" | "purple" | "blue",
-    "filled"
-  >;
-}
-
-/**
- * Primary content in *IntroSlide → Items*
- */
-export interface IntroSlideSliceIndexItem {
-  /**
-   * Summary item name field in *IntroSlide → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: intro_slide.items[].summary_item_name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  summary_item_name: prismic.RichTextField;
-
-  /**
-   * Summary item number field in *IntroSlide → Items*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: intro_slide.items[].summary_item_number
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  summary_item_number: prismic.NumberField;
-}
-
-/**
- * Index variation for IntroSlide Slice
- *
- * - **API ID**: `index`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type IntroSlideSliceIndex = prismic.SharedSliceVariation<
-  "index",
-  Simplify<IntroSlideSliceIndexPrimary>,
-  Simplify<IntroSlideSliceIndexItem>
->;
-
-/**
  * Slice variation for *IntroSlide*
  */
-type IntroSlideSliceVariation = IntroSlideSliceDefault | IntroSlideSliceIndex;
+type IntroSlideSliceVariation = IntroSlideSliceDefault;
 
 /**
  * IntroSlide Shared Slice
@@ -3577,7 +3501,7 @@ export interface SlideSliceWithImagePrimary {
    * - **API ID Path**: slide.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<"large screen">;
+  image: prismic.ImageField<never>;
 
   /**
    * Content field in *Slide → Primary*
@@ -3599,6 +3523,20 @@ export interface SlideSliceWithImagePrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   media_side: prismic.BooleanField;
+
+  /**
+   * Background color field in *Slide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
 }
 
 /**
@@ -3637,6 +3575,20 @@ export interface SlideSliceContentOnlyPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Background color field in *Slide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
 }
 
 /**
@@ -3653,9 +3605,74 @@ export type SlideSliceContentOnly = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceContentTwoColumnsPrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content Left field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide left side content
+   * - **API ID Path**: slide.primary.content_left
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content_left: prismic.RichTextField;
+
+  /**
+   * Content Right field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slide right side content
+   * - **API ID Path**: slide.primary.content_right
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content_right: prismic.RichTextField;
+
+  /**
+   * Background color field in *Slide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+}
+
+/**
+ * Content Two Columns variation for Slide Slice
+ *
+ * - **API ID**: `contentTwoColumns`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceContentTwoColumns = prismic.SharedSliceVariation<
+  "contentTwoColumns",
+  Simplify<SlideSliceContentTwoColumnsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Slide*
  */
-type SlideSliceVariation = SlideSliceWithImage | SlideSliceContentOnly;
+type SlideSliceVariation =
+  | SlideSliceWithImage
+  | SlideSliceContentOnly
+  | SlideSliceContentTwoColumns;
 
 /**
  * Slide Shared Slice
@@ -3707,6 +3724,90 @@ type SliderSliceVariation = SliderSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type SliderSlice = prismic.SharedSlice<"slider", SliderSliceVariation>;
+
+/**
+ * Primary content in *SliderIndex → Primary*
+ */
+export interface SliderIndexSliceIndexPrimary {
+  /**
+   * Title field in *SliderIndex → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider_index.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *SliderIndex → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider_index.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Background color field in *SliderIndex → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: slider_index.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+}
+
+/**
+ * Primary content in *SliderIndex → Items*
+ */
+export interface SliderIndexSliceIndexItem {
+  /**
+   * Summary item name field in *SliderIndex → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider_index.items[].summary_item_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  summary_item_name: prismic.RichTextField;
+}
+
+/**
+ * Index variation for SliderIndex Slice
+ *
+ * - **API ID**: `index`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderIndexSliceIndex = prismic.SharedSliceVariation<
+  "index",
+  Simplify<SliderIndexSliceIndexPrimary>,
+  Simplify<SliderIndexSliceIndexItem>
+>;
+
+/**
+ * Slice variation for *SliderIndex*
+ */
+type SliderIndexSliceVariation = SliderIndexSliceIndex;
+
+/**
+ * SliderIndex Shared Slice
+ *
+ * - **API ID**: `slider_index`
+ * - **Description**: SliderIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderIndexSlice = prismic.SharedSlice<
+  "slider_index",
+  SliderIndexSliceVariation
+>;
 
 /**
  * Primary content in *VideoSlide → Primary*
@@ -4113,21 +4214,25 @@ declare module "@prismicio/client" {
       TextSliceDefault,
       IntroSlideSlice,
       IntroSlideSliceDefaultPrimary,
-      IntroSlideSliceIndexPrimary,
-      IntroSlideSliceIndexItem,
       IntroSlideSliceVariation,
       IntroSlideSliceDefault,
-      IntroSlideSliceIndex,
       SlideSlice,
       SlideSliceWithImagePrimary,
       SlideSliceContentOnlyPrimary,
+      SlideSliceContentTwoColumnsPrimary,
       SlideSliceVariation,
       SlideSliceWithImage,
       SlideSliceContentOnly,
+      SlideSliceContentTwoColumns,
       SliderSlice,
       SliderSliceDefaultPrimary,
       SliderSliceVariation,
       SliderSliceDefault,
+      SliderIndexSlice,
+      SliderIndexSliceIndexPrimary,
+      SliderIndexSliceIndexItem,
+      SliderIndexSliceVariation,
+      SliderIndexSliceIndex,
       VideoSlideSlice,
       VideoSlideSliceWithYoutubeVideoPrimary,
       VideoSlideSliceWithVideoPrimary,

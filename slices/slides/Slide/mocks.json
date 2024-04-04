@@ -35,47 +35,25 @@
 			"image": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-					"width": 4000,
-					"height": 4000
+					"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+					"width": 3810,
+					"height": 5715
 				},
-				"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?rect=0%2C586%2C4000%2C2827&w=631&h=446",
-				"width": 631,
-				"height": 446,
+				"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?rect=0%2C771%2C3810%2C4173&w=578&h=633",
+				"width": 578,
+				"height": 633,
 				"edit": {
 					"zoom": 1,
 					"crop": {
 						"x": 0,
-						"y": 586
+						"y": 771
 					},
 					"background": "transparent"
 				},
 				"credits": null,
 				"alt": null,
 				"__TYPE__": "ImageContent",
-				"thumbnails": {
-					"large screen": {
-						"origin": {
-							"id": "large screen",
-							"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
-							"width": 4010,
-							"height": 4010
-						},
-						"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?rect=0%2C765%2C4010%2C2479&w=896&h=554",
-						"width": 896,
-						"height": 554,
-						"edit": {
-							"zoom": 1,
-							"crop": {
-								"x": 0,
-								"y": 765
-							},
-							"background": "transparent"
-						},
-						"credits": null,
-						"alt": null
-					}
-				}
+				"thumbnails": {}
 			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
@@ -93,6 +71,11 @@
 			"media_side": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "orange"
 			}
 		},
 		"items": [
@@ -110,10 +93,140 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading4",
 						"content": {
-							"text": "Aute excepteur mollit exercitation veniam esse pariatur reprehenderit deserunt aliqua minim quis occaecat magna et deserunt. Culpa et consequat anim. Qui anim sint reprehenderit aliquip quis nostrud esse reprehenderit minim elit consectetur aliqua enim."
-						}
+							"text": "Slices",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 6
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Multi-functional components created via Slice Machine",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Design components for designers",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "React or Vue components for developers",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Website sections for content editors",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Page Types",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 10
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Page templates",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Unique URL structures",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Unique user interfaces",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Custom Types",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 12
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Meant for configuration or settings like categorization, global SEO, theme etc.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Slice Machine",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 13
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Developer tool",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Npm package compatible with Next, Nuxt, and SvelteKit",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -123,8 +236,191 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Stairs"
-						}
+							"text": "Something",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "orange"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contentTwoColumns",
+		"primary": {
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "orange",
+				"type": "Select"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "2 columns",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"content_left": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Slices",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 6
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Multi-functional components created via Slice Machine",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Design components for designers",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "React or Vue components for developers",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Website sections for content editors",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Page Types",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 10
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Page templates",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Unique URL structures",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Unique user interfaces",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"content_right": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Custom Types",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 12
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Meant for configuration or settings like categorization, global SEO, theme etc.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading4",
+						"content": {
+							"text": "Slice Machine",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 13
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Developer tool",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Npm package compatible with Next, Nuxt, and SvelteKit",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
