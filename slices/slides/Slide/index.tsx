@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import WithImage from "./WithImage";
 import Content from "./Content";
 import ContentTwoCol from "./ContentTwoCol";
+import Title from "./Title";
 
 /**
  * Props for `Slide`.
@@ -82,6 +83,9 @@ const Slide = ({
           )}
           {slice.variation === "contentTwoColumns" && (
             <ContentTwoCol slice={slice} context={context} />
+          )}
+          {slice.variation === "title" && (
+            <Title slice={slice} context={context} />
           )}
         </div>
       </div>

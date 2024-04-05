@@ -3667,12 +3667,65 @@ export type SlideSliceContentTwoColumns = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Slide → Primary*
+ */
+export interface SlideSliceTitlePrimary {
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Background color field in *Slide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+}
+
+/**
+ * Title variation for Slide Slice
+ *
+ * - **API ID**: `title`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceTitle = prismic.SharedSliceVariation<
+  "title",
+  Simplify<SlideSliceTitlePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Slide*
  */
 type SlideSliceVariation =
   | SlideSliceWithImage
   | SlideSliceContentOnly
-  | SlideSliceContentTwoColumns;
+  | SlideSliceContentTwoColumns
+  | SlideSliceTitle;
 
 /**
  * Slide Shared Slice
@@ -4220,10 +4273,12 @@ declare module "@prismicio/client" {
       SlideSliceWithImagePrimary,
       SlideSliceContentOnlyPrimary,
       SlideSliceContentTwoColumnsPrimary,
+      SlideSliceTitlePrimary,
       SlideSliceVariation,
       SlideSliceWithImage,
       SlideSliceContentOnly,
       SlideSliceContentTwoColumns,
+      SlideSliceTitle,
       SliderSlice,
       SliderSliceDefaultPrimary,
       SliderSliceVariation,

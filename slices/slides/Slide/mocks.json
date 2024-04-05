@@ -61,10 +61,8 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Innovative Ideas",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Angle"
+						}
 					}
 				]
 			},
@@ -236,10 +234,8 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Something",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Discussion"
+						}
 					}
 				]
 			},
@@ -271,10 +267,8 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "2 columns",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Regular"
+						}
 					}
 				]
 			},
@@ -421,6 +415,45 @@
 							"spans": []
 						},
 						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "title",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Perfect"
+						}
+					}
+				]
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "orange",
+				"type": "Select"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod minim sit Lorem ad enim qui Lorem veniam ex occaecat minim anim laboris veniam. Esse qui velit incididunt nostrud Lorem nulla officia aliqua est et consectetur aute dolore laborum proident. Nostrud nulla adipisicing et sunt occaecat ad ut et mollit deserunt adipisicing sit."
+						}
 					}
 				]
 			}

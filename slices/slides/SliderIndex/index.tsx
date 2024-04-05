@@ -20,9 +20,9 @@ const SliderIndex = ({
   context: SliderDocumentData;
 }): JSX.Element => {
   return (
-    <div className="w-[1280]">
+    <div className="lg:w-[1280]">
       <div
-        className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-${slice.primary.background_color}`}
+        className={`lg:w-[1280px] lg:h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-${slice.primary.background_color}`}
       >
         <div className="flex flex-col md:flex-row w-full h-full inset-0 mb-10 overflow-clip justify-between">
           <div className="w-1/2 flex flex-col gap-y-12 text-left content-start px-4 pt-10 pb-4 overflow-y-scroll">

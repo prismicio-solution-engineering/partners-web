@@ -18,7 +18,7 @@
             "label": "Title",
             "placeholder": "Slide title",
             "allowTargetBlank": true,
-            "multi": "heading2,heading3,strong,em"
+            "single": "heading2,strong,em"
           }
         },
         "image": {
@@ -86,7 +86,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,heading3,strong,em"
+            "single": "heading2,strong,em"
           }
         },
         "content": {
@@ -134,7 +134,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,heading3,strong,em"
+            "single": "heading2,strong,em"
           }
         },
         "content_left": {
@@ -161,6 +161,50 @@
               "highlight",
               "inline code"
             ]
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background color",
+            "placeholder": "Slide background color",
+            "options": [
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "title",
+      "name": "Title",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em"
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
           }
         },
         "background_color": {
