@@ -43,20 +43,8 @@
 						}
 					],
 					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
 						"milestone_image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
@@ -74,6 +62,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -107,14 +98,6 @@
 									"direction": "ltr"
 								}
 							]
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
 						}
 					]
 				]
@@ -163,28 +146,8 @@
 						}
 					],
 					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
 						"milestone_image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
@@ -202,6 +165,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]
@@ -210,25 +176,6 @@
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
 					[
 						"step_title",
 						{
@@ -272,7 +219,6 @@
 					[
 						"milestone_image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
@@ -290,6 +236,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]
@@ -339,28 +288,8 @@
 						}
 					],
 					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
 						"milestone_image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
@@ -378,297 +307,10 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
-						}
-					]
-				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "linear",
-		"primary": {
-			"section_title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Partnership Process",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"section_description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Understand the key steps to becoming a partner with our organization and be ready for successful collaborations.",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"step_number",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "01"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
-						"step_title",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading3",
-									"content": {
-										"text": "Submit Your Application",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"step_description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Send in your application to express your interest in becoming a partner with our agency.",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					]
-				]
-			},
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"step_number",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "02"
-						}
-					],
-					[
-						"step_title",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading3",
-									"content": {
-										"text": "Meet & Greet",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"step_description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "We will have a session to get to know each other and discuss collaboration possibilities.",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					]
-				]
-			},
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"step_title",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading3",
-									"content": {
-										"text": "Training & Certification",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"step_description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Go through training sessions to understand our product and services, followed by a certification.",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"step_number",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "03"
-						}
-					]
-				]
-			},
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"step_number",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "04"
-						}
-					],
-					[
-						"step_title",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading3",
-									"content": {
-										"text": "Launch Projects",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"step_description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Start launching projects and campaigns as an official partner agency.",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
 						}
 					]
 				]
@@ -719,17 +361,6 @@
 						}
 					],
 					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
 						"step_title",
 						{
 							"__TYPE__": "StructuredTextContent",
@@ -759,14 +390,6 @@
 									"direction": "ltr"
 								}
 							]
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
 						}
 					]
 				]
@@ -813,50 +436,12 @@
 								}
 							]
 						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
 					]
 				]
 			},
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
 					[
 						"step_title",
 						{
@@ -940,25 +525,6 @@
 									"direction": "ltr"
 								}
 							]
-						}
-					],
-					[
-						"link_label",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Read more"
-						}
-					],
-					[
-						"read_more_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io/",
-								"target": "_blank"
-							}
 						}
 					]
 				]

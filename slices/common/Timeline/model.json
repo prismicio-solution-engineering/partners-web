@@ -54,22 +54,6 @@
             "multi": "paragraph,em,strong,hyperlink"
           }
         },
-        "link_label": {
-          "type": "Text",
-          "config": {
-            "label": "Link label",
-            "placeholder": "Read more link label"
-          }
-        },
-        "read_more_link": {
-          "type": "Link",
-          "config": {
-            "label": "Read More Link",
-            "placeholder": "Add a link for more details...",
-            "allowTargetBlank": true,
-            "select": "web"
-          }
-        },
         "milestone_image": {
           "type": "Image",
           "config": {
@@ -79,77 +63,6 @@
               "width": 490
             },
             "thumbnails": []
-          }
-        }
-      },
-      "docURL": "...",
-      "version": "initial",
-      "imageUrl": ""
-    },
-    {
-      "id": "linear",
-      "name": "Linear",
-      "description": "The standard layout of the timeline component, showcasing the steps involved in the partnership process.",
-      "primary": {
-        "section_title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Section Title",
-            "placeholder": "Enter the title of the timeline here...",
-            "allowTargetBlank": true,
-            "single": "heading2"
-          }
-        },
-        "section_description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Section Description",
-            "placeholder": "Enter a short description of the timeline here...",
-            "allowTargetBlank": true,
-            "single": "paragraph"
-          }
-        }
-      },
-      "items": {
-        "step_number": {
-          "type": "Text",
-          "config": {
-            "label": "Step Number",
-            "placeholder": "01, 02, etc."
-          }
-        },
-        "step_title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Step Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading3"
-          }
-        },
-        "step_description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Step Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,em,strong,hyperlink"
-          }
-        },
-        "link_label": {
-          "type": "Text",
-          "config": {
-            "label": "Link label",
-            "placeholder": "Read more link label"
-          }
-        },
-        "read_more_link": {
-          "type": "Link",
-          "config": {
-            "label": "Read More Link",
-            "placeholder": "Add a link for more details...",
-            "allowTargetBlank": true,
-            "select": "web"
           }
         }
       },
@@ -205,22 +118,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,em,strong,hyperlink"
-          }
-        },
-        "link_label": {
-          "type": "Text",
-          "config": {
-            "label": "Link label",
-            "placeholder": "Read more link label"
-          }
-        },
-        "read_more_link": {
-          "type": "Link",
-          "config": {
-            "label": "Read More Link",
-            "placeholder": "Add a link for more details...",
-            "allowTargetBlank": true,
-            "select": "web"
           }
         }
       },

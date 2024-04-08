@@ -2621,26 +2621,6 @@ export interface TimelineSliceAlternatedWithImageItem {
   step_description: prismic.RichTextField;
 
   /**
-   * Link label field in *Timeline → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Read more link label
-   * - **API ID Path**: timeline.items[].link_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_label: prismic.KeyTextField;
-
-  /**
-   * Read More Link field in *Timeline → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Add a link for more details...
-   * - **API ID Path**: timeline.items[].read_more_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  read_more_link: prismic.LinkField;
-
-  /**
    * Milestone Image field in *Timeline → Items*
    *
    * - **Field Type**: Image
@@ -2662,99 +2642,6 @@ export type TimelineSliceAlternatedWithImage = prismic.SharedSliceVariation<
   "alternatedWithImage",
   Simplify<TimelineSliceAlternatedWithImagePrimary>,
   Simplify<TimelineSliceAlternatedWithImageItem>
->;
-
-/**
- * Primary content in *Timeline → Primary*
- */
-export interface TimelineSliceLinearPrimary {
-  /**
-   * Section Title field in *Timeline → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Enter the title of the timeline here...
-   * - **API ID Path**: timeline.primary.section_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_title: prismic.TitleField;
-
-  /**
-   * Section Description field in *Timeline → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Enter a short description of the timeline here...
-   * - **API ID Path**: timeline.primary.section_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_description: prismic.RichTextField;
-}
-
-/**
- * Primary content in *Timeline → Items*
- */
-export interface TimelineSliceLinearItem {
-  /**
-   * Step Number field in *Timeline → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: 01, 02, etc.
-   * - **API ID Path**: timeline.items[].step_number
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  step_number: prismic.KeyTextField;
-
-  /**
-   * Step Title field in *Timeline → Items*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: timeline.items[].step_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  step_title: prismic.TitleField;
-
-  /**
-   * Step Description field in *Timeline → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: timeline.items[].step_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  step_description: prismic.RichTextField;
-
-  /**
-   * Link label field in *Timeline → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Read more link label
-   * - **API ID Path**: timeline.items[].link_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_label: prismic.KeyTextField;
-
-  /**
-   * Read More Link field in *Timeline → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Add a link for more details...
-   * - **API ID Path**: timeline.items[].read_more_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  read_more_link: prismic.LinkField;
-}
-
-/**
- * Linear variation for Timeline Slice
- *
- * - **API ID**: `linear`
- * - **Description**: The standard layout of the timeline component, showcasing the steps involved in the partnership process.
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TimelineSliceLinear = prismic.SharedSliceVariation<
-  "linear",
-  Simplify<TimelineSliceLinearPrimary>,
-  Simplify<TimelineSliceLinearItem>
 >;
 
 /**
@@ -2815,26 +2702,6 @@ export interface TimelineSliceGridItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   step_description: prismic.RichTextField;
-
-  /**
-   * Link label field in *Timeline → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Read more link label
-   * - **API ID Path**: timeline.items[].link_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_label: prismic.KeyTextField;
-
-  /**
-   * Read More Link field in *Timeline → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Add a link for more details...
-   * - **API ID Path**: timeline.items[].read_more_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  read_more_link: prismic.LinkField;
 }
 
 /**
@@ -2855,7 +2722,6 @@ export type TimelineSliceGrid = prismic.SharedSliceVariation<
  */
 type TimelineSliceVariation =
   | TimelineSliceAlternatedWithImage
-  | TimelineSliceLinear
   | TimelineSliceGrid;
 
 /**
@@ -4262,13 +4128,10 @@ declare module "@prismicio/client" {
       TimelineSlice,
       TimelineSliceAlternatedWithImagePrimary,
       TimelineSliceAlternatedWithImageItem,
-      TimelineSliceLinearPrimary,
-      TimelineSliceLinearItem,
       TimelineSliceGridPrimary,
       TimelineSliceGridItem,
       TimelineSliceVariation,
       TimelineSliceAlternatedWithImage,
-      TimelineSliceLinear,
       TimelineSliceGrid,
       ArticlesSlice,
       ArticlesSliceListPrimary,
