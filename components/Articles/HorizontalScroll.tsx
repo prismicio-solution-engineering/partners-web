@@ -9,23 +9,12 @@ import { getArticlesByUids } from "@/utils/getArticlesByUids";
 import { getArticlesByCategory } from "@/utils/getArticlesByCategory";
 import { getCategory } from "@/utils/getCategory";
 import { ArticleDocument } from "@/prismicio-types";
+import { CategoryPill, categoryPillColor } from "../CategoryPill";
 
 const serializer = {
   heading1: ({ children }) => (
     <h3 className="text-xl font-bold mb-4 text-gray-darker">{children}</h3>
   ),
-};
-
-const categoryPill = (category: string) => {
-  if (category === "Use case") {
-    return "bg-quaternary-purple text-primary-purple";
-  } else if (category === "Best practice") {
-    return "bg-quaternary-green text-primary-green";
-  } else if (category === "Tutorial") {
-    return "bg-quaternary-orange text-primary-orange";
-  } else if (category === "Solution engineering team projects") {
-    return "bg-quaternary-blue text-primary-blue";
-  }
 };
 
 export const HorizontalScroll = async ({
@@ -93,7 +82,7 @@ export const HorizontalScroll = async ({
               )}
               <div className="px-8 py-4 whitespace-normal h-80 flex flex-col justify-between">
                 <span
-                  className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
+                  className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPillColor(article.data.category.data.name)}`}
                 >
                   {article.data.category.data.name}
                 </span>
@@ -105,9 +94,6 @@ export const HorizontalScroll = async ({
                   <p className="text-gray-darker text-sm max-h-[96px] text-ellipsis overflow-hidden">
                     {article.data.excerpt}
                   </p>
-                  <Button variant="link" document={article}>
-                    {slice.primary.articles_read_more_label}
-                  </Button>
                 </div>
                 <div className="text-sm text-gray-darker">
                   <span>

@@ -26,9 +26,6 @@
             "timeline": {
               "type": "SharedSlice"
             },
-            "text": {
-              "type": "SharedSlice"
-            },
             "accordion_section": {
               "type": "SharedSlice"
             },

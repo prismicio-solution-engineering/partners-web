@@ -1,21 +1,16 @@
 "use client";
 import { useState } from "react";
-import { Button } from "../Button";
+import { Button } from "./Button";
 import {
   ArticleDocument,
-  ArticleDocumentData,
+  ProjectDocument,
   ArticlesSliceAutoList,
   ArticlesSliceList,
-  NavigationDocumentData,
+  ResourcesDocument,
 } from "@/prismicio-types";
-import * as prismic from "@prismicio/client";
-import { categoryPillColor } from "../CategoryPill";
+import { categoryPillColor } from "./CategoryPill";
 
-type ArticlesProps = {
-  data: ArticleDocumentData;
-};
-
-export const List = ({
+const List = ({
   data,
   slice,
 }: {
@@ -120,6 +115,16 @@ export const List = ({
           </div>
         ))}
       </div>
+    </div>
+  );
+};
+
+export const ResourcesLayout = (page: ResourcesDocument) => {
+  return (
+    <div className="flex flex-col items-center my-16">
+      <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-4">
+        Reousrce page with articles, projects in list/grid form and filters
+      </h2>
     </div>
   );
 };

@@ -80,3 +80,20 @@ export const reviewsChecklistQuery = `
   }
 }
 `;
+
+export const projectQuery = `
+{
+  project {
+    project_name
+    project_description
+    live_project_link
+    source_code_link
+    featured_image
+    category {
+      ...on project_category {
+        ...project_categoryFields
+      }
+    }
+  }
+}
+`;

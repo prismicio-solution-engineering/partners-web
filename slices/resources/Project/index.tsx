@@ -1,5 +1,11 @@
-import { Content } from "@prismicio/client";
+import { Button } from "@/components/Button";
+import { categoryPillColor, categoryColor } from "@/components/CategoryPill";
+import { ProjectDocument } from "@/prismicio-types";
+import { getProjectByUid } from "@/utils/getProjectByUid";
+import { Content, asText, isFilled } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import FullWidthCard from "./List";
 
 /**
  * Props for `Project`.
@@ -9,14 +15,11 @@ export type ProjectProps = SliceComponentProps<Content.ProjectSlice>;
 /**
  * Component for "Project" Slices.
  */
-const Project = ({ slice }: ProjectProps): JSX.Element => {
+const Project = async ({ slice }: ProjectProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for project (variation: {slice.variation}) Slices
-    </section>
+    <>
+      {slice.variation === "fullWidthCard" && <FullWidthCard slice={slice} />}
+    </>
   );
 };
 

@@ -1,8 +1,16 @@
 "use client";
 
 import { ReviewChecklist } from "./ReviewChecklist";
-import { BooleanField, Content, ContentRelationshipField, KeyTextField, RichTextField, SelectField, asText } from "@prismicio/client";
+import {
+  BooleanField,
+  Content,
+  ContentRelationshipField,
+  KeyTextField,
+  RichTextField,
+  SelectField,
+} from "@prismicio/client";
 import { Tab } from "@headlessui/react";
+import { PrismicRichText } from "./PrismicRichText";
 
 export type ChecklistProps = {
   name: RichTextField;
@@ -24,17 +32,17 @@ export default function ReviewLayout({
   page,
 }: {
   criteria: ChecklistProps;
-  page: Content.ReviewsDocumentData;
+  page: Content.ReviewsDocument;
 }) {
   const tabs = [
     {
       name: "Sample project",
-      description: asText(page.sample_project_description),
+      description: page.data.sample_project_description,
       current: true,
     },
     {
       name: "Full project",
-      description: asText(page.full_project_description),
+      description: page.data.full_project_description,
       current: false,
     },
   ];
@@ -45,7 +53,6 @@ export default function ReviewLayout({
 
   return (
     <div className="max-w-screen-xl mx-auto">
-
       <Tab.Group>
         <Tab.List className="flex space-x-1 bg-white p-1">
           {tabs.map((tab, idx) => (
@@ -66,10 +73,10 @@ export default function ReviewLayout({
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="mt-2">
+        <Tab.Panels className="mt-10">
           {tabs.map((tab, idx) => (
             <Tab.Panel key={idx}>
-              {tab.description}
+              <PrismicRichText field={tab.description} />
               <ReviewChecklist
                 criteria={
                   tab.name === "Sample project"

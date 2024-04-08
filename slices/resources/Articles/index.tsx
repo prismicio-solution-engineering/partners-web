@@ -2,8 +2,7 @@ import { Grid } from "@/components/Articles/Grid";
 import { HorizontalScroll } from "@/components/Articles/HorizontalScroll";
 import { List } from "@/components/Articles/List";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import { getArticles } from "@/utils/getArticles";
-import { Content, isFilled } from "@prismicio/client";
+import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**

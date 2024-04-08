@@ -10,23 +10,12 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "../PrismicRichText";
 import { getAllArticles } from "@/utils/getAllArticles";
 import { getAllArticlesByCategory } from "@/utils/getAllArticlesByCategory";
+import { categoryPillColor } from "../CategoryPill";
 
 const serializer = {
   heading1: ({ children }) => (
     <h3 className="text-xl font-bold mb-4 text-gray-darker">{children}</h3>
   ),
-};
-
-const categoryPill = (category: string) => {
-  if (category === "Use case") {
-    return "bg-quaternary-purple text-primary-purple";
-  } else if (category === "Best practice") {
-    return "bg-quaternary-green text-primary-green";
-  } else if (category === "Tutorial") {
-    return "bg-quaternary-orange text-primary-orange";
-  } else if (category === "Solution engineering team projects") {
-    return "bg-quaternary-blue text-primary-blue";
-  }
 };
 
 export async function Grid({
@@ -118,8 +107,8 @@ export async function Grid({
                 />
               )}
               <div className="px-8 py-4 whitespace-normal flex flex-col justify-between">
-                <span
-                  className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPill(article.data.category.data.name)}`}
+              <span
+                  className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPillColor(article.data.category.data.name)}`}
                 >
                   {article.data.category.data.name}
                 </span>

@@ -239,7 +239,6 @@ type HomeDocumentDataSlicesSlice =
   | TestimonialsSlice
   | CallToActionSlice
   | TimelineSlice
-  | TextSlice
   | AccordionSectionSlice
   | HeroBannerSlice
   | FeaturedPartnersSlice;
@@ -3316,7 +3315,7 @@ export type ArticlesSlice = prismic.SharedSlice<
 /**
  * Primary content in *Project → Primary*
  */
-export interface ProjectSliceDefaultPrimary {
+export interface ProjectSliceCardPrimary {
   /**
    * Project field in *Project → Primary*
    *
@@ -3329,22 +3328,50 @@ export interface ProjectSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Project Slice
+ * Card variation for Project Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `card`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ProjectSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ProjectSliceDefaultPrimary>,
+export type ProjectSliceCard = prismic.SharedSliceVariation<
+  "card",
+  Simplify<ProjectSliceCardPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Project → Primary*
+ */
+export interface ProjectSliceFullWidthCardPrimary {
+  /**
+   * Project field in *Project → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project">;
+}
+
+/**
+ * Full Width Card variation for Project Slice
+ *
+ * - **API ID**: `fullWidthCard`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSliceFullWidthCard = prismic.SharedSliceVariation<
+  "fullWidthCard",
+  Simplify<ProjectSliceFullWidthCardPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Project*
  */
-type ProjectSliceVariation = ProjectSliceDefault;
+type ProjectSliceVariation = ProjectSliceCard | ProjectSliceFullWidthCard;
 
 /**
  * Project Shared Slice
@@ -4258,9 +4285,11 @@ declare module "@prismicio/client" {
       ArticlesSliceAutoHorizontalScroll,
       ArticlesSliceAutoFilterableGrid,
       ProjectSlice,
-      ProjectSliceDefaultPrimary,
+      ProjectSliceCardPrimary,
+      ProjectSliceFullWidthCardPrimary,
       ProjectSliceVariation,
-      ProjectSliceDefault,
+      ProjectSliceCard,
+      ProjectSliceFullWidthCard,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceVariation,
