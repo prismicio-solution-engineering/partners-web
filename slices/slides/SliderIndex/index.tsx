@@ -37,7 +37,7 @@ const SliderIndex = ({
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (
-                    <h2 className="text-6xl font-semibold font-sans text-gray-darker">
+                    <h2 className="text-7xl font-semibold font-sans text-gray-darker">
                       {children}
                     </h2>
                   ),

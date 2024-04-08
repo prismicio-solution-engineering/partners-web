@@ -1,5 +1,5 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { SlideSliceWithImage, SliderDocumentData } from "@/prismicio-types";
 import { SlidePrismicRichText } from "./SlidePrismicRichText";
 
