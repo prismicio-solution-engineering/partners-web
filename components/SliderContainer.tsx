@@ -77,7 +77,7 @@ export const SliderContainer = ({
           <ChevronRightIcon className="h-10 w-10" />
         </button>
       </div>
-      <div className="absolute w-full flex justify-center bottom-5">
+      <div className="absolute w-full flex justify-center bottom-4">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
             key={index}
