@@ -15,12 +15,11 @@ export type ProjectProps = SliceComponentProps<Content.ProjectSlice>;
 /**
  * Component for "Project" Slices.
  */
-const Project = async ({ slice }: ProjectProps): JSX.Element => {
-  return (
-    <>
-      {slice.variation === "fullWidthCard" && <FullWidthCard slice={slice} />}
-    </>
-  );
-};
-
-export default Project;
+export default function Project({ slice }: ProjectProps) {
+  switch (slice.variation) {
+    case "fullWidthCard":
+      return <FullWidthCard slice={slice} />;
+    case "card":
+      return <FullWidthCard slice={slice} />;
+  }
+}

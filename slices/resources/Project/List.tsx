@@ -1,24 +1,31 @@
 import { Button } from "@/components/Button";
-import { categoryPillColor, categoryColor} from "@/components/CategoryPill";
-import { ProjectDocument, ProjectSliceFullWidthCard } from "@/prismicio-types";
+import { categoryPillColor, categoryColor } from "@/components/CategoryPill";
+import { ProjectDocument } from "@/prismicio-types";
 import { getProjectByUid } from "@/utils/getProjectByUid";
-import { isFilled } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
-const FullWidthCard = async (slice : ProjectSliceFullWidthCard) => {
+const FullWidthCard = async ({
+  slice,
+}: {
+  slice: Content.ProjectSliceFullWidthCard;
+}) => {
   const projectUid: string = isFilled.contentRelationship(slice.primary.project)
-    ? slice.primary.project.uid!
+    ? slice.primary.project.uid
     : "";
 
-  const project: ProjectDocument = await getProjectByUid(projectUid);
+  const project: ProjectDocument =
+    projectUid && (await getProjectByUid(projectUid));
 
   return (
-    <div className="w-full max-w-screen-xl mx-auto my-16 px-4 sm:px-6 lg:px-8">
-      <div className={`flex flex-col md:flex-row gap-12 items-center mb-10 last:mb-0 bg-white border-2 border-silver-light shadow-lg rounded-lg  md:p-16`}>
-        <div className="md:w-3/5 px-4 mb-8 md:mb-0">
+    <div className="w-full mx-auto my-16">
+      <div
+        className={`flex flex-col md:flex-row gap-12 items-center mb-10 last:mb-0 bg-white rounded-lg max-w-screen-xl mx-auto px-4`}
+      >
+        <div className="md:w-3/5 mb-8 md:mb-0">
           <PrismicNextImage
             field={project.data.featured_image}
-            className={`w-full h-48 md:h-80 rounded-lg object-contain p-10 bg-quaternary-${categoryColor(project.data.category.data.category_name)}`}
+            className={`w-full h-48 md:h-80 rounded-lg object-contain border shadow-lg border-silver-base`}
           />
         </div>
         <div className="md:w-2/5">
