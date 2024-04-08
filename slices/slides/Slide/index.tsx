@@ -72,9 +72,9 @@ const Slide = ({
     <>
       <div
         ref={contentRef}
-        className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-${slice.primary.background_color}`}
+        className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg bg-quaternary-${slice.primary.background_color}`}
       >
-        <div className="h-full flex flex-col md:flex-row w-full inset-0 mb-10 overflow-y-clip justify-start gap-10">
+        <div className="h-full flex flex-row w-full inset-0 mb-10 overflow-y-clip justify-start gap-10">
           {slice.variation === "withImage" && (
             <WithImage slice={slice} context={context} />
           )}

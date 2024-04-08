@@ -29,12 +29,12 @@ const serializer = {
     <p className="text-xl font-sans pb-2 text-gray-base">{children}</p>
   ),
   listItem: ({ children }) => (
-    <li className="mb-1 list-disc pl-1 last:mb-0 md:pl-2 text-xl list-inside text-gray-base">
+    <li className="mb-1 list-disc last:mb-0 pl-2 text-xl list-inside text-gray-base">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="mb-1 list-decimal pl-1 last:mb-0 md:pl-2 text-xl list-inside text-gray-base">
+    <li className="mb-1 list-decimallast:mb-0 pl-2 text-xl list-inside text-gray-base">
       {children}
     </li>
   ),
@@ -74,13 +74,13 @@ export type SlideProps = SliceComponentProps<Content.SlideSlice>;
 const layout = (slice: VideoSlideSlice) => {
 
   const altTextSection = (
-    <div className="text-left flex flex-col justify-start md:w-1/2 overflow-clip px-4 pt-10 pb-4 overflow-y-scroll">
+    <div className="text-left flex flex-col justify-start w-1/2 overflow-clip px-4 pt-10 pb-4">
       <PrismicRichText field={slice.primary.content} components={serializer} />
     </div>
   );
 
   const altMediaSection = (
-    <div className="flex flex-col md:w-1/2 p-4 ">
+    <div className="flex flex-col w-1/2 p-4 ">
 
       {slice.variation === "withVideo" && (
         <video
@@ -125,7 +125,7 @@ const VideoSlide = ({ slice }: VideoSlideSlice): JSX.Element => {
             field={slice.primary.title}
             components={serializer}
           />
-          <div className="flex flex-col md:flex-row w-full h-2/3 inset-0 mb-10 overflow-clip">
+          <div className="flex flex-row w-full h-2/3 inset-0 mb-10 overflow-clip">
             {layout(slice)}
           </div>
         </div>

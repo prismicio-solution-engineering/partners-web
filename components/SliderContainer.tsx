@@ -53,10 +53,10 @@ export const SliderContainer = ({
   
   return (
     <div className="relative w-full">
-      <div className="px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="px-8 overflow-hidden">
         <button
           onClick={prevSlide}
-          className="absolute left-0 z-10 text-silver-darker hidden md:block"
+          className="absolute -left-4 z-10 text-silver-darker block"
           style={{ top: "50%", transform: "translateY(-50%)" }}
           aria-label="Scroll left"
         >
@@ -70,18 +70,18 @@ export const SliderContainer = ({
         </div>
         <button
           onClick={nextSlide}
-          className="absolute right-0 z-10 text-silver-darker hidden md:block"
+          className="absolute -right-4 z-10 text-silver-darker block"
           style={{ top: "50%", transform: "translateY(-50%)" }}
           aria-label="Scroll right"
         >
           <ChevronRightIcon className="h-10 w-10" />
         </button>
       </div>
-      <div className="absolute w-full flex justify-center bottom-0 p-8">
+      <div className="absolute w-full flex justify-center bottom-5">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
             key={index}
-            className={`h-3 w-3 mx-1 rounded-full ${index === currentSlide ? "bg-silver-darker" : "bg-silver-light"} focus:outline-none`}
+            className={`h-3 w-3 mx-1 rounded-full ${index === currentSlide ? "bg-silver-darker" : "bg-white"} focus:outline-none`}
             onClick={() => goToSlide(index)}
           ></button>
         ))}
