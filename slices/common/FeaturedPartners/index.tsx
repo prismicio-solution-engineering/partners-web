@@ -38,7 +38,6 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
                 >
                   <PrismicNextImage
                     className="mx-auto object-contain"
-                    width={344}
                     height={100}
                     field={item.partner_logo}
                   />
