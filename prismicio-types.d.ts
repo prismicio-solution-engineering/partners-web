@@ -2739,177 +2739,6 @@ export type TimelineSlice = prismic.SharedSlice<
 /**
  * Primary content in *Articles → Primary*
  */
-export interface ArticlesSliceListPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Articles → Items*
- */
-export interface ArticlesSliceListItem {
-  /**
-   * Article field in *Articles → Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.items[].article
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  article: prismic.ContentRelationshipField<"article">;
-}
-
-/**
- * List variation for Articles Slice
- *
- * - **API ID**: `list`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceList = prismic.SharedSliceVariation<
-  "list",
-  Simplify<ArticlesSliceListPrimary>,
-  Simplify<ArticlesSliceListItem>
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
-export interface ArticlesSliceAutoListPrimary {
-  /**
-   * Title field in *Articles → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Link to blog label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.link_to_blog_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  link_to_blog_label: prismic.KeyTextField;
-
-  /**
-   * Link to blog field in *Articles → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link to blog page
-   * - **API ID Path**: articles.primary.link_to_blog
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link_to_blog: prismic.LinkField;
-
-  /**
-   * Filter label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.filter_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  filter_label: prismic.KeyTextField;
-
-  /**
-   * Articles read more label field in *Articles → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: To display on each article
-   * - **API ID Path**: articles.primary.articles_read_more_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  articles_read_more_label: prismic.KeyTextField;
-
-  /**
-   * Number of articles field in *Articles → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.number_of_articles
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  number_of_articles: prismic.NumberField;
-
-  /**
-   * Category filter field in *Articles → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.primary.category
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  category: prismic.ContentRelationshipField<"article_category">;
-}
-
-/**
- * Auto list variation for Articles Slice
- *
- * - **API ID**: `autoList`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticlesSliceAutoList = prismic.SharedSliceVariation<
-  "autoList",
-  Simplify<ArticlesSliceAutoListPrimary>,
-  never
->;
-
-/**
- * Primary content in *Articles → Primary*
- */
 export interface ArticlesSliceHorizontalScrollPrimary {
   /**
    * Title field in *Articles → Primary*
@@ -3144,7 +2973,7 @@ export interface ArticlesSliceAutoFilterableGridPrimary {
 }
 
 /**
- * Auto Filterable Grid variation for Articles Slice
+ * Grid variation for Articles Slice
  *
  * - **API ID**: `autoFilterableGrid`
  * - **Description**: Default
@@ -3160,8 +2989,6 @@ export type ArticlesSliceAutoFilterableGrid = prismic.SharedSliceVariation<
  * Slice variation for *Articles*
  */
 type ArticlesSliceVariation =
-  | ArticlesSliceList
-  | ArticlesSliceAutoList
   | ArticlesSliceHorizontalScroll
   | ArticlesSliceAutoHorizontalScroll
   | ArticlesSliceAutoFilterableGrid;
@@ -4134,16 +3961,11 @@ declare module "@prismicio/client" {
       TimelineSliceAlternatedWithImage,
       TimelineSliceGrid,
       ArticlesSlice,
-      ArticlesSliceListPrimary,
-      ArticlesSliceListItem,
-      ArticlesSliceAutoListPrimary,
       ArticlesSliceHorizontalScrollPrimary,
       ArticlesSliceHorizontalScrollItem,
       ArticlesSliceAutoHorizontalScrollPrimary,
       ArticlesSliceAutoFilterableGridPrimary,
       ArticlesSliceVariation,
-      ArticlesSliceList,
-      ArticlesSliceAutoList,
       ArticlesSliceHorizontalScroll,
       ArticlesSliceAutoHorizontalScroll,
       ArticlesSliceAutoFilterableGrid,
