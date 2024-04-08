@@ -23,9 +23,9 @@ const IntroSlide = ({
   return (
     <div>
       <div
-        className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg mb-5 bg-quaternary-${slice.primary.background_color}`}
+        className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg bg-quaternary-${slice.primary.background_color}`}
       >
-        <div className="flex flex-col gap-10 md:flex-row w-full inset-0 mb-10 overflow-clip justify-between">
+        <div className="flex gap-10 flex-row w-full inset-0 mb-10 overflow-clip justify-between">
           <div className="w-1/2 flex flex-col justify-between">
             <PrismicNextImage
               field={context.logo}

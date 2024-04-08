@@ -27,10 +27,10 @@ const ContentTwoCol = ({
           </div>
         </div>
         <div className="flex flex-row gap-10">
-          <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4 overflow-y-scroll">
+          <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4">
             <SlidePrismicRichText field={slice.primary.content_left} />
           </div>
-          <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4 overflow-y-scroll">
+          <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4">
             <SlidePrismicRichText field={slice.primary.content_right} />
           </div>
         </div>

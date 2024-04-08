@@ -6,6 +6,7 @@ import Slide from "../Slide";
 import VideoSlide from "../VideoSlide";
 import { SliderContainer } from "@/components/SliderContainer";
 import SliderIndex from "../SliderIndex";
+import Scaler from "@/components/Scaler";
 
 /**
  * Props for `Slider`.
@@ -21,27 +22,29 @@ const Slider = async ({ slice }: SliderProps): JSX.Element => {
   const slider = await client.getByUID("slider", slice.primary.slider.uid);
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-8 mt-16 relative">
-      <SliderContainer>
-        {slider.data.slices.map((slice, idx) => (
-          <div key={idx}>
-            {slice.slice_type === "intro_slide" ? (
-              <IntroSlide slice={slice} context={slider.data} />
-            ) : slice.slice_type === "slide" ? (
-              <Slide slice={slice} context={slider.data} />
-            ) : 
-              slice.slice_type === "video_slide" ? (
-                <VideoSlide slice={slice} context={slider.data} />
-              )
-             : (
-              slice.slice_type === "slider_index" && (
-                <SliderIndex slice={slice} context={slider.data} />
-              )
-            )}
-          </div>
-        ))}
-      </SliderContainer>
-    </div>
+    <Scaler>
+      <div className="relative">
+        <SliderContainer>
+          {slider.data.slices.map((slice, idx) => (
+            <div key={idx}>
+              {slice.slice_type === "intro_slide" ? (
+                <IntroSlide slice={slice} context={slider.data} />
+              ) : slice.slice_type === "slide" ? (
+                <Slide slice={slice} context={slider.data} />
+              ) :
+                slice.slice_type === "video_slide" ? (
+                  <VideoSlide slice={slice} context={slider.data} />
+                )
+                  : (
+                    slice.slice_type === "slider_index" && (
+                      <SliderIndex slice={slice} context={slider.data} />
+                    )
+                  )}
+            </div>
+          ))}
+        </SliderContainer>
+      </div>
+    </Scaler>
   );
 };
 
