@@ -35,19 +35,19 @@ const defaultComponents: JSXMapSerializer = {
     <p className="text-lg font-sans pb-2 text-gray-base">{children}</p>
   ),
   listItem: ({ children }) => (
-    <li className="list-disc pl-1 last:mb-0 text-xl list-inside text-gray-base">
+    <li className="list-disc pl-2 last:mb-0 text-lg list-inside text-gray-base">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="list-decimal pl-1 last:mb-0 text-xl list-inside text-gray-base">
+    <li className="list-decimal pl-2 last:mb-0 text-lg list-inside text-gray-base">
       {children}
     </li>
   ),
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className="text-gray-base font-sans text-xl underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+      className="text-gray-base font-sans text-lg underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
     >
       {children}
     </PrismicNextLink>
