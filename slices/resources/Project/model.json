@@ -5,27 +5,6 @@
   "description": "Project",
   "variations": [
     {
-      "id": "card",
-      "name": "Card",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "project": {
-          "type": "Link",
-          "config": {
-            "label": "Project",
-            "select": "document",
-            "customtypes": [
-              "project"
-            ]
-          }
-        }
-      },
-      "items": {}
-    },
-    {
       "id": "fullWidthCard",
       "name": "Full Width Card",
       "docURL": "...",

@@ -3,19 +3,87 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices/resources";
 import Header from "@/components/Header";
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { PageLayout } from "@/components/PageLayout";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { projectQuery } from "@/utils/graphQueries";
+import { categoryPillColor } from "@/components/CategoryPill";
+import { Button } from "@/components/Button";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("projects");
   const navigation =
     await client.getSingle<Content.NavigationDocument>("navigation");
+  const projects = await client.getAllByType("project", {
+    graphQuery: projectQuery,
+  });
+
   return (
     <>
       <Header navigation={navigation} />
       <PageLayout title={page.data.title} description={page.data.description} />
       <SliceZone slices={page?.data?.slices} components={components} />
+      <div className="max-w-screen-xl mx-auto my-16 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-lg overflow-hidden shadow-lg max-w-[350px] hover:-translate-y-6 ease-in-out duration-300"
+            >
+              <PrismicNextLink field={project.data.live_project_link}>
+                {isFilled.image(project.data.featured_image) ? (
+                  <PrismicNextImage
+                    className="object-contain"
+                    field={
+                      isFilled.imageThumbnail(
+                        project.data.featured_image.thumbnail
+                      )
+                        ? project.data.featured_image.thumbnail
+                        : project.data.featured_image
+                    }
+                    width={320}
+                    height={720}
+                  />
+                ) : (
+                  <img
+                    src="https://images.prismic.io/prismic-partners-web/65e19e9027237c2bb829b42b_illu-library_double-question-marks.png?auto=format,compress"
+                    className="w-[350px] h-[200px] object-cover"
+                  />
+                )}
+              </PrismicNextLink>
+              <div className="px-8 py-8 whitespace-normal flex flex-col">
+                <div className="flex flex-col gap-2">
+                  <span
+                    className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPillColor(project.data.category.data.category_name)}`}
+                  >
+                    {project.data.category.data.category_name}
+                  </span>
+                  <span className="text-xl font-sans font-bold text-gray-darker mt-2">
+                    {project.data.project_name}
+                  </span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="flex flex-row justify-between w-full">
+                    <Button
+                      field={project.data.source_code_link}
+                      variant="link"
+                    >
+                      Source Code
+                    </Button>
+                    <Button
+                      field={project.data.live_project_link}
+                      variant="link"
+                    >
+                      Live project
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

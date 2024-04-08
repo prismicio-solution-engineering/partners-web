@@ -862,7 +862,7 @@ interface ProjectDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  featured_image: prismic.ImageField<never>;
+  featured_image: prismic.ImageField<"thumbnail">;
 }
 
 /**
@@ -3008,34 +3008,6 @@ export type ArticlesSlice = prismic.SharedSlice<
 /**
  * Primary content in *Project → Primary*
  */
-export interface ProjectSliceCardPrimary {
-  /**
-   * Project field in *Project → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.project
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  project: prismic.ContentRelationshipField<"project">;
-}
-
-/**
- * Card variation for Project Slice
- *
- * - **API ID**: `card`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSliceCard = prismic.SharedSliceVariation<
-  "card",
-  Simplify<ProjectSliceCardPrimary>,
-  never
->;
-
-/**
- * Primary content in *Project → Primary*
- */
 export interface ProjectSliceFullWidthCardPrimary {
   /**
    * Project field in *Project → Primary*
@@ -3064,7 +3036,7 @@ export type ProjectSliceFullWidthCard = prismic.SharedSliceVariation<
 /**
  * Slice variation for *Project*
  */
-type ProjectSliceVariation = ProjectSliceCard | ProjectSliceFullWidthCard;
+type ProjectSliceVariation = ProjectSliceFullWidthCard;
 
 /**
  * Project Shared Slice
@@ -3970,10 +3942,8 @@ declare module "@prismicio/client" {
       ArticlesSliceAutoHorizontalScroll,
       ArticlesSliceAutoFilterableGrid,
       ProjectSlice,
-      ProjectSliceCardPrimary,
       ProjectSliceFullWidthCardPrimary,
       ProjectSliceVariation,
-      ProjectSliceCard,
       ProjectSliceFullWidthCard,
       TextSlice,
       TextSliceDefaultPrimary,
