@@ -30,14 +30,14 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
             {slice.items.map((item, idx) => (
               <div
                 key={idx}
-                className="shrink-0 h-[100px] w-1/3"
+                className="shrink-0 h-[100px] w-1/3 grid items-center justify-center"
               >
                 <PrismicNextLink
-                  className="block rounded-lg overflow-hidden cursor-pointer transform hover:scale-110 transition-transform duration-300"
+                  className="block rounded-lg overflow-hidden cursor-pointer transform hover:scale-110 transition-transform duration-300 object-contain w-80"
                   field={item.partner_link}
                 >
                   <PrismicNextImage
-                    className="mx-auto object-contain"
+                    className="mx-auto"
                     height={100}
                     field={item.partner_logo}
                   />

@@ -5,6 +5,7 @@ export const ScrollContainer = ({
   gap,
   ...props
 }: {
+  gap: number;
   children: React.ReactNode;
 }) => {
   const scrollContainerRef = React.useRef(null);
