@@ -60,7 +60,7 @@ const SliderIndex = ({
             <div className="text-xl font-sans text-gray-base">
               {slice.items.map((item, idx) => (
                 <div key={idx} className="flex flex-col my-8">
-                  <div className="flex flex-row gap-6">
+                  <div className="flex flex-row items-center gap-6">
                     <span
                       className={`text-4xl text-secondary-${slice.primary.background_color}`}
                     >
