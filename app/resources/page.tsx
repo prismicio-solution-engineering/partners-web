@@ -6,13 +6,14 @@ import { components } from "@/slices/resources";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import { PageLayout } from "@/components/PageLayout";
+import Footer from "@/components/Footer";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("resources");
   const navigation =
     await client.getSingle<Content.NavigationDocument>("navigation");
-  const articlesCategories = await client.getAllByType("article_category");
+  // const articlesCategories = await client.getAllByType("article_category");
 
   return (
     <>
@@ -22,6 +23,7 @@ export default async function Page() {
         description={page.data.description}
       />
       <SliceZone slices={page?.data?.slices} components={components} />
+      <Footer navigation={navigation} />
     </>
   );
 }

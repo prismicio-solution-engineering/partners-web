@@ -1,13 +1,17 @@
 "use client";
 import { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { NavigationDocumentData } from "@/prismicio-types";
+import { NavigationDocument } from "@/prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceZone } from "@prismicio/react";
 import { components } from "@/slices/navigation";
 import Modal from "./Modal";
 
-export default function Header({ navigation }: NavigationDocumentData) {
+export default function Header({
+  navigation,
+}: {
+  navigation: NavigationDocument;
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -40,7 +44,9 @@ export default function Header({ navigation }: NavigationDocumentData) {
         <nav
           className={`${isMobileMenuOpen ? "block md:hidden w-full" : "hidden md:flex items-center space-x-4"} relative flex justify-between z-100`}
         >
-          <div className="flex items-center md:gap-x-12">
+          <div
+            className={`flex ${isMobileMenuOpen ? "flex-col" : "items-center md:gap-x-12"}`}
+          >
             {navigation.data.slices1 && (
               <SliceZone
                 slices={navigation.data.slices1}
@@ -49,49 +55,8 @@ export default function Header({ navigation }: NavigationDocumentData) {
               />
             )}
           </div>
-          {/* <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="flex items-center p-1 mt-4 md:mt-0">
-              <button
-                type="button"
-                className="ml-auto flex h-8 w-8 items-center justify-center rounded-lg lg:ml-8"
-                onClick={() => setOpen(true)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex items-center p-1 mt-4 md:mt-0">
-              <Modal data={navigation.data} />
-            </div>
-          </div> */}
         </nav>
       </div>
-
-      {/* Mobile Menu */}
-      {/* <div className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden`}>
-        <nav className="bg-white p-4">
-          <div className="flex items-center border-2 border-gray-300 p-1 mt-4 w-full">
-            <input
-              type="text"
-              className="bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none"
-              placeholder="Search"
-            />
-            <SearchIcon className="h-5 w-5 text-gray-700" />
-          </div>
-        </nav>
-      </div> */}
     </header>
   );
 }

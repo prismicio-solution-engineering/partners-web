@@ -9,6 +9,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { projectQuery } from "@/utils/graphQueries";
 import { categoryPillColor } from "@/components/CategoryPill";
 import { Button } from "@/components/Button";
+import Footer from "@/components/Footer";
 
 export default async function Page() {
   const client = createClient();
@@ -84,6 +85,7 @@ export default async function Page() {
           ))}
         </div>
       </div>
+      <Footer navigation={navigation} />
     </>
   );
 }

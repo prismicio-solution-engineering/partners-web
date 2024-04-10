@@ -9,6 +9,8 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicNextImage } from "@prismicio/next";
 import { fullArticleQuery } from "@/utils/graphQueries";
+import Footer from "@/components/Footer";
+import { categoryPillColor } from "@/components/CategoryPill";
 
 type Params = { uid: string };
 
@@ -18,18 +20,6 @@ const serializer = {
       {children}
     </h1>
   ),
-};
-
-const categoryPill = (category: string) => {
-  if (category === "Use case") {
-    return "bg-quaternary-purple text-primary-purple";
-  } else if (category === "Best practice") {
-    return "bg-quaternary-green text-primary-green";
-  } else if (category === "Tutorial") {
-    return "bg-quaternary-orange text-primary-orange";
-  } else if (category === "Solution engineering team projects") {
-    return "bg-quaternary-blue text-primary-blue";
-  }
 };
 
 export default async function Page({ params }: { params: Params }) {
@@ -46,11 +36,11 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Header navigation={navigation} />
-      <div className="bg-white px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-16">
+      <div className="bg-white px-4 sm:px-6 lg:px-8 my-16 max-w-screen-xl mx-auto flex flex-col gap-16">
+        <div className=" flex flex-col md:flex-row gap-16">
           <div className="md:w-1/2">
             <div
-              className={`h-8 w-fit inline-flex text-center rounded-lg px-3 py-1 font-sans font-semibold text-sm mb-4 ${categoryPill(page.data.category.data.name)}`}
+              className={`h-8 w-fit inline-flex text-center rounded-lg px-3 py-1 font-sans font-semibold text-sm mb-4 ${categoryPillColor(page.data.category.data.name)}`}
             >
               {page.data.category.data.name}
             </div>
@@ -68,8 +58,14 @@ export default async function Page({ params }: { params: Params }) {
             />
           </div>
         </div>
+        <div className="flex flex-row gap-10">
+          <div className="w-1/4">Table Of Content</div>
+          <div className="w-3/4">
+            <SliceZone slices={page?.data?.slices2} components={components} />
+          </div>
+        </div>
       </div>
-      <SliceZone slices={page?.data?.slices2} components={components} />
+      <Footer navigation={navigation} />
     </>
   );
 }

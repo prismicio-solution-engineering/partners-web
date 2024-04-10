@@ -6,6 +6,7 @@ import { components as resourcesComponents } from "@/slices/resources";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
+import Footer from "@/components/Footer";
 
 export default async function Page() {
   const client = createClient();
@@ -25,6 +26,7 @@ export default async function Page() {
           ...resourcesComponents,
         }}
       />
+      <Footer navigation={navigation} />
     </>
   );
 }

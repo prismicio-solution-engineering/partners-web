@@ -10,6 +10,7 @@ import { components as slidesComponents } from "@/slices/slides";
 import Header from "@/components/Header";
 import { Content } from "@prismicio/client";
 import { PageLayout } from "@/components/PageLayout";
+import Footer from "@/components/Footer";
 
 type Params = { uid: string };
 
@@ -23,7 +24,10 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Header navigation={navigation} />
-      <PageLayout title={page?.data?.title} description={page?.data?.description} />
+      <PageLayout
+        title={page?.data?.title}
+        description={page?.data?.description}
+      />
       <SliceZone
         slices={page?.data?.slices}
         components={{
@@ -33,6 +37,7 @@ export default async function Page({ params }: { params: Params }) {
           ...slidesComponents,
         }}
       />
+      <Footer navigation={navigation} />
     </>
   );
 }

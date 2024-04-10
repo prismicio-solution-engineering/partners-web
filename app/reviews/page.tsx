@@ -9,6 +9,7 @@ import { Content } from "@prismicio/client";
 import ReviewLayout from "@/components/ReviewLayout";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { reviewsQuery } from "@/utils/graphQueries";
+import Footer from "@/components/Footer";
 
 export default async function Page() {
   const client = createClient();
@@ -28,6 +29,7 @@ export default async function Page() {
       </div>
       <SliceZone slices={page?.data?.slices} components={components} />;
       <ReviewLayout criteria={checklist.data.criteria} page={page} />
+      <Footer navigation={navigation} />
     </>
   );
 }
