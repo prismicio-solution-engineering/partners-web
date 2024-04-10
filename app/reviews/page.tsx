@@ -21,7 +21,7 @@ export default async function Page() {
     await client.getSingle<Content.NavigationDocument>("navigation");
 
   return (
-    <>
+    <div className="">
       <Header navigation={navigation} />
       <div className="text-center mx-auto max-w-screen-xl">
         <PrismicRichText field={page.data.page_title} />
@@ -30,7 +30,7 @@ export default async function Page() {
       <SliceZone slices={page?.data?.slices} components={components} />;
       <ReviewLayout criteria={checklist.data.criteria} page={page} />
       <Footer navigation={navigation} />
-    </>
+    </div>
   );
 }
 

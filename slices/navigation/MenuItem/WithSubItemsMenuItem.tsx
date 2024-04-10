@@ -29,17 +29,21 @@ const WithSubItemsMenuItem = ({
     <>
       {isMobileMenu ? (
         <div className="relative">
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center justify-between w-full text-gray-base hover:text-gray-darker py-2"
-          >
-            {slice.primary.label}
-            <ChevronDownIcon
-              className={`${
-                isDropdownOpen ? "transform rotate-180" : ""
-              } w-5 h-5`}
-            />
-          </button>
+          <div className="flex flex-row items-center justify-start w-full text-gray-base hover:text-gray-darker py-2">
+            <PrismicNextLink field={slice.primary.link}>
+              {slice.primary.label}
+            </PrismicNextLink>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className=""
+            >
+              <ChevronDownIcon
+                className={`${
+                  isDropdownOpen ? "transform rotate-180" : ""
+                } w-4 h-4`}
+              />
+            </button>
+          </div>
           <div className={`${isDropdownOpen ? "block" : "hidden"}`}>
             {slice.items.map((item, idx) => (
               <PrismicNextLink
@@ -58,7 +62,9 @@ const WithSubItemsMenuItem = ({
             onMouseLeave={() => setIsMobileMenuOpen(false)}
           >
             <Menu.Button className="text-gray-base hover:text-gray-darker flex items-center">
-              {slice.primary.label}
+              <PrismicNextLink field={slice.primary.link}>
+                {slice.primary.label}
+              </PrismicNextLink>
               <ChevronDownIcon className="ml-2 h-5 w-5" aria-hidden="true" />
             </Menu.Button>
             <Transition
