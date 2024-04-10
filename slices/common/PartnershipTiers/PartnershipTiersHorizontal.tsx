@@ -38,14 +38,14 @@ const PartnershipTiersHorizontal = async ({
           {tiers.results.map((tier, idx) => (
             <div
               key={idx}
-              className={`flex-shrink-0 w-full md:w-1/3 p-6 rounded-lg overflow-hidden ${tier.data.is_featured_tier && "bg-[#E8F8F3]"} shadow-lg `}
+              className={`flex-shrink-0 w-full md:w-1/3 p-6 rounded-lg overflow-hidden shadow-lg `}
               style={{ maxWidth: "360px" }}
             >
               <div className="flex flex-col items-start text-gray-darker">
                 <h3 className="text-xl font-sans font-bold">
                   <PrismicText field={tier.data.tier_name} />
                 </h3>
-                <p className="text-sm mb-6 text-center text-gray-500 min-h-[40px]">
+                <p className="text-sm mb-6 text-left text-gray-500 min-h-[40px]">
                   <PrismicText field={tier.data.tier_description} />
                 </p>
                 <ul className="w-full">

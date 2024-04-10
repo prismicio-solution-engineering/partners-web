@@ -1,6 +1,6 @@
 import { Button } from "@/components/Button";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import type { Content } from "@prismicio/client";
+import { isFilled, type Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
 const serializer = {
@@ -10,7 +10,9 @@ const serializer = {
     </h1>
   ),
   paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-gray-base max-w-2xl mx-auto mb-4">{children}</p>
+    <p className="font-sans text-lg text-gray-base max-w-2xl mx-auto mb-4">
+      {children}
+    </p>
   ),
 };
 
@@ -24,20 +26,25 @@ const HeroWithImage = ({
       <div className="max-w-screen-xl mx-auto py-16 px-8 md:py-24 rounded-lg">
         <div className="flex flex-col lg:flex-row items-center -mx-4 px-4 gap-16 lg:text-left text-center">
           <div className="w-full lg:w-1/2">
-            <PrismicRichText field={slice.primary.title} components={serializer} />
+            <PrismicRichText
+              field={slice.primary.title}
+              components={serializer}
+            />
             <PrismicRichText
               field={slice.primary.description}
               components={serializer}
             />
-            <div className="text-center lg:text-left">
-              <Button
-                field={slice.primary.button_link}
-                variant="primary"
-                color="black"
-              >
-                {slice.primary.button_label}
-              </Button>
-            </div>
+            {isFilled.link(slice.primary.button_link) && (
+              <div className="text-center lg:text-left">
+                <Button
+                  field={slice.primary.button_link}
+                  variant="primary"
+                  color="black"
+                >
+                  {slice.primary.button_label}
+                </Button>
+              </div>
+            )}
           </div>
           <div className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
             <div className="bg-white rounded-lg overflow-hidden">

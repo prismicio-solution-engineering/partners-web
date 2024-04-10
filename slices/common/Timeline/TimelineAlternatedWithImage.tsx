@@ -43,7 +43,7 @@ const TimelineAlternatedWithImage = ({
               <PrismicRichText field={item.step_description} />
             </div>
             <div className="md:w-3/5 px-12">
-              <div className="bg-quaternary-purple border-2 border-gray-darker p-9 rounded-lg">
+              <div className="bg-quaternary-purple border-2 border-gray-darker rounded-lg">
                 <PrismicNextImage
                   field={item.milestone_image}
                   className="w-full h-80 rounded-lg object-cover"

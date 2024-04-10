@@ -15,47 +15,7 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "label": "TItle",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2,strong"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,hyperlink,em,strong"
-          }
-        }
-      },
-      "items": {
-        "tier": {
-          "type": "Link",
-          "config": {
-            "label": "Tier",
-            "select": "document",
-            "customtypes": [
-              "partnership_tier"
-            ]
-          }
-        }
-      }
-    },
-    {
-      "id": "fullWidthCards",
-      "name": "Full Width Cards",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "TItle",
+            "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong"

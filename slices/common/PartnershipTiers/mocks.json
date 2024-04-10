@@ -9,7 +9,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "While"
+							"text": "Struggle"
 						}
 					}
 				]
@@ -21,51 +21,6 @@
 						"type": "paragraph",
 						"content": {
 							"text": "Eu dolore pariatur ullamco dolor ad ad cillum id. Do est deserunt et duis adipisicing ipsum eiusmod esse. Ad Lorem eu nisi."
-						}
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"tier",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
-							}
-						}
-					]
-				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "fullWidthCards",
-		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Studying"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Nulla anim est cillum do commodo tempor aliqua id labore amet aliqua incididunt ex est. Do mollit fugiat eu exercitation sit."
 						}
 					}
 				]
