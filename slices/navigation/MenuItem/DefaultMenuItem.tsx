@@ -23,14 +23,14 @@ const DefaultMenuItem = ({
       {isMobileMenu ? (
         <PrismicNextLink
           field={slice.primary.link}
-          className="block text-[#151515] hover:text-primary-blue py-2"
+          className="block text-gray-base hover:text-gray-darker py-2"
         >
           {slice.primary.label}
         </PrismicNextLink>
       ) : (
         <PrismicNextLink
           field={slice.primary.link}
-          className="text-[#151515] hover:text-primary-blue block mt-4 md:mt-0"
+          className="text-gray-base hover:text-gray-darker block mt-4 md:mt-0"
         >
           {slice.primary.label}
         </PrismicNextLink>

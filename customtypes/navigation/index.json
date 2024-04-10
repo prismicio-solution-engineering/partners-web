@@ -195,6 +195,15 @@
             }
           }
         }
+      },
+      "copyright": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Copyright",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,hyperlink,strong,em"
+        }
       }
     }
   }
