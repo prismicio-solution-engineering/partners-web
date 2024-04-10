@@ -22,17 +22,17 @@ const defaultComponents: JSXMapSerializer = {
     </h3>
   ),
   heading4: ({ children }) => (
-    <h4 className={`text-2xl font-semibold font-sans mb-2 text-gray-dark`}>
+    <h4 className={`text-2xl font-semibold font-sans mt-2 text-gray-dark`}>
       {children}
     </h4>
   ),
   heading5: ({ children }) => (
-    <h5 className={`text-2xl font-normal font-sans mb-2 text-gray-base`}>
+    <h5 className={`text-2xl font-normal font-sans mt-2 text-gray-base`}>
       {children}
     </h5>
   ),
   paragraph: ({ children }) => (
-    <p className="text-lg font-sans pb-2 text-gray-base">{children}</p>
+    <p className="text-lg font-sans pb-1 text-gray-base">{children}</p>
   ),
   listItem: ({ children }) => (
     <li className="list-disc pl-2 last:mb-0 text-lg list-inside text-gray-base">

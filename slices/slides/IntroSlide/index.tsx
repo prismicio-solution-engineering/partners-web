@@ -1,9 +1,9 @@
 "use client";
-import { PrismicRichText } from "@/components/PrismicRichText";
 import { IntroSlideSlice, SliderDocumentData } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import { SlidePrismicRichText } from "../Slide/SlidePrismicRichText";
 
 /**
  * Props for `IntroSlide`.
@@ -39,7 +39,7 @@ const IntroSlide = ({
               >
                 {slice.primary.date}
               </p>
-              <PrismicRichText
+              <SlidePrismicRichText
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (

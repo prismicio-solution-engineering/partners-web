@@ -1,6 +1,6 @@
-import { PrismicRichText } from "@/components/PrismicRichText";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { SlideSliceTitle, SliderDocumentData } from "@/prismicio-types";
+import { SlidePrismicRichText } from "./SlidePrismicRichText";
 
 const Title = ({
   slice,
@@ -21,7 +21,7 @@ const Title = ({
           />
         </div>
         <div className="h-full px-4 pt-28 pb-4 w-fit mx-auto flex flex-col gap-14">
-          <PrismicRichText
+          <SlidePrismicRichText
             field={slice.primary.title}
             components={{
               heading2: ({ children }) => (
@@ -34,14 +34,14 @@ const Title = ({
             }}
           />
           <div className="grid grid-cols-2">
-            <PrismicRichText
+            <SlidePrismicRichText
               field={slice.primary.content}
               components={{
                 paragraph: ({ children }) => (
                   <p className="text-3xl font-sans pb-2 text-gray-dark font-semibold">
                     {children}
                   </p>
-                )
+                ),
               }}
             />
           </div>

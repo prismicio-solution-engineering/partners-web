@@ -1,4 +1,3 @@
-import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicNextImage } from "@prismicio/next";
 import { SlideSliceWithImage, SliderDocumentData } from "@/prismicio-types";
 import { SlidePrismicRichText } from "./SlidePrismicRichText";
@@ -31,7 +30,7 @@ const WithImage = ({
             height={50}
           />
           <div className="text-left flex flex-col">
-            <PrismicRichText
+            <SlidePrismicRichText
               field={slice.primary.title}
               components={{
                 heading2: ({ children }) => (
@@ -51,9 +50,7 @@ const WithImage = ({
           </div>
         </div>
         <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4">
-          <SlidePrismicRichText
-            field={slice.primary.content}
-          />
+          <SlidePrismicRichText field={slice.primary.content} />
         </div>
       </div>
       {slice.primary.media_side && (

@@ -3,6 +3,7 @@ import { SliderDocumentData, SliderIndexSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import { SlidePrismicRichText } from "../Slide/SlidePrismicRichText";
 
 /**
  * Props for `SliderIndex`.
@@ -33,7 +34,7 @@ const SliderIndex = ({
                 width={72}
                 height={72}
               />
-              <PrismicRichText
+              <SlidePrismicRichText
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (
@@ -66,7 +67,7 @@ const SliderIndex = ({
                     >
                       {(idx += 1)}{" "}
                     </span>
-                    <PrismicRichText
+                    <SlidePrismicRichText
                       field={item.summary_item_name}
                       components={{
                         paragraph: ({ children }) => (

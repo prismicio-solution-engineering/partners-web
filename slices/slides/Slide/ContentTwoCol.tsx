@@ -1,4 +1,4 @@
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import {
   SlideSliceContentTwoColumns,
   SliderDocumentData,
