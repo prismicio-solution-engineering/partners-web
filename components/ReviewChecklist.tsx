@@ -7,10 +7,10 @@ import { CategoryProps, ChecklistProps } from "./ReviewLayout";
 
 const serializer = {
   paragraph: ({ children }) => (
-    <p className="text-left font-sans text-base text-gray-base">{children}</p>
+    <p className="text-left font-copy text-base text-gray-base">{children}</p>
   ),
   heading4: ({ children }) => (
-    <h4 className="text-left text-xl font-sans font-bold text-gray-darker mt-4 mb-2">
+    <h4 className="text-left text-xl font-copy font-bold text-gray-darker mt-4 mb-2">
       {children}
     </h4>
   ),
@@ -26,7 +26,7 @@ function ChecklistItem({ item, index, toggle, active }) {
       }`}
     >
       <p
-        className="text-gray-darker text-xl font-sans cursor-pointer flex justify-between font-bold"
+        className="text-gray-darker text-xl font-copy cursor-pointer flex justify-between font-bold"
         onClick={() => toggle(index)}
       >
         <PrismicText field={item.name} />
@@ -112,7 +112,7 @@ export function ReviewChecklist({
         {categories.map((category, idx) =>
           groupedItems[category] && groupedItems[category].length > 0 ? (
             <div key={idx}>
-              <p className="text-3xl font-sans font-bold text-gray-darker mb-8">
+              <p className="text-3xl font-copy font-bold text-gray-darker mb-8">
                 {category}
               </p>
               {/* Checklist item per category */}

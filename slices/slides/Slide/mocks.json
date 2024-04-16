@@ -7,28 +7,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "list-item",
+						"type": "paragraph",
 						"content": {
-							"text": "Cutting-edge technologies",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Creative solutions",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Strategic thinking",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Nulla officia laboris enim cupidatat non eu. Elit adipisicing incididunt consectetur excepteur aliquip quis dolor proident."
+						}
 					}
 				]
 			},
@@ -91,140 +73,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading4",
+						"type": "paragraph",
 						"content": {
-							"text": "Slices",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 6
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Multi-functional components created via Slice Machine",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Design components for designers",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "React or Vue components for developers",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Website sections for content editors",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "heading4",
-						"content": {
-							"text": "Page Types",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 10
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Page templates",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Unique URL structures",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Unique user interfaces",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "heading4",
-						"content": {
-							"text": "Custom Types",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 12
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Meant for configuration or settings like categorization, global SEO, theme etc.",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "heading4",
-						"content": {
-							"text": "Slice Machine",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 13
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Developer tool",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Npm package compatible with Next, Nuxt, and SvelteKit",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Commodo occaecat pariatur incididunt est veniam qui deserunt incididunt occaecat quis dolore aliquip ut magna."
+						}
 					}
 				]
 			},
@@ -276,88 +128,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading4",
+						"type": "paragraph",
 						"content": {
-							"text": "Slices",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 6
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Multi-functional components created via Slice Machine",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Design components for designers",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "React or Vue components for developers",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Website sections for content editors",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "heading4",
-						"content": {
-							"text": "Page Types",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 10
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Page templates",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Unique URL structures",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Unique user interfaces",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Pariatur ut incididunt nulla esse Lorem reprehenderit voluptate."
+						}
 					}
 				]
 			},
@@ -365,56 +139,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading4",
+						"type": "paragraph",
 						"content": {
-							"text": "Custom Types",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 12
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Meant for configuration or settings like categorization, global SEO, theme etc.",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "heading4",
-						"content": {
-							"text": "Slice Machine",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 13
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Developer tool",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Npm package compatible with Next, Nuxt, and SvelteKit",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Duis proident irure eu voluptate irure anim. Veniam quis excepteur elit excepteur occaecat ea eiusmod esse nisi esse adipisicing deserunt et ad eiusmod. Lorem quis ad elit mollit consectetur reprehenderit adipisicing proident deserunt sint id quis cillum."
+						}
 					}
 				]
 			}

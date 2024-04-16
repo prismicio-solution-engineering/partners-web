@@ -9,7 +9,7 @@ const TimelineGrid = ({ slice }: { slice: Content.TimelineSliceGrid }) => {
         field={slice.primary.section_description}
         components={{
           paragraph: ({ children }) => (
-            <p className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
+            <p className="font-copy text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
               {children}
             </p>
           ),
@@ -21,14 +21,14 @@ const TimelineGrid = ({ slice }: { slice: Content.TimelineSliceGrid }) => {
             key={idx}
             className="flex flex-col items-center p-8 w-[30%] bg-silver-light rounded-lg text-center shadow-sm"
           >
-            <span className="font-sans font-bold text-primary-purple text-xl mb-2">
+            <span className="font-copy font-bold text-primary-purple text-xl mb-2">
               {item.step_number}
             </span>
             <PrismicRichText
               field={item.step_title}
               components={{
                 heading3: ({ children }) => (
-                  <h3 className="text-xl font-sans font-bold text-gray-darker mb-4">
+                  <h3 className="text-xl font-headings font-bold text-gray-darker mb-4">
                     {children}
                   </h3>
                 ),

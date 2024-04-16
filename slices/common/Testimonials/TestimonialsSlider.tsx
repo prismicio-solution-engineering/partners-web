@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const serializer = {
   paragraph: ({ children }) => (
-    <blockquote className="text-xl font-sans text-gray-darker italic mb-8">
+    <blockquote className="text-xl font-copy text-gray-darker italic mb-8">
       {children}
     </blockquote>
   ),
@@ -61,7 +61,7 @@ const TestimonialsSlider = async ({
                   height={80}
                 />
                 <div className="text-left">
-                  <p className="text-lg font-sans font-bold text-gray-darker">
+                  <p className="text-lg font-copy font-bold text-gray-darker">
                     {item.author_name}
                   </p>
                   <p className="text-gray-darker">

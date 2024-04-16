@@ -13,7 +13,7 @@ export const AuthForm = ({ data }: AuthProps) => {
 
   return (
     <div className="flex flex-col items-center my-16 bg-silver-light rounded-lg p-8 max-w-screen-xl mx-auto shadow-sm">
-      <h3 className="text-2xl font-sans font-bold text-gray-darker mb-6">
+      <h3 className="text-2xl font-headings font-bold text-gray-darker mb-6">
         {isSignUp ? data.sign_up_title : data.sign_in_title}
       </h3>
       <form className="w-full max-w-md flex flex-col gap-6">

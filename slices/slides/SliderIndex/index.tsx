@@ -3,7 +3,7 @@ import { SliderDocumentData, SliderIndexSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import { SlidePrismicRichText } from "../Slide/SlidePrismicRichText";
+import { SlidePrismicRichText } from "../../../components/SlidePrismicRichText";
 
 /**
  * Props for `SliderIndex`.
@@ -27,18 +27,18 @@ const SliderIndex = ({
       >
         <div className="flex flex-row w-full h-full inset-0 mb-10 overflow-clip justify-between">
           <div className="w-1/2 flex flex-col gap-y-12 text-left content-start px-4 pt-10 pb-4">
-            <div className="flex flex-row gap-10 justify-start">
+            <div className="flex flex-row gap-10 justify-start items-center">
               <PrismicNextImage
                 field={context.logo}
-                className="w-[72px] h-[72px] object-contain"
-                width={72}
-                height={72}
+                className="w-[50px] h-[50px] object-contain"
+                width={50}
+                height={50}
               />
               <SlidePrismicRichText
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (
-                    <h2 className="text-7xl font-semibold font-sans text-gray-darker">
+                    <h2 className="text-3xl font-normal font-headings text-gray-darker">
                       {children}
                     </h2>
                   ),
@@ -47,7 +47,7 @@ const SliderIndex = ({
                       <>
                         {node.data.label === "highlight" && (
                           <span
-                            className={`text-primary-${slice.primary.background_color} font-semibold`}
+                            className={`text-primary-${slice.primary.background_color} font-copy font-semibold`}
                           >
                             {children}
                           </span>
@@ -58,9 +58,9 @@ const SliderIndex = ({
                 }}
               />
             </div>
-            <div className="text-xl font-sans text-gray-base">
+            <div className="text-xl font-copy text-gray-base">
               {slice.items.map((item, idx) => (
-                <div key={idx} className="flex flex-col my-8">
+                <div key={idx} className="flex flex-col py-8 border-b border-gray-base mr-8">
                   <div className="flex flex-row items-center gap-6">
                     <span
                       className={`text-4xl text-secondary-${slice.primary.background_color}`}
@@ -71,7 +71,7 @@ const SliderIndex = ({
                       field={item.summary_item_name}
                       components={{
                         paragraph: ({ children }) => (
-                          <span className="text-2xl font-sans text-gray-base">
+                          <span className="text-2xl font-copy text-gray-base">
                             {children}
                           </span>
                         ),

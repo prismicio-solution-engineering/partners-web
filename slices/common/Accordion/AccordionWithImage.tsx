@@ -6,15 +6,15 @@ import { useState } from "react";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2 className="font-sans font-bold text-3xl text-gray-darker mb-8">
+    <h2 className="font-headings font-bold text-3xl text-gray-darker mb-8">
       {children}
     </h2>
   ),
   paragraph: ({ children }) => (
-    <p className="mb-4 text-gray-darker font-sans text-lg">{children}</p>
+    <p className="mb-4 text-gray-darker font-copy text-lg">{children}</p>
   ),
   preformatted: ({ node }) => (
-    <pre className="my-3 p-2 text-lg text-gray-200 bg-gray-darker border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
+    <pre className=" font-code my-3 p-2 text-lg text-gray-200 bg-gray-darker border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
       {node.text}
     </pre>
   ),
@@ -49,7 +49,7 @@ const AccordionWithImage = ({
       </div>
       <div className="flex flex-col w-full md:w-1/2 px-12">
         <div className="text-center md:text-left p-4">
-          <span className="text-primary-purple font-sans font-semibold uppercase text-sm mb-2 block">
+          <span className="text-primary-purple font-copy font-semibold uppercase text-sm mb-2 block">
             {slice.primary.eyebrow}
           </span>
           <PrismicRichText
@@ -74,10 +74,10 @@ const AccordionWithImage = ({
                 className="w-full text-left py-5 focus:outline-none"
               >
                 <div className="flex justify-between items-center">
-                  <span className="text-xl font-sans font-semibold text-gray-darker">
+                  <span className="text-xl font-copy font-semibold text-gray-darker">
                     {item.accordion_title}
                   </span>
-                  <span className="text-xl font-sans text-gray-darker">
+                  <span className="text-xl font-copy text-gray-darker">
                     {index === activeIndex ? "-" : "+"}
                   </span>
                 </div>

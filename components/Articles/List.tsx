@@ -58,24 +58,24 @@ export const List = ({
 
   return (
     <div className="flex flex-col items-center my-16">
-      {/* <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-4">
+      {/* <h2 className="text-4xl font-headings font-bold text-gray-darker text-center mb-4">
         Latest Articles
       </h2> */}
       <div className="my-8">
         <button
-          className={`mx-4 font-sans font-bold text-base text-gray-darker ${filteredCategory === "All" ? "underline" : ""}`}
+          className={`mx-4 font-copy font-bold text-base text-gray-darker ${filteredCategory === "All" ? "underline" : ""}`}
           onClick={() => setFilteredCategory("All")}
         >
           All
         </button>
         <button
-          className={`mx-4 font-sans font-bold text-base text-gray-darker ${filteredCategory === "Best practice" ? "underline" : ""}`}
+          className={`mx-4 font-copy font-bold text-base text-gray-darker ${filteredCategory === "Best practice" ? "underline" : ""}`}
           onClick={() => setFilteredCategory("Best practice")}
         >
           Best Practices
         </button>
         <button
-          className={`mx-4 font-sans font-bold text-base text-gray-darker ${filteredCategory === "Use case" ? "underline" : ""}`}
+          className={`mx-4 font-copy font-bold text-base text-gray-darker ${filteredCategory === "Use case" ? "underline" : ""}`}
           onClick={() => setFilteredCategory("Use case")}
         >
           Use Cases
@@ -100,10 +100,10 @@ export const List = ({
               >
                 {article.category}
               </span>
-              <h3 className="text-xl font-sans font-bold text-gray-darker mt-2 mb-4">
+              <h3 className="text-xl font-headings font-bold text-gray-darker mt-2 mb-4">
                 {article.title}
               </h3>
-              <p className="text-gray-darker font-sans text-sm mb-2">
+              <p className="text-gray-darker font-copy text-sm mb-2">
                 {article.date}
               </p>
               <div className="flex items-center mt-4">
@@ -112,7 +112,7 @@ export const List = ({
                   src={article.author.picture}
                   alt={article.author.name}
                 />
-                <p className="text-gray-darker font-sans">
+                <p className="text-gray-darker font-copy">
                   {article.author.name}
                 </p>
               </div>

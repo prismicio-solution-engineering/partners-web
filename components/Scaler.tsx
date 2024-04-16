@@ -37,11 +37,11 @@ const Scaler = ({
                                 <p>Your text goes here. This text will scale with the div.</p>
                                 <div className="text-left flex flex-col content-end">
                                     <p
-                                        className={`text-primary-orange text-2xl font-sans font-bold`}
+                                        className={`text-primary-orange text-2xl font-copy font-bold`}
                                     >
                                         12/12/2002
                                     </p>
-                                    <h2 className="text-7xl font-bold font-sans mt-10 text-gray-darker">
+                                    <h2 className="text-7xl font-bold font-copy mt-10 text-gray-darker">
                                         Your text goes here. This text will scale with the div.
                                     </h2>
                                 </div>

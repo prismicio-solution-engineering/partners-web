@@ -3,7 +3,7 @@ import { IntroSlideSlice, SliderDocumentData } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import { SlidePrismicRichText } from "../Slide/SlidePrismicRichText";
+import { SlidePrismicRichText } from "../../../components/SlidePrismicRichText";
 
 /**
  * Props for `IntroSlide`.
@@ -29,13 +29,13 @@ const IntroSlide = ({
           <div className="w-1/2 flex flex-col justify-between">
             <PrismicNextImage
               field={context.logo}
-              className="w-[72px] h-[72px] object-contain"
-              width={72}
-              height={72}
+              className="w-[50px] h-[50px] object-contain"
+              width={50}
+              height={50}
             />
             <div className="text-left flex flex-col content-end">
               <p
-                className={`text-primary-${slice.primary.background_color} text-2xl font-sans font-bold`}
+                className={`text-primary-${slice.primary.background_color} text-2xl font-copy font-bold`}
               >
                 {slice.primary.date}
               </p>
@@ -43,9 +43,32 @@ const IntroSlide = ({
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (
-                    <h2 className="text-7xl font-bold font-sans mt-10 text-gray-darker">
+                    <h2 className="text-7xl font-bold font-headings mt-4 mb-4 text-gray-darker break-words">
                       {children}
                     </h2>
+                  ),
+                  label: ({ node, children }) => {
+                    return (
+                      <>
+                        {node.data.label === "highlight" && (
+                          <span
+                            className={`text-primary-${slice.primary.background_color} font-semibold`}
+                          >
+                            {children}
+                          </span>
+                        )}
+                      </>
+                    );
+                  },
+                }}
+              />
+              <SlidePrismicRichText
+                field={slice.primary.description}
+                components={{
+                  paragraph: ({ children }) => (
+                    <p className="text-2xl font-copy font-normal pb-1 text-gray-dark">
+                      {children}
+                    </p>
                   ),
                 }}
               />

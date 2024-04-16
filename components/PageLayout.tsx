@@ -30,14 +30,14 @@ export function PageLayout({
         )}
         <div>
           {title ? (
-            <h1 className="text-5xl font-sans font-bold text-gray-darker text-center">
+            <h1 className="text-5xl font-headings font-bold text-gray-darker text-center">
               {prismic.isFilled.richText(title) ? (
                 <PrismicText field={title} />
               ) : null}
             </h1>
           ) : null}
           {description ? (
-            <p className="mb-4 text-center text-gray-base font-sans text-lg">
+            <p className="mb-4 text-center text-gray-base font-copy text-lg">
               {prismic.isFilled.richText(description) ? (
                 <PrismicText field={description} />
               ) : null}

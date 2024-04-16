@@ -60,7 +60,7 @@ export default async function Page() {
                   >
                     {project.data.category.data.category_name}
                   </span>
-                  <span className="text-xl font-sans font-bold text-gray-darker mt-2">
+                  <span className="text-xl font-copy font-bold text-gray-darker mt-2">
                     {project.data.project_name}
                   </span>
                 </div>

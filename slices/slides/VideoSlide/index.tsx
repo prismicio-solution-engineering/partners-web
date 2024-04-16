@@ -1,7 +1,7 @@
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { VideoSlideSlice } from "@/prismicio-types";
-import { SlidePrismicRichText } from "../Slide/SlidePrismicRichText";
+import { SlidePrismicRichText } from "../../../components/SlidePrismicRichText";
 
 /**
  * Props for `Slide`.

@@ -5,15 +5,15 @@ import { useState } from "react";
 
 const serializer = {
   heading2: ({ children }) => (
-    <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-6">
+    <h2 className="text-4xl font-headings font-bold text-gray-darker text-center mb-6">
       {children}
     </h2>
   ),
   paragraph: ({ children }) => (
-    <p className="mb-4 text-gray-darker font-sans text-lg">{children}</p>
+    <p className="mb-4 text-gray-darker font-copy text-lg">{children}</p>
   ),
   preformatted: ({ node }) => (
-    <pre className="my-3 p-2 text-lg text-gray-200 bg-gray-darker border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
+    <pre className="font-code my-3 p-2 text-lg text-gray-200 bg-gray-darker border-[#0d1117] rounded-lg shadow-lg whitespace-break-spaces">
       {node.text}
     </pre>
   ),
@@ -37,14 +37,14 @@ function AccordionItem({ item, index, toggle, active }) {
       }`}
     >
       <h3
-        className="text-gray-darker font-sans text-lg cursor-pointer flex justify-between font-bold"
+        className="text-gray-darker font-headings text-lg cursor-pointer flex justify-between font-bold"
         onClick={() => toggle(index)}
       >
         <span>{item.accordion_title}</span>
         <span>{isActive ? "-" : "+"}</span>
       </h3>
       <div
-        className={`font-sans text-base text-gray-darker transition-max-height duration-500 ease-in-out ${
+        className={`font-copy text-base text-gray-darker transition-max-height duration-500 ease-in-out ${
           isActive ? "max-h-96" : "max-h-0 overflow-hidden"
         }`}
       >

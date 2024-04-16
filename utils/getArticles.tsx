@@ -1,12 +1,9 @@
 import { createClient } from "@/prismicio";
-import * as prismic from "@prismicio/client";
 import { articleQuery } from "./graphQueries";
 
 const client = createClient();
 
-export const getArticles = async (
-  size: number,
-) => {
+export const getArticles = async ({ size }: { size?: number }) => {
   try {
     const articles = await client.getByType("article", {
       graphQuery: articleQuery,

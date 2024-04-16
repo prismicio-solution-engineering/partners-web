@@ -16,7 +16,7 @@ type Params = { uid: string };
 
 const serializer = {
   heading1: ({ children }) => (
-    <h1 className="text-gray-darker text-4xl lg:text-5xl font-sans font-bold mb-6">
+    <h1 className="text-gray-darker text-4xl lg:text-5xl font-headings font-bold mb-6">
       {children}
     </h1>
   ),
@@ -40,12 +40,12 @@ export default async function Page({ params }: { params: Params }) {
         <div className=" flex flex-col md:flex-row gap-16">
           <div className="md:w-1/2">
             <div
-              className={`h-8 w-fit inline-flex text-center rounded-lg px-3 py-1 font-sans font-semibold text-sm mb-4 ${categoryPillColor(page.data.category.data.name)}`}
+              className={`h-8 w-fit inline-flex text-center rounded-lg px-3 py-1 font-copy font-semibold text-sm mb-4 ${categoryPillColor(page.data.category.data.name)}`}
             >
               {page.data.category.data.name}
             </div>
             <PrismicRichText field={page.data.title} components={serializer} />
-            <p className="font-sans text-lg text-gray-base mb-8">
+            <p className="font-copy text-lg text-gray-base mb-8">
               {page.data.excerpt}
             </p>
           </div>

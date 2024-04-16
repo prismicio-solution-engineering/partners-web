@@ -23,14 +23,14 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
         {isFilled.richText(slice.primary.section_description) && (
           <PrismicRichText field={slice.primary.section_description} />
         )}
-        <div className="max-w-screen-2xl mx-auto relative">
+        <div className="max-w-screen-2xl mx-auto relative mb-6">
           <div
           >
             <ScrollContainer gap={5}>
             {slice.items.map((item, idx) => (
               <div
                 key={idx}
-                className="shrink-0 h-[100px] w-1/3 grid items-center justify-center"
+                className="shrink-0 h-[110px] w-1/3 grid items-center justify-center"
               >
                 <PrismicNextLink
                   className="block rounded-lg overflow-hidden cursor-pointer transform hover:scale-110 transition-transform duration-300 object-contain w-80"

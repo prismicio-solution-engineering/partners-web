@@ -42,7 +42,7 @@ const PartnershipTiersHorizontal = async ({
               style={{ maxWidth: "360px" }}
             >
               <div className="flex flex-col items-start text-gray-darker">
-                <h3 className="text-xl font-sans font-bold">
+                <h3 className="text-xl font-headings font-bold">
                   <PrismicText field={tier.data.tier_name} />
                 </h3>
                 <p className="text-sm mb-6 text-left text-gray-500 min-h-[40px]">
@@ -52,7 +52,7 @@ const PartnershipTiersHorizontal = async ({
                   {tier.data.tier_features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center font-sans mb-[24px]"
+                      className="flex items-center font-copy mb-[24px]"
                     >
                       <span className="mr-4 text-2xl">
                         <PrismicNextImage

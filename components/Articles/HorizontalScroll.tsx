@@ -1,4 +1,3 @@
-import { Button } from "../Button";
 import { isFilled, type Content, asDate } from "@prismicio/client";
 import React from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
@@ -7,13 +6,12 @@ import { ScrollContainer } from "../ScrollContainer";
 import { getArticles } from "@/utils/getArticles";
 import { getArticlesByUids } from "@/utils/getArticlesByUids";
 import { getArticlesByCategory } from "@/utils/getArticlesByCategory";
-import { getCategory } from "@/utils/getCategory";
 import { ArticleDocument } from "@/prismicio-types";
-import { CategoryPill, categoryPillColor } from "../CategoryPill";
+import { categoryPillColor } from "../CategoryPill";
 
 const serializer = {
   heading1: ({ children }) => (
-    <h3 className="text-xl font-bold mb-4 text-gray-darker">{children}</h3>
+    <h3 className="font-headings text-xl font-bold mb-4 text-gray-darker">{children}</h3>
   ),
 };
 

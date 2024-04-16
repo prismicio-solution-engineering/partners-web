@@ -1,6 +1,6 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { SlideSliceTitle, SliderDocumentData } from "@/prismicio-types";
-import { SlidePrismicRichText } from "./SlidePrismicRichText";
+import { SlidePrismicRichText } from "../../../components/SlidePrismicRichText";
 
 const Title = ({
   slice,
@@ -11,8 +11,8 @@ const Title = ({
 }): JSX.Element => {
   return (
     <>
-      <div className="w-full">
-        <div className="px-4">
+      <div className="w-full flex flex-col justify-between">
+        <div className="px-4 self-start">
           <PrismicNextImage
             field={context.logo}
             className="w-[50px] h-[50px] object-contain"
@@ -20,25 +20,25 @@ const Title = ({
             height={50}
           />
         </div>
-        <div className="h-full px-4 pt-28 pb-4 w-fit mx-auto flex flex-col gap-14">
+        <div className="px-4 pb-4 w-full flex flex-col grow gap-8 justify-end text-left">
           <SlidePrismicRichText
             field={slice.primary.title}
             components={{
               heading2: ({ children }) => (
                 <h2
-                  className={`text-6xl font-bold font-sans text-center text-primary-${slice.primary.background_color}`}
+                  className={`text-6xl font-bold font-headings text-primary-${slice.primary.background_color}`}
                 >
                   {children}
                 </h2>
               ),
             }}
           />
-          <div className="grid grid-cols-2">
+          <div className="">
             <SlidePrismicRichText
               field={slice.primary.content}
               components={{
                 paragraph: ({ children }) => (
-                  <p className="text-3xl font-sans pb-2 text-gray-dark font-semibold">
+                  <p className="text-3xl font-copy pb-2 text-gray-dark">
                     {children}
                   </p>
                 ),

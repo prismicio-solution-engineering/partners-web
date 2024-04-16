@@ -74,7 +74,7 @@ export const LargeCards = ({
 
   return (
     <div className="flex flex-col items-center my-16">
-      {/* <h2 className="text-4xl font-sans font-bold text-gray-darker text-center mb-4">
+      {/* <h2 className="text-4xl font-headings font-bold text-gray-darker text-center mb-4">
         Prismic Announcements
       </h2> */}
       <div className="flex justify-center mb-[88px]">
@@ -104,14 +104,14 @@ export const LargeCards = ({
             className="flex flex-col md:flex-row gap-12 items-center mb-10 last:mb-0 bg-[#F5F5F5] rounded-lg p-10 md:p-16"
           >
             <div className="md:w-3/5 px-4 mb-8 md:mb-0">
-              <h3 className="text-xl font-sans font-bold text-gray-darker mb-4">
+              <h3 className="text-xl font-headings font-bold text-gray-darker mb-4">
                 {article.title}
               </h3>
               <p className="text-gray-darker mb-4">{article.excerpt}</p>
               <span className="text-gray-darker mb-4 block">
                 {article.date} - {article.category}
               </span>
-              <button className="text-primary-purple font-sans font-bold text-base underline underline-offset-8 hover:underline-offset-4">
+              <button className="text-primary-purple font-copy font-bold text-base underline underline-offset-8 hover:underline-offset-4">
                 Read more
               </button>
             </div>

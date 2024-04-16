@@ -14,7 +14,7 @@ const TimelineAlternatedWithImage = ({
         field={slice.primary.section_description}
         components={{
           paragraph: ({ children }) => (
-            <p className="font-sans text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
+            <p className="font-copy text-lg text-gray-darker max-w-2xl text-center mx-auto mb-[88px]">
               {children}
             </p>
           ),
@@ -27,14 +27,14 @@ const TimelineAlternatedWithImage = ({
             className={`flex flex-col md:flex-row gap-12 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""} items-center mb-10 last:mb-0 bg-[#F5F5F5] rounded-lg p-10 md:p-16`}
           >
             <div className="md:w-2/5 px-4 mb-8 md:mb-0">
-              <span className="font-sans font-bold text-primary-purple text-xl mb-[24px] block">
+              <span className="font-copy font-bold text-primary-purple text-xl mb-[24px] block">
                 {item.step_number}
               </span>
               <PrismicRichText
                 field={item.step_title}
                 components={{
                   heading3: ({ children }) => (
-                    <h3 className="text-xl font-sans font-bold text-gray-darker mb-4">
+                    <h3 className="text-xl font-headings font-bold text-gray-darker mb-4">
                       {children}
                     </h3>
                   ),

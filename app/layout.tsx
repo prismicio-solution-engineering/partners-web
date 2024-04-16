@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import clsx from "clsx";
+import { headingsFont, copyFont, monoFont } from "@/assets/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className={clsx(
+          "font-copy font-medium antialiased",
+          `${headingsFont.variable} ${copyFont.variable} ${monoFont.variable}`
+        )}
+      >
         {children}
         <PrismicPreview repositoryName={repositoryName} />
       </body>

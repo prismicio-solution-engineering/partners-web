@@ -1,4 +1,4 @@
-import { SlidePrismicRichText } from "./SlidePrismicRichText";
+import { SlidePrismicRichText } from "../../../components/SlidePrismicRichText";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SlideSliceContentOnly, SliderDocumentData } from "@/prismicio-types";
 
@@ -25,16 +25,11 @@ const Content = ({
               components={{
                 heading2: ({ children }) => (
                   <h2
-                    className={`text-4xl font-bold font-sans text-gray-darker`}
+                    className={`text-4xl font-bold font-headings text-gray-darker`}
                   >
                     {children}
                   </h2>
-                ),
-                heading3: ({ children }) => (
-                  <h3 className="text-3xl font-semibold font-sans text-gray-base">
-                    {children}
-                  </h3>
-                ),
+                )
               }}
             />
           </div>
@@ -45,20 +40,13 @@ const Content = ({
             components={{
               heading4: ({ children }) => (
                 <h4
-                  className={`text-2xl font-semibold font-sans mb-2 text-gray-dark`}
+                  className={`text-2xl font-semibold font-copy mb-2 text-gray-dark`}
                 >
                   {children}
                 </h4>
               ),
-              heading5: ({ children }) => (
-                <h5
-                  className={`text-2xl font-normal font-sans mb-2 text-gray-base`}
-                >
-                  {children}
-                </h5>
-              ),
               paragraph: ({ children }) => (
-                <p className="text-lg font-sans pb-2 text-gray-base">
+                <p className="text-lg font-copy pb-2 text-gray-base">
                   {children}
                 </p>
               ),
@@ -75,7 +63,7 @@ const Content = ({
               hyperlink: ({ children, node }) => (
                 <PrismicNextLink
                   field={node.data}
-                  className="text-gray-base font-sans text-xl underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+                  className="text-gray-base font-copy text-xl underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
                 >
                   {children}
                 </PrismicNextLink>
@@ -92,7 +80,7 @@ const Content = ({
                     )}
                     {node.data.label === "inline code" && (
                       <span
-                        className={`px-2 py-1 bg-silver-light border border-silver-base font-mono rounded-md text-lg font-normal text-primary-${slice.primary.background_color}`}
+                        className={`px-2 py-1 bg-silver-light border border-silver-base font-code rounded-md text-lg font-normal text-primary-${slice.primary.background_color}`}
                       >
                         {children}
                       </span>

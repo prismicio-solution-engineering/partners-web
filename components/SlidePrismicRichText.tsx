@@ -11,43 +11,53 @@ import type * as prismic from "@prismicio/client";
 const defaultComponents: JSXMapSerializer = {
   heading2: ({ children }) => (
     <h2
-      className={`text-4xl font-bold font-sans text-gray-darker`}
+      className={`text-4xl font-headings font-bold text-gray-darker break-words`}
     >
       {children}
     </h2>
   ),
   heading3: ({ children }) => (
-    <h3 className="text-3xl font-semibold font-sans text-gray-base">
+    <h3 className="text-3xl font-semibold font-headings text-gray-base mt-4 first:mt-0 break-words">
       {children}
     </h3>
   ),
   heading4: ({ children }) => (
-    <h4 className={`text-2xl font-semibold font-sans mt-2 text-gray-dark`}>
+    <h4 className={`text-2xl font-semibold font-headings text-gray-dark mt-4 mb-2 first:mt-0 break-words`}>
       {children}
     </h4>
   ),
-  heading5: ({ children }) => (
-    <h5 className={`text-2xl font-normal font-sans mt-2 text-gray-base`}>
-      {children}
-    </h5>
+  preformatted: ({ children }) => (
+    <pre className="font-code mt-3 mb-7 p-4 text-sm text-silver-light bg-gray-dark border-gray-darker rounded-lg shadow-lg whitespace-break-spaces">
+      <code>{children}</code>
+    </pre>
   ),
   paragraph: ({ children }) => (
-    <p className="text-lg font-sans pb-1 text-gray-base">{children}</p>
+    <p className="font-copy text-lg pb-1 text-gray-base break-words">{children}</p>
+  ),
+  list: ({ children }) => (
+    <ul className="my-2 break-words">
+      {children}
+    </ul>
+  ),
+  oList: ({ children }) => (
+    <ol className="my-2 break-words">
+      {children}
+    </ol>
   ),
   listItem: ({ children }) => (
-    <li className="list-disc pl-2 last:mb-0 text-lg list-inside text-gray-base">
+    <li className="list-disc ml-5 pl-2 last:mb-0 text-lg list-outside text-gray-base">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="list-decimal pl-2 last:mb-0 text-lg list-inside text-gray-base">
+    <li className="list-decimal ml-5 pl-2 last:mb-0 text-lg list-outside text-gray-base">
       {children}
     </li>
   ),
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className="text-gray-base font-sans text-lg underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+      className="text-gray-base font-copy text-lg underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out break-words"
     >
       {children}
     </PrismicNextLink>
@@ -62,7 +72,7 @@ const defaultComponents: JSXMapSerializer = {
         )}
         {node.data.label === "inline code" && (
           <span
-            className={`px-2 py-1 bg-silver-light border border-silver-base font-mono rounded-md text-lg font-normal text-primary-orange`}
+            className={`px-2 py-1 bg-silver-light border border-silver-base font-code rounded-md text-lg font-normal text-primary-orange`}
           >
             {children}
           </span>

@@ -48,6 +48,17 @@
 						"direction": "ltr"
 					}
 				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna duis nisi reprehenderit amet in laboris commodo amet labore incididunt laborum ad elit. Laboris magna fugiat minim incididunt minim eiusmod magna cupidatat ad aute et cupidatat ipsum adipisicing."
+						}
+					}
+				]
 			}
 		},
 		"items": []

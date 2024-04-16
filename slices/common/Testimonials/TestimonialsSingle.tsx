@@ -51,10 +51,10 @@ const TestimonialsSingle = async ({
             />
           </div>
           <div className="flex-grow">
-            <div className="text-lg font-sans font-bold text-gray-darker">
+            <div className="text-lg font-copy font-bold text-gray-darker">
               {slice.primary.author_name}
             </div>
-            <p className="text-sm font-sans text-primary-purple">
+            <p className="text-sm font-copy text-primary-purple">
               {slice.primary.author_role} - {slice.primary.author_company}
             </p>
           </div>

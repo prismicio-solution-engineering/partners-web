@@ -3150,6 +3150,16 @@ export interface IntroSlideSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
+   * Description field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
    * Image field in *IntroSlide → Primary*
    *
    * - **Field Type**: Image

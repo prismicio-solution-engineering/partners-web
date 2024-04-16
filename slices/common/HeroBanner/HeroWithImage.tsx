@@ -5,12 +5,12 @@ import { PrismicNextImage } from "@prismicio/next";
 
 const serializer = {
   heading1: ({ children }) => (
-    <h1 className="text-gray-darker text-4xl lg:text-5xl font-sans font-bold mb-6">
+    <h1 className="text-gray-darker text-4xl lg:text-5xl font-headings font-bold mb-6">
       {children}
     </h1>
   ),
   paragraph: ({ children }) => (
-    <p className="font-sans text-lg text-gray-base max-w-2xl mx-auto mb-4">
+    <p className="font-copy text-lg text-gray-base max-w-2xl mx-auto mb-4">
       {children}
     </p>
   ),

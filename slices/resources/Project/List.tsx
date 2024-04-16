@@ -36,7 +36,7 @@ const FullWidthCard = async ({
           >
             {project.data.category.data.category_name}
           </span>
-          <h3 className="text-xl font-sans font-bold text-gray-darker mt-2 mb-4">
+          <h3 className="text-xl font-headings font-bold text-gray-darker mt-2 mb-4">
             {project.data.project_name}
           </h3>
           <div className="flex items-center mt-4">

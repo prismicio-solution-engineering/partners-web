@@ -18,25 +18,11 @@ const serializer = {
   ),
 };
 
-export async function Grid({
-  slice,
+export async function FilterableGrid({
+  articles,
 }: {
-  slice: ArticlesSliceAutoFilterableGrid;
+  articles: ArticleDocument[];
 }) {
-  let articles: ArticleDocument[] = [];
-
-  if (
-    slice.variation === "autoFilterableGrid" &&
-    isFilled.contentRelationship(slice.primary.category)
-  ) {
-    articles = await getAllArticlesByCategory(slice.primary.category.id);
-  }
-  if (
-    slice.variation === "autoFilterableGrid" &&
-    !isFilled.contentRelationship(slice.primary.category)
-  ) {
-    articles = await getAllArticles();
-  }
 
   // State for the filtered articles after applying date filter
   // const [filteredArticles, setFilteredArticles] = useState([]);

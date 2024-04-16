@@ -3,7 +3,7 @@ import {
   SlideSliceContentTwoColumns,
   SliderDocumentData,
 } from "@/prismicio-types";
-import { SlidePrismicRichText } from "./SlidePrismicRichText";
+import { SlidePrismicRichText } from "../../../components/SlidePrismicRichText";
 
 const ContentTwoCol = ({
   slice,
@@ -14,7 +14,7 @@ const ContentTwoCol = ({
 }): JSX.Element => {
   return (
     <>
-      <div className="w-full">
+      <div className="w-full flex flex-col">
         <div className="flex flex-row gap-10 justify-start px-4">
           <PrismicNextImage
             field={context.logo}
@@ -26,12 +26,14 @@ const ContentTwoCol = ({
             <SlidePrismicRichText field={slice.primary.title} />
           </div>
         </div>
-        <div className="flex flex-row gap-10">
-          <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4">
-            <SlidePrismicRichText field={slice.primary.content_left} />
-          </div>
-          <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4">
-            <SlidePrismicRichText field={slice.primary.content_right} />
+        <div className="flex flex-col grow">
+          <div className="flex flex-row gap-10 grow">
+            <div className="h-full w-1/2 text-left flex flex-col justify-center px-4 pb-4">
+              <SlidePrismicRichText field={slice.primary.content_left} />
+            </div>
+            <div className="h-full w-1/2 text-left flex flex-col justify-center px-4 pb-4">
+              <SlidePrismicRichText field={slice.primary.content_right} />
+            </div>
           </div>
         </div>
       </div>
