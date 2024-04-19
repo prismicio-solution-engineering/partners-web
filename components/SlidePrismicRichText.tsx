@@ -35,22 +35,22 @@ const defaultComponents: JSXMapSerializer = {
     <p className="font-copy text-lg pb-1 text-gray-darker break-words font-normal">{children}</p>
   ),
   list: ({ children }) => (
-    <ul className="my-2 break-words font-normal">
+    <ul className="my-2 break-words font-copy text-lg font-normal">
       {children}
     </ul>
   ),
   oList: ({ children }) => (
-    <ol className="my-2 break-words font-normal">
+    <ol className="my-2 break-words font-copy text-lg font-normal">
       {children}
     </ol>
   ),
   listItem: ({ children }) => (
-    <li className="list-disc ml-5 pl-2 last:mb-0 text-lg list-outside text-gray-darker">
+    <li className="list-disc ml-5 pl-2 last:mb-0 list-outside text-gray-darker">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="list-decimal ml-5 pl-2 last:mb-0 text-lg list-outside text-gray-darker">
+    <li className="list-decimal ml-5 pl-2 last:mb-0 list-outside text-gray-darker">
       {children}
     </li>
   ),
