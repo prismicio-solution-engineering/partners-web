@@ -30,18 +30,7 @@ const WithImage = ({
             height={50}
           />
           <div className="text-left flex flex-col">
-            <SlidePrismicRichText
-              field={slice.primary.title}
-              components={{
-                heading2: ({ children }) => (
-                  <h2
-                    className={`text-4xl font-bold font-headings text-gray-darker`}
-                  >
-                    {children}
-                  </h2>
-                ),
-              }}
-            />
+            <SlidePrismicRichText field={slice.primary.title} />
           </div>
         </div>
         <div className="text-left flex flex-col justify-center grow px-4 pt-10 pb-4">

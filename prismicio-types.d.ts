@@ -3406,6 +3406,16 @@ export type SlideSliceContentTwoColumns = prismic.SharedSliceVariation<
  */
 export interface SlideSliceTitlePrimary {
   /**
+   * Eyebrow field in *Slide → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
    * Title field in *Slide → Primary*
    *
    * - **Field Type**: Rich Text
@@ -3438,6 +3448,16 @@ export interface SlideSliceTitlePrimary {
     "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
+
+  /**
+   * Image field in *Slide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**

@@ -189,6 +189,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -220,6 +227,17 @@
               "blue"
             ],
             "default_value": "orange"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 578,
+              "height": 633
+            },
+            "thumbnails": []
           }
         }
       },

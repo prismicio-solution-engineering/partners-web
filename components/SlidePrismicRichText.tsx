@@ -11,7 +11,7 @@ import type * as prismic from "@prismicio/client";
 const defaultComponents: JSXMapSerializer = {
   heading2: ({ children }) => (
     <h2
-      className={`text-4xl font-headings font-semibold text-gray-darker break-words`}
+      className={`text-4xl font-headings font-medium text-gray-darker break-words`}
     >
       {children}
     </h2>

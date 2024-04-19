@@ -11,40 +11,49 @@ const Title = ({
 }): JSX.Element => {
   return (
     <>
-      <div className="w-full flex flex-col justify-between">
-        <div className="px-4 self-start">
+      <div className="flex gap-10 flex-row w-full inset-0 overflow-clip justify-between">
+        <div className="w-1/2 flex flex-col justify-between">
           <PrismicNextImage
             field={context.logo}
             className="w-[50px] h-[50px] object-contain"
             width={50}
             height={50}
           />
-        </div>
-        <div className="px-4 pb-4 w-full flex flex-col grow gap-8 justify-end text-left">
-          <SlidePrismicRichText
-            field={slice.primary.title}
-            components={{
-              heading2: ({ children }) => (
-                <h2
-                  className={`text-6xl font-bold font-headings text-primary-${slice.primary.background_color}`}
-                >
-                  {children}
-                </h2>
-              ),
-            }}
-          />
-          <div className="">
+          <div className="text-left flex flex-col content-end">
+            <p
+              className={`text-primary-${slice.primary.background_color} text-2xl font-copy font-bold`}
+            >
+              {slice.primary.eyebrow}
+            </p>
+            <SlidePrismicRichText
+              field={slice.primary.title}
+              components={{
+                heading2: ({ children }) => (
+                  <h2 className="text-7xl font-bold font-headings mt-4 mb-4 text-gray-darker break-words">
+                    {children}
+                  </h2>
+                ),
+              }}
+            />
             <SlidePrismicRichText
               field={slice.primary.content}
               components={{
                 paragraph: ({ children }) => (
-                  <p className="text-3xl font-copy pb-2 text-gray-dark">
+                  <p className="text-2xl font-copy font-normal pb-1 text-gray-dark">
                     {children}
                   </p>
                 ),
               }}
             />
           </div>
+        </div>
+        <div className="w-1/2 h-full border border-1 border-gray-darker rounded-xl">
+        <PrismicNextImage
+            field={slice.primary.image}
+            width={599}
+            height={633}
+            className="w-full h-full object-contain rounded-xl "
+          />
         </div>
       </div>
     </>

@@ -1,4 +1,3 @@
-"use client";
 import { IntroSlideSlice, SliderDocumentData } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";

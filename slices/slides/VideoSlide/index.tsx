@@ -15,9 +15,7 @@ export type SlideProps = SliceComponentProps<Content.SlideSlice>;
 const layout = (slice: VideoSlideSlice) => {
   const altTextSection = (
     <div className="text-left flex flex-col justify-start w-1/2 overflow-clip px-4 pt-10 pb-4">
-      <SlidePrismicRichText
-        field={slice.primary.content}
-      />
+      <SlidePrismicRichText field={slice.primary.content} />
     </div>
   );
 
@@ -57,14 +55,12 @@ const layout = (slice: VideoSlideSlice) => {
   }
 };
 
-const VideoSlide = ({ slice }: {slice: VideoSlideSlice}): JSX.Element => {
+const VideoSlide = ({ slice }: { slice: VideoSlideSlice }): JSX.Element => {
   return (
     <>
       <div className="relative">
         <div className="overflow-hidden relative border border-silver-base shadow-sm px-10 mx-4 rounded-lg mt-16 mb-5 bg-quaternary-orange">
-          <SlidePrismicRichText
-            field={slice.primary.title}
-          />
+          <SlidePrismicRichText field={slice.primary.title} />
           <div className="flex flex-row w-full h-2/3 inset-0 mb-10 overflow-clip">
             {layout(slice)}
           </div>

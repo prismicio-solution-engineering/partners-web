@@ -26,7 +26,7 @@ const SliderIndex = ({
         className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg bg-quaternary-${slice.primary.background_color}`}
       >
         <div className="flex flex-row w-full h-full inset-0 mb-10 overflow-clip justify-between">
-          <div className="w-1/2 flex flex-col gap-y-12 text-left content-start px-4 pt-10 pb-4">
+          <div className="w-1/2 flex flex-col gap-y-12 text-left content-start px-4 pb-4">
             <div className="flex flex-row gap-10 justify-start items-center">
               <PrismicNextImage
                 field={context.logo}
@@ -37,11 +37,6 @@ const SliderIndex = ({
               <SlidePrismicRichText
                 field={slice.primary.title}
                 components={{
-                  heading2: ({ children }) => (
-                    <h2 className="text-3xl font-normal font-headings text-gray-darker">
-                      {children}
-                    </h2>
-                  ),
                   label: ({ node, children }) => {
                     return (
                       <>
@@ -60,7 +55,10 @@ const SliderIndex = ({
             </div>
             <div className="text-xl font-copy text-gray-base">
               {slice.items.map((item, idx) => (
-                <div key={idx} className="flex flex-col py-8 border-b border-gray-base mr-8">
+                <div
+                  key={idx}
+                  className="flex flex-col py-8 border-b border-gray-base mr-8"
+                >
                   <div className="flex flex-row items-center gap-6">
                     <span
                       className={`text-4xl text-secondary-${slice.primary.background_color} w-10`}
