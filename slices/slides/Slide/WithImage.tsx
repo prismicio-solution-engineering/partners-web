@@ -12,7 +12,9 @@ const WithImage = ({
   return (
     <>
       {!slice.primary.media_side && (
-        <div className="w-1/2 h-full border border-1 border-gray-darker rounded-xl">
+        <div
+          className={`w-1/2 h-full border border-1 border-gray-darker rounded-xl bg-tertiary-${slice.primary.background_color}`}
+        >
           <PrismicNextImage
             field={slice.primary.image}
             width={599}
@@ -22,23 +24,37 @@ const WithImage = ({
         </div>
       )}
       <div className="w-1/2 flex flex-col">
-        <div className="flex flex-row gap-10 justify-start px-4">
-          <PrismicNextImage
-            field={context.logo}
-            className="w-[50px] h-[50px] object-contain"
-            width={50}
-            height={50}
-          />
+        <div
+          className={`flex flex-row gap-10 ${slice.primary.media_side ? "justify-start" : "justify-between"} px-4`}
+        >
+          {slice.primary.media_side && (
+            <PrismicNextImage
+              field={context.logo}
+              className="w-[50px] h-[50px] object-contain"
+              width={50}
+              height={50}
+            />
+          )}
           <div className="text-left flex flex-col">
             <SlidePrismicRichText field={slice.primary.title} />
           </div>
+          {!slice.primary.media_side && (
+            <PrismicNextImage
+              field={context.logo}
+              className="w-[50px] h-[50px] object-contain"
+              width={50}
+              height={50}
+            />
+          )}
         </div>
         <div className="text-left flex flex-col justify-center grow px-4 pt-10 pb-4">
           <SlidePrismicRichText field={slice.primary.content} />
         </div>
       </div>
       {slice.primary.media_side && (
-        <div className="w-1/2 h-full border border-1 border-gray-darker rounded-xl">
+        <div
+          className={`w-1/2 h-full border border-1 border-gray-darker rounded-xl bg-tertiary-${slice.primary.background_color}`}
+        >
           <PrismicNextImage
             field={slice.primary.image}
             width={599}

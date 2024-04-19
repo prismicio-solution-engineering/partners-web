@@ -51,6 +51,15 @@
             }
           }
         },
+        "media_side": {
+          "type": "Boolean",
+          "config": {
+            "label": "Media side",
+            "placeholder_false": "left",
+            "placeholder_true": "right",
+            "default_value": true
+          }
+        },
         "background_color": {
           "type": "Select",
           "config": {

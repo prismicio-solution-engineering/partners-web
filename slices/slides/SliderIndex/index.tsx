@@ -25,15 +25,31 @@ const SliderIndex = ({
       <div
         className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg bg-quaternary-${slice.primary.background_color}`}
       >
-        <div className="flex flex-row w-full h-full inset-0 mb-10 overflow-clip justify-between">
-          <div className="w-1/2 flex flex-col gap-y-12 text-left content-start px-4 pb-4">
-            <div className="flex flex-row gap-10 justify-start items-center">
+        <div className="flex flex-row w-full h-full inset-0 mb-10 overflow-clip justify-between gap-10">
+          {!slice.primary.media_side && (
+            <div
+              className={`w-1/2 h-full border border-1 border-gray-darker rounded-xl bg-tertiary-${slice.primary.background_color}`}
+            >
               <PrismicNextImage
-                field={context.logo}
-                className="w-[50px] h-[50px] object-contain"
-                width={50}
-                height={50}
+                field={slice.primary.image}
+                width={599}
+                height={633}
+                className="w-full h-full object-contain rounded-xl "
               />
+            </div>
+          )}
+          <div className="w-1/2 flex flex-col gap-y-12 text-left content-start px-4 pb-4">
+            <div
+              className={`flex flex-row gap-10 ${slice.primary.media_side ? "justify-start" : "justify-between"} items-center`}
+            >
+              {slice.primary.media_side && (
+                <PrismicNextImage
+                  field={context.logo}
+                  className="w-[50px] h-[50px] object-contain"
+                  width={50}
+                  height={50}
+                />
+              )}
               <SlidePrismicRichText
                 field={slice.primary.title}
                 components={{
@@ -52,6 +68,14 @@ const SliderIndex = ({
                   },
                 }}
               />
+              {!slice.primary.media_side && (
+                <PrismicNextImage
+                  field={context.logo}
+                  className="w-[50px] h-[50px] object-contain"
+                  width={50}
+                  height={50}
+                />
+              )}
             </div>
             <div className="text-xl font-copy text-gray-base">
               {slice.items.map((item, idx) => (
@@ -80,14 +104,18 @@ const SliderIndex = ({
               ))}
             </div>
           </div>
-          <div className="w-1/2 h-full border border-1 border-gray-darker rounded-xl">
-            <PrismicNextImage
-              field={slice.primary.image}
-              width={599}
-              height={633}
-              className="w-full h-full object-contain rounded-xl "
-            />
-          </div>
+          {slice.primary.media_side && (
+            <div
+              className={`w-1/2 h-full border border-1 border-gray-darker rounded-xl bg-tertiary-${slice.primary.background_color}`}
+            >
+              <PrismicNextImage
+                field={slice.primary.image}
+                width={599}
+                height={633}
+                className="w-full h-full object-contain rounded-xl "
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

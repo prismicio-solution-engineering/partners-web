@@ -29,10 +29,19 @@
           "config": {
             "label": "Image",
             "constraint": {
-              "width": 599,
+              "width": 578,
               "height": 633
             },
             "thumbnails": []
+          }
+        },
+        "media_side": {
+          "type": "Boolean",
+          "config": {
+            "label": "Media side",
+            "placeholder_false": "left",
+            "placeholder_true": "right",
+            "default_value": true
           }
         },
         "background_color": {

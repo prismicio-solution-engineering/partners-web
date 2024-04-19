@@ -3170,6 +3170,17 @@ export interface IntroSlideSliceDefaultPrimary {
   image: prismic.ImageField<never>;
 
   /**
+   * Media side field in *IntroSlide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: intro_slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+
+  /**
    * Background color field in *IntroSlide → Primary*
    *
    * - **Field Type**: Select
@@ -3249,6 +3260,27 @@ export interface SlideSliceTitlePrimary {
   content: prismic.RichTextField;
 
   /**
+   * Image field in *Slide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Media side field in *Slide → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: slide.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
+
+  /**
    * Background color field in *Slide → Primary*
    *
    * - **Field Type**: Select
@@ -3261,16 +3293,6 @@ export interface SlideSliceTitlePrimary {
     "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
-
-  /**
-   * Image field in *Slide → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
 }
 
 /**
@@ -3556,6 +3578,17 @@ export interface SliderIndexSliceIndexPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Media side field in *SliderIndex → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: slider_index.primary.media_side
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  media_side: prismic.BooleanField;
 
   /**
    * Background color field in *SliderIndex → Primary*

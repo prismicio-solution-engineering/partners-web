@@ -25,10 +25,22 @@ const IntroSlide = ({
         className={`w-[1280px] h-[715px] mx-auto relative border border-1 border-silver-base shadow-sm p-10 rounded-lg bg-quaternary-${slice.primary.background_color}`}
       >
         <div className="flex gap-10 flex-row w-full h-full inset-0 overflow-clip justify-between">
+          {!slice.primary.media_side && (
+            <div
+              className={`w-1/2 h-full border border-1 border-gray-darker rounded-xl bg-tertiary-${slice.primary.background_color}`}
+            >
+              <PrismicNextImage
+                field={slice.primary.image}
+                width={599}
+                height={633}
+                className="w-full h-full object-contain rounded-xl "
+              />
+            </div>
+          )}
           <div className="w-1/2 flex flex-col justify-between">
             <PrismicNextImage
               field={context.logo}
-              className="w-[50px] h-[50px] object-contain"
+              className={`w-[50px] h-[50px] object-contain ${!slice.primary.media_side && "self-end"}`}
               width={50}
               height={50}
             />
@@ -73,12 +85,16 @@ const IntroSlide = ({
               />
             </div>
           </div>
-          <div className="w-1/2 h-full border border-1 border-gray-darker rounded-xl">
-            <PrismicNextImage
-              field={slice.primary.image}
-              className="w-full h-full object-contain rounded-xl "
-            />
-          </div>
+          {slice.primary.media_side && (
+            <div
+              className={`w-1/2 h-full border border-1 border-gray-darker rounded-xl bg-tertiary-${slice.primary.background_color}`}
+            >
+              <PrismicNextImage
+                field={slice.primary.image}
+                className="w-full h-full object-contain rounded-xl "
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

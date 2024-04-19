@@ -104,6 +104,11 @@ const config: Config = {
     "bg-quaternary-green",
     "bg-quaternary-purple",
     "bg-quaternary-blue",
+    "bg-tertiary-orange",
+    "bg-tertiary-pink",
+    "bg-tertiary-green",
+    "bg-tertiary-purple",
+    "bg-tertiary-blue",
   ],
   plugins: [
     require("@tailwindcss/aspect-ratio"),

@@ -37,15 +37,6 @@
             "multi": "paragraph,strong,em"
           }
         },
-        "background_color": {
-          "type": "Select",
-          "config": {
-            "label": "Background color",
-            "placeholder": "Slide background color",
-            "options": ["orange", "pink", "green", "purple", "blue"],
-            "default_value": "orange"
-          }
-        },
         "image": {
           "type": "Image",
           "config": {
@@ -55,6 +46,24 @@
               "height": 633
             },
             "thumbnails": []
+          }
+        },
+        "media_side": {
+          "type": "Boolean",
+          "config": {
+            "label": "Media side",
+            "placeholder_false": "left",
+            "placeholder_true": "right",
+            "default_value": true
+          }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background color",
+            "placeholder": "Slide background color",
+            "options": ["orange", "pink", "green", "purple", "blue"],
+            "default_value": "orange"
           }
         }
       },
