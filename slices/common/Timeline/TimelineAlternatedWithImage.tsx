@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -20,7 +21,7 @@ const TimelineAlternatedWithImage = ({
           ),
         }}
       />
-      <div className="w-full max-w-screen-xl mx-auto ">
+      <Container>
         {slice.items.map((item, idx) => (
           <div
             key={idx}
@@ -52,7 +53,7 @@ const TimelineAlternatedWithImage = ({
             </div>
           </div>
         ))}
-      </div>
+      </Container>
     </div>
   );
 };

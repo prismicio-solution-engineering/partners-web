@@ -9,20 +9,18 @@ export default function Footer({
   navigation: NavigationDocument;
 }) {
   return (
-    <footer className="w-full bg-silver-light p-6 text-sm text-gray-base border-t border-silver-base">
-      <nav className="md:flex items-center space-x-4 relative flex justify-between">
+    <footer className="w-full bg-silver-light p-6 text-sm text-gray-dark border-t border-silver-base">
+      <nav className="flex lg:items-center space-x-4 relative justify-between">
         <PrismicText field={navigation.data.copyright} />
-        <div className="flex items-center md:gap-x-12">
-          <ul className="flex flex-row gap-10">
-            {navigation.data.links.map((link, idx) => (
-              <li key={idx}>
-                <PrismicNextLink field={link.link}>
-                  {link.link_label}
-                </PrismicNextLink>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+          {navigation.data.links.map((link, idx) => (
+            <li key={idx}>
+              <PrismicNextLink field={link.link}>
+                {link.link_label}
+              </PrismicNextLink>
+            </li>
+          ))}
+        </ul>
       </nav>
     </footer>
   );

@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 
@@ -14,7 +15,7 @@ const serializer = {
 
 const FeatureDefault = ({ slice }: { slice: Content.FeaturesSliceDefault }) => {
   return (
-    <div className="bg-white flex flex-col items-center gap-y-8 my-16 max-w-screen-xl mx-auto">
+    <Container className="bg-white flex flex-col items-center gap-y-8">
       <div className="max-w-fit text-center font-copy font-semibold text-sm uppercase text-gray-darker rounded-lg bg-quaternary-purple px-3 py-1">
         {slice.primary.eyebrow}
       </div>
@@ -29,7 +30,7 @@ const FeatureDefault = ({ slice }: { slice: Content.FeaturesSliceDefault }) => {
           />
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

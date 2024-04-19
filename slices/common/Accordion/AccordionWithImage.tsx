@@ -1,4 +1,6 @@
 "use client";
+
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -40,7 +42,7 @@ const AccordionWithImage = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center mt-16 max-w-screen-xl mx-auto px-8">
+    <Container className="flex flex-col md:flex-row items-center">
       <div className="w-full md:w-1/2">
         <PrismicNextImage
           className="w-full h-full object-cover rounded-lg"
@@ -96,7 +98,7 @@ const AccordionWithImage = ({
           ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

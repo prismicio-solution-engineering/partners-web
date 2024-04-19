@@ -23,7 +23,7 @@ const FeaturedPartners = ({ slice }: FeaturedPartnersProps): JSX.Element => {
         {isFilled.richText(slice.primary.section_description) && (
           <PrismicRichText field={slice.primary.section_description} />
         )}
-        <div className="max-w-screen-2xl mx-auto relative mb-6">
+        <div className="max-w-screen-sm md:max-w-screen-2xl mx-auto relative mb-6">
           <div
           >
             <ScrollContainer gap={5}>

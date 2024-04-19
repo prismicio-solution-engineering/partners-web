@@ -30,12 +30,12 @@ export default async function Page() {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-lg overflow-hidden shadow-lg max-w-[350px] hover:-translate-y-6 ease-in-out duration-300"
+              className="flex flex-col bg-white rounded-lg overflow-hidden shadow-lg max-w-[350px] hover:-translate-y-6 ease-in-out duration-300"
             >
               <PrismicNextLink field={project.data.live_project_link}>
                 {isFilled.image(project.data.featured_image) ? (
                   <PrismicNextImage
-                    className="object-contain"
+                    className="object-contain w-full border border-silver-base rounded-t-lg"
                     field={
                       isFilled.imageThumbnail(
                         project.data.featured_image.thumbnail
@@ -53,7 +53,7 @@ export default async function Page() {
                   />
                 )}
               </PrismicNextLink>
-              <div className="px-8 py-8 whitespace-normal flex flex-col">
+              <div className="px-8 py-8 flex flex-col grow justify-between">
                 <div className="flex flex-col gap-2">
                   <span
                     className={`h-8 w-fit inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ${categoryPillColor(project.data.category.data.category_name)}`}
@@ -64,8 +64,8 @@ export default async function Page() {
                     {project.data.project_name}
                   </span>
                 </div>
-                <div className="flex items-center mt-4">
-                  <div className="flex flex-row justify-between w-full">
+                <div className="mt-4">
+                  <div className="flex flex-row justify-between">
                     <Button
                       field={project.data.source_code_link}
                       variant="link"

@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -17,7 +18,7 @@ const TestimonialsSingle = async ({
 }) => {
   return (
     <>
-      <div className="bg-silver-light shadow rounded-lg p-8 md:p-12 max-w-screen-xl mx-auto my-16">
+      <Container className="bg-silver-light shadow rounded-lg md:p-12">
         <div className="flex justify-start mb-4">
           <PrismicNextImage
             className="h-12 object-contain"
@@ -59,7 +60,7 @@ const TestimonialsSingle = async ({
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };

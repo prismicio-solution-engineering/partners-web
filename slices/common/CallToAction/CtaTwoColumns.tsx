@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 
@@ -16,7 +17,7 @@ const CtaTwoColumns = ({
   slice: Content.CallToActionSliceTwoColumns;
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center py-16 bg-[#E8F8F3] rounded-xl mt-16 max-w-screen-xl mx-auto">
+    <Container className="flex flex-col md:flex-row items-center justify-center bg-[#E8F8F3] rounded-xl">
       <div className="md:w-1/2 p-8">
         <PrismicRichText field={slice.primary.title} components={serializer} />
         <PrismicRichText
@@ -38,7 +39,7 @@ const CtaTwoColumns = ({
           ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

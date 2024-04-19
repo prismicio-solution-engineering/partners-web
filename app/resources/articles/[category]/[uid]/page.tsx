@@ -58,13 +58,13 @@ export default async function Page({ params }: { params: Params }) {
             />
           </div>
         </div>
-        <div className="flex flex-row gap-10">
-          <div className="w-1/4">Table Of Content</div>
-          <div className="w-3/4">
+        {/* <div className="flex flex-row gap-10"> */}
+          {/* <div className="w-1/4">Table Of Content</div> */}
+          <div className="w-full">
             <SliceZone slices={page?.data?.slices2} components={components} />
           </div>
         </div>
-      </div>
+      {/* </div> */}
       <Footer navigation={navigation} />
     </>
   );

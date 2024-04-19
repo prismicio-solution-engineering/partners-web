@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { isFilled, type Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -23,7 +24,7 @@ const HeroWithImage = ({
 }) => {
   return (
     <div className="relative overflow-hidden mt-16">
-      <div className="max-w-screen-xl mx-auto py-16 px-8 md:py-24 rounded-lg">
+      <Container className="md:py-24 rounded-lg">
         <div className="flex flex-col lg:flex-row items-center -mx-4 px-4 gap-16 lg:text-left text-center">
           <div className="w-full lg:w-1/2">
             <PrismicRichText
@@ -55,7 +56,7 @@ const HeroWithImage = ({
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

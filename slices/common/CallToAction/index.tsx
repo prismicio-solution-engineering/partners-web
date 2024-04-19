@@ -15,8 +15,8 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
   switch (slice.variation) {
     case "default":
       return <CtaDefault slice={slice} />;
-      case "twoColumns":
-        return <CtaTwoColumns slice={slice} />
+    case "twoColumns":
+      return <CtaTwoColumns slice={slice} />;
   }
 };
 

@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -19,8 +20,8 @@ const FeatureWithImage = ({
   slice: Content.FeaturesSliceWithImage;
 }) => {
   return (
-    <div className="bg-white px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-16">
+    <Container className="bg-white">
+      <div className="flex flex-col md:flex-row items-center gap-16">
         {slice.primary.image_side === false && (
           <div className="md:w-1/2">
             <PrismicNextImage
@@ -51,7 +52,7 @@ const FeatureWithImage = ({
           </div>
         )}
       </div>
-    </div>
+    </Container>
   );
 };
 

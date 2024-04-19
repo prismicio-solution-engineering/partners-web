@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 
@@ -15,7 +16,7 @@ const serializer = {
 
 const HeroDefault = ({ slice }: { slice: Content.HeroBannerSliceDefault }) => {
   return (
-    <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 my-16 md:my-24">
+    <Container className="md:my-24">
       <div className="flex flex-col items-center gap-6 w-full">
         <PrismicRichText field={slice.primary.title} components={serializer} />
         <PrismicRichText
@@ -35,7 +36,7 @@ const HeroDefault = ({ slice }: { slice: Content.HeroBannerSliceDefault }) => {
           ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

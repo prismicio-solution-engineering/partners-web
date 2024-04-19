@@ -16,8 +16,8 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
   switch (slice.variation) {
     case "default":
       return <HeroDefault slice={slice} />;
-      case "withImage":
-        return <HeroWithImage slice={slice} />
+    case "withImage":
+      return <HeroWithImage slice={slice} />;
   }
 };
 

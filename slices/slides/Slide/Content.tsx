@@ -34,7 +34,7 @@ const Content = ({
             />
           </div>
         </div>
-        <div className="h-full text-left flex flex-col justify-start px-4 pt-10 pb-4">
+        <div className="text-left flex flex-col justify-center px-4 pt-10 pb-4">
           <SlidePrismicRichText
             field={slice.primary.content}
             components={{

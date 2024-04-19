@@ -1,4 +1,6 @@
 "use client";
+
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { useState } from "react";
@@ -39,7 +41,7 @@ const AccordionTwoColumns = ({
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-start justify-between gap-16 mt-16 max-w-screen-xl mx-auto px-8 overflow-clip">
+    <Container className="flex flex-col lg:flex-row items-start justify-between gap-16 overflow-clip">
       <div className="w-full lg:w-1/2">
         <p className="text-primary-purple font-copy text-lg mb-4">
           {slice.primary.eyebrow}
@@ -81,7 +83,7 @@ const AccordionTwoColumns = ({
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -7,6 +7,7 @@ import { useState } from "react";
 import ChevronLeft from "@/assets/icons/chevron-left.svg";
 import ChevronRight from "@/assets/icons/chevron-right.svg";
 import Image from "next/image";
+import { Container } from "@/components/Container";
 
 const serializer = {
   paragraph: ({ children }) => (
@@ -40,7 +41,7 @@ const TestimonialsSlider = async ({
       <div className="text-center mb-12">
         <PrismicRichText field={slice.primary.title} />
       </div>
-      <div className="overflow-hidden relative bg-silver-light py-20 mx-auto max-w-screen-xl px-8 rounded-lg shadow-sm">
+      <Container className="overflow-hidden relative bg-silver-light py-20 rounded-lg shadow-sm">
         <div
           className="whitespace-nowrap transition-transform duration-500"
           style={{
@@ -98,7 +99,7 @@ const TestimonialsSlider = async ({
             unoptimized
           />
         </button>
-      </div>
+      </Container>
     </section>
   );
 };

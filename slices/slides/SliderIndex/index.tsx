@@ -63,7 +63,7 @@ const SliderIndex = ({
                 <div key={idx} className="flex flex-col py-8 border-b border-gray-base mr-8">
                   <div className="flex flex-row items-center gap-6">
                     <span
-                      className={`text-4xl text-secondary-${slice.primary.background_color}`}
+                      className={`text-4xl text-secondary-${slice.primary.background_color} w-10`}
                     >
                       {(idx += 1)}{" "}
                     </span>

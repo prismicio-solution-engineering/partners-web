@@ -1,4 +1,6 @@
 "use client";
+
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 import { useState } from "react";
@@ -71,7 +73,7 @@ const AccordionCentered = ({
   };
 
   return (
-    <section className="bg-white text-center mt-16 max-w-screen-xl mx-auto px-8 rounded-lg">
+    <Container className="bg-white text-center rounded-lg">
       <PrismicRichText
         field={slice.primary.section_title}
         components={serializer}
@@ -87,7 +89,7 @@ const AccordionCentered = ({
           />
         ))}
       </div>
-    </section>
+    </Container>
   );
 };
 

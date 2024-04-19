@@ -1,9 +1,10 @@
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import type { Content } from "@prismicio/client";
 
 const TimelineGrid = ({ slice }: { slice: Content.TimelineSliceGrid }) => {
   return (
-    <div className="flex flex-col items-center mx-auto max-w-screen-xl my-16">
+    <Container className="flex flex-col items-center">
       <PrismicRichText field={slice.primary.section_title} />
       <PrismicRichText
         field={slice.primary.section_description}
@@ -38,7 +39,7 @@ const TimelineGrid = ({ slice }: { slice: Content.TimelineSliceGrid }) => {
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

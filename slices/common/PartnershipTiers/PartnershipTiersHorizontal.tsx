@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container";
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { createClient } from "@/prismicio";
 import { PartnershipTierDocument } from "@/prismicio-types";
@@ -30,16 +31,15 @@ const PartnershipTiersHorizontal = async ({
   );
 
   return (
-    <div className="flex flex-col items-center pt-16 pb-16 my-8 bg-white mt-16 max-w-screen-xl mx-auto px-8">
+    <Container className="flex flex-col items-center bg-white">
       <PrismicRichText field={slice.primary.title} />
       <PrismicRichText field={slice.primary.description} />
-      <div className="w-full max-w-screen-xl mx-auto">
-        <div className="flex justify-between gap-6">
+      <div className="w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch lg:justify-between gap-16 lg:gap-6 mt-16">
           {tiers.results.map((tier, idx) => (
             <div
               key={idx}
-              className={`flex-shrink-0 w-full md:w-1/3 p-6 rounded-lg overflow-hidden shadow-lg `}
-              style={{ maxWidth: "360px" }}
+              className={`p-6 rounded-lg overflow-hidden shadow-lg w-96`}
             >
               <div className="flex flex-col items-start text-gray-darker">
                 <h3 className="text-xl font-headings font-bold">
@@ -73,7 +73,7 @@ const PartnershipTiersHorizontal = async ({
           ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
