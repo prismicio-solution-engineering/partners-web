@@ -3217,6 +3217,78 @@ export type IntroSlideSlice = prismic.SharedSlice<
 /**
  * Primary content in *Slide → Primary*
  */
+export interface SlideSliceTitlePrimary {
+  /**
+   * Eyebrow field in *Slide → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content field in *Slide → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Background color field in *Slide → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide background color
+   * - **Default Value**: orange
+   * - **API ID Path**: slide.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Image field in *Slide → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Title variation for Slide Slice
+ *
+ * - **API ID**: `title`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideSliceTitle = prismic.SharedSliceVariation<
+  "title",
+  Simplify<SlideSliceTitlePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Slide → Primary*
+ */
 export interface SlideSliceWithImagePrimary {
   /**
    * Title field in *Slide → Primary*
@@ -3402,85 +3474,13 @@ export type SlideSliceContentTwoColumns = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Slide → Primary*
- */
-export interface SlideSliceTitlePrimary {
-  /**
-   * Eyebrow field in *Slide → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.eyebrow
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  eyebrow: prismic.KeyTextField;
-
-  /**
-   * Title field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Content field in *Slide → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Background color field in *Slide → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Slide background color
-   * - **Default Value**: orange
-   * - **API ID Path**: slide.primary.background_color
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  background_color: prismic.SelectField<
-    "orange" | "pink" | "green" | "purple" | "blue",
-    "filled"
-  >;
-
-  /**
-   * Image field in *Slide → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slide.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Title variation for Slide Slice
- *
- * - **API ID**: `title`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlideSliceTitle = prismic.SharedSliceVariation<
-  "title",
-  Simplify<SlideSliceTitlePrimary>,
-  never
->;
-
-/**
  * Slice variation for *Slide*
  */
 type SlideSliceVariation =
+  | SlideSliceTitle
   | SlideSliceWithImage
   | SlideSliceContentOnly
-  | SlideSliceContentTwoColumns
-  | SlideSliceTitle;
+  | SlideSliceContentTwoColumns;
 
 /**
  * Slide Shared Slice
@@ -4017,15 +4017,15 @@ declare module "@prismicio/client" {
       IntroSlideSliceVariation,
       IntroSlideSliceDefault,
       SlideSlice,
+      SlideSliceTitlePrimary,
       SlideSliceWithImagePrimary,
       SlideSliceContentOnlyPrimary,
       SlideSliceContentTwoColumnsPrimary,
-      SlideSliceTitlePrimary,
       SlideSliceVariation,
+      SlideSliceTitle,
       SlideSliceWithImage,
       SlideSliceContentOnly,
       SlideSliceContentTwoColumns,
-      SlideSliceTitle,
       SliderSlice,
       SliderSliceDefaultPrimary,
       SliderSliceVariation,

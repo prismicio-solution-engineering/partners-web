@@ -29,7 +29,7 @@ const Title = ({
               field={slice.primary.title}
               components={{
                 heading2: ({ children }) => (
-                  <h2 className="text-7xl font-bold font-headings mt-4 mb-4 text-gray-darker break-words">
+                  <h2 className="text-5xl font-bold font-headings mt-4 mb-4 text-gray-darker break-words">
                     {children}
                   </h2>
                 ),
