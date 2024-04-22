@@ -56,7 +56,7 @@ const config: Config = {
         quaternary: {
           orange: "#FEF1E9",
           pink: "#FFE5EA",
-          green: "#D4F2E9",
+          green: "#E8F8F3",
           purple: "#F5E6FF",
           blue: "#E6F7FE"
         },
