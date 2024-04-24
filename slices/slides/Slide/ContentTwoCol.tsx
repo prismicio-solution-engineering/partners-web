@@ -29,10 +29,44 @@ const ContentTwoCol = ({
         <div className="flex flex-col grow">
           <div className="flex flex-row gap-10 grow">
             <div className="h-full w-1/2 text-left flex flex-col justify-center px-4 pb-4">
-              <SlidePrismicRichText field={slice.primary.content_left} />
+              <SlidePrismicRichText
+                field={slice.primary.content_left}
+                components={{
+                  label: ({ node, children }) => {
+                    return (
+                      <>
+                        {node.data.label === "highlight" && (
+                          <span
+                            className={`text-primary-${slice.primary.background_color} font-semibold`}
+                          >
+                            {children}
+                          </span>
+                        )}
+                      </>
+                    );
+                  },
+                }}
+              />
             </div>
             <div className="h-full w-1/2 text-left flex flex-col justify-center px-4 pb-4">
-              <SlidePrismicRichText field={slice.primary.content_right} />
+              <SlidePrismicRichText
+                field={slice.primary.content_right}
+                components={{
+                  label: ({ node, children }) => {
+                    return (
+                      <>
+                        {node.data.label === "highlight" && (
+                          <span
+                            className={`text-primary-${slice.primary.background_color} font-semibold`}
+                          >
+                            {children}
+                          </span>
+                        )}
+                      </>
+                    );
+                  },
+                }}
+              />
             </div>
           </div>
         </div>

@@ -55,6 +55,19 @@ const Title = ({
                     {children}
                   </p>
                 ),
+                label: ({ node, children }) => {
+                  return (
+                    <>
+                      {node.data.label === "highlight" && (
+                        <span
+                          className={`text-primary-${slice.primary.background_color} font-semibold`}
+                        >
+                          {children}
+                        </span>
+                      )}
+                    </>
+                  );
+                },
               }}
             />
           </div>

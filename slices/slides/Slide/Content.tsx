@@ -24,7 +24,24 @@ const Content = ({
           </div>
         </div>
         <div className="text-left flex flex-col justify-center px-4 pt-10 pb-4">
-          <SlidePrismicRichText field={slice.primary.content} />
+          <SlidePrismicRichText
+            field={slice.primary.content}
+            components={{
+              label: ({ node, children }) => {
+                return (
+                  <>
+                    {node.data.label === "highlight" && (
+                      <span
+                        className={`text-primary-${slice.primary.background_color} font-semibold`}
+                      >
+                        {children}
+                      </span>
+                    )}
+                  </>
+                );
+              },
+            }}
+          />
         </div>
       </div>
     </>

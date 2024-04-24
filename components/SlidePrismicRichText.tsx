@@ -22,7 +22,7 @@ const defaultComponents: JSXMapSerializer = {
     </h3>
   ),
   heading4: ({ children }) => (
-    <h4 className={`text-2xl font-medium font-headings text-gray-darker mt-4 mb-2 first:mt-0 break-words`}>
+    <h4 className={`text-2xl font-medium font-headings text-gray-darker mt-4  first:mt-0 break-words`}>
       {children}
     </h4>
   ),
