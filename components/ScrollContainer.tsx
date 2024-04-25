@@ -17,7 +17,7 @@ export const ScrollContainer = ({
   };
 
   return (
-    <div className="bg-white mt-16 px-4 sm:px-6 lg:px-8 relative">
+    <div className="bg-white px-4 sm:px-6 lg:px-8 relative">
       <button
         onClick={() => scroll(-1280)}
         className="absolute left-0 z-10 text-silver-darker hidden md:block"
