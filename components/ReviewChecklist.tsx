@@ -119,11 +119,11 @@ export function ReviewChecklist({
               {groupedItems[category] &&
                 groupedItems[category].map((item, index) => (
                   <ChecklistItem
-                    key={index}
+                    key={category+"_"+index}
                     item={item}
                     active={activeIndex}
                     toggle={toggle}
-                    index={index}
+                    index={category+"_"+index}
                   />
                 ))}
             </div>
