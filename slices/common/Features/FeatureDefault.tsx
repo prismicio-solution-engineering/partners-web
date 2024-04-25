@@ -19,7 +19,7 @@ const FeatureDefault = ({ slice }: { slice: Content.FeaturesSliceDefault }) => {
       <div className="max-w-fit text-center font-copy font-semibold text-sm uppercase text-gray-darker rounded-lg bg-quaternary-purple px-3 py-1">
         {slice.primary.eyebrow}
       </div>
-      <div className="flex flex-col md:flex-row gap-16 items-center ">
+      <div className="flex flex-col md:flex-row md:gap-16 items-center ">
         <div className="mb-8 md:mb-0 md:w-1/2">
           <PrismicRichText field={slice.primary.feature_name} components={serializer} />
         </div>

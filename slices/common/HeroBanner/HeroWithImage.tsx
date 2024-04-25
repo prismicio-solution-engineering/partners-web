@@ -47,7 +47,7 @@ const HeroWithImage = ({
               </div>
             )}
           </div>
-          <div className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
+          <div className="w-full lg:w-1/2 px-4 mt-2 lg:mt-0">
             <div className="bg-white rounded-lg overflow-hidden">
               <PrismicNextImage
                 field={slice.primary.image}

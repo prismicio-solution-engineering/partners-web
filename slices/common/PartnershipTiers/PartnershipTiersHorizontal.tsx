@@ -39,7 +39,7 @@ const PartnershipTiersHorizontal = async ({
           {tiers.results.map((tier, idx) => (
             <div
               key={idx}
-              className={`p-6 rounded-lg overflow-hidden shadow-lg w-96`}
+              className={`w-full p-6 rounded-lg overflow-hidden shadow-lg w-96`}
             >
               <div className="flex flex-col items-start text-gray-darker">
                 <h3 className="text-xl font-headings font-bold">
