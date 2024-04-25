@@ -10,6 +10,7 @@ import { projectQuery } from "@/utils/graphQueries";
 import { categoryPillColor } from "@/components/CategoryPill";
 import { Button } from "@/components/Button";
 import Footer from "@/components/Footer";
+import { PrismicRichText } from "@/components/PrismicRichText";
 
 export default async function Page() {
   const client = createClient();
@@ -63,6 +64,18 @@ export default async function Page() {
                   <span className="text-xl font-copy font-bold text-gray-darker mt-2">
                     {project.data.project_name}
                   </span>
+                  <div className="h-20 line-clamp-3">
+                    <PrismicRichText
+                      field={project.data.project_description}
+                      components={{
+                        paragraph: ({ children }) => (
+                          <p className="font-copy text-base text-gray-base">
+                            {children}
+                          </p>
+                        ),
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className="mt-4">
                   <div className="flex flex-row justify-between">
