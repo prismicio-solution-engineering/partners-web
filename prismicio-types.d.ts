@@ -882,6 +882,129 @@ export type PartnershipTierDocument<Lang extends string = string> =
   >;
 
 /**
+ * Item in *Pricing plan → Features*
+ */
+export interface PricingPlanDocumentDataFeaturesItem {
+  /**
+   * Feature name field in *Pricing plan → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.features[].feature_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  feature_name: prismic.KeyTextField;
+
+  /**
+   * Feature Description field in *Pricing plan → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.features[].feature_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_description: prismic.RichTextField;
+}
+
+/**
+ * Content for Pricing plan documents
+ */
+interface PricingPlanDocumentData {
+  /**
+   * Name field in *Pricing plan*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Price monthly field in *Pricing plan*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.price
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * Price yearly field in *Pricing plan*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.price_yearly
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price_yearly: prismic.KeyTextField;
+
+  /**
+   * Description field in *Pricing plan*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Link field in *Pricing plan*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Link label field in *Pricing plan*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.link_label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Features field in *Pricing plan*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_plan.features[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<Simplify<PricingPlanDocumentDataFeaturesItem>>;
+}
+
+/**
+ * Pricing plan document from Prismic
+ *
+ * - **API ID**: `pricing_plan`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PricingPlanDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PricingPlanDocumentData>,
+    "pricing_plan",
+    Lang
+  >;
+
+/**
  * Content for Project documents
  */
 interface ProjectDocumentData {
@@ -1528,6 +1651,7 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | PartnershipTierDocument
+  | PricingPlanDocument
   | ProjectDocument
   | ProjectCategoryDocument
   | ProjectsDocument
@@ -2412,6 +2536,61 @@ type PartnershipTiersSliceVariation = PartnershipTiersSliceHorizontalCards;
 export type PartnershipTiersSlice = prismic.SharedSlice<
   "partnership_tiers",
   PartnershipTiersSliceVariation
+>;
+
+/**
+ * Primary content in *Pricing → Primary*
+ */
+export interface PricingSliceDefaultPrimary {
+  /**
+   * Title field in *Pricing → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Pricing → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Pricing Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PricingSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Pricing*
+ */
+type PricingSliceVariation = PricingSliceDefault;
+
+/**
+ * Pricing Shared Slice
+ *
+ * - **API ID**: `pricing`
+ * - **Description**: Pricing
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSlice = prismic.SharedSlice<
+  "pricing",
+  PricingSliceVariation
 >;
 
 /**
@@ -3950,6 +4129,9 @@ declare module "@prismicio/client" {
       PartnershipTierDocument,
       PartnershipTierDocumentData,
       PartnershipTierDocumentDataTierFeaturesItem,
+      PricingPlanDocument,
+      PricingPlanDocumentData,
+      PricingPlanDocumentDataFeaturesItem,
       ProjectDocument,
       ProjectDocumentData,
       ProjectCategoryDocument,
@@ -4013,6 +4195,10 @@ declare module "@prismicio/client" {
       PartnershipTiersSliceHorizontalCardsItem,
       PartnershipTiersSliceVariation,
       PartnershipTiersSliceHorizontalCards,
+      PricingSlice,
+      PricingSliceDefaultPrimary,
+      PricingSliceVariation,
+      PricingSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceSinglePrimary,
       TestimonialsSliceSliderPrimary,
