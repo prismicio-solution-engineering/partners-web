@@ -48,14 +48,8 @@
           "label": "Link",
           "placeholder": "",
           "allowTargetBlank": true,
-          "select": null
-        }
-      },
-      "link_label": {
-        "type": "Text",
-        "config": {
-          "label": "Link label",
-          "placeholder": ""
+          "select": null,
+          "allowText": true
         }
       },
       "features": {

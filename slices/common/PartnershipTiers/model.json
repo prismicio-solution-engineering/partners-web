@@ -43,6 +43,53 @@
           }
         }
       }
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,hyperlink,em,strong"
+          }
+        },
+        "tiers": {
+          "type": "Group",
+          "config": {
+            "label": "Tiers",
+            "repeat": true,
+            "fields": {
+              "tier": {
+                "type": "Link",
+                "config": {
+                  "label": "Tier",
+                  "select": "document",
+                  "customtypes": [
+                    "partnership_tier"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
