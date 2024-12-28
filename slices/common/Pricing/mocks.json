@@ -40,6 +40,13 @@
 										"id": "mock_document_id"
 									}
 								}
+							],
+							[
+								"is_featured",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
 							]
 						]
 					}

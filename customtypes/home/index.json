@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "pricing": {
+              "type": "SharedSlice"
+            },
             "partnership_tiers": {
               "type": "SharedSlice"
             },

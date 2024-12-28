@@ -321,6 +321,7 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | PricingSlice
   | PartnershipTiersSlice
   | FeaturesSlice
   | TestimonialsSlice
@@ -694,6 +695,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | PricingSlice
   | ProjectSlice
   | ArticlesSlice
   | SliderSlice
@@ -2845,6 +2847,17 @@ export interface PricingSliceDefaultPrimaryPlansItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   plan: prismic.ContentRelationshipField<"pricing_plan">;
+
+  /**
+   * Is featured field in *Pricing → Default → Primary → Plans*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: pricing.default.primary.plans[].is_featured
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_featured: prismic.BooleanField;
 }
 
 /**
