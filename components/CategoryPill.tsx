@@ -1,4 +1,6 @@
-export const categoryPillColor = (category: string) => {
+import { KeyTextField } from "@prismicio/client";
+
+export const categoryPillColor = (category: string | KeyTextField) => {
   if (category === "Use case") {
     return "bg-quaternary-purple text-primary-purple";
   } else if (category === "Best practice") {

@@ -14,18 +14,18 @@ import { categoryPillColor } from "@/components/CategoryPill";
 
 type Params = { uid: string };
 
-const serializer = {
-  heading1: ({ children }) => (
-    <h1 className="text-gray-darker text-4xl lg:text-5xl font-headings font-bold mb-6">
-      {children}
-    </h1>
-  ),
-};
-
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
-    .getByUID<Content.ArticleDocument>("article", params.uid, {
+    .getByUID<
+      Content.ArticleDocument & {
+        data: {
+          category: {
+            data: Pick<Content.ArticleCategoryDocument["data"], "name">;
+          };
+        };
+      }
+    >("article", params.uid, {
       graphQuery: fullArticleQuery,
     })
     .catch(() => notFound());
@@ -44,7 +44,16 @@ export default async function Page({ params }: { params: Params }) {
             >
               {page.data.category.data.name}
             </div>
-            <PrismicRichText field={page.data.title} components={serializer} />
+            <PrismicRichText
+              field={page.data.title}
+              components={{
+                heading1: ({ children }) => (
+                  <h1 className="text-gray-darker text-4xl lg:text-5xl font-headings font-bold mb-6">
+                    {children}
+                  </h1>
+                ),
+              }}
+            />
             <p className="font-copy text-lg text-gray-base mb-8">
               {page.data.excerpt}
             </p>
@@ -59,11 +68,11 @@ export default async function Page({ params }: { params: Params }) {
           </div>
         </div>
         {/* <div className="flex flex-row gap-10"> */}
-          {/* <div className="w-1/4">Table Of Content</div> */}
-          <div className="w-full">
-            <SliceZone slices={page?.data?.slices2} components={components} />
-          </div>
+        {/* <div className="w-1/4">Table Of Content</div> */}
+        <div className="w-full">
+          <SliceZone slices={page?.data?.slices2} components={components} />
         </div>
+      </div>
       {/* </div> */}
       <Footer navigation={navigation} />
     </>
@@ -88,7 +97,15 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const client = createClient();
-  const pages = await client.getAllByType("article");
+  const pages = await client.getAllByType<
+    Content.ArticleDocument & {
+      data: {
+        category: {
+          uid: string;
+        };
+      };
+    }
+  >("article");
 
   return pages.map((page) => {
     return {

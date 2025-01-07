@@ -17,7 +17,15 @@ export default async function Page() {
   const page = await client.getSingle("projects");
   const navigation =
     await client.getSingle<Content.NavigationDocument>("navigation");
-  const projects = await client.getAllByType("project", {
+  const projects = await client.getAllByType<
+    Content.ProjectDocument & {
+      data: {
+        category: {
+          data: Pick<Content.ProjectCategoryDocument["data"], "category_name">;
+        };
+      };
+    }
+  >("project", {
     graphQuery: projectQuery,
   });
 
