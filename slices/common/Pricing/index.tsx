@@ -1,5 +1,3 @@
-"use client";
-
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { createClient } from "@/prismicio";
@@ -24,14 +22,6 @@ const Pricing = async ({ slice }: PricingProps) => {
   }));
 
   const uids = plansData?.map((plan) => plan.uid) || [];
-
-  // const uids: string[] = slice.primary.plans?.map((item) => {
-  //   if (isFilled.contentRelationship(item.plan)) {
-  //     return item.plan.uid!;
-  //   }
-
-  //   return "";
-  // });
 
   const plans = await client
     .getByUIDs<PricingPlanDocument>("pricing_plan", uids, {
