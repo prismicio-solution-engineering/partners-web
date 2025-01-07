@@ -816,6 +816,42 @@ export interface PartnershipTierDocumentDataTierFeaturesItem {
 }
 
 /**
+ * Item in *Partnership Tier → Table items*
+ */
+export interface PartnershipTierDocumentDataTableItemsItem {
+  /**
+   * Item field in *Partnership Tier → Table items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.table_items[].item
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  item: prismic.ContentRelationshipField<"tier_table_item">;
+
+  /**
+   * Checked field in *Partnership Tier → Table items*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: partnership_tier.table_items[].is_checked
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_checked: prismic.BooleanField;
+
+  /**
+   * Description field in *Partnership Tier → Table items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: If filled, will replace the check icon
+   * - **API ID Path**: partnership_tier.table_items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
  * Item in *Partnership Tier → Requirements*
  */
 export interface PartnershipTierDocumentDataRequirementsItem {
@@ -848,106 +884,6 @@ export interface PartnershipTierDocumentDataRequirementsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   customer_base: prismic.KeyTextField;
-}
-
-/**
- * Item in *Partnership Tier → Financial*
- */
-export interface PartnershipTierDocumentDataFinancialItem {
-  /**
-   * Item name field in *Partnership Tier → Financial*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.financial[].item_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  item_name: prismic.KeyTextField;
-
-  /**
-   * Item description field in *Partnership Tier → Financial*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description or label as True or False for Check or X icons
-   * - **API ID Path**: partnership_tier.financial[].item_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  item_description: prismic.RichTextField;
-}
-
-/**
- * Item in *Partnership Tier → Support*
- */
-export interface PartnershipTierDocumentDataSupportItem {
-  /**
-   * Item name field in *Partnership Tier → Support*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.support[].item_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  item_name: prismic.KeyTextField;
-
-  /**
-   * Item description field in *Partnership Tier → Support*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description or label as True or False for Check or X icons
-   * - **API ID Path**: partnership_tier.support[].item_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  item_description: prismic.RichTextField;
-}
-
-/**
- * Item in *Partnership Tier → Training and Resources*
- */
-export interface PartnershipTierDocumentDataTrainingAndResourcesItem {
-  /**
-   * Item name field in *Partnership Tier → Training and Resources*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.training_and_resources[].item_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  item_name: prismic.KeyTextField;
-
-  /**
-   * Item description field in *Partnership Tier → Training and Resources*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description or label as True or False for Check or X icons
-   * - **API ID Path**: partnership_tier.training_and_resources[].item_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  item_description: prismic.RichTextField;
-}
-
-/**
- * Item in *Partnership Tier → Marketing*
- */
-export interface PartnershipTierDocumentDataMarketingItem {
-  /**
-   * Item name field in *Partnership Tier → Marketing*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.marketing[].item_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  item_name: prismic.KeyTextField;
-
-  /**
-   * Item description field in *Partnership Tier → Marketing*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description or label as True or False for Check or X icons
-   * - **API ID Path**: partnership_tier.marketing[].item_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  item_description: prismic.RichTextField;
 }
 
 /**
@@ -999,6 +935,19 @@ interface PartnershipTierDocumentData {
    */
   tier_features: prismic.GroupField<
     Simplify<PartnershipTierDocumentDataTierFeaturesItem>
+  >;
+
+  /**
+   * Table items field in *Partnership Tier*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partnership_tier.table_items[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  table_items: prismic.GroupField<
+    Simplify<PartnershipTierDocumentDataTableItemsItem>
   > /**
    * Requirements field in *Partnership Tier*
    *
@@ -1010,98 +959,6 @@ interface PartnershipTierDocumentData {
    */;
   requirements: prismic.GroupField<
     Simplify<PartnershipTierDocumentDataRequirementsItem>
-  > /**
-   * Financial icon field in *Partnership Tier*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.financial_icon
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */;
-  financial_icon: prismic.ImageField<never>;
-
-  /**
-   * Financial field in *Partnership Tier*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.financial[]
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  financial: prismic.GroupField<
-    Simplify<PartnershipTierDocumentDataFinancialItem>
-  >;
-
-  /**
-   * Support Icon field in *Partnership Tier*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.support_icon
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  support_icon: prismic.ImageField<never>;
-
-  /**
-   * Support field in *Partnership Tier*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.support[]
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  support: prismic.GroupField<Simplify<PartnershipTierDocumentDataSupportItem>>;
-
-  /**
-   * Training and Resources Icon field in *Partnership Tier*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.training_and_resources_icon
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  training_and_resources_icon: prismic.ImageField<never>;
-
-  /**
-   * Training and Resources field in *Partnership Tier*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.training_and_resources[]
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  training_and_resources: prismic.GroupField<
-    Simplify<PartnershipTierDocumentDataTrainingAndResourcesItem>
-  >;
-
-  /**
-   * Marketing Icon field in *Partnership Tier*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.marketing_icon
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  marketing_icon: prismic.ImageField<never>;
-
-  /**
-   * Marketing field in *Partnership Tier*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: partnership_tier.marketing[]
-   * - **Tab**: Benefits
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  marketing: prismic.GroupField<
-    Simplify<PartnershipTierDocumentDataMarketingItem>
   >;
 }
 
@@ -1871,6 +1728,92 @@ interface SliderDocumentData {
 export type SliderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<SliderDocumentData>, "slider", Lang>;
 
+/**
+ * Content for Tier table category documents
+ */
+interface TierTableCategoryDocumentData {
+  /**
+   * Name field in *Tier table category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tier_table_category.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+}
+
+/**
+ * Tier table category document from Prismic
+ *
+ * - **API ID**: `tier_table_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TierTableCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TierTableCategoryDocumentData>,
+    "tier_table_category",
+    Lang
+  >;
+
+/**
+ * Content for Tier table item documents
+ */
+interface TierTableItemDocumentData {
+  /**
+   * Category field in *Tier table item*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tier_table_item.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"tier_table_category">;
+
+  /**
+   * Name field in *Tier table item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Item name
+   * - **API ID Path**: tier_table_item.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Description field in *Tier table item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Tooltip description
+   * - **API ID Path**: tier_table_item.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Tier table item document from Prismic
+ *
+ * - **API ID**: `tier_table_item`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TierTableItemDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TierTableItemDocumentData>,
+    "tier_table_item",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1888,7 +1831,9 @@ export type AllDocumentTypes =
   | ReviewCriteriaCategoryDocument
   | ReviewsDocument
   | ReviewsChecklistDocument
-  | SliderDocument;
+  | SliderDocument
+  | TierTableCategoryDocument
+  | TierTableItemDocument;
 
 /**
  * Primary content in *Accordion → With image → Primary*
@@ -4472,11 +4417,8 @@ declare module "@prismicio/client" {
       PartnershipTierDocument,
       PartnershipTierDocumentData,
       PartnershipTierDocumentDataTierFeaturesItem,
+      PartnershipTierDocumentDataTableItemsItem,
       PartnershipTierDocumentDataRequirementsItem,
-      PartnershipTierDocumentDataFinancialItem,
-      PartnershipTierDocumentDataSupportItem,
-      PartnershipTierDocumentDataTrainingAndResourcesItem,
-      PartnershipTierDocumentDataMarketingItem,
       PricingPlanDocument,
       PricingPlanDocumentData,
       PricingPlanDocumentDataFeaturesItem,
@@ -4501,6 +4443,10 @@ declare module "@prismicio/client" {
       SliderDocument,
       SliderDocumentData,
       SliderDocumentDataSlicesSlice,
+      TierTableCategoryDocument,
+      TierTableCategoryDocumentData,
+      TierTableItemDocument,
+      TierTableItemDocumentData,
       AllDocumentTypes,
       AccordionSectionSlice,
       AccordionSectionSliceWithImagePrimary,

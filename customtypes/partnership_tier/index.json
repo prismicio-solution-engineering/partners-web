@@ -63,6 +63,39 @@
             }
           }
         }
+      },
+      "table_items": {
+        "type": "Group",
+        "config": {
+          "label": "Table items",
+          "repeat": true,
+          "fields": {
+            "item": {
+              "type": "Link",
+              "config": {
+                "label": "Item",
+                "select": "document",
+                "customtypes": ["tier_table_item"]
+              }
+            },
+            "is_checked": {
+              "type": "Boolean",
+              "config": {
+                "label": "Checked",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": "If filled, will replace the check icon"
+              }
+            }
+          }
+        }
       }
     },
     "Requirements": {
@@ -91,152 +124,6 @@
               "config": {
                 "label": "Customer Base",
                 "placeholder": ""
-              }
-            }
-          }
-        }
-      }
-    },
-    "Benefits": {
-      "financial_icon": {
-        "type": "Image",
-        "config": {
-          "label": "Financial icon",
-          "constraint": {
-            "width": 24,
-            "height": 24
-          },
-          "thumbnails": []
-        }
-      },
-      "financial": {
-        "type": "Group",
-        "config": {
-          "label": "Financial",
-          "repeat": true,
-          "fields": {
-            "item_name": {
-              "type": "Text",
-              "config": {
-                "label": "Item name",
-                "placeholder": ""
-              }
-            },
-            "item_description": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Item description",
-                "placeholder": "Description or label as True or False for Check or X icons",
-                "allowTargetBlank": true,
-                "single": "paragraph,strong,em,hyperlink"
-              }
-            }
-          }
-        }
-      },
-      "support_icon": {
-        "type": "Image",
-        "config": {
-          "label": "Support Icon",
-          "constraint": {
-            "width": 24,
-            "height": 24
-          },
-          "thumbnails": []
-        }
-      },
-      "support": {
-        "type": "Group",
-        "config": {
-          "label": "Support",
-          "repeat": true,
-          "fields": {
-            "item_name": {
-              "type": "Text",
-              "config": {
-                "label": "Item name",
-                "placeholder": ""
-              }
-            },
-            "item_description": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Item description",
-                "placeholder": "Description or label as True or False for Check or X icons",
-                "allowTargetBlank": true,
-                "single": "paragraph,strong,em,hyperlink"
-              }
-            }
-          }
-        }
-      },
-      "training_and_resources_icon": {
-        "type": "Image",
-        "config": {
-          "label": "Training and Resources Icon",
-          "constraint": {
-            "width": 24,
-            "height": 24
-          },
-          "thumbnails": []
-        }
-      },
-      "training_and_resources": {
-        "type": "Group",
-        "config": {
-          "label": "Training and Resources",
-          "repeat": true,
-          "fields": {
-            "item_name": {
-              "type": "Text",
-              "config": {
-                "label": "Item name",
-                "placeholder": ""
-              }
-            },
-            "item_description": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Item description",
-                "placeholder": "Description or label as True or False for Check or X icons",
-                "allowTargetBlank": true,
-                "single": "paragraph,strong,em,hyperlink"
-              }
-            }
-          }
-        }
-      },
-      "marketing_icon": {
-        "type": "Image",
-        "config": {
-          "label": "Marketing Icon",
-          "constraint": {
-            "width": 24,
-            "height": 24
-          },
-          "thumbnails": []
-        }
-      },
-      "marketing": {
-        "type": "Group",
-        "config": {
-          "label": "Marketing",
-          "repeat": true,
-          "fields": {
-            "item_name": {
-              "type": "Text",
-              "config": {
-                "label": "Item name",
-                "placeholder": ""
-              }
-            },
-            "item_description": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Item description",
-                "placeholder": "Description or label as True or False for Check or X icons",
-                "allowTargetBlank": true,
-                "single": "paragraph,strong,em,hyperlink"
               }
             }
           }
